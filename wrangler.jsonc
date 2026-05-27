@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ai-news-blog",
+  "compatibility_date": "2026-05-27",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "public"
+  },
+  "build": {
+    "command": ""
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
