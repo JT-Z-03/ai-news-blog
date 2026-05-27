@@ -6,7 +6,7 @@ preserveTaxonomyNames = true
 
 [params]
   description = '每日 AI 热点新闻，追踪大模型最新动态'
-  author = '你的名字'
+  author = '钟懿'
   keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
   searchSubstrings = true
   ShowBreadCrumbs = true
