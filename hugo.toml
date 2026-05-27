@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/'
+baseURL = 'https://ai-news-blog.2871761207.workers.dev/'
 languageCode = 'zh-cn'
 title = 'AI 热点追踪'
 theme = 'hugo-PaperMod'
