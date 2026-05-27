@@ -1,0 +1,25 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'zh-cn'
+title = 'AI 热点追踪'
+theme = 'hugo-PaperMod'
+preserveTaxonomyNames = true
+
+[params]
+  description = '每日 AI 热点新闻，追踪大模型最新动态'
+  author = '你的名字'
+  keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
+  searchSubstrings = true
+  ShowBreadCrumbs = true
+  ShowReadingTime = true
+  ShowWordCount = true
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
