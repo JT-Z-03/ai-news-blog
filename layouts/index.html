@@ -6,11 +6,11 @@
 
 <!-- Hero Section -->
 <header class="page-header" style="text-align:center; padding: 3rem 0 2rem;">
-    <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤖 AI 热点追踪</h1>
+    <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">AI 热点追踪</h1>
     <p style="color: var(--meta); font-size: 1rem;">深度分析 + 精选日报，追踪 AI 行业最重要的事</p>
     <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
-        <a href="/categories/深度分析/" class="button" style="background: var(--accent); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">📊 深度文章</a>
-        <a href="/categories/日报/" class="button" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">📰 日报归档</a>
+        <a href="/categories/深度分析/" class="button" style="background: var(--accent); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">深度文章</a>
+        <a href="/categories/日报/" class="button" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">日报归档</a>
         <a href="/about/" class="button" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">关于本站</a>
     </div>
 </header>
@@ -21,8 +21,8 @@
 {{- if $deepArticles }}
 <section style="margin-bottom: 3.5rem;">
     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
-        <h2 style="font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 0.8rem;">📊 深度文章</h2>
-        <span style="color: var(--meta); font-size: 0.85rem;">—— 独立分析，值得反复阅读</span>
+        <h2 style="font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 0.8rem;">深度文章</h2>
+        <span style="color: var(--meta); font-size: 0.85rem;">独立分析，值得反复阅读</span>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem;">
@@ -52,7 +52,7 @@
 
     {{- if (gt $deepArticles.Len 6) }}
     <div style="text-align: center; margin-top: 1.2rem;">
-        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.9rem;">查看全部深度文章 →</a>
+        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.9rem;">查看全部深度文章 &rarr;</a>
     </div>
     {{- end }}
 </section>
@@ -65,8 +65,8 @@
 {{- if $dailyArticles }}
 <section style="margin-bottom: 3rem;">
     <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
-        <h2 style="font-size: 1.3rem; border-left: 4px solid #f0a500; padding-left: 0.8rem;">📰 日报</h2>
-        <span style="color: var(--meta); font-size: 0.85rem;">—— 今日要闻，快速浏览</span>
+        <h2 style="font-size: 1.3rem; border-left: 4px solid #f0a500; padding-left: 0.8rem;">日报</h2>
+        <span style="color: var(--meta); font-size: 0.85rem;">今日要闻，快速浏览</span>
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 0.8rem;">
@@ -83,7 +83,7 @@
 
     {{- if (gt $dailyArticles.Len 8) }}
     <div style="text-align: center; margin-top: 1rem;">
-        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.9rem;">查看全部日报 →</a>
+        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.9rem;">查看全部日报 &rarr;</a>
     </div>
     {{- end }}
 </section>
