@@ -3,7 +3,7 @@ title: "AI 热点日报 | 2026年5月28日（下午更新）"
 date: 2026-05-28T20:00:00+08:00
 draft: false
 tags: ["AI", "日报", "更新"]
-categories: ["AI 热点"]
+categories: ["日报"]
 slug: "ai-hot-2026-05-28-update"
 description: "今日下午更新：DeepSeek 计划 IPO、Qwen3.7-Max 登顶 OpenRouter 榜首、Mistral 布局工业 AI、Kling AI 20万美元4K制作挑战传统影视"
 ---

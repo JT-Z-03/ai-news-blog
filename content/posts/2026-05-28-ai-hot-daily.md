@@ -3,7 +3,7 @@ title: "AI 热点日报 | 2026年5月28日"
 date: 2026-05-28T08:00:00+08:00
 draft: false
 tags: ["AI", "日报"]
-categories: ["AI 热点"]
+categories: ["日报"]
 slug: "ai-hot-2026-05-28"
 description: "今日 AI 圈十大热点：Runway 发布 MCP 服务器、Claude Code v2.1.152 更新、OpenAI 私有 MCP 支持、Cognition 逆势融资等"
 ---

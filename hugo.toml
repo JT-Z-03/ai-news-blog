@@ -5,13 +5,30 @@ theme = 'hugo-PaperMod'
 preserveTaxonomyNames = true
 
 [params]
-  description = '每日 AI 热点新闻，追踪大模型最新动态'
+  description = '深度分析 + 精选日报，追踪 AI 行业最重要的事'
   author = '钟懿'
   keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
   searchSubstrings = true
   ShowBreadCrumbs = true
   ShowReadingTime = true
   ShowWordCount = true
+  profileMode = { enabled = true }
+  homeInfoParams = {
+    Title = "关于作者",
+    Content = "钟懿，关注 AI 领域的信息爱好者。每天花时间筛选、整理、输出 AI 行业最有价值的内容。",
+    [params.social]
+      github = "JT-Z-03/ai-news-blog"
+  }
+
+[params.profileMode]
+  enabled = true
+  title = "关于作者"
+  imageUrl = ""
+  subtitle = "钟懿，关注 AI 领域的信息爱好者"
+
+[params.social]
+  github = "https://github.com/JT-Z-03/ai-news-blog"
+  rss = true
 
 [taxonomies]
   tag = 'tags'
