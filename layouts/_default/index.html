@@ -1,0 +1,96 @@
+{{- define "main" -}}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+{{- $deepArticles := where $pages "Params.categories" "intersect" (slice "深度分析") }}
+{{- $dailyArticles := where $pages "Params.categories" "intersect" (slice "日报") }}
+
+<!-- Hero Section -->
+<header class="page-header" style="text-align:center; padding: 3rem 0 2rem;">
+    <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">🤖 AI 热点追踪</h1>
+    <p style="color: var(--meta); font-size: 1rem;">深度分析 + 精选日报，追踪 AI 行业最重要的事</p>
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem; flex-wrap: wrap;">
+        <a href="/categories/深度分析/" class="button" style="background: var(--accent); color: white; padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">📊 深度文章</a>
+        <a href="/categories/日报/" class="button" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">📰 日报归档</a>
+        <a href="/about/" class="button" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.5rem 1.2rem; border-radius: 6px; font-size: 0.9rem;">关于本站</a>
+    </div>
+</header>
+
+<div style="height: 2px; background: linear-gradient(to right, transparent, var(--accent), transparent); margin: 1rem 0 3rem;"></div>
+
+<!-- Deep Articles Section -->
+{{- if $deepArticles }}
+<section style="margin-bottom: 3.5rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.3rem; border-left: 4px solid var(--accent); padding-left: 0.8rem;">📊 深度文章</h2>
+        <span style="color: var(--meta); font-size: 0.85rem;">—— 独立分析，值得反复阅读</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.2rem;">
+        {{- range (first 6 $deepArticles) }}
+        <article class="post-entry" style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: var(--accent); border-radius: 0 10px 0 30px; opacity: 0.15;"></div>
+            <header class="entry-header">
+                <h3 style="font-size: 1rem; line-height: 1.4; margin-bottom: 0.6rem;">
+                    <a href="{{ .Permalink }}" style="text-decoration: none; color: inherit;">{{ .Title }}</a>
+                </h3>
+            </header>
+            {{- if .Summary }}
+            <div class="entry-content">
+                <p style="font-size: 0.85rem; color: var(--meta); line-height: 1.6;">{{ .Summary | plainify | htmlUnescape | truncate 100 }}</p>
+            </div>
+            {{- end }}
+            <footer class="entry-footer" style="margin-top: 0.8rem;">
+                <span style="font-size: 0.78rem; color: var(--meta);">{{ .Date.Format "2006-01-02" }}</span>
+                {{- with .Params.tags }}
+                <span style="font-size: 0.75rem; color: var(--accent); margin-left: 0.5rem;">{{ index . 0 }}</span>
+                {{- end }}
+            </footer>
+            <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+        </article>
+        {{- end }}
+    </div>
+
+    {{- if (gt $deepArticles.Len 6) }}
+    <div style="text-align: center; margin-top: 1.2rem;">
+        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.9rem;">查看全部深度文章 →</a>
+    </div>
+    {{- end }}
+</section>
+{{- end }}
+
+<!-- Divider -->
+<div style="height: 1px; background: var(--border); margin: 0 0 3rem;"></div>
+
+<!-- Daily Briefs Section -->
+{{- if $dailyArticles }}
+<section style="margin-bottom: 3rem;">
+    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.3rem; border-left: 4px solid #f0a500; padding-left: 0.8rem;">📰 日报</h2>
+        <span style="color: var(--meta); font-size: 0.85rem;">—— 今日要闻，快速浏览</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+        {{- range (first 8 $dailyArticles) }}
+        <article class="post-entry" style="display: flex; align-items: baseline; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--border);">
+            <span style="font-size: 0.78rem; color: var(--meta); min-width: 70px; flex-shrink: 0;">{{ .Date.Format "01-02" }}</span>
+            <h3 style="font-size: 0.95rem; flex: 1;">
+                <a href="{{ .Permalink }}" style="text-decoration: none; color: inherit;">{{ .Title }}</a>
+            </h3>
+            <span style="font-size: 0.78rem; color: var(--meta);">{{ with .Params.categories }}{{ index . 0 }}{{ end }}</span>
+        </article>
+        {{- end }}
+    </div>
+
+    {{- if (gt $dailyArticles.Len 8) }}
+    <div style="text-align: center; margin-top: 1rem;">
+        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.9rem;">查看全部日报 →</a>
+    </div>
+    {{- end }}
+</section>
+{{- end }}
+
+{{- if and (not $deepArticles) (not $dailyArticles) }}
+<p style="text-align: center; color: var(--meta); padding: 3rem 0;">暂无文章，<a href="/about/" style="color: var(--accent);">关于本站</a></p>
+{{- end }}
+
+{{- end }}
