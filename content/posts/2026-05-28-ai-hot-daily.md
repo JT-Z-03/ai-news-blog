@@ -5,7 +5,7 @@ draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: "ai-hot-2026-05-28"
-description: "2026年5月28日 AI 圈要闻：Cognition 估值260亿美元成最大独立智能体实验室、Runway MCP服务器上线、Qwen3.5创580tps推理纪录、ITBench-AA揭示前沿模型SRE任务均低于50%
+description: "2026年5月28日 AI圈要闻：Cognition估值260亿美元、Runway MCP服务器上线、Qwen3.5创580tps推理纪录"
 ---
 
 # AI 热点日报 | 2026年5月28日
