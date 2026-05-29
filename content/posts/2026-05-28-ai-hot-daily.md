@@ -5,7 +5,7 @@ draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: "ai-hot-2026-05-28"
-description: "2026年5月28日 AI 圈要闻：DeepSeek 冲击科创板 IPO、Qwen3.7-Max 登顶 OpenRouter 榜首、Claude Opus 4.8 发布、OpenRouter B 轮 1.13 亿美元、Perplexity 接入 Office 全家桶"
+description: "2026年5月28日 AI 圈要闻：Runway MCP服务器上线、Cognition估值260亿美元成最大独立智能体实验室、Qwen3.5创580tps推理纪录、Claude Code v2.1.152更新
 ---
 
 # AI 热点日报 | 2026年5月28日
@@ -16,154 +16,134 @@ description: "2026年5月28日 AI 圈要闻：DeepSeek 冲击科创板 IPO、Qwe
 
 ## 今日头条
 
-### DeepSeek 冲击科创板 IPO，估值 35 亿美元
+### Cognition 成为全球最大独立智能体实验室
 
-DeepSeek 正在推进科创板 A 股 IPO，本轮融资 5 亿美元，估值 35 亿美元。此前已累计产生 3500 亿 tokens 使用量。上市后将成 A 股首个纯粹的大模型标的。
+Cognition 宣布完成超 10 亿美元融资，估值达 260 亿美元，由 Lux Capital、General Catalyst 等领投。企业使用量自年初增长超 10 倍，年化收入增至 4.92 亿美元。公司两年前推出 Devin，定位为首个 AI 软件工程师，并得到 Peter Thiel 重大投资。
 
-**我的分析**：35 亿美元估值处于合理区间——参考 Cognition 34.92 亿美元、Mistral 约 60 亿美元。但风险在于：上市文件一定会被问算力来源（美国出口管制）、真实收入数据、幻方量化股东背景。这件事最终能否顺利落地，这三个问题的答案很重要。
-
-📎 [TheXPin @ X](https://x.com/thexpin/status/2059947998302679059)
+📎 [swyx @ X](https://x.com/swyx/status/2059717021944926238)
 
 ---
 
 ## 产品发布
 
-### Claude Opus 4.8 发布，Agentic Coding 能力大幅提升
-
-Anthropic 发布 Claude Opus 4.8，在 Agentic Coding 基准上有显著提升，是目前 Claude 系列最强模型。
-
-📎 [Anthropic 官方公告](https://www.anthropic.com/news/claude-opus-4-8)
-
-### Claude Code v2.1.152 新增修复模式
-
-Claude Code 新版支持 `/code-review --fix`，可直接在对话内修复代码问题；新增 `disallowed-tools` frontmatter 配置；`SessionStart` 支持 `reloadSkills: true`。
-
-📎 [GitHub Releases](https://github.com/anthropics/claude-code/releases/tag/v2.1.152)
-
 ### Runway MCP 服务器正式上线
 
-Runway 推出 MCP 服务器，Gen-4.5、Seedance 2.0、GPT Image 2、Kling 3.0 等模型通过 MCP 协议统一对外暴露，Claude、ChatGPT、Cursor 可直接调用。
+Runway 推出 MCP 服务器，支持 Claude、ChatGPT、Cursor 等 AI 智能体在对话界面直接生成图像与视频，接入 Gen-4.5、Seedance 2.0、GPT Image 2、Kling 3.0 及 Nano Banana Pro 等 SOTA 模型。用户可通过 runwayml.com/mcp 添加服务器并登录现有账户使用，无需单独申请 API 密钥。
 
 📎 [Runway 官方公告](https://runwayml.com/news/mcp)
 
-### Perplexity Computer 接入 Microsoft Office 全家桶
+### Claude Code v2.1.152 更新发布
 
-Perplexity AI 助手现在可以直接在 Excel、Word、PowerPoint、Outlook 内运行，提供实时 AI 辅助。
+新版核心改进：`/code-review --fix` 现在将审查建议直接应用到工作目录；技能与斜杠命令支持通过 frontmatter 的 `disallowed-tools` 移除模型工具；新增 `/reload-skills` 命令可不重启会话重新扫描技能目录；`SessionStart` 钩子支持 `reloadSkills: true`；新增 `MessageDisplay` 钩子事件以变换或隐藏助手消息。
 
-📎 [Perplexity @ X](https://x.com/perplexity_ai/status/2060013442720010598)
+📎 [GitHub Releases](https://github.com/anthropics/claude-code/releases/tag/v2.1.152)
 
 ### OpenAI 私有 MCP 服务器上线
 
-支持团队在自有网络内托管 MCP 服务器，通过 ChatGPT、Codex、Responses API 访问，HTTPS 加密传输。
+支持团队在自有网络内托管 MCP 服务器，ChatGPT、Codex、Responses API 通过仅出站 HTTPS 连接。
 
 📎 [OpenAI Developers @ X](https://x.com/OpenAIDevs/status/2059703536825565499)
 
-### Mistral 发布 Search Toolkit
+### Grok 编程智能体登陆 Kilo IDE
 
-Mistral AI 发布搜索工具包，强化企业级搜索场景。
+xAI 宣布 Grok 编程智能体登陆 Kilo IDE，SuperGrok 或 X Premium+ 订阅用户可使用 grok-build-0.1，享受高速智能体编程体验，支持 IDE 扩展和 CLI。
 
-📎 [Mistral 官方公告](https://mistral.ai/news/search-toolkit)
+📎 [xAI @ X](https://x.com/xai/status/2059666227115819149)
+
+### Perplexity 开源 Unigram 分词器
+
+Perplexity 开源重新构建的 Unigram 分词器，可将 CPU 占用降低 5-6 倍。配合小型重排序器和嵌入模型，GPU 运行时间仅为个位数毫秒。
+
+📎 [Perplexity @ X](https://x.com/perplexity_ai/status/2059664738087469511)
 
 ### FastVideo Dreamverse 开源：7 秒生成 30 秒 1080p 视频
 
-辉岳 AI 实验室开源 FastVideo Dreamverse，基于 NVIDIA B200 GPU + LTX-2 模型，实现 7 秒生成 30 秒 1080p 高清视频。
+辉岳 AI 实验室开源 FastVideo Dreamverse，基于单张 NVIDIA B200 GPU 和 LTX-2 模型，实现 7 秒生成 30 秒 1080p 高清视频的实时视频生成。
 
 📎 [Sky Computing Lab @ X](https://x.com/haoailab/status/2059695648103112946)
 
-### Sesame（Oculus 创始人创业公司）发布 iOS 应用
+### OpenCode 与 MiMo V2.5 限时免费开放
 
-📎 [TechCrunch](https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app)
-
-### OpenClaw 2026.5.27 发布
-
-runtime/security 边界优化，gateway 和 reply 路径加速。
-
-📎 [OpenClaw @ X](https://x.com/openclaw/status/2059985767456231751)
+📎 [opencode @ X](https://x.com/opencode/status/2059696100626297225)
 
 ---
 
 ## 行业动态
 
-### OpenRouter 完成 1.13 亿美元 B 轮融资
+### 英伟达黄仁勋展示台湾新园区，计划年投资 1500 亿美元
 
-AI 模型路由器 OpenRouter 获得 B 轮 1.13 亿美元，NVentures（英伟达）、ServiceNow Ventures 领投，a16z、Menlo Ventures 跟投。英伟达投资 OpenRouter 的逻辑：GPU 销售之外布局 AI 消费层。
+黄仁勋展示英伟达新的台湾园区，就在竞争对手 AMD 宣布将向台湾 AI 领域投资超 100 亿美元一周后。
 
-📎 [OpenRouter 官方公告](https://openrouter.ai/announcements/series-b)
+📎 [Rohan Paul @ X](https://x.com/rohanpaul_ai/status/2059689400267939925)
 
-### Qwen3.7-Max 登顶 OpenRouter Trending 榜首
+### 教皇发布 AI 通谕《Magnifica Humanitas》，警告人工智能触及权利与自由
 
-Qwen3.7-Max 累计使用量 77.3B tokens，登顶 OpenRouter Trending LLM 榜单，超越 Claude、GPT 系列。中国开源模型出海最成功的一战。
+教皇 Leo XIV 发布通谕，警告 AI 的使用绝非纯粹技术问题，当其进入影响人类生活的过程时，便触及权利、机会、地位与自由。Anthropic 联合创始人 Christopher Olah 出席发布现场，引发科技界广泛讨论。
 
-📎 [Alibaba Cloud @ X](https://x.com/alibaba_cloud/status/2059918150997623004)
+📎 [The Verge](https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions)
 
-### Cognition 逆势成为全球最大独立 Agent 实验室
+### 我国加快推进人工智能综合性立法
 
-Cognition 完成新一轮融资，估值 34.92 亿美元，旗下 Devin 是 AI 编程 Agent 领域标杆产品。在 OpenAI、Anthropic 亲自下场做 Coding Agent 的背景下，先发优势窗口正在收窄。
+📎 [IT之家](https://www.ithome.com/0/955/758.htm)
 
-📎 [swyx @ X](https://x.com/swyx/status/2059717021944926238)
+### 阿里云入选 Omdia 智能体 AI 市场雷达领导者
 
-### Kling AI 宣布用 20 万美元制作 4K AI 电影
+Omdia 认可阿里云在每一层的全栈能力，是首个将整个平台围绕智能体范式进行构建的云服务商。
 
-Kling AI 在 AI on the Lot 社区日宣布挑战"用 20 万美元预算 + AI 生成完整 4K 电影"，目标：5 月 29 日公布完整方案。这个挑战的意义不是证明 AI 能拍电影，而是证明 AI 视频生成的制作管线能否标准化。
+📎 [阿里云 @ X](https://x.com/alibaba_cloud/status/2059509714854007181)
 
-📎 [Kling AI @ X](https://x.com/Kling_ai/status/2059908126611292645)
+### 阿里云成为 PyTorch 白金会员
 
-### Mistral AI 联合 ASML 布局工业工程 AI
-
-Mistral 在 AI Now Summit 2026 发布"Mistral for Industrial Engineering"，联合 ASML 等欧洲工业巨头，推进工业 AI 场景落地，10MW 数据中心在 Les Ulis 落地。
-
-📎 [Mistral AI 官方公告](https://mistral.ai/news/ai-now-summit-2026)
+📎 [阿里云 @ X](https://x.com/alibaba_cloud/status/2059453607075004835)
 
 ---
 
 ## 论文研究
 
-### ITBench-AA 首发：SRE 任务下前沿模型准确率不足 50%
+### Qwen3.5 创 580 tokens/s 推理速度纪录
 
-Artificial Analysis 联合 IBM 发布首个企业 IT 任务基准 ITBench-AA，Claude Opus 4.7 准确率 47%，GPT-5.5、Qwen3.7 Max 均未过 50%。问题不在模型能力，而在训练数据和任务结构的错配——模型缺的是 SRE 场景的实操经验。
+Qwen3.5 在 TokenSpeed 推理引擎上，针对智能体工作负载达到 580 tokens/s 的创纪录速度，由通义千问推理团队、NVIDIA 及 Mooncake 团队共同实现，采用 FlashAttention-4 优化。
+
+📎 [通义千问 @ X](https://x.com/Alibaba_Qwen/status/2059674574397313277)
+
+### ITBench-AA：前沿大模型 SRE 任务得分均低于 50%
+
+Artificial Analysis 和 IBM 推出的 ITBench-AA SRE 基准测试显示，所有前沿大模型均未超过 50%：Claude Opus 4.7 得 47% 领先，GPT-5.5 得 46%，Qwen3.7 Max 得 42%。关键发现：模型推理轮次差异近 3 倍，但更长轨迹并不转化为更高准确率。开源模型 Gemma 4 31B 以每任务 $0.14 成本获得 37% 得分，优于成本更高但得分更低的闭源模型。
 
 📎 [Hugging Face Blog](https://huggingface.co/blog/ibm-research/itbench-aa)
 
-### AMD MI355X + SGLang 实现 DeepSeek-R1 分布式推理成本优化
+### Google Research 发布零信任聚合隐私分析方案
 
-📎 [LMSYS Blog](https://www.lmsys.org/blog/2026-05-28-mori)
+📎 [Google Research Blog](https://research.google/blog/private-analytics-via-zero-trust-aggregation)
 
 ---
 
 ## 技巧与观点
 
-### Coding Agent 成熟度报告：双寡头格局已形成
+### 编程智能体 PMF 已找到：Anthropic 和 OpenAI 进入收获期
 
-OpenAI（GPT-5.5）+ Anthropic（Claude Opus 4.7）双寡头格局确立，Claude Code、Codex、Cursor 分列前三。中国模型在 Coding Agent 这个细分场景的生态建设上，还落后一个身位。
-
-📎 [dotey @ X](https://x.com/dotey/status/2059773942500298934)
-
-### Simon Willison：Anthropic 和 OpenAI 已找到 PMF
-
-Anthropic Enterprise 20 万美元/年的定价已被市场接受，OpenAI Codex 获得大量企业级 API token。AI 商业化从"探索期"进入"收获期"。
+Simon Willison 指出 Anthropic Enterprise 套餐（每席位 $20/月 + API 费用）和 OpenAI Codex（按 token 用量计费）代表两家公司正式进入商业化收获阶段，GPT-5.5 和 Opus 4.7 的 API 定价也显著高于前代。
 
 📎 [Simon Willison](https://simonwillison.net/2026/May/27/product-market-fit)
 
-### Anthropic 详解：用 LLM 保护源代码安全
+### 用好 Coding Agent：关键是开头走对方向
 
-Claude 官方博客深度解析 LLMs 如何保障代码安全，覆盖 21,596 个真实 CVE 漏洞案例。
+核心方法：先用最强模型（GPT-5.5、Claude Opus 4.7）分别在 Codex、Claude Code、Cursor 的 Plan 模式下生成设计方案，选择最优并借鉴其他版本。对于复杂计划拆分为多个 Phases，明确要求与验证标准，执行时辅以人工审核纠偏。避免多个智能体交叉 Review 导致代码越改越多。
+
+📎 [宝玉 @ X](https://x.com/dotey/status/2059773942500298934)
+
+### Anthropic 发布 AI 智能体零信任安全框架
+
+Anthropic 指出前沿大模型正将漏洞利用周期从数月压缩至数小时，提出三层零信任架构（基础、高级、优化级）及八阶段实施流程，涵盖提示注入、工具投毒、记忆投毒等特有威胁。
+
+📎 [Claude Blog](https://claude.com/blog/zero-trust-for-ai-agents)
+
+### 用 Claude 保障源代码安全：六步循环实践
+
+核心流程：威胁建模 → 沙箱隔离 → 漏洞发现 → 验证 → 分类 → 修复。瓶颈已从发现转移到验证与处理阶段。截至 2026 年 5 月 22 日已披露 1,596 个开源软件漏洞，其中 97 个已修补。
 
 📎 [Claude Blog](https://claude.com/blog/using-llms-to-secure-source-code)
 
-### Coding Agent 选型指南（IT 之家）
-
-Qwen3.5-4B 在 Polar 评测中 Codex SWE-Bench Verified pass@1 提升 594.74%，Gemma 4 31B 价格仅为 GPT-4o 的 37%。
-
-📎 [IT之家](https://www.ithome.com/0/956/293.htm)
-
-### OpenAI 前沿治理框架
-
-📎 [OpenAI 官方公告](https://openai.com/index/openai-frontier-governance-framework)
-
-### pgvector 向量搜索全栈实现指南
-
-📎 [MarkTechPost](https://www.marktechpost.com/2026/05/28/a-coding-guide-to-implement-a-pgvector-powered-semantic-hybrid-sparse-and-quantized-vector-search-system)
-
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT / AI Digest / AI Brief*
+*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
