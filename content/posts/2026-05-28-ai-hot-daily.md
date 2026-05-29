@@ -10,7 +10,7 @@ description: "2026年5月28日 AI 圈要闻：DeepSeek 冲击科创板 IPO、Qwe
 
 # AI 热点日报 | 2026年5月28日
 
-> 整合来源：AI HOT + AI Digest + AI Brief
+> 数据来源：AI HOT（aihot.virxact.com）
 
 ---
 
