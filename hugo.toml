@@ -1,4 +1,4 @@
-baseURL = 'https://29b59cbe.ai-news-blog-cg8.pages.dev/'
+baseURL = 'https://ai-news-blog-cg8.pages.dev/'
 languageCode = 'zh-cn'
 title = 'AI 热点追踪'
 theme = 'hugo-PaperMod'
