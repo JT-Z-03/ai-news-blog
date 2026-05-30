@@ -1,151 +1,161 @@
 ---
-title: "AI Hot Daily | 2026-05-28"
-date: 2026-05-28T20:00:00+08:00
+title: "AI 热点日报 | 2026年5月28日"
+date: 2026-05-28T08:00:00+08:00
 draft: false
-tags: ["AI", "daily"]
-categories: ["daily"]
+tags: ["AI", "日报"]
+categories: ["日报"]
 slug: "ai-hot-2026-05-28"
-description: "AI daily: Cognition $26B valuation, Runway MCP server launched, Qwen3.5 sets 580 tps record, Pope Leo XIV issues AI encyclical"
+description: "2026年5月28日 AI 圈要闻：Cognition 估值 260 亿美元成最大独立智能体实验室、Runway 推出 MCP 服务器、Qwen3.5 创下 580 tokens/s 推理纪录、教皇发布 AI 通谕警告"
 ---
 
-# AI Hot Daily | 2026-05-28
+# AI 热点日报 | 2026年5月28日
 
-> Source: AI HOT (aihot.virxact.com)
+> 数据来源：AI HOT（aihot.virxact.com）
 
 ---
 
-## Top Story
+## 今日头条
 
-### Cognition Valued at $26B, Becomes Largest Independent Agent Lab
+### Cognition 估值 260 亿美元，成为全球最大独立智能体实验室
 
-Cognition raised over $1B at $26B valuation from Lux Capital and General Catalyst. Annual revenue hit $492M with 10x enterprise usage growth since start of year. Devin remains the flagship AI software engineer product backed by Peter Thiel.
+Cognition 完成超 10 亿美元融资，估值达 260 亿美元，由 Lux Capital、General Catalyst 等领投。年化收入 4.92 亿美元，企业使用量年初以来增长超 10 倍。两年前推出 Devin，定位为首个 AI 软件工程师，背后有 Peter Thiel 重磅投资。公司宣称拥有多项领先优势，包括首个编码智能体、顶级代码审查能力等。
 
 📎 [swyx @ X](https://x.com/swyx/status/2059717021944926238)
 
-### Pope Leo XIV Issues AI Encyclical Warning on Rights and Freedom
+### 教皇 Leo XIV 发布 AI 通谕，警告人工智能触及权利与自由
 
-Pope Leo XIV published "Magnifica Humanitas," warning AI use is never purely technical and directly impacts rights, opportunity, status and freedom when it enters human life processes. Anthropic co-founder Christopher Olah attended the announcement.
+教皇 Leo XIV 发布题为《Magnifica Humanitas》的通谕，强调 AI 的使用绝非纯粹技术问题，当其进入影响人类生活的过程时，便触及权利、机会、地位与自由。Anthropic 联合创始人 Christopher Olah 出席发布会，引发科技界广泛关注和讨论。
 
 📎 [The Verge](https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions)
 
 ---
 
-## Product Updates
+## 模型发布/更新
 
-### Runway Launches MCP Server, Enabling Direct Image/Video Generation in AI Agents
+*（5月28日数据无本分类条目）*
 
-Runway MCP server lets Claude, ChatGPT, Cursor and other MCP-compatible AI agents generate images and videos directly in chat interface. Supports Gen-4.5, Seedance 2.0, GPT Image 2, Kling 3.0 and Nano Banana Pro. Setup via runwayml.com/mcp, no separate API key needed.
+---
+
+## 产品发布/更新
+
+### Runway 推出 MCP 服务器，AI 智能体可直接生成图像与视频
+
+Runway 正式推出 MCP 服务器，允许 Claude、ChatGPT、Cursor 等兼容 MCP 的 AI 智能体在对话界面中直接生成图像与视频。接入 Gen-4.5、Seedance 2.0、GPT Image 2、Kling 3.0 及 Nano Banana Pro 等多款 SOTA 模型。通过 runwayml.com/mcp 添加并登录现有账户即可使用，无需单独申请 API 密钥。
 
 📎 [Runway](https://runwayml.com/news/mcp)
 
-### Claude Code v2.1.152: New /code-review --fix to Apply Fixes Directly
+### Claude Code v2.1.152：/code-review --fix 可直接应用修复建议
 
-Key improvements: `/code-review --fix` now applies review suggestions directly to working directory; skills support `disallowed-tools` frontmatter config; new `/reload-skills` command rescans skill directory without session restart; `SessionStart` hook supports `reloadSkills: true`; new `MessageDisplay` hook to transform or hide assistant messages.
+本次更新亮点：`/code-review --fix` 现在能将审查建议直接应用到工作目录；技能与斜杠命令支持通过 frontmatter 的 `disallowed-tools` 移除模型工具；新增 `/reload-skills` 命令可不重启会话重新扫描技能目录；`SessionStart` 钩子现可返回 `reloadSkills: true` 并支持通过 `hookSpecificOutput.sessionTitle` 设置会话标题；新增 `MessageDisplay` 钩子事件以变换或隐藏助手消息。
 
 📎 [GitHub Releases](https://github.com/anthropics/claude-code/releases/tag/v2.1.152)
 
-### OpenAI Private MCP Server: Internal Network Hosting with Outbound-Only HTTPS
+### OpenAI 产品支持私有 MCP 服务器安全连接
 
-Teams can keep MCP servers in internal networks while ChatGPT, Codex and Responses API connect via outbound-only HTTPS for secure isolation.
+团队可在内部网络保留 MCP 服务器，同时 ChatGPT、Codex 和 Responses API 通过仅出站 HTTPS 进行连接，实现安全隔离。
 
 📎 [OpenAI Developers @ X](https://x.com/OpenAIDevs/status/2059703536825565499)
 
-### xAI Grok Coding Agent Lands on Kilo IDE
+### xAI Grok 编程智能体登陆 Kilo IDE 平台
 
-SuperGrok or X Premium+ subscribers can now use grok-build-0.1 for high-speed agentic coding in Kilo IDE extension and CLI.
+SuperGrok 或 X Premium+ 订阅用户可在 Kilo IDE 扩展或 CLI 中使用 grok-build-0.1，享受高速智能体编程体验。
 
 📎 [xAI @ X](https://x.com/xai/status/2059666227115819149)
 
-### Perplexity Open-Sources Unigram Tokenizer, Cutting CPU Usage 5-6x
+### Perplexity 开源 Unigram 分词器，CPU 占用降低 5-6 倍
 
-New Unigram tokenizer implementation combined with small reranker and embedding models keeps GPU runtime in single-digit milliseconds.
+重新构建的 Unigram 分词器可将 CPU 占用降低 5-6 倍。配合小型重排序器和嵌入模型，GPU 运行时间仅为个位数毫秒。
 
 📎 [Perplexity @ X](https://x.com/perplexity_ai/status/2059664738087469511)
 
-### FastVideo Dreamverse: 7 Seconds to Generate 30s 1080p Video
+### FastVideo Dreamverse：7 秒生成 30 秒 1080p 视频
 
-HaoYi AI Lab open-sources FastVideo Dreamverse on single NVIDIA B200 GPU plus LTX-2 model for real-time video generation atmosphere guidance.
+HaoYi AI Lab 开源 FastVideo Dreamverse，基于单张 NVIDIA B200 GPU 和 LTX-2 模型实现实时视频生成的氛围引导工具。
 
 📎 [Sky Computing Lab @ X](https://x.com/haoailab/status/2059695648103112946)
 
 ---
 
-## Industry
+## 行业动态
 
-### Nvidia Jensen Huang Showcases Taiwan Campus, Planning $150B Annual Investment
+### 黄仁勋展示英伟达台湾新园区，计划每年投资 1500 亿美元
 
-Just one week after AMD announced plans to invest over $10B in Taiwan AI, Nvidia revealed its own major Taiwan campus expansion.
+就在竞争对手 AMD 宣布将向台湾 AI 领域投资超过 100 亿美元一周后，英伟达展示了新的台湾园区扩张计划。
 
 📎 [Rohan Paul @ X](https://x.com/rohanpaul_ai/status/2059689400267939925)
 
-### China to Accelerate AI Health Comprehensive Legislation
+### 我国将加快研究推进人工智能健康发展综合性立法
 
-📎 [IT Home](https://www.ithome.com/0/955/758.htm)
+📎 [IT之家](https://www.ithome.com/0/955/758.htm)
 
-### Qualcomm and ByteDance Partner on AI ASIC Chips, Millions of Units
+### 高通与字节跳动达成 AI ASIC 芯片合作，采购量达数百万颗级别
 
-📎 [IT Home](https://www.ithome.com/0/955/674.htm)
+📎 [IT之家](https://www.ithome.com/0/955/674.htm)
 
-### Alibaba Cloud Named Omdia Agent AI Market Radar Leader
+### 阿里云入选 Omdia 智能体 AI 市场雷达领导者
 
-📎 [Alibaba Cloud @ X](https://x.com/alibaba_cloud/status/2059509714854007181)
+Omdia 认可阿里云是首个将整个平台围绕智能体范式进行构建的云服务商。
 
-### Alibaba Cloud Becomes PyTorch Foundation Platinum Member
+📎 [阿里云 @ X](https://x.com/alibaba_cloud/status/2059509714854007181)
 
-📎 [Alibaba Cloud @ X](https://x.com/alibaba_cloud/status/2059453607075004835)
+### 阿里云成为 PyTorch 基金会白金会员
 
-### OpenAI Publishes 2026 Election Safeguards Plan
+📎 [阿里云 @ X](https://x.com/alibaba_cloud/status/2059453607075004835)
+
+### OpenAI 发布 2026 年选举保障计划
 
 📎 [OpenAI](https://openai.com/index/election-safeguards-2026)
 
 ---
 
-## Research
+## 论文研究
 
-### Qwen3.5 Sets 580 tokens/s Inference Speed Record
+### Qwen3.5 创下 580 tokens/s 推理速度纪录
 
-Qwen3.5 achieved 580 tokens/s on TokenSpeed inference engine for agent workloads through collaboration between Alibaba Qwen inference team, NVIDIA and Mooncake team using FlashAttention-4 optimization.
+Qwen3.5 在 TokenSpeed 推理引擎上针对智能体工作负载达到 580 tokens/s 的创纪录速度，由通义千问推理团队、NVIDIA 及 Mooncake 团队共同实现，采用 FlashAttention-4 优化。这一里程碑标志着开源大语言模型推理性能的边界得到推动。
 
-📎 [Alibaba Qwen @ X](https://x.com/Alibaba_Qwen/status/2059674574397313277)
+📎 [通义千问 @ X](https://x.com/Alibaba_Qwen/status/2059674574397313277)
 
-### ITBench-AA: All Frontier Models Score Below 50% on SRE Tasks
+### ITBench-AA：所有前沿大模型在 SRE 任务中得分均低于 50%
 
-ITBench-AA SRE benchmark from Artificial Analysis and IBM shows all frontier models under 50%: Claude Opus 4.7 at 47% leads, GPT-5.5 at 46%, Qwen3.7 Max at 42%. Key finding: 3x variation in reasoning rounds but longer traces do not convert to higher accuracy. Open-source Gemma 4 31B scores 37% at $0.14/task, outperforming more expensive closed models.
+Artificial Analysis 和 IBM 推出的 ITBench-AA SRE 基准测试显示，所有前沿大模型得分均未超过 50%。Claude Opus 4.7 以 47% 领先，GPT-5.5 得 46%，Qwen3.7 Max 得 42%。关键发现：模型推理轮次差异近 3 倍，但更长的轨迹并不转化为更高准确率。开源模型 Gemma 4 31B（Reasoning）以每任务 $0.14 的成本获得 37% 得分，优于成本更高但得分更低的闭源模型。
 
 📎 [Hugging Face Blog](https://huggingface.co/blog/ibm-research/itbench-aa)
 
-### Google Research Publishes Zero-Trust Aggregation Privacy Analysis
+### Google Research 发布零信任聚合隐私分析方案
+
+结合零信任原则与可信执行环境（TEE）的透明性，通过密码学与硬件保护的结合，确保系统仅能获取群体的匿名化聚合洞察。
 
 📎 [Google Research Blog](https://research.google/blog/private-analytics-via-zero-trust-aggregation)
 
 ---
 
-## Insights
+## 技巧与观点
 
-### Coding Agent Maturity: Dual Oligopoly Formed
+### 用好 Coding Agent，关键是两头——尤其是开头
 
-OpenAI (GPT-5.5) + Anthropic (Claude Opus 4.7) dual oligopoly established, Claude Code, Codex and Cursor taking top three spots. Chinese models still one position behind in Coding Agent ecosystem building.
+用最强模型（如 GPT-5.5、Claude Opus 4.7）分别在 Codex、Claude Code、Cursor 的 Plan 模式下生成设计方案，选择最优并借鉴其他版本。复杂计划可拆分为多个 Phases 并明确验证标准，形成 Markdown 文档。执行时按 Phases 进行并辅以人工审核纠偏。Code Review 用 GPT-5.5 审核代码质量与设计符合度即可。应避免多个智能体交叉 Review，否则可能导致代码越改越多。
 
-📎 [Baoyu @ X](https://x.com/dotey/status/2059773942500298934)
+📎 [宝玉 @ X](https://x.com/dotey/status/2059773942500298934)
 
-### Anthropic and OpenAI Found Product-Market Fit
+### Anthropic 和 OpenAI 找到了产品市场契合点
 
-Anthropic Enterprise ($20/seat/month + API) and OpenAI Codex (per-token pricing) mark both companies entering commercial harvest phase with new models priced significantly above predecessors.
+Anthropic Enterprise（$20/席位/月 + API 费用）和 OpenAI Codex（按 API token 用量计费）标志着两家公司进入商业化收割阶段。同时发布的新模型 GPT-5.5（4月23日）和 Opus 4.7（4月16日）的 API 定价也显著高于前代版本。
 
 📎 [Simon Willison](https://simonwillison.net/2026/May/27/product-market-fit)
 
-### Anthropic Publishes AI Agent Zero-Trust Security Framework
+### Anthropic 发布 AI 智能体零信任安全框架
 
-Frontier LLMs compressing vulnerability exploitation cycle from months to hours. Three-tier zero-trust architecture proposed: basic, advanced, optimized, plus eight-stage implementation covering prompt injection, tool poisoning, memory poisoning threats.
+前沿大语言模型将漏洞利用周期从数月压缩至数小时。三层零信任架构（基础、高级、优化级）及八阶段实施流程，覆盖提示注入、工具投毒、记忆投毒等特有威胁。
 
 📎 [Claude Blog](https://claude.com/blog/zero-trust-for-ai-agents)
 
-### Securing Source Code with LLMs: Six-Step Cycle
+### 用大语言模型保障源代码安全：六步循环
 
-Core process: threat modeling, sandbox isolation, vulnerability discovery, verification, classification, remediation. Discovery bottleneck has shifted to verification. 1,596 open source vulnerabilities disclosed as of May 22, 2026, with 97 already patched.
+核心流程：威胁建模 → 沙箱隔离 → 漏洞发现 → 验证 → 分类 → 修复。漏洞发现现已易于并行化，瓶颈转移到验证与处理阶段。截至 2026 年 5 月 22 日已披露 1,596 个开源漏洞，其中 97 个已修补。
 
 📎 [Claude Blog](https://claude.com/blog/using-llms-to-secure-source-code)
 
 ---
 
-*AI Hot Daily · Author: Zhong Yi · Source: AI HOT (aihot.virxact.com)*
+*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
