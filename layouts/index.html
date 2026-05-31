@@ -22,12 +22,12 @@
 <!-- Deep Articles Section -->
 {{- if $deepArticles }}
 <section style="padding: 3rem 0 2rem;">
-    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem; position: relative; z-index: 1;">
         <div style="display: flex; align-items: center; gap: 0.8rem;">
             <h2 style="font-size: 1.25rem; font-weight: 600;">深度文章</h2>
             <span style="color: var(--tertiary); font-size: 0.8rem;">独立分析，值得反复阅读</span>
         </div>
-        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.85rem; text-decoration: none;">查看全部 &rarr;</a>
+        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem;">
@@ -67,12 +67,12 @@
 <!-- Daily Briefs Section -->
 {{- if $dailyArticles }}
 <section style="padding: 2rem 0 3rem;">
-    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem; position: relative; z-index: 1;">
         <div style="display: flex; align-items: center; gap: 0.8rem;">
             <h2 style="font-size: 1.25rem; font-weight: 600;">日报</h2>
             <span style="color: var(--tertiary); font-size: 0.8rem;">今日要闻，快速浏览</span>
         </div>
-        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.85rem; text-decoration: none;">查看全部 &rarr;</a>
+        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
