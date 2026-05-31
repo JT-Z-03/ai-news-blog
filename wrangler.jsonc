@@ -5,12 +5,7 @@
   "observability": {
     "enabled": true
   },
-  "assets": {
-    "directory": "public"
-  },
-  "build": {
-    "command": ""
-  },
+  "pages_build_output_dir": "public",
   "compatibility_flags": [
     "nodejs_compat"
   ]
