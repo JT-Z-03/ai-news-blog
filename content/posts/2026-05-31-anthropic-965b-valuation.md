@@ -1,6 +1,6 @@
 ---
 title: "Anthropic 估值 9650 亿美元：AI 行业正式进入\"三足鼎立\"时代"
-date: 2026-05-31T08:00:00+08:00
+date: 2026-06-01T08:00:00+08:00
 draft: false
 tags: ["Anthropic", "Claude", "AI融资", "大模型", "行业分析"]
 categories: ["深度分析"]
