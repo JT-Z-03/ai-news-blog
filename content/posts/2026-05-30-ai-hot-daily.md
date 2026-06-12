@@ -8,8 +8,6 @@ slug: "ai-hot-2026-05-30"
 description: "2026年5月30日 AI 圈要闻：阶跃星辰发布 Step 3.7 Flash 开源大模型、OpenAI 实时翻译模型支持 70+ 语言、小米开源 ControlFoley 可控视频音效生成模型、Cursor 团队发布开发者习惯报告"
 ---
 
-# AI 热点日报 | 2026年5月30日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

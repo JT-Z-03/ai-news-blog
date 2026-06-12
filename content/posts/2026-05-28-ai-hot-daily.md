@@ -8,8 +8,6 @@ slug: "ai-hot-2026-05-28"
 description: "2026年5月28日 AI 圈要闻：Cognition 估值 260 亿美元成最大独立智能体实验室、Runway 推出 MCP 服务器、Qwen3.5 创下 580 tokens/s 推理纪录、教皇发布 AI 通谕警告"
 ---
 
-# AI 热点日报 | 2026年5月28日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

@@ -4,6 +4,9 @@ date: 2026-05-27T22:10:00+08:00
 tags: ["Runway", "MCP", "多模态", "工具", "AI生成"]
 categories: ["AI 新闻"]
 summary: "Runway 正式推出 MCP 服务器，Claude、ChatGPT、Cursor 等主流 AI 工具现在可以直接调用 Gen-4.5、Seedance 2.0、Kling 3.0 等顶级模型生成图像和视频，无需切换工作流。"
+description: "Runway 推出 MCP 服务器，让 Claude、ChatGPT、Cursor 等 AI 工具直接调用图像和视频生成模型。"
+slug: "runway-mcp-server"
+aliases: ["/posts/2026-05-27-runway-mcp-server/"]
 sources:
   - title: "Runway 官方公告"
     url: "https://runwayml.com/news/mcp"

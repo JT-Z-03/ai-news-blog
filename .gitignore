@@ -1,6 +1,10 @@
 # Hugo build output
 public/
 resources/_gen/
+.hugo_build.lock
+
+# Wrangler local state
+.wrangler/
 
 # OS files
 .DS_Store

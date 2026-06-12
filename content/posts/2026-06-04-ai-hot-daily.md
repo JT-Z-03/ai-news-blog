@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-04"
 description: "2026年6月4日 AI 圈要闻：微软与 OpenAI 彻底分道扬镳、DeepSeek 拟首轮融资 500 亿、ChatGPT 月活破 10 亿、欧盟公布技术主权计划、OpenClaw 2026.6.1 发布"
 ---
 
-# AI 热点日报 | 2026年6月4日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

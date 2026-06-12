@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-08"
 description: "2026年6月8日 AI 圈要闻：ChatGPT 要变 AgentGPT、OpenAI 与特朗普政府讨论公共财富基金、苹果终于认真对待 AI、北海道农民用 AI 的 8 种方式"
 ---
 
-# AI 热点日报 | 2026年6月8日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

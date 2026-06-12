@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-07"
 description: "2026年6月7日 AI 圈要闻：GitHub 开源 Spec Kit 工具包、OpenCV 5 发布、美国众议院 AI 监管法案草案、ResNet 获 CVPR 时间检验奖"
 ---
 
-# AI 热点日报 | 2026年6月7日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-05"
 description: "2026年6月5日 AI 圈要闻：Nex-N2-Pro 397B 推理模型发布、NVIDIA Nemotron 3 Ultra 发布、Google 开源实时音乐模型 MRT2、台积电坦言产能跟不上 AI 需求、机器人流量首次超过人类"
 ---
 
-# AI 热点日报 | 2026年6月5日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---
