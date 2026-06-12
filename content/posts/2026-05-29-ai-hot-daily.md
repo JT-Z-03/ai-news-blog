@@ -8,8 +8,6 @@ slug: "ai-hot-2026-05-29"
 description: "2026年5月29日 AI 圈要闻：Anthropic 完成 650 亿美元 H 轮融资估值 9650 亿美元、Claude Opus 4.8 发布性能全面升级、DeepSeek 计划科创板 IPO、Qwen3.7-Max 登顶 OpenRouter 榜首"
 ---
 
-# AI 热点日报 | 2026年5月29日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

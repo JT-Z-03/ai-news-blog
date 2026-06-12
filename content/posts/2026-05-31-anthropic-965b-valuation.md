@@ -8,8 +8,6 @@ slug: "anthropic-965b-valuation-three-way-race"
 description: "Anthropic 完成 650 亿美元 H 轮融资，估值达 9650 亿美元超越 OpenAI，成为全球估值最高的 AI 公司。本文从融资结构、战略布局、行业影响三个维度做深度解读。"
 ---
 
-# Anthropic 估值 9650 亿美元：AI 行业正式进入"三足鼎立"时代
-
 > 数据来源：Anthropic 官方 Newsroom、Bloomberg、Simon Willison 博客
 
 ---
@@ -114,6 +112,14 @@ Anthropic 的这轮融资是 2026 年 AI 行业最重要的里程碑事件之一
 - **是谁能建立最稳固的算力-模型-商业飞轮**，谁就是下一个十年的基础设施
 
 对于中国 AI 行业来说，这个数字也值得参考：Anthropic 用 770 亿美元融了一个 9650 亿估值的公司，而中国大模型公司目前的融资格局和估值水平，和这个量级还有明显差距。差距不在技术，而在**商业化速度**和**生态构建能力**。
+
+---
+
+## 主要来源
+
+- [Anthropic：Series H 融资公告](https://www.anthropic.com/news/series-h)
+- [Anthropic：Claude Opus 4.8](https://www.anthropic.com/news/claude-opus-4-8)
+- [Claude Blog：Dynamic Workflows](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code)
 
 ---
 

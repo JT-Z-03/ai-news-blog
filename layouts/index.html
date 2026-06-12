@@ -17,7 +17,7 @@
     </div>
 </header>
 
-<div style="padding: 0 1rem; max-width: 1100px; margin: 0 auto;">
+<div class="home-shell">
 
 <!-- Deep Articles Section -->
 {{- if $deepArticles }}
@@ -30,9 +30,9 @@
         <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.2rem;">
+    <div class="home-grid">
         {{- range (first 6 $deepArticles) }}
-        <article style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s;">
+        <article class="home-card" style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s;">
             <header style="margin-bottom: 0.8rem;">
                 <h3 style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.5rem;">
                     <a href="{{ .Permalink }}" style="text-decoration: none; color: var(--primary);">{{ .Title }}</a>
@@ -75,9 +75,9 @@
         <a href="/categories/日报/" style="color: #f0a500; font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+    <div class="home-grid home-grid--daily">
         {{- range (first 6 $dailyArticles) }}
-        <article style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem;">
+        <article class="home-card" style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem;">
             <time style="font-size: 0.78rem; color: var(--tertiary); min-width: 60px; flex-shrink: 0;">{{ .Date.Format "01-02" }}</time>
             <div style="flex: 1; min-width: 0;">
                 <h3 style="font-size: 0.9rem; font-weight: 500; line-height: 1.4; margin: 0;">

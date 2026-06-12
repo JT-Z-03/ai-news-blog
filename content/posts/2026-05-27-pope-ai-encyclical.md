@@ -4,6 +4,9 @@ date: 2026-05-27T20:37:00+08:00
 tags: ["AI伦理", "教皇", "Anthropic", "政策法规", "安全对齐"]
 categories: ["AI 新闻"]
 summary: "教皇 Leo XIV 发布《Magnifica Humanitas》通谕，警告 AI 进入影响人类生活的领域时涉及权利、机会、自由等根本问题。Anthropic 联合创始人 Christopher Olah 出席发布会，引发科技界热议。"
+description: "教皇 Leo XIV 发布 AI 主题通谕《Magnifica Humanitas》，警告 AI 对人类权利、机会与自由的影响。"
+slug: "pope-ai-encyclical"
+aliases: ["/posts/2026-05-27-pope-ai-encyclical/"]
 sources:
   - title: "The Verge 报道"
     url: "https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions"

@@ -8,8 +8,6 @@ slug: "microsoft-openai-divorce-ai-war"
 description: "微软在 Build 2026 上发布自研推理模型 MAI-Thinking-1，正式宣告与 OpenAI 分道扬镳。与此同时，Anthropic 秘密提交 IPO、Alphabet 融资 800 亿美元、DeepSeek 首轮 500 亿。这篇文章把五条独立新闻串成一条主线：AI 行业从合作关系进入全面竞争时代。"
 ---
 
-# 微软与 OpenAI 正式分家：AI 行业从"联姻"走向"混战"
-
 > 数据来源：The Verge、Bloomberg、Microsoft Build 2026 官方、IT之家、OpenRouter
 
 ---
@@ -152,6 +150,14 @@ OpenAI 也在赌同一件事——Greg Brockman 正在打造一个整合 ChatGPT
 这中间隔着的 7 年，不是两家公司的恩怨，而是整个行业从 0 到 1 再到 N 的必然过程。
 
 真正有趣的问题是：**当所有巨头都在自研大模型，当算力成本成为最大的竞争壁垒，当 Agent 成为新的操作系统入口——还有几家能活到下个十年？**
+
+---
+
+## 主要来源
+
+- [The Verge：微软发布 MAI-Thinking-1](https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026)
+- [The Verge：微软与 OpenAI 转向正面竞争](https://www.theverge.com/ai-artificial-intelligence/942242/microsoft-build-ai-agents-openai-competition)
+- [IT之家：DeepSeek 首轮融资报道](https://www.ithome.com/0/959/249.htm)
 
 ---
 

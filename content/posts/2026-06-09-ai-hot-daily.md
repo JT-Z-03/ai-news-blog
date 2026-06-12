@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-09"
 description: "2026年6月9日 AI 圈要闻：小米 MiMo 突破 1000 tokens/s、苹果 WWDC 2026 发布 AFM 三代与 Core AI、OpenAI 秘密提交 IPO、Kimi Code 焕新升级、微信 AI 官宣内测"
 ---
 
-# AI 热点日报 | 2026年6月9日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

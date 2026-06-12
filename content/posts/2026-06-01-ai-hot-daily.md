@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-01"
 description: "2026年6月1日 AI 圈要闻：OpenAI 进军机器人领域、苹果 WWDC 将推 Gemini 蒸馏本地模型、特斯拉 FSD 首次全程零干预横穿加拿大"
 ---
 
-# AI 热点日报 | 2026年6月1日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

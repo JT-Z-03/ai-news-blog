@@ -23,7 +23,7 @@ draft: false
 
 - Hugo 静态博客引擎
 - Cloudflare Pages 全球 CDN 部署
-- Pagefind 客户端全文搜索
+- PaperMod 客户端全文搜索
 
 ## 联系我
 

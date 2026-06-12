@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-03"
 description: "2026年6月3日 AI 圈要闻：微软发布首款推理模型 MAI-Thinking-1、Claude Code 新增动态工作流、Anthropic 扩展 Glasswing 安全计划、SK 海力士计划五年产能翻倍"
 ---
 
-# AI 热点日报 | 2026年6月3日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

@@ -1,10 +1,16 @@
 baseURL = 'https://ai-news-blog-cg8.pages.dev/'
-languageCode = 'zh-cn'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh-cn'
 title = 'AI 热点追踪'
 theme = 'hugo-PaperMod'
 preserveTaxonomyNames = true
+enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
 [params]
+  env = 'production'
   description = '深度分析 + 精选日报，追踪 AI 行业最重要的事'
   author = '钟懿'
   keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
@@ -12,9 +18,37 @@ preserveTaxonomyNames = true
   ShowBreadCrumbs = true
   ShowReadingTime = true
   ShowWordCount = true
-  profileMode = { enabled = true, title = "关于作者", subtitle = "钟懿，关注 AI 领域的信息爱好者" }
   social = { github = "https://github.com/JT-Z-03/ai-news-blog" }
-  rss = true
+
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "deep-analysis"
+  name = "深度分析"
+  url = "/categories/深度分析/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "daily"
+  name = "日报"
+  url = "/categories/日报/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 50
 
 [taxonomies]
   tag = 'tags'

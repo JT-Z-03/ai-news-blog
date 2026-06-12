@@ -4,6 +4,9 @@ date: 2026-05-27T09:00:00+08:00
 tags: ["小米", "MiMo", "大模型", "API", "降价"]
 categories: ["AI 新闻"]
 summary: "小米宣布 MiMo V2.5 系列 API 永久降价，最高降幅达 99%，不再区分上下文窗口长度，Token Plan 用量提升 5-8 倍。"
+description: "小米宣布 MiMo V2.5 系列 API 永久降价，最高降幅达 99%，不再区分上下文窗口长度，Token Plan 用量提升 5-8 倍。"
+slug: "mimo-v25-api-price-cut"
+aliases: ["/posts/2026-05-27-mimo-v25-price-cut/"]
 sources:
   - title: "小米 MiMo 官微"
     url: "https://www.miomi.com"

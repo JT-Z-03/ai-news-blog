@@ -8,8 +8,6 @@ slug: "ai-hot-2026-06-02"
 description: "2026年6月2日 AI 圈要闻：MiniMax M3 开源发布、xAI Composer 2.5 编程模型、Anthropic 秘密提交 IPO 申请、智谱拟登陆科创板"
 ---
 
-# AI 热点日报 | 2026年6月2日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---

@@ -8,8 +8,6 @@ slug: "ai-hot-2026-05-31"
 description: "2026年5月31日 AI 圈要闻：xAI 放弃 JAX 自研训练框架、软银 750 亿欧元砸向法国 AI、GitHub Copilot 新计费惹众怒、NVIDIA N1X 芯片呼之欲出"
 ---
 
-# AI 热点日报 | 2026年5月31日
-
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---
