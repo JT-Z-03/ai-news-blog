@@ -2,6 +2,8 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $deepArticles := where $pages "Params.categories" "intersect" (slice "深度分析") }}
 {{- $dailyArticles := where $pages "Params.categories" "intersect" (slice "日报") }}
+{{- $signalDeep := first 1 $deepArticles }}
+{{- $signalDaily := first 2 $dailyArticles }}
 
 <div class="home-landing">
     <header class="home-hero">
@@ -31,26 +33,27 @@
                 </div>
             </dl>
         </div>
-        <div class="home-signal" aria-hidden="true">
-            <div class="home-signal__ring home-signal__ring--outer"></div>
-            <div class="home-signal__ring home-signal__ring--inner"></div>
-            <div class="home-signal__sweep"></div>
-            <div class="home-signal__node home-signal__node--one"></div>
-            <div class="home-signal__node home-signal__node--two"></div>
-            <div class="home-signal__node home-signal__node--three"></div>
-            <div class="home-signal__panel home-signal__panel--lead">
-                <span></span>
-                <strong></strong>
-                <i></i>
-            </div>
-            <div class="home-signal__panel home-signal__panel--small">
-                <span></span>
-                <strong></strong>
-            </div>
-            <div class="home-signal__panel home-signal__panel--wide">
-                <span></span>
-                <strong></strong>
-            </div>
+        <div class="home-signal" aria-label="精选内容速览">
+            <div class="home-signal__ring home-signal__ring--outer" aria-hidden="true"></div>
+            <div class="home-signal__ring home-signal__ring--inner" aria-hidden="true"></div>
+            <div class="home-signal__sweep" aria-hidden="true"></div>
+            <div class="home-signal__node home-signal__node--one" aria-hidden="true"></div>
+            <div class="home-signal__node home-signal__node--two" aria-hidden="true"></div>
+            <div class="home-signal__node home-signal__node--three" aria-hidden="true"></div>
+            {{- range $signalDeep }}
+            <a class="home-signal__panel home-signal__panel--lead" href="{{ .RelPermalink }}">
+                <span class="home-signal__label">深度解析</span>
+                <strong>{{ .Title }}</strong>
+                <em>{{ with .Description }}{{ . | plainify | htmlUnescape | truncate 52 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 52 }}{{ end }}</em>
+            </a>
+            {{- end }}
+            {{- range $index, $item := $signalDaily }}
+            <a class="home-signal__panel {{ if eq $index 0 }}home-signal__panel--small{{ else }}home-signal__panel--wide{{ end }}" href="{{ $item.RelPermalink }}">
+                <span class="home-signal__label">最新日报</span>
+                <strong>{{ $item.Title }}</strong>
+                <em>{{ with $item.Description }}{{ . | plainify | htmlUnescape | truncate 46 }}{{ else }}{{ $item.Summary | plainify | htmlUnescape | truncate 46 }}{{ end }}</em>
+            </a>
+            {{- end }}
         </div>
     </header>
 
