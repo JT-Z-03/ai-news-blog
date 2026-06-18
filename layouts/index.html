@@ -3,99 +3,116 @@
 {{- $deepArticles := where $pages "Params.categories" "intersect" (slice "深度分析") }}
 {{- $dailyArticles := where $pages "Params.categories" "intersect" (slice "日报") }}
 
-<!-- Hero Section -->
-<header class="page-header" style="text-align:center; padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); margin-bottom: 0;">
-    <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 0.8rem; letter-spacing: -0.02em;">AI 热点追踪</h1>
-    <p style="color: var(--secondary); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2rem; line-height: 1.7;">
-        深度分析 + 精选日报，追踪 AI 行业最重要的事。<br>
-        有大事才写，拒绝信息过载。
-    </p>
-    <div style="display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/categories/深度分析/" style="background: var(--accent); color: var(--accent-color); padding: 0.55rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none;">深度文章</a>
-        <a href="/categories/日报/" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.55rem 1.5rem; border-radius: 6px; font-size: 0.9rem; text-decoration: none; color: var(--primary);">日报归档</a>
-        <a href="/about/" style="background: var(--entry-bg); border: 1px solid var(--border); padding: 0.55rem 1.5rem; border-radius: 6px; font-size: 0.9rem; text-decoration: none; color: var(--primary);">关于本站</a>
-    </div>
-</header>
-
-<div class="home-shell">
-
-<!-- Deep Articles Section -->
-{{- if $deepArticles }}
-<section style="padding: 3rem 0 2rem;">
-    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem; position: relative; z-index: 1;">
-        <div style="display: flex; align-items: center; gap: 0.8rem;">
-            <h2 style="font-size: 1.25rem; font-weight: 600;">深度文章</h2>
-            <span style="color: var(--tertiary); font-size: 0.8rem;">独立分析，值得反复阅读</span>
-        </div>
-        <a href="/categories/深度分析/" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
-    </div>
-
-    <div class="home-grid">
-        {{- range (first 6 $deepArticles) }}
-        <article class="home-card" style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; display: flex; flex-direction: column; transition: border-color 0.2s;">
-            <header style="margin-bottom: 0.8rem;">
-                <h3 style="font-size: 1.05rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.5rem;">
-                    <a href="{{ .Permalink }}" style="text-decoration: none; color: var(--primary);">{{ .Title }}</a>
-                </h3>
-                <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--tertiary);">
-                    <time>{{ .Date.Format "2006年1月2日" }}</time>
-                    {{- with .Params.tags }}
-                    <span style="color: var(--accent); background: var(--accent-bg); padding: 0.1rem 0.5rem; border-radius: 4px; font-size: 0.72rem;">{{ index . 0 }}</span>
-                    {{- end }}
+<div class="home-landing">
+    <header class="home-hero">
+        <div class="home-hero__copy">
+            <p class="home-kicker">AI NEWS INTELLIGENCE</p>
+            <h1>AI 热点追踪</h1>
+            <p class="home-hero__summary">
+                深度分析 + 精选日报，追踪 AI 行业最重要的事。少搬运，多筛选；少噪音，多线索。
+            </p>
+            <div class="home-actions" aria-label="首页快捷入口">
+                <a class="home-button home-button--primary" href="/categories/深度分析/">深度文章</a>
+                <a class="home-button" href="/categories/日报/">日报归档</a>
+                <a class="home-button" href="/search/">搜索</a>
+            </div>
+            <dl class="home-stats" aria-label="站点内容概览">
+                <div>
+                    <dt>{{ len $deepArticles }}</dt>
+                    <dd>深度分析</dd>
                 </div>
-            </header>
-            {{- if .Summary }}
-            <div style="flex: 1;">
-                <p style="font-size: 0.875rem; color: var(--secondary); line-height: 1.7;">{{ .Summary | plainify | htmlUnescape | truncate 120 }}</p>
-            </div>
-            {{- end }}
-            <footer style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border);">
-                <a href="{{ .Permalink }}" style="color: var(--accent); font-size: 0.85rem; text-decoration: none; font-weight: 500;">阅读全文 &rarr;</a>
-            </footer>
-            <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-        </article>
-        {{- end }}
-    </div>
-</section>
-{{- end }}
-
-<!-- Divider -->
-{{- if and $deepArticles $dailyArticles }}
-<div style="height: 1px; background: var(--border); margin: 0 0 1rem;"></div>
-{{- end }}
-
-<!-- Daily Briefs Section -->
-{{- if $dailyArticles }}
-<section style="padding: 2rem 0 3rem;">
-    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem; position: relative; z-index: 1;">
-        <div style="display: flex; align-items: center; gap: 0.8rem;">
-            <h2 style="font-size: 1.25rem; font-weight: 600;">日报</h2>
-            <span style="color: var(--tertiary); font-size: 0.8rem;">今日要闻，快速浏览</span>
+                <div>
+                    <dt>{{ len $dailyArticles }}</dt>
+                    <dd>日报归档</dd>
+                </div>
+                <div>
+                    <dt>可追溯</dt>
+                    <dd>来源链接</dd>
+                </div>
+            </dl>
         </div>
-        <a href="/categories/日报/" style="color: #f0a500; font-size: 0.85rem; text-decoration: none; position: relative; z-index: 2;">查看全部 &rarr;</a>
-    </div>
-
-    <div class="home-grid home-grid--daily">
-        {{- range (first 6 $dailyArticles) }}
-        <article class="home-card" style="background: var(--entry-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem;">
-            <time style="font-size: 0.78rem; color: var(--tertiary); min-width: 60px; flex-shrink: 0;">{{ .Date.Format "01-02" }}</time>
-            <div style="flex: 1; min-width: 0;">
-                <h3 style="font-size: 0.9rem; font-weight: 500; line-height: 1.4; margin: 0;">
-                    <a href="{{ .Permalink }}" style="text-decoration: none; color: var(--primary);">{{ .Title }}</a>
-                </h3>
+        <div class="home-signal" aria-hidden="true">
+            <div class="home-signal__ring home-signal__ring--outer"></div>
+            <div class="home-signal__ring home-signal__ring--inner"></div>
+            <div class="home-signal__sweep"></div>
+            <div class="home-signal__node home-signal__node--one"></div>
+            <div class="home-signal__node home-signal__node--two"></div>
+            <div class="home-signal__node home-signal__node--three"></div>
+            <div class="home-signal__panel home-signal__panel--lead">
+                <span></span>
+                <strong></strong>
+                <i></i>
             </div>
-            <span style="color: var(--tertiary); font-size: 0.75rem; flex-shrink: 0;">{{ with .Params.categories }}{{ index . 0 }}{{ end }}</span>
-        </article>
+            <div class="home-signal__panel home-signal__panel--small">
+                <span></span>
+                <strong></strong>
+            </div>
+            <div class="home-signal__panel home-signal__panel--wide">
+                <span></span>
+                <strong></strong>
+            </div>
+        </div>
+    </header>
+
+    <div class="home-content">
+        {{- if $deepArticles }}
+        <section class="home-section" aria-labelledby="home-deep-title">
+            <div class="home-section__header">
+                <div>
+                    <p class="home-section__eyebrow">ANALYSIS</p>
+                    <h2 id="home-deep-title">深度文章</h2>
+                </div>
+                <a class="home-section__link" href="/categories/深度分析/">查看全部</a>
+            </div>
+
+            <div class="home-feature-grid">
+                {{- range (first 3 $deepArticles) }}
+                <article class="home-article-card">
+                    <div class="home-card-meta">
+                        <time>{{ .Date.Format "2006年1月2日" }}</time>
+                        {{- with .Params.tags }}
+                        <span>{{ index . 0 }}</span>
+                        {{- end }}
+                    </div>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    {{- if .Summary }}
+                    <p>{{ .Summary | plainify | htmlUnescape | truncate 128 }}</p>
+                    {{- end }}
+                    <a class="home-card-cta" href="{{ .Permalink }}">阅读全文</a>
+                    <a class="entry-link" aria-label="阅读全文：{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+                </article>
+                {{- end }}
+            </div>
+        </section>
+        {{- end }}
+
+        {{- if $dailyArticles }}
+        <section class="home-section home-section--daily" aria-labelledby="home-daily-title">
+            <div class="home-section__header">
+                <div>
+                    <p class="home-section__eyebrow">DAILY BRIEF</p>
+                    <h2 id="home-daily-title">日报</h2>
+                </div>
+                <a class="home-section__link" href="/categories/日报/">查看全部</a>
+            </div>
+
+            <div class="home-daily-list">
+                {{- range (first 6 $dailyArticles) }}
+                <article class="home-daily-item">
+                    <time>{{ .Date.Format "01-02" }}</time>
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <span>{{ with .Params.categories }}{{ index . 0 }}{{ end }}</span>
+                </article>
+                {{- end }}
+            </div>
+        </section>
+        {{- end }}
+
+        {{- if and (not $deepArticles) (not $dailyArticles) }}
+        <section class="home-empty">
+            <p>暂无文章，<a href="/about/">关于本站</a></p>
+        </section>
         {{- end }}
     </div>
-</section>
-{{- end }}
-
-{{- if and (not $deepArticles) (not $dailyArticles) }}
-<section style="padding: 4rem 0; text-align: center;">
-    <p style="color: var(--tertiary); font-size: 1rem;">暂无文章，<a href="/about/" style="color: var(--accent); text-decoration: none;">关于本站</a></p>
-</section>
-{{- end }}
-
 </div>
 {{- end }}
