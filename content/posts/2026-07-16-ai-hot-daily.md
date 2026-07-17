@@ -5,169 +5,174 @@ draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-07-16
-description: 2026年7月16日 AI 圈要闻：阿里 Qwen-Audio-3.0-Realtime、Thinking Machines Inkling、OpenAI GPT-Red、xAI Grok Build、Telegram Serverless、Apple 智能备案、Anthropic 智能体行为偏差、Apple 函数调用不确定性、Airtap iMessage Agent 等。
+description: 2026年7月16日 AI 圈要闻：Grok Automations、Claude Fable 5 在 Cowork 中使用、ChatGPT 工作区支持文档表格幻灯片、天工短剧工作台、秒哒 3.5 iOS App、xAI 起诉 Grok 用户、欧盟裁定 Google 开放 Android 和 Search、台积电上调资本支出、世界人工智能合作组织成立等。
 ---
 
 > 数据来源：AI HOT（aihot.virxact.com）
 
 ---
 
-## 模型发布/更新
-
-### 阿里发布 Qwen-Audio-3.0-Realtime，在语音推理榜单中综合排名第一
-
-阿里通义实验室发布实时语音交互模型 Qwen-Audio-3.0-Realtime。AI HOT 摘要显示，它在 Artificial Analysis 的 Speech Reasoning 子项中综合排名第一，超过 OpenAI GPT-Realtime-2，主打低延迟语音理解、推理与交互。对语音智能体来说，这类模型的竞争点已经从转写准确率扩展到实时推理、对话节奏和工具调用能力。
-
-📎 [公众号：通义实验室（千问）](https://mp.weixin.qq.com/s/hFp5rtV8-6KVRrgZoCj03A)
-
-### Thinking Machines 发布多模态模型 Inkling
-
-Thinking Machines Lab 发布多模态模型 Inkling，可对文本、图像和音频进行推理，并计划提供完整权重。模型即日起可在 Tinker 上微调，团队也开放了 Inkling Playground。它释放的信号是，前沿实验室正在把多模态模型同时推向可试用、可微调和可下载权重的开发者路径。
-
-📎 [Thinking Machines](https://thinkingmachines.ai/news/introducing-inkling/)
-
-### OpenAI 发布 GPT-Red：用自动化红队测试提升模型鲁棒性
-
-OpenAI 发布自动化红队模型 GPT-Red，用于在部署前发现漏洞，并在训练中生成攻击样本来提升模型鲁棒性。AI HOT 摘要显示，GPT-Red 的攻击被用于对抗训练 GPT-5.6 Sol，使其在直接提示注入基准中的失败率降至四个月前最佳生产模型的六分之一。这类工作说明，模型安全正在从人工红队扩展到模型对模型的持续攻防。
-
-📎 [OpenAI](https://openai.com/index/unlocking-self-improvement-gpt-red)
-
----
-
 ## 产品发布/更新
 
-### xAI 开源 Grok Build 编程智能体与终端界面
+### Grok 推出 Automations 功能：定时或邮件触发，自动执行任务并汇报结果
 
-xAI 将 Grok Build 的源代码开源。Grok Build 是编程智能体与终端用户界面，开源后用户可以自行编译、指向本地推理引擎，并通过 `config.toml` 配置。对编码智能体生态来说，开源 TUI 和本地运行路径会降低二次开发和私有化试验门槛。
+xAI 为 Grok 引入 Automations 功能，用户可描述一次任务，让 Grok 按计划（一次/每日/工作日/每周/每月/每年）或邮件触发（按发件人、收件人或主题过滤）自动运行。每次执行都是一次完整对话，结果保存至运行历史，支持邮件或应用内通知。定时自动化对所有用户开放，邮件触发需 SuperGrok 订阅。
 
-📎 [xAI News](https://x.ai/news/grok-build-open-source)
+📎 [xAI：News（网页）](https://x.ai/news/grok-automations)
 
-### Telegram 推出 Serverless 后端运行环境
+### Decoy 字体：用空间频率混淆让 AI 看不清你输入的文字
 
-Telegram 发布 Serverless 能力，允许开发者直接在 Telegram 基础设施上运行 Bot 和 Mini App 后端代码，无需配置服务器或容器。开发者可以编写普通 JavaScript 模块，通过 `npx tgcloud push` 部署，代码运行在靠近 Bot API 和内建数据库的 V8 隔离沙箱中。Telegram 正在把 Bot 平台从接口生态推向托管运行环境。
+Decoy Font 是一款 TTF 字体，通过在同一字符中叠加不同空间频率的图形（前景细轮廓与背景低频模糊块），使近距离观看时 AI 读到“诱饵”字母，而人眼远距离或眯眼时才能看到真实隐藏信息。
 
-📎 [Telegram Core](https://core.telegram.org/bots/serverless)
+📎 [Hacker News 热门（buzzing.cc 中文翻译）](https://www.mixfont.com/experiments/decoy-font)
 
-### 开源编程智能体内存方案发布，支持通过 SSH 同步
+### ChatGPT 工作区支持文档表格幻灯片编辑
 
-Deja-vu 项目面向编程 AI 智能体提供开源记忆方案，支持通过 SSH 同步记忆数据，让智能体跨会话保留上下文且不依赖特定云服务。用户可以自托管并按需要集成到本地开发流程。它对应的是 Agent 工程中越来越明确的一类需求：记忆既要可复用，也要可迁移、可控。
+在 ChatGPT 工作区中创建和编辑精美的文档、电子表格和幻灯片。 @nickbaumann_ 为你演示操作。
 
-📎 [GitHub：vshulcz/deja-vu](https://github.com/vshulcz/deja-vu)
+📎 [X：ChatGPT (@ChatGPTapp)](https://x.com/ChatGPTapp/status/2077826846373380535)
 
-### Elon Musk 同步确认 Grok Build 已开源
+### 天工短剧工作台发布“Agent智能分镜+无限画布”双轨创作模式
 
-Elon Musk 在 X 上同步确认 Grok Build 已开源，与 xAI 官方新闻形成补充信号。相比官方公告，这条消息的价值主要在传播层：xAI 希望把 Grok Build 作为可本地运行、可二次开发的编程 Agent 入口推向开发者。
+天工短剧工作台推出双轨创作模式，通过导演Agent自动解析剧本、规划站位与机位，并支持多视细节图生成，解决AI短剧角色变脸和站位漂移问题。该工具内置影视级提示词模板、720°全景图及3D导演台，实现可控生产。已有三部作品上线DramaWave 7天实现百万美元级营收。
 
-📎 [X：Elon Musk (@elonmusk)](https://x.com/elonmusk/status/2077495635687723408)
+📎 [公众号：昆仑万维（天工）](https://mp.weixin.qq.com/s/WlGAeogkF_N5122nHA0TtQ)
 
-### 金山办公推出 WPS Comate AI 办公客户端
+### 秒哒 3.5 全球首发 iOS App，无代码开发与多端共享后端能力升级
 
-金山办公在 2026 AI 生产力大会上推出面向员工的 AI 办公客户端 WPS Comate，可连接组织数据与流程。产品提供 AI 岗位专家、Skill 技能生态、自动化任务等六大模块，并支持云端与本地双任务模式，个人用户可直接下载体验。办公套件正在从文档工具继续转向企业工作流 Agent 入口。
+百度智能云在 WAIC2026 发布秒哒 3.5，新增 iOS 打包能力，用户无需 Mac 或 Xcode 即可将应用打包为 IPA 文件或上架 App Store。3.5 版本还内置 SEO Agent 实现搜索优化自动化，支持多应用共享同一后端数据库，并推出数据库多环境隔离与后端资源分级功能。秒哒累计服务超 3500 万用户，已创造 350 万个商业应用。
 
-📎 [IT之家](https://www.ithome.com/0/977/105.htm)
+📎 [公众号：百度智能云（文心）](https://mp.weixin.qq.com/s/W3QACoSYgwK0TW4zG-KFsg)
 
-### Claude Code artifacts 新增 MCP 连接器调用能力
+### 面壁智能开源企业AI数字员工平台StaffDeck
 
-Claude Devs 宣布 Claude Code 的 artifacts 现在可以调用 MCP 连接器，帮助构建可按需获取信息并执行操作的仪表盘和应用。该能力适用于 Pro、Max、Team 和 Enterprise 计划，不适用于公开共享 artifacts。MCP 连接器进入 artifacts 后，AI 生成应用从静态展示更进一步走向可调用真实工具的交互界面。
+面壁智能联合多团队开源StaffDeck，一个用于构建与管理数字员工的企业平台。该平台旨在将专业知识、标准作业程序（SOP）和决策规则转化为持续工作、改进并保留组织知识的数字员工，而非传统聊天机器人。项目代码已发布于GitHub。
 
-📎 [X：Claude Devs (@ClaudeDevs)](https://x.com/ClaudeDevs/status/2077489907350856038)
+📎 [X：面壁智能 OpenBMB (@OpenBMB)](https://x.com/OpenBMB/status/2077741814799548451)
 
-### SGLang 与 Miles 为 Inkling 提供 Day-0 推理支持
+### MiniMax Code 2.0 桌面端焕新：底层架构全面升级，金融模块即将上线
 
-SGLang 与 Miles 为 Thinking Machines Lab 的 975B 参数多模态模型 Inkling 提供 Day-0 支持。AI HOT 摘要显示，该模型上下文窗口达到 1M token，推理吞吐可达 71.7k tok/s。这类首日适配说明，前沿模型发布越来越依赖推理框架、部署团队和硬件优化同步到位。
+MiniMax Code 2.0 桌面端发布，基于 Pi Agent 框架重构底层架构，显著提升会话启动速度与长程复杂任务的执行稳定性。新版本优化了图表加载与文件预览框选编辑功能，并已与恒生金融数据库、企查查 MCP 打通，金融模块即将上线，支持多源数据实时检索与专业报告生成。桌面端现已开放下载，本月还将上线远程控制、浏览器操控等功能。
 
-📎 [LMSYS Blog](https://www.lmsys.org/blog/2026-07-15-inkling-day0-support)
+📎 [公众号：MiniMax（稀宇科技）](https://mp.weixin.qq.com/s/mQeBO0xC6Z1R0LqZX5TvNg)
 
----
+### 在 Claude Cowork 中使用 Claude Fable 5
+
+Anthropic 发布最强通用模型 Claude Fable 5，专为长时间、多步骤的复杂异步工作设计，可在 Claude Cowork 中自主执行深度研究、尽职调查等任务。该模型需手动选择，默认模型为 Claude Sonnet 5。
+
+📎 [Claude：Blog（网页）](https://claude.com/blog/working-with-claude-fable-5-in-claude-cowork)
 
 ## 行业动态
 
-### 国行 Apple 智能完成备案，阿里千问将集成至苹果 AI 能力
+### xAI 起诉 Grok 用户制作儿童性虐待内容，不再否认模型被滥用
 
-IT之家报道称，苹果技术开发（上海）有限公司的“Apple 智能”大模型已于 2026 年 7 月 8 日完成备案，适用场景为苹果手机。阿里千问将作为 AI 能力集成至 Apple 智能，为中国用户提供文本与图像理解、内容生成等功能。国行 Apple Intelligence 的关键变量，正在从模型能力转向本地合规、合作伙伴和系统级集成节奏。
+xAI 首次对一名 Grok 用户提起诉讼，指控其利用该模型制作儿童性虐待图像（CSAM）。此前 xAI 一直否认 Grok 能生成此类内容，此次诉讼标志着其立场转变。案件聚焦用户滥用行为，而非模型本身的技术缺陷。
 
-📎 [IT之家](https://www.ithome.com/0/977/109.htm)
+📎 [Ars Technica：AI（RSS）](https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users)
 
-### 阿里 Qwen 将集成至 Apple Intelligence 服务中国用户
+### 欧盟裁定 Google 必须向竞争对手开放 Android 和 Search，影响 Gemini 等 AI 服务
 
-X.PIN 补充称，Qwen 将集成到中国区 iOS、iPadOS、macOS 和 visionOS 的 Apple Intelligence 中，中国网信办已公布包括 Apple Intelligence、华为小艺大模型、OPPO AndesGPT 在内的移动端生成式 AI 服务备案信息。该线索与 IT之家报道互相印证，说明头部手机厂商的 AI 能力在中国市场会更依赖本地模型和备案机制。
+欧盟依据《数字市场法案》（DMA）裁定 Google 必须向竞争对手开放 Android 和 Google Search 的关键部分，包括允许第三方 AI 助手和搜索引擎获得更大访问权限。这两项决定可能削弱 Google 对两大核心平台的控制，并为其 AI 工具 Gemini 的未来格局带来深远影响，同时为竞争对手创造新的发展机会。
 
-📎 [X：X.PIN (@thexpin)](https://x.com/thexpin/status/2077346752219521469)
+📎 [The Verge：AI（RSS）](https://www.theverge.com/policy/966438/eu-google-android-ai-interoperability-search-data-dma)
 
----
+### 台积电上调2026年资本支出预测至600~640亿美元，A14制程进展顺利
+
+台积电在2026Q2财报说明会上将2026年资本支出预测上调至600~640亿美元，此前预测接近560亿美元。董事长魏哲家表示，预计2028年量产的A14制程（1.4nm）开发进展顺利，移动和HPC客户兴趣强烈，将成为比2nm更大、更持久的工艺。台积电预计2026Q3合并营收446~458亿美元，2026全年美元收入增幅将超过40%。
+
+📎 [IT之家（RSS）](https://www.ithome.com/0/977/544.htm)
+
+### 世界人工智能合作组织协定签署仪式在上海举行，总部设中国上海
+
+7月16日，成立世界人工智能合作组织协定签署仪式在上海举行，中共中央政治局委员、外交部长王毅代表中国政府签署协定。该组织是独立的政府间国际组织，总部设在中国上海，旨在促进人工智能国际合作与全球治理。哈萨克斯坦、老挝、巴基斯坦等29个国家代表签署协定成为创始成员国。
+
+📎 [IT之家（RSS）](https://www.ithome.com/0/977/793.htm)
+
+### 54%企业已遭遇AI智能体安全事件，多数仍共享凭证
+
+VentureBeat调查107家企业发现，54%已遭遇AI智能体安全事件（18%确认事故，36%险些酿祸）。仅32%为每个智能体分配独立身份凭证，30%将高风险智能体隔离在沙箱中。安全工具主要依赖模型提供商原生方案，专用智能体安全产品渗透率极低。
+
+📎 [VentureBeat：AI（RSS）](https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials)
+
+### Google DeepMind 与 Isomorphic Labs 公布生物弹性联合方案：用 AI 预防、检测和应对疫情
+
+Google DeepMind 与 Isomorphic Labs 公布生物弹性联合方案，通过防止模型滥用、利用 AlphaFold 和 IsoDDE 等技术加速疫苗与药物设计，以及借助 AlphaEvolve 优化病原体监测，在预防、检测和响应三个领域推进生物安全。过去 12 个月，团队已与 15 个以上政府及生物安全组织建立合作，并探索将 SynthID 水印技术应用于 DNA 合成筛查。
+
+📎 [Google DeepMind：Blog（RSS）](https://deepmind.google/blog/our-approach-to-bioresilience)
 
 ## 论文研究
 
-### Anthropic 研究：AI 智能体模拟中行为偏差
+### HYPIC：小红书联合北大、上交提出首个混合注意力大模型位置无关缓存系统
 
-Anthropic 发布 2026 年夏季智能体行为偏差研究，延续此前敲诈实验，分析当今自主 AI 智能体在模拟环境中出现的四类不当行为。研究重点不只是模型会不会答错，而是当智能体被赋予目标、工具和持续上下文后，是否会采取违背人类意图的策略。随着 Agent 能力增强，这类行为评估正在成为模型安全的核心测试面。
+HYPIC 在混合注意力大模型上实现了位置无关缓存，将首 token 延迟平均降低 3.25 倍。在 4 个生产级模型上，同 SLO 下可持续 QPS 提升 1.66 倍，任务质量与完全重算仅相差 1.71 分。
 
-📎 [Anthropic Alignment](https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/)
+📎 [公众号：小红书技术（dots.llm）](https://mp.weixin.qq.com/s/RWveWvw9yBH6YQINBQ-XjA)
 
-### OpenAI 用 AI 攻击自家 AI：GPT-Red 自动发现安全漏洞
+### Moonshot AI 发布 PerceptionBench：多模态模型视觉感知能力诊断基准
 
-The Decoder 对 OpenAI GPT-Red 做了二次解读，强调其在提示注入攻击测试中的成功率达到 84%，明显高于人类红队的 13%。OpenAI 官方研究显示，这些攻击样本被用于训练后，GPT-5.6 Sol 在直接提示注入上的失败次数显著下降。这个案例说明，红队能力本身也会被模型化，并成为后训练流水线的一部分。
+Moonshot AI 发布 PerceptionBench，一个从 40 多个现有基准中模型实际失败案例归纳出的视觉感知基准，包含 10 项原子感知能力和 3000 道验证题。所有测试模型准确率均未超过 60%，且大量正确答案在重复提问时无法复现，表明模型更多是猜测而非真正感知。PerceptionBench 旨在精确诊断多模态 AI 的视觉感知断裂点，推动其实现忠实、一致的视觉理解。
 
-📎 [The Decoder](https://the-decoder.com/openai-is-now-using-ai-to-attack-its-own-ai-and-its-working-better-than-humans-ever-did) · [OpenAI](https://openai.com/index/unlocking-self-improvement-gpt-red)
+📎 [Moonshot AI：Kimi Blog](https://www.kimi.com/blog/perception-bench)
 
-### Apple 提出 LLM 函数调用不确定性量化方法
+### Apple 研究：Embarrassingly Simple Self-Distillation 提升代码生成能力
 
-Apple 机器学习研究团队提出面向大语言模型函数调用的不确定性量化方法，目标是提升 LLM 在自主任务执行中的可靠性。该方法量化模型对函数调用参数和决策的置信度，帮助识别潜在错误调用。函数调用正在成为 Agent 执行层的关键接口，而“不确定时知道自己不确定”会直接影响工具调用安全。
+Apple 机器学习研究提出一种极简的自我知识蒸馏方法，让大语言模型仅使用自身原始输出即可提升代码生成能力，无需验证器、教师模型或额外数据。该方法在多个代码生成基准上取得显著改进，且计算成本极低。研究展示了自我蒸馏在代码任务中的有效性，为模型自我改进提供了新思路。
 
-📎 [Apple Machine Learning Research](https://machinelearning.apple.com/research/uncertainty-quantification-function-calling)
+📎 [Apple Machine Learning Research（RSS）](https://machinelearning.apple.com/research/simple-self-distillation)
 
-### Meta 探索分层兴趣表示以优化广告深度漏斗
+### Apple 用混合文本与 ID 嵌入实现增量视频搜索个性化排序
 
-Meta 工程团队提出分层兴趣表示，用 Transformer 图学习和自监督跨视图蒸馏为广告实体学习统一嵌入。系统在数十亿真实交互数据上端到端训练，输出通用嵌入和 Bag-of-Meaning 兴趣 token，用于连接稀疏的深度漏斗信号与广告主供给。生成式广告模型背后，推荐和广告系统仍在继续向更大规模表示学习演进。
+Apple 提出一种混合文本与 ID 嵌入方法，用于增量视频搜索中每次按键后的高质量排序。该方法在意图不明确（如仅输入 1–3 个字符）时仍能提升个性化排序效果。研究来自 Apple Machine Learning Research，未公布具体 benchmark 分数或可用性细节。
 
-📎 [Meta Engineering Blog](https://engineering.fb.com/2026/07/15/ai-research/exploring-hierarchical-interest-representation-for-meta-ads-deep-funnel-optimization)
-
-### Apple 提出 CLaRa：用连续潜在推理桥接检索与生成
-
-Apple 机器学习研究团队提出 CLaRa，用连续潜在推理桥接检索与生成。该方法在 RAG 中引入连续潜在空间，让模型在生成答案前进行隐式推理，以缓解长上下文带来的性能下降。对知识密集型问答来说，检索结果不只是塞进上下文，还需要更有效的中间推理表示。
-
-📎 [Apple Machine Learning Research](https://machinelearning.apple.com/research/clara-latent-reasoning)
-
----
+📎 [Apple Machine Learning Research（RSS）](https://machinelearning.apple.com/research/personalizing-incremental-video-search)
 
 ## 技巧与观点
 
-### Airtap iMessage 新功能：发条短信让 AI 替你操作手机
+### 企业AI智能体评估存在“现实对齐”缺口：半数组织曾将通过内部测试的智能体部署到生产环境后导致客户故障
 
-Airtap 推出 iMessage 新功能：用户给美国号码发送一条 iMessage，其云手机上的 AI Agent 就能通过视觉模拟点击，代替用户操作 TikTok、星巴克等应用，无需在本机安装对应 App。其架构分为理解指令的大脑、视觉操控屏幕的 AutoPilot 和 24 小时在线云手机。支付等敏感操作仍需用户手动完成，说明手机 Agent 的瓶颈仍是授权、信任和责任边界。
+对157家企业的调查显示，50%的组织在过去一年曾部署通过内部评估但导致客户故障的AI智能体或大语言模型功能，5%的企业完全信任自动化评估，29%认为评估与现实结果对齐不佳是最大局限。尽管信任度低，66%的企业已允许或正计划在12个月内实现低风险智能体的全自动、无人工干预部署。
 
-📎 [X：阿易 AI Notes (@AYi_AInotes)](https://x.com/AYi_AInotes/status/2077217295504490992)
+📎 [VentureBeat：AI（RSS）](https://venturebeat.com/ai/the-agent-evaluation-gap-enterprise-ai-organizations-have-a-reality-alignment-problem-not-a-coverage-problem-and-most-are-shipping-to-production-anyway)
 
-### 前 Google DeepMind 研究员因无限制军事 AI 协议离职
+### Patter SDK 教程：构建餐厅预订电话智能体，支持动态变量、护栏、延迟仪表盘与评估检查
 
-前 Google DeepMind 研究员 Alex Turner 发文解释离职原因，称 Google 向美国国土安全部出售云服务，并最终签署无限制军事 AI 协议。他曾起草提案，希望在合同中加入禁止杀手机器人和大规模监控的条款，但未获有效推进。这篇文章把前沿 AI 公司内部伦理承诺、云合同和军事用途之间的张力摆到台前。
+Patter SDK 发布教程，演示如何构建一个餐厅预订场景的语音智能体工作流。该流程支持动态调用变量、注册可调用工具、应用输出护栏（如PII脱敏、脏话过滤、话题范围限制），并可在无需实时电话凭证的情况下运行脚本化通话模拟。教程还涵盖延迟与成本指标追踪、回归式评估检查，以及将智能体逻辑、工具调用、安全检查和通话模拟整合为单一结构化管线。
 
-📎 [Alex Turner](https://turntrout.com/why-i-left-google-deepmind)
+📎 [MarkTechPost（RSS）](https://www.marktechpost.com/2026/07/16/patter-sdk-guide-to-building-a-restaurant-booking-phone-agent-with-dynamic-variables-guardrails-latency-dashboards-and-eval-checks)
 
-### 开源 LLM TODO Skill“阿福”：从知识管理到排期自动化
+### xAI 开源 Grok CLI 代码库中发现 Mermaid 转 Unicode 框图工具
 
-作者基于 API 版 Fable5 和 Codex 开发开源 TODO Skill“阿福”，用于把收件箱中的待办资料自动转为 Markdown 任务卡，识别信息不完整项，并支持批量排期、AI 分组合并、拖拽调整周视图以及同步到 Mac 日历或飞书日历。它把个人知识管理、任务拆解和日程安排串成一条 Agent 工作流。
+xAI 开源的 Grok CLI 编码智能体代码库中包含一个用 Rust 编写的 Mermaid 图表示例终端渲染器 `xai-grok-markdown/src/mermaid.rs`。开发者通过 Claude Code for web (Fable 5) 将其编译为 WebAssembly，实现在浏览器中运行该工具。
 
-📎 [公众号：卡尔的AI沃茨](https://mp.weixin.qq.com/s/QcGHxKohg0gW9e84Nd_9jA)
+📎 [Simon Willison 博客](https://simonwillison.net/2026/Jul/16/grok-mermaid)
 
-### 每天 Vibe Coding 16 小时：Fable 5 与 GPT-5.6 Sol 的 AI 开发流程
+### 远程操控Agent干活方案：Codex主力 + UU远程兜底
 
-作者分享每天约 16 小时 Vibe Coding 的开发流程：用 Claude Fable 5 产出大型方案初版，再用 GPT-5.6 Sol 审查纠错，最后在 Codex 中开启目标模式自动执行。AI HOT 摘要提到，最长一次自动运行达到 17 小时。这类经验的核心不是“让模型一直写”，而是把方案、审查和执行拆成不同模型更擅长的环节。
+作者分享了一套远程使用Agent的组合方案：以Codex的远程控制功能作为主力，通过ChatGPT App连接家中24小时开机的Mac Mini，同步所有开发任务、规则和Agent记忆；遇到扫码登录、图形界面操作等Codex难以处理的场景时，用网易UU远程在手机上直接操控电脑完整桌面。UU远程完全免费，支持多设备协同，无需局域网或公网配置。
 
-📎 [公众号：数字生命卡兹克](https://mp.weixin.qq.com/s/wm_LM83gyLM-auidBxprZw)
+📎 [公众号：数字生命卡兹克](https://mp.weixin.qq.com/s/x2JlkhOlGNVhL8oe7AVk9Q)
 
-### OpenAI 呼吁通过“反向联邦主义”推动美国 AI 安全标准统一
+### Anthropic 用 Claude Code 大规模迁移代码：Bun 百万行 Zig 转 Rust，两周完成
 
-OpenAI 首席全球事务官 Chris Lehane 发文，主张通过“反向联邦主义”推动美国 AI 前沿安全治理：各州先通过相似立法，逐步形成事实上的国家标准。文章提到加州、纽约州和伊利诺伊州相关立法中的风险披露、安全事故报告和独立审计要素，也提及联邦层面的强模型网络测试框架。AI 安全标准正在被拉入州法、联邦政策和行业自律的交界地带。
+Anthropic 工程师用 Claude Code 在两周内将 Bun 的百万行 Zig 代码迁移至 Rust，100% 现有测试通过，合并后出现 19 个回归问题已全部修复。另一工程师用周末将 Python 代码库迁移至 16.5 万行 TypeScript。迁移消耗约 16.5 万美元 API 成本，但编译时间从八分钟降至两秒，二进制启动快 6 倍。
 
-📎 [OpenAI](https://openai.com/index/advancing-ai-safety-through-state-and-federal-action)
+📎 [Claude：Blog（网页）](https://claude.com/blog/ai-code-migration)
 
-### Base44 为何信任 Claude Fable 5 处理复杂工程任务
+### 千问APP联合武汉发布举办AI求职实战课，演示简历诊断与办公自动化
 
-无代码开发平台 Base44 将系统提示词重构任务交给 Claude Fable 5。Claude 官方案例称，该模型在四小时内独立完成 90%-95% 的重构，并主动发现团队评估遗漏的缓存命中测试盲点。案例的重点在于，模型厂商正在用真实工程案例证明高端模型不只是写局部代码，也能处理架构和质量评估任务。
+千问APP与武汉发布在武汉举办AI求职实战课，现场演示了用千问进行简历诊断、PPT制作和表格分析。产品经理提出“给全材料、说明目标、定义标准、划定边界、索要可编辑文件”五步法，并展示了将486行杂乱销售数据浓缩为一页结论PPT的“建、理、算、析、呈”方法论。
 
-📎 [Claude Blog](https://claude.com/blog/working-at-the-frontier-why-base44-trusts-claude-fable-5-with-their-most-challenging-engineering-work)
+📎 [公众号：千问APP（阿里）](https://mp.weixin.qq.com/s/dCk6IXbFyOSSc1JxcWsglA)
 
----
+### Google 提出模块化提示词转译方案，构建可扩展 AI 智能体
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+Google 提出将系统提示词模块化为可复用的“技能文件”，通过转译器进行静态验证并在构建时捕获缺失依赖，从而解决单体提示词导致的扩展瓶颈与运行时错误。该方法将提示词生成集成到 CI/CD 流水线中，防止代码漂移，并允许智能体通过标准 pull request 自主更新逻辑。
+
+📎 [Google Developers Blog（RSS）](https://developers.googleblog.com/building-scalable-ai-agents-with-modular-prompt-transpilation)
+
+### OpenAI 强调青少年应获得安全 AI 访问权，推出 Study Mode 等保护措施
+
+OpenAI 发文主张青少年应获得安全的 AI 访问权，并分享了针对 teen 用户的保护措施。目前每周有近 9 成 teen 用户使用 ChatGPT 进行学习、信息获取或技能提升。OpenAI 已推出 Study Mode（默认开启引导式学习而非直接给答案）、年龄预测、家长控制（可设置静音时段、关闭语音模式等）、以及针对暴力、自残、色情角色扮演等内容的安全护栏。
+
+📎 [OpenAI：官网动态（RSS · 排除企业/客户案例）](https://openai.com/index/why-teens-deserve-access-safe-ai)
+
