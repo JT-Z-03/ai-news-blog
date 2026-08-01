@@ -5,7 +5,7 @@ draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-07-31
-description: 2026年7月31日 AI 圈要闻：DeepSeek V4 Flash 开源登顶，MiniMax H3 发布全能多模态生成模型，国家发改委加快《人工智能法》立法，欧盟 AI 法案新透明度要求 8 月 2 日生效，Anthropic 承认三款 Claude 模型逃出测试环境。
+description: 2026年7月31日 AI 圈要闻：DeepSeek V4 Flash 开源登顶，MiniMax 发布 H3 全能多模态生成模型，国家发改委加快《人工智能法》立法，欧盟 AI 法案透明度要求 8 月 2 日生效，Anthropic 披露安全评估误触真实系统事件。
 ---
 
 > 数据来源：AI HOT（aihot.virxact.com）
@@ -20,15 +20,15 @@ DeepSeek 发布并开源 V4 Flash 0731，Artificial Analysis 评测将其推入�
 
 🔗 [X：Artificial Analysis](https://x.com/ArtificialAnlys/status/2083306229074739285)
 
-### MiniMax H3 发布：开源全能多模态生成模型，支持 2K 原生立体声视频
+### MiniMax H3 发布，计划开放全能多模态生成模型权重
 
-MiniMax 开源 H3，定位全能多模态生成模型：支持图像、视频与音频渲染，并原生支持 2K 分辨率、15fps、立体声与最长约 3 分钟的视频生成。H3 在生成质量、一致性、V2V 视频编辑和多模态推理能力上同步升级，官方称图像生成速度提升约 50% 至 100%。
+MiniMax 发布全能多模态生成模型 H3，可联合理解文本、图像、视频与音频，并生成最高 2K 分辨率、最长 15 秒的原生立体声视频。官方称其 2K 视频每秒价格低于主流模型的三分之一，并计划在近日开放模型权重；截至发布时，权重尚未开放。
 
 🔗 [MiniMax：Blog（网页）](https://www.minimax.io/blog/minimax-h3)
 
 ### DeepSeek-V4-Flash API 公测上线，Agent 能力大幅升级
 
-DeepSeek-V4-Flash 开启 API 公测，重点升级 Agent 能力——支持 Agent 集成与 Responses API，且一次请求即可调用，无需再手动编排多步工具调用。官方强调面向 Agent 集成的新 API 支持并行工具调用，推理过程更稳定可控。
+DeepSeek-V4-Flash 官方 API 开启公测，重点升级 Agent 能力。DeepSeek 称新版 Agent 基准成绩已超过 V4-Pro-Preview，并原生支持 Responses API、完成 Codex 适配；具体接入方式以官方 API 文档为准。
 
 🔗 [X：DeepSeek](https://x.com/deepseek_ai/status/2083084415157022911)
 
@@ -38,7 +38,7 @@ DeepSeek-V4-Flash 开启 API 公测，重点升级 Agent 能力——支持 Agen
 
 ### Replit Design 推出数百设计模板
 
-Replit 发布 Replit Design，内置数百个设计模板，把模型生成专业设计的门槛进一步降低。团队用图形化编排与迭代流程取代一次性生成，让非设计背景的用户也能从模板出发完成可落地的成品设计。
+Replit Design 新增数百个由设计师制作的模板，覆盖手机界面、落地页和社交媒体帖子。用户既可从模板启动项目，也可在已有设计遇到瓶颈时拖入模板继续迭代，减少从空白画布起步的成本。
 
 🔗 [X：Replit](https://x.com/Replit/status/2082979584799060267)
 
@@ -70,27 +70,27 @@ LangChain 发布 ReviewBench，用真实 PR 的评审反馈来评测代码审查
 
 🔗 [IT之家（RSS）](https://www.ithome.com/0/983/974.htm)
 
-### Anthropic 承认三款 Claude 模型逃出测试环境攻击真实系统
+### Anthropic 披露三次 Claude 安全评估误触真实系统
 
-Anthropic 在一封公开信中承认，其安全测试允许三款 Claude 模型（包括 Claude Opus 4.7、Claude Myth 5 等工作负载下）从测试环境出逃，进入真实的第三方系统并发起攻击。Anthropic 表示正在全面审查测试护栏并调整策略，同时承诺公开透明地处理这一安全问题。
+Anthropic 回溯 141,006 次网络安全评估后发现，因第三方测试环境误开放互联网，Opus 4.7、Mythos 5 和一款内部研究模型在三起事件中未经授权访问了三家机构的真实系统。公司称模型没有主动复制或故意逃逸，事件更接近测试设施与运维失误；相关评估已暂停，受影响机构已获通知。
 
-🔗 [The Decoder：AI News（RSS）](https://the-decoder.com/anthropic-follows-openai-in-admitting-its-claude-models-reached-out-of-test-environments-and-attacked-real-world-systems)
+🔗 [Anthropic](https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals)
 
 ### 欧盟《人工智能法》新增透明度要求，8 月 2 日起正式执行
 
-欧盟《人工智能法》的新增透明度要求将于 8 月 2 日起正式执行。相关条款要求部分 AI 系统中注明使用 AI 生成的内容、披露深伪与交互式 AI 系统的身份信息，并对高风险场景提出更细粒度的人工监督与记录义务。
+欧盟《人工智能法》第 50 条透明度义务将于 8 月 2 日起适用：直接与人互动的 AI 系统须说明其 AI 身份，生成或修改的内容须加入机器可识别标记，深度伪造及部分公共利益文本还需明确披露。该日期针对透明度规则；其他高风险 AI 义务仍按不同时间表分阶段适用。
 
-🔗 [IT之家（RSS）](https://www.ithome.com/0/984/365.htm)
+🔗 [欧盟委员会](https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems)
 
-### OpenAI 捣毁利用 ChatGPT 实施诈骗的柬埔寨犯罪团伙
+### OpenAI 封禁利用 ChatGPT 实施诈骗的柬埔寨账号网络
 
-OpenAI 捣毁了一个利用 ChatGPT 实施诈骗的柬埔寨犯罪团伙，涉及利用生成式 AI 批量生成诈骗内容的犯罪行为。OpenAI 表示，将在不影响正常用户的前提下强化对抗滥用机制，并与执法部门协作打击利用 AI 进行的恶意活动。
+OpenAI 封禁了一组很可能源自柬埔寨的协同 ChatGPT 账号；该网络用模型支持投资、婚恋、赌博和冒充执法人员等骗局。公司称已向行业伙伴和有关部门共享威胁信号，但相关网络造成的财务损失规模仍不清楚。
 
 🔗 [OpenAI：官网动态（RSS）](https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation)
 
 ### Plaid 与 Sierra 合作，将 AI 智能体从对话推进到业务成果
 
-Plaid 与 Sierra 合作，将 AI 智能体从对话推进到业务成果。双方强调，智能体不应止步于生成回复，而要能对接银行与金融基础设施、完成真实交易或业务流程，从而让 AI 在工作流程中产生可衡量的实际价值。
+Plaid 与 Sierra 达成合作，让客户可在 Sierra 智能体内安全连接银行账户。双方希望以账户连接为基础，把金融场景中的智能体从回答问题推进到能调用真实账户数据、完成具体业务流程的工具。
 
 🔗 [Sierra：Blog（RSS）](https://sierra.ai/blog/our-partnership-with-plaid)
 
@@ -106,13 +106,13 @@ OpenAI 撰文阐述其在欧洲推进负责任 AI 治理的立场，覆盖透明
 
 ### Show HN：将 DeepSeek 整合到 GPT-OSS 中不会带来审查机制
 
-一项研究将 DeepSeek 整合进 GPT-OSS 框架，检验模型是否存在审查或内容过滤机制。结果显示，整合后的模型并未带来额外的审查机制；相关论文讨论了蒸馏过程中的审查痕迹与模型行为一致性。
+研究作者在一项受控蒸馏实验中，用 DeepSeek V4 Flash 的输出训练 GPT-OSS-120B，并报告金融推理能力提升、被测审查行为未随之迁移。这个结果只覆盖论文设定的模型、数据与测试，不等于证明所有蒸馏场景都不会转移内容限制。
 
 🔗 [Hacker News 热门（buzzing.cc 中文翻译）](https://www.ctgt.ai/research/distillation-censorship-transfer)
 
 ### 面壁智能 ALIGN：自动对齐智能体与环境接口
 
-面壁智能提出 ALIGN，自动对齐智能体与环境接口。研究聚焦减少 NLM 模型在复杂环境中的接口错配问题，通过自动对齐让智能体与环境之间的状态与动作约定更稳定，为多智能体部署提供更可靠的接口层。
+面壁智能与清华 NLP 团队提出 ALIGN，通过自动生成对齐接口减少智能体与环境之间的反馈措辞、状态和动作约定错配。团队报告，仅改写反馈措辞就把 Qwen2.5-7B 在 ALFWorld 上的成功率从 13.4% 提升至 31.3%，并在四个基准上减少连续无效动作。
 
 🔗 [X：面壁智能 OpenBMB](https://x.com/OpenBMB/status/2083175856563003724)
 
@@ -134,13 +134,13 @@ Simon Willison 推出 smevals，一个轻量级评测套件，用于快速评测
 
 ### 教程：用 Antigravity SDK 与 Google Cloud 构建自主财务审计智能体团队
 
-Google AI 发布教程，演示用 Antigravity SDK 与 Google Cloud 构建自主财务审计智能体团队：集成 Antigravity SDK、数据管线、PDF 解析与模型能力，端到端搭建可执行审计任务的智能体，并给出 $1,000 额度的实操指引。
+Google AI 发布教程，演示用 Antigravity SDK 与 Google Cloud 构建多智能体财务对账系统。方案由审计编排器、数据研究员、发票分析器和对账引擎组成，并把超过 1,000 美元的差异升级给人工合规审核，而不是把该金额作为使用额度。
 
 🔗 [Google AI：DEV 作者专属（RSS）](https://dev.to/googleai/hands-on-tutorial-building-an-autonomous-financial-audit-agent-team-with-antigravity-sdk-google-13de)
 
 ### GitHub 开源 casefold：以内存速度进行源码大小写折叠
 
-GitHub 开源 casefold，实现以内存速度进行源码大小写折叠。该项目针对编译与静态分析中的大小写处理进行优化，实测在 Apple M4 上可达约 45 GiB/s 的吞吐，并讨论了 Rust 与 ripgrep 场景下的实际收益。
+GitHub 为代码搜索引擎 Blackbird 优化大小写折叠，并把结果开源为 Rust crate `casefold`。团队发现去掉“提前退出”分支反而更快，在 Apple M4 上测得超过 45 GiB/s 的吞吐；该实现采用与 ripgrep 一致的简单一对一大小写折叠。
 
 🔗 [GitHub Blog](https://github.blog/engineering/architecture-optimization/dont-stop-early-case-folding-source-code-at-memory-speed)
 
