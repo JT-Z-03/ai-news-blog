@@ -4,7 +4,7 @@
 
 ## 口径与一手来源
 
-- [官方事实] 模型发布、基准数值、Flash 测试条件与产品范围均以 [DeepSeek API Change Log](https://api-docs.deepseek.com/updates/) 的 2026-07-31、2026-08-13 条目为准。
+- [官方事实] 模型发布、基准数值、Flash 与 Pro 测试条件及产品范围均以 [DeepSeek API Change Log](https://api-docs.deepseek.com/updates/) 的 2026-07-31、2026-08-13 条目为准。
 - [官方事实] 人民币价格、峰谷窗口、生效时间及新旧价格均以 [DeepSeek「模型 & 价格」中文页](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/) 为准。
 - [官方事实] Harness 的名称、开发者预览状态、Cordis 关系及许可证均以 [DeepSeek 官方仓库 README](https://github.com/deepseek-ai/deepseek-harness#deepseek-harness)、[架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md#cordis) 与 [LICENSE](https://github.com/deepseek-ai/deepseek-harness/blob/master/LICENSE) 为准。
 
@@ -32,8 +32,8 @@
 | DSBench-FullStack | 68.7 | 71.1 | [官方事实] Flash 注记称其为内部 full-stack development test set；不得称为外部公开排行榜。[Flash](https://api-docs.deepseek.com/updates/#date-2026-07-31) / [Pro](https://api-docs.deepseek.com/updates/#date-2026-08-13) |
 | DSBench-Hard | 59.6 | 67.2 | [官方事实] Flash 注记称其为内部 Coding Agent hard-problem test set；不得称为外部公开排行榜。[Flash](https://api-docs.deepseek.com/updates/#date-2026-07-31) / [Pro](https://api-docs.deepseek.com/updates/#date-2026-08-13) |
 
-- [官方事实] Flash 所列公共基准集的 Code Agent 任务使用 DeepSeek Harness 极简模式（`minimal mode`，当时标为 *to be released soon*）、max 思考强度、`topp=0.95` 和 `temperature=1.0`。为正文检索兼容，本台账另记为 **top-p 0.95**；不据此改写官方参数名称或推断参数对分数的因果作用。[Change Log（Flash 注记）](https://api-docs.deepseek.com/updates/#date-2026-07-31)
-- [证据不足，不写入正文] Pro 的发布条目没有逐项公布可与 Flash 对齐的 harness、思考强度、temperature、top-p、试次、任务版本、超时或工具集合；不得将 Flash 条件套用到 Pro。[Change Log（Pro 条目）](https://api-docs.deepseek.com/updates/#date-2026-08-13)
+- [官方事实] Flash 与 Pro 所列公共基准集的 Code Agent 任务都使用 DeepSeek Harness 极简模式（`minimal mode`）、max 思考强度、`topp=0.95` 和 `temperature=1.0`；Flash 条目当时将 Harness 标为 *to be released soon*。为正文检索兼容，本台账另记为 **top-p 0.95**；不据此改写官方参数名称或推断参数对分数的因果作用。[Change Log（Flash 注记）](https://api-docs.deepseek.com/updates/#date-2026-07-31) / [Pro 条目](https://api-docs.deepseek.com/updates/#date-2026-08-13)
+- [证据不足] 两次发布都未完整披露任务版本、工具集、试次、超时等协议细节；不能断言两列分数采用完全相同的协议，也不能据此做严格纵向比较。[Change Log（Flash 条目）](https://api-docs.deepseek.com/updates/#date-2026-07-31) / [Pro 条目](https://api-docs.deepseek.com/updates/#date-2026-08-13)
 - [证据不足，不写入正文] 上表是特定厂商披露的基准或内部测试集结果，不是独立复现、SLA 或任意生产工作负载的表现承诺。
 
 ## 新 API 价格（人民币）
