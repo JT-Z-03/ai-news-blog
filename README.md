@@ -21,6 +21,7 @@ git submodule update --init --recursive
 
 ```powershell
 .\scripts\validate-content.ps1
+.\scripts\validate-security.ps1
 .\hugo.exe --gc --minify --cleanDestinationDir --printPathWarnings
 ```
 
