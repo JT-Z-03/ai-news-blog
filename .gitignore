@@ -24,3 +24,6 @@ Thumbs.db
 
 # Hugo binary
 hugo.exe
+
+# Isolated task worktrees
+.worktrees/
