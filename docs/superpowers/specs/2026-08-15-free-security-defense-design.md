@@ -63,7 +63,7 @@ flowchart LR
 
 ### 拉取请求校验
 
-新增一个 GitHub Actions 校验流程，在针对 `main` 的拉取请求和 `main` 更新时运行仓库已有的内容校验与安全校验。该流程使用固定且唯一的检查名称，实施完成后将它加入主分支的必过检查。
+新增 `.github/workflows/repository-validation.yml`，在针对 `main` 的拉取请求和 `main` 更新时运行仓库已有的内容校验与安全校验。工作流只授予仓库内容读取权限，必过检查名称固定为 `repository-validation`，避免与其他工作流重名。
 
 安全校验继续验证 `static/_headers` 中的内容安全策略、强制 HTTPS、类型保护、禁止嵌入、来源策略和权限策略。校验脚本必须同时兼容 Windows 的 CRLF 换行和 GitHub Linux 环境的 LF 换行。
 
@@ -79,27 +79,27 @@ Cloudflare Pages 现有构建检查继续负责 Hugo 正式构建，不在 GitHu
 
 ### 发布后在线检查
 
-新增一个可手动触发、也按小时运行的 GitHub Actions 工作流。定时安排在整点之外，降低 GitHub Actions 高峰时段延迟的概率。
+新增 `scripts/monitor-site.ps1` 和 `.github/workflows/site-monitor.yml`。工作流只授予仓库内容读取权限，可以手动触发，并安排在每个小时的第 17 分钟运行，降低 GitHub Actions 整点高峰导致延迟的概率。
 
 每次运行检查以下项目。
 
-- 首页返回成功状态，并包含站点的预期标题标记。
+- 首页返回成功状态，并包含标题标记「AI 热点追踪」。
 - `/search/` 返回成功状态。
-- `/sitemap.xml` 返回成功状态，并包含站点地图的基本 XML 标记。
+- `/sitemap.xml` 返回成功状态，并包含 `<urlset` 站点地图标记。
 - 首页返回现有设计要求的关键安全响应头。
 
-单项失败后在同一次任务中短暂等待并重试，总计三次。三次都失败才让工作流失败；任何一次成功则本次检查通过。失败只产生 GitHub Actions 红色状态和 GitHub 通知，不执行自动回滚、不改源码，也不自动封禁访问者。
+每次尝试都运行整套检查。任一项目失败时等待 15 秒后重试，最多尝试三次；整套检查有一次全部成功则本次任务通过，连续三次都存在失败项目才让工作流失败。失败只产生 GitHub Actions 红色状态和 GitHub 通知，不执行自动回滚、不改源码，也不自动封禁访问者。
 
 账户所有者需要确认 GitHub 的 Actions 与安全警报邮件通知已经开启。GitHub 定时任务可能延迟；公开仓库连续 60 天没有活动时，定时工作流还可能被暂停。本站持续发布内容时通常不会触发暂停，恢复手册仍需记录重新启用方法。
 
 ### 恢复手册
 
-新增中文恢复手册，按事件类型给出固定顺序。
+新增中文恢复手册，分别处理以下事件。
 
-1. 如果只是新版本页面损坏，先在 Cloudflare Pages 的部署记录中回滚到上一个成功的生产部署，恢复访问。
-2. 如果 GitHub 源码包含恶意或错误改动，确认影响提交，通过新的拉取请求撤销，不绕过主分支保护。
-3. 如果怀疑账户被盗，先修改密码、撤销陌生会话、轮换令牌并确认双重验证，再恢复部署和源码。
-4. 恢复后手动运行在线检查，确认页面、站点地图和安全响应头全部通过，并记录事件时间和处置结果。
+- 只有新版本页面损坏时，先在 Cloudflare Pages 的部署记录中回滚到上一个成功的生产部署，恢复访问。
+- GitHub 源码包含恶意或错误改动时，确认影响提交，通过新的拉取请求撤销，不绕过主分支保护。
+- 怀疑账户被盗时，先修改密码、撤销陌生会话、轮换令牌并确认双重验证，再恢复部署和源码。
+- 任何恢复完成后，手动运行在线检查，确认页面、站点地图和安全响应头全部通过，并记录事件时间和处置结果。
 
 若 GitHub 账户已经完全失去访问权限，或邮箱也同时被盗，30 分钟恢复目标不再保证成立；此时必须使用平台账户恢复流程。
 
@@ -129,10 +129,10 @@ Cloudflare Pages 现有构建检查继续负责 Hugo 正式构建，不在 GitHu
 
 本次只增加或调整以下内容。
 
-- GitHub 拉取请求校验和每小时在线检查工作流。
-- 现有安全校验脚本的 Windows 与 Linux 换行兼容性。
-- 私密漏洞报告入口、账户安全清单和中文恢复手册。
-- GitHub 仓库的密钥保护、安全报告和必过检查设置。
+- `.github/workflows/repository-validation.yml` 与 `.github/workflows/site-monitor.yml`。
+- `scripts/validate-security.ps1` 的跨平台兼容性，以及新的 `scripts/monitor-site.ps1`。
+- 根目录 `SECURITY.md`、`docs/security/account-security-checklist.md` 和 `docs/security/incident-response.md`。
+- GitHub 仓库的密钥保护、私密漏洞报告和 `repository-validation` 必过检查设置。
 
 本次不增加数据库、后台登录、用户系统、Cloudflare Workers、付费防火墙、付费监控、访客追踪或自建服务器；不收集访客 IP；不开发自动反击、自动封禁或自动回滚功能；不修改文章内容、网站主题或视觉布局。
 
@@ -144,4 +144,3 @@ Cloudflare Pages 现有构建检查继续负责 Hugo 正式构建，不在 GitHu
 - [GitHub：定时工作流可能被暂停](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/disable-and-enable-workflows)
 - [GitHub：公开仓库 Actions 费用](https://docs.github.com/en/billing/concepts/product-billing/github-actions)
 - [Cloudflare Pages：回滚生产部署](https://developers.cloudflare.com/pages/configuration/rollbacks/)
-
