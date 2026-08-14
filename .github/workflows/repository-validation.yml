@@ -1,0 +1,30 @@
+name: Repository validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-validation:
+    name: repository-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Validate content
+        shell: pwsh
+        run: ./scripts/validate-content.ps1
+
+      - name: Validate security headers
+        shell: pwsh
+        run: ./scripts/validate-security.ps1
