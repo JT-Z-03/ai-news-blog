@@ -1,14 +1,21 @@
+param(
+    [string]$HeadersPath
+)
+
 $ErrorActionPreference = "Stop"
 
-$headersPath = Join-Path $PSScriptRoot "..\static\_headers"
-if (-not (Test-Path -LiteralPath $headersPath)) {
+if ([string]::IsNullOrWhiteSpace($HeadersPath)) {
+    $HeadersPath = Join-Path $PSScriptRoot "..\static\_headers"
+}
+
+if (-not (Test-Path -LiteralPath $HeadersPath)) {
     Write-Error "Missing Cloudflare Pages security headers artifact: static/_headers"
     exit 1
 }
 
-$content = [IO.File]::ReadAllText($headersPath, [Text.Encoding]::UTF8)
+$content = [IO.File]::ReadAllText($HeadersPath, [Text.Encoding]::UTF8)
 $requiredPatterns = [ordered]@{
-    "global rule" = "(?m)^/\*$"
+    "global rule" = "(?m)^/\*\r?$"
     "content security policy" = "(?mi)^\s+Content-Security-Policy:\s+.*default-src 'self'.*object-src 'none'.*base-uri 'self'.*form-action 'self'.*frame-ancestors 'none'"
     "strict transport security" = "(?mi)^\s+Strict-Transport-Security:\s+.*max-age=31536000"
     "content type protection" = "(?mi)^\s+X-Content-Type-Options:\s+nosniff\s*$"
