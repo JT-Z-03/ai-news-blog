@@ -12,7 +12,7 @@ description: "从 V4-Flash、V4-Pro、峰谷定价到开源 Harness，DeepSeek �
 
 十三天以后，那条注记里的产品露面了。
 
-8 月 13 日，DeepSeek-V4-Pro 正式版在 APP、网页端和 API 同步上线，DeepSeek Harness v0.1 开放开发者预览，API 更新价格也在同一批公告中出现。新价格把一天切成高峰与空闲两类时段，并从 8 月 17 日起执行。[官方更新日志](https://api-docs.deepseek.com/zh-cn/updates)把这几项变化列在相邻位置，[8 月 13 日公告](https://api-docs.deepseek.com/zh-cn/news/news260813)则把 Pro 与价格调整放进同一次发布。
+8 月 13 日，三项变化同日通过不同官方渠道出现。DeepSeek-V4-Pro 正式版在 APP、网页端和 API 同步上线，API 更新价格也写入[官方更新日志](https://api-docs.deepseek.com/zh-cn/updates)与[8 月 13 日公告](https://api-docs.deepseek.com/zh-cn/news/news260813)。DeepSeek Harness v0.1 则在[官方产品页](https://deepseek.com/harness/)和[官方仓库](https://github.com/deepseek-ai/deepseek-harness)开放开发者预览。新价格把一天切成高峰与空闲两类时段，并从 8 月 17 日起执行。
 
 若只逐条看，这是两次模型更新、一次调价和一个开源项目。放到同一条时间线上，问题就变了。为什么模型档位、调用接口、价格时段和 Agent 执行框架会在同一阶段落地？
 
@@ -78,7 +78,7 @@ Flash 的测试条件公开得更细。公共基准集里的 Code Agent 任务�
 
 这里同时存在两套比较基准。拿新价格内部比较，空闲时段确实只有高峰的一半，同一档模型、同一类 tokens 若能完整错峰，费率会下降一半。拿新旧价格比较，所有空闲项仍然涨价。开发者若只在高峰和空闲之间选，会看到明显价差；若拿调整前后的账单比较，即使已经错峰，也不能假定费用下降。
 
-总成本还要把缓存命中输入、缓存未命中输入和输出分别计算。三类 tokens 的费率不同，Flash 与 Pro 的费率又不同，任务跨越多个时段时还要按运行时间拆开。价格页给出的是计费单价，并没有给任何具体项目的输入输出比例。本文因此只复算表内百分比，不用一个虚构任务去演示“能省多少”。
+总成本还要把缓存命中输入、缓存未命中输入和输出分别计算。三类 tokens 的费率不同，Flash 与 Pro 的费率又不同。任务的不同调用若分别落在多个时段，成本估算需要使用对应费率。官方价格页没有披露单次跨时段请求如何归属计费窗口，也没有给任何具体项目的输入输出比例。本文因此只复算表内百分比，不补充未公开的计费实现规则，也不用一个虚构任务去演示“能省多少”。
 
 ![DeepSeek API 峰谷价格表](images/posts/deepseek-v4-agent-platform/api-peak-offpeak-pricing.png)
 
