@@ -94,13 +94,13 @@ Flash 的测试条件公开得更细。公共基准集里的 Code Agent 任务�
 
 这个执行层的正式名称是 DeepSeek Harness，命令名为 `dsh`，[官方仓库](https://github.com/deepseek-ai/deepseek-harness)在 8 月 13 日开放 v0.1 开发者预览。代码采用 [MIT 许可证](https://github.com/deepseek-ai/deepseek-harness/blob/master/LICENSE)。README 同时提醒项目会快速迭代，破坏兼容性的变更也在预期之内。现阶段把它称为成熟生产平台，证据远远不够。
 
-Harness 建在 Cordis 插件系统之上。[架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)把 Cordis 写作 `dsh` 的下层框架。插件通过共享上下文提供服务、类型化事件和可逆 effect。Cordis 是依赖与框架，不是 Harness 的同义词，公开材料也不能证明两者存在某种公司关系。
+Harness 建在 Cordis 插件系统之上。[架构文档](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/architecture.md)把 Cordis 写作 `dsh` 的下层框架。插件通过共享上下文提供服务、类型化事件和可逆副作用，也就是需要时能够撤销的执行操作。Cordis 是依赖与框架，不是 Harness 的同义词，公开材料也不能证明两者存在某种公司关系。
 
 官方架构文档给出的运行形态比一个命令行聊天工具宽得多：base 运行时承载持久化、沙箱与审批策略、设置、凭据和遥测，web 运行时面向浏览器应用，headless（无界面）运行时面向无服务器的一次性运行器。这些部件共同说明 Harness 试图处理的是一段任务如何运行，不只是一轮提示词怎样发给模型。
 
-插件化设计也改变了故障边界。模型返回了什么，只是执行记录的一部分。工具有没有注册、凭据能否使用、文件写到哪里、某个动作要不要审批、会话能不能恢复，都由模型之外的部件决定。Cordis 提供共享上下文、类型化事件和可逆 effect，让这些部件可以组合，也让替换某一项时不必把整个程序重写。后一句是对架构用途的解释，不代表 v0.1 已经验证了所有组合。
+插件化设计也改变了故障边界。模型返回了什么，只是执行记录的一部分。工具有没有注册、凭据能否使用、文件写到哪里、某个动作要不要审批、会话能不能恢复，都由模型之外的部件决定。Cordis 的共享上下文、类型化事件和可逆副作用让这些部件可以组合，也让替换某一项时不必把整个程序重写。后一句是对架构用途的解释，不代表 v0.1 已经验证了所有组合。
 
-普通读者可以把 Harness 理解成任务运行时：模型负责生成下一步，工具与技能提供可调用能力；会话、文件系统和存储保留交互记录与任务材料；沙箱限制动作范围；loop 让模型在观察、调用工具与继续推理之间循环；调度与编排安排步骤，UI 则提供操作入口。模型、工具、技能、会话、沙箱、文件系统与存储、循环、调度与编排及 UI 都以可替换、可组合的部件接入执行过程。[官方 Harness 页面](https://deepseek.com/harness/)将这些功能列为插件化组成。
+普通读者可以把 Harness 理解成任务运行时：模型负责生成下一步，工具与技能提供可调用能力；会话、文件系统和存储保留交互记录与任务材料；沙箱限制动作范围；loop 让模型在观察、调用工具与继续推理之间循环；调度与编排安排步骤，UI 则提供操作入口。这些功能以可替换、可组合的部件接入执行过程。[官方 Harness 页面](https://deepseek.com/harness/)将它们列为插件化组成。
 
 ![DeepSeek Harness 插件化组成](images/posts/deepseek-v4-agent-platform/harness-plugin-architecture.png)
 
