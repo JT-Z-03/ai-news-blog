@@ -22,6 +22,8 @@ git submodule update --init --recursive
 ```powershell
 .\scripts\validate-content.ps1
 .\scripts\validate-security.ps1
+.\scripts\validate-home-orbit.ps1
+.\scripts\validate-site-orbit.ps1
 .\hugo.exe --gc --minify --cleanDestinationDir --printPathWarnings
 ```
 
@@ -32,8 +34,8 @@ git submodule update --init --recursive
 - `content/posts/`：日报与深度分析
 - `content/about.md`：关于页面
 - `content/search.md`：客户端全文搜索
-- `layouts/index.html`：定制首页
-- `assets/css/extended/custom.css`：首页响应式样式
+- `layouts/`：页面模板
+- `assets/css/extended/`：站点样式
 - `hugo.toml`：站点、菜单、搜索和 SEO 配置
 
 ## 发布流程
@@ -42,8 +44,9 @@ git submodule update --init --recursive
 2. 检查文章日期、frontmatter、来源链接和正文内容。
 3. 运行本地构建。
 4. 只提交本次文章与必要配置变更。
-5. 推送到 `main`，由 Cloudflare Pages 自动部署。
-6. 验证线上文章 URL 返回 `200`。
+5. 推送功能分支并创建 Pull Request。
+6. 等待仓库校验和 Cloudflare Pages 检查通过后合并到 `main`。
+7. 验证线上文章 URL 返回 `200`。
 
 不要在仓库、脚本或 Skill 中保存 Cloudflare API Token。需要手动部署时，通过环境变量提供凭据：
 
@@ -58,7 +61,7 @@ npx wrangler pages deploy public --project-name ai-news-blog
 
 - Build command：`hugo --gc --minify`
 - Build output directory：`public`
-- Hugo version：`0.162.0`
+- Environment variable：`HUGO_VERSION=0.162.0`
 - Production branch：`main`
 
 ## 内容质量要求
