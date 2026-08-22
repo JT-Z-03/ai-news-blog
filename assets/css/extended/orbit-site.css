@@ -70,8 +70,201 @@ body.orbit-shell {
     transform: translateX(-50%);
 }
 
+.orbit-page {
+    min-height: 60vh;
+    color: var(--orbit-ink);
+}
+
+.orbit-reading-progress {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.25rem;
+    align-items: center;
+    max-width: 880px;
+    margin: 2.6rem auto 4.5rem;
+    color: var(--orbit-muted);
+    font-size: 0.78rem;
+}
+
+.orbit-reading-progress::before {
+    content: "";
+    grid-column: 1;
+    grid-row: 1;
+    height: 2px;
+    background: var(--orbit-border);
+}
+
+.orbit-reading-progress__bar {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: var(--orbit-accent);
+}
+
+.orbit-reading-progress[hidden] {
+    display: none;
+}
+
+.orbit-reading-progress__label {
+    white-space: nowrap;
+}
+
+.orbit-page__header,
+.orbit-article__body,
+.orbit-article__toc,
+.orbit-article__footer {
+    width: 100%;
+    max-width: var(--orbit-reading-width);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.orbit-page__header {
+    padding: 0 0 2rem;
+    border-bottom: 1px solid var(--orbit-border);
+    background: var(--orbit-page);
+}
+
+.orbit-static-page .orbit-page__header {
+    margin-top: 4.5rem;
+}
+
+.orbit-page__header .breadcrumbs {
+    margin-bottom: 2.5rem;
+}
+
+.orbit-page__eyebrow {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1.7rem;
+    color: var(--orbit-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+}
+
+.orbit-page__eyebrow span {
+    width: 0.55rem;
+    height: 0.55rem;
+    background: var(--orbit-accent);
+}
+
+.orbit-page__title {
+    margin: 0;
+    color: var(--orbit-ink);
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 760;
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+}
+
+.orbit-static-page .orbit-page__title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.orbit-page__description {
+    max-width: 46rem;
+    margin: 1.2rem 0 0;
+    color: var(--orbit-muted);
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    line-height: 1.7;
+}
+
+.orbit-page__meta {
+    margin-top: 1.15rem;
+    color: var(--orbit-muted);
+    font-size: 0.86rem;
+}
+
+.orbit-page__meta a {
+    color: inherit;
+    text-decoration-color: var(--orbit-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+}
+
+.orbit-article__toc {
+    margin-top: 2rem;
+}
+
+.orbit-article__body {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: var(--orbit-ink);
+    font-size: 1.06rem;
+    line-height: 1.85;
+}
+
+.orbit-article__body h2 {
+    position: relative;
+    margin-top: 3.5rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--orbit-border);
+    color: var(--orbit-ink);
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    line-height: 1.3;
+}
+
+.orbit-article__body h2::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 4rem;
+    height: 3px;
+    background: var(--orbit-accent);
+}
+
+.orbit-article__body h3 {
+    margin-top: 2.5rem;
+    color: var(--orbit-ink);
+}
+
+.orbit-article__body a {
+    color: var(--orbit-ink);
+    text-decoration-color: var(--orbit-accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+
+.orbit-article__body blockquote,
+.orbit-article__body pre,
+.orbit-article__body table {
+    background: var(--orbit-surface-soft);
+}
+
+.orbit-article__body blockquote {
+    border-inline-start-color: var(--orbit-accent);
+}
+
+.orbit-article__footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--orbit-border);
+}
+
 @media (max-width: 560px) {
     .home-landing {
         width: min(100%, calc(100vw - 28px));
+    }
+
+    .orbit-reading-progress {
+        gap: 0.8rem;
+        margin: 1.5rem auto 3rem;
+    }
+
+    .orbit-page__header .breadcrumbs {
+        margin-bottom: 1.8rem;
+    }
+
+    .orbit-page__title {
+        letter-spacing: -0.035em;
+    }
+
+    .orbit-article__body {
+        font-size: 1rem;
     }
 }

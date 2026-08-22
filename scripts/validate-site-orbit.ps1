@@ -63,6 +63,17 @@ try {
         }
     }
 
+    $articleMarkup = Read-Output "posts/deepseek-v4-agent-platform/index.html"
+    $aboutMarkup = Read-Output "about/index.html"
+
+    Require-Match $articleMarkup '<article class="orbit-page orbit-article"' "Regular posts should render the reading-first article layout."
+    Require-Match $articleMarkup 'class="orbit-reading-progress"' "Regular posts should render a reading-progress control."
+    Require-Match $articleMarkup 'class="orbit-article__body post-content md-content"' "Regular posts should expose the constrained reading body."
+    Require-Match $aboutMarkup '<article class="orbit-page orbit-static-page"' "Static pages should render the Orbit static-page layout."
+    if ($aboutMarkup -match 'orbit-reading-progress') {
+        $errors.Add("Static pages should not render article reading progress.")
+    }
+
     $orbitCss = [IO.File]::ReadAllText($orbitCssPath, [Text.Encoding]::UTF8)
     Require-Match $orbitCss '(?s)\.orbit-shell \.main:not\(:has\(\.home-landing\)\)\s*\{[^}]*max-width:\s*none;' "The shared shell must override the legacy non-home main width."
 }
