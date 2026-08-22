@@ -46,6 +46,9 @@ try {
     if ($combinedCss -match '#14b8a6|#0f766e|rgba\(20,\s*184,\s*166') {
         $errors.Add("Built site CSS should not contain the legacy teal design tokens.")
     }
+    if ($combinedCss -notmatch '(?s)@media\s*\(max-width:\s*480px\)\s*\{(?:(?!@media).)*?\.orbit-article__footer\s+\.post-tags\s+a\s*\{(?=[^}]*display:\s*inline-flex)(?=[^}]*min-height:\s*44px)(?=[^}]*align-items:\s*center)[^}]*\}') {
+        $errors.Add("Article tag links should expose a 44px centered mobile hit area in built CSS.")
+    }
 
     $fixtureContentRoot = Join-Path $fixtureRoot "content"
     $fixtureSectionRoot = Join-Path $fixtureContentRoot "orbit-empty-fixture"

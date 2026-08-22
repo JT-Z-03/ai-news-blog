@@ -750,6 +750,13 @@ body.orbit-shell {
         min-height: 44px;
     }
 
+    .orbit-article__footer .post-tags a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+
     .orbit-shell .top-link {
         width: 44px;
         height: 44px;
