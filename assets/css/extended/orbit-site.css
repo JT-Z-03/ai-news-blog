@@ -1,0 +1,73 @@
+:root {
+    --orbit-accent: #d4ff3f;
+    --orbit-ink: #121212;
+    --orbit-muted: #767676;
+    --orbit-border: #e5e5e5;
+    --orbit-page: #fbfbf9;
+    --orbit-surface: #ffffff;
+    --orbit-surface-soft: #f4f4f1;
+    --orbit-reading-width: 800px;
+    --orbit-shell-width: 1200px;
+}
+
+[data-theme="dark"] {
+    --orbit-ink: #f5f5f4;
+    --orbit-muted: #a8a8a3;
+    --orbit-border: #33332f;
+    --orbit-page: #111110;
+    --orbit-surface: #191918;
+    --orbit-surface-soft: #212120;
+}
+
+body.orbit-shell {
+    background: var(--orbit-page);
+    color: var(--orbit-ink);
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.orbit-shell .header {
+    border-bottom: 1px solid var(--orbit-border);
+    background: color-mix(in srgb, var(--orbit-page) 92%, transparent);
+    backdrop-filter: blur(18px);
+}
+
+.orbit-shell .nav {
+    max-width: min(var(--orbit-shell-width), calc(100vw - 32px));
+}
+
+.orbit-shell .main {
+    width: min(var(--orbit-shell-width), calc(100vw - 32px));
+    max-width: none;
+}
+
+.orbit-shell a:focus-visible,
+.orbit-shell button:focus-visible,
+.orbit-shell input:focus-visible {
+    outline: 3px solid var(--orbit-accent);
+    outline-offset: 3px;
+}
+
+.orbit-shell .menu a:hover,
+.orbit-shell .menu .active {
+    background: var(--orbit-accent);
+    color: #121212;
+}
+
+.orbit-shell .footer {
+    max-width: min(var(--orbit-shell-width), calc(100vw - 32px));
+    border-top: 1px solid var(--orbit-border);
+    color: var(--orbit-muted);
+}
+
+.home-landing {
+    position: relative;
+    left: 50%;
+    width: min(1120px, calc(100vw - 32px));
+    transform: translateX(-50%);
+}
+
+@media (max-width: 560px) {
+    .home-landing {
+        width: min(100%, calc(100vw - 28px));
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{{- $theme := site.Params.defaultTheme | default "auto" }}
+<html lang="{{ site.Language }}" dir="{{ .Language.Direction | default "auto" }}" data-theme="{{ $theme }}">
+<head>
+    {{- partial "head.html" . }}
+</head>
+{{- $bodyClasses := slice "orbit-shell" (printf "orbit-kind-%s" .Kind) -}}
+{{- with .Layout }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-layout-%s" .) }}{{ end -}}
+{{- with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-section-%s" .) }}{{ end -}}
+<body class="{{ delimit $bodyClasses " " }}" id="top">
+    {{ partialCached "header.html" . .Page -}}
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+</body>
+</html>
