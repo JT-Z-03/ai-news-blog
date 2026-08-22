@@ -1,7 +1,7 @@
 .orbit-home {
     --orbit-accent: #d4ff3f;
     --orbit-ink: #121212;
-    --orbit-muted: #747474;
+    --orbit-muted: #717171;
     --orbit-focus-contrast: #121212;
     --orbit-border: #e5e5e5;
     --orbit-surface: #ffffff;
@@ -503,7 +503,7 @@
     border-radius: inherit;
 }
 
-.orbit-post-link:focus-visible {
+.orbit-shell .orbit-post-link:focus-visible {
     outline: 3px solid var(--orbit-focus-contrast);
     outline-offset: -6px;
     box-shadow: inset 0 0 0 3px var(--orbit-accent);

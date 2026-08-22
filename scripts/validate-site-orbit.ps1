@@ -103,6 +103,27 @@ function Get-ContrastRatio([string]$foreground, [string]$background) {
     return ($lighter + 0.05) / ($darker + 0.05)
 }
 
+function Get-CssSpecificity([string]$selector) {
+    $idCount = [regex]::Matches($selector, '#[a-zA-Z_][\w-]*').Count
+    $classCount = [regex]::Matches($selector, '\.[a-zA-Z_][\w-]*').Count
+    $attributeCount = [regex]::Matches($selector, '\[[^\]]+\]').Count
+    $pseudoClassCount = [regex]::Matches($selector, '(?<!:):(?!:)[a-zA-Z_][\w-]*(?:\([^)]*\))?').Count
+
+    $remaining = [regex]::Replace($selector, '#[a-zA-Z_][\w-]*|\.[a-zA-Z_][\w-]*|\[[^\]]+\]|:{1,2}[a-zA-Z_][\w-]*(?:\([^)]*\))?', ' ')
+    $elementCount = [regex]::Matches($remaining, '(?i)(?:^|[\s>+~])([a-z][\w-]*)').Count
+
+    return @($idCount, ($classCount + $attributeCount + $pseudoClassCount), $elementCount)
+}
+
+function Compare-CssSpecificity([int[]]$first, [int[]]$second) {
+    for ($index = 0; $index -lt 3; $index++) {
+        if ($first[$index] -ne $second[$index]) {
+            return [Math]::Sign($first[$index] - $second[$index])
+        }
+    }
+    return 0
+}
+
 New-Item -ItemType Directory -Path $destination | Out-Null
 New-Item -ItemType Directory -Path $fixtureDestination | Out-Null
 try {
@@ -301,8 +322,13 @@ url: "/orbit-archive-fixture/"
     $orbitHomeCss = [IO.File]::ReadAllText($orbitHomeCssPath, [Text.Encoding]::UTF8)
     $siteMutedMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
     $homeMutedMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
-    if (-not ($siteMutedMatch.Success -and $homeMutedMatch.Success)) {
-        $errors.Add("Orbit styles should declare their light muted-text tokens.")
+    $sitePageMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-page:\s*(?<color>#[0-9a-fA-F]{6});')
+    $siteSurfaceMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-surface:\s*(?<color>#[0-9a-fA-F]{6});')
+    $homeSurfaceMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-surface:\s*(?<color>#[0-9a-fA-F]{6});')
+    $homeSoftSurfaceMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-surface-soft:\s*(?<color>#[0-9a-fA-F]{6});')
+    if (-not ($siteMutedMatch.Success -and $homeMutedMatch.Success -and $sitePageMatch.Success -and
+        $siteSurfaceMatch.Success -and $homeSurfaceMatch.Success -and $homeSoftSurfaceMatch.Success)) {
+        $errors.Add("Orbit styles should declare their light muted-text and surface tokens.")
     }
     else {
         $siteMuted = $siteMutedMatch.Groups["color"].Value
@@ -310,9 +336,18 @@ url: "/orbit-archive-fixture/"
         if ($siteMuted -ne $homeMuted) {
             $errors.Add("Orbit site and homepage muted-text tokens should stay consistent.")
         }
-        $mutedContrast = Get-ContrastRatio $siteMuted "#fbfbf9"
-        if ($mutedContrast -lt 4.5) {
-            $errors.Add("Light muted text contrast is $([Math]::Round($mutedContrast, 2)):1; it must meet WCAG AA 4.5:1.")
+
+        $mutedSurfaceContracts = [ordered]@{
+            "Orbit page" = $sitePageMatch.Groups["color"].Value
+            "Orbit grouped surface" = $siteSurfaceMatch.Groups["color"].Value
+            "homepage surface" = $homeSurfaceMatch.Groups["color"].Value
+            "homepage soft card surface" = $homeSoftSurfaceMatch.Groups["color"].Value
+        }
+        foreach ($surface in $mutedSurfaceContracts.GetEnumerator()) {
+            $mutedContrast = Get-ContrastRatio $siteMuted $surface.Value
+            if ($mutedContrast -lt 4.5) {
+                $errors.Add("Light muted text contrast on $($surface.Key) $($surface.Value) is $([Math]::Round($mutedContrast, 3)):1; it must meet WCAG AA 4.5:1.")
+            }
         }
     }
     Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "Light Orbit pages should declare an ink focus-contrast token."
@@ -320,7 +355,22 @@ url: "/orbit-archive-fixture/"
     Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "The homepage should share the light focus-contrast token."
     Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "The homepage should share the dark focus-contrast token."
     Require-Match $orbitCss '(?s)\.orbit-shell a:focus-visible,[^{]*\.orbit-shell input:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Shared focus indicators should combine a contrasting outline with the lime cue."
-    Require-Match $orbitHomeCss '(?s)\.orbit-post-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*inset\s+0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Image-card focus should combine an inset lime cue with a contrasting outline."
+    $cardFocusRuleMatch = [regex]::Match($orbitHomeCss, '(?ms)^(?<selector>[^\r\n{]*\.orbit-post-link:focus-visible)\s*\{(?<declarations>[^}]*)\}')
+    if (-not $cardFocusRuleMatch.Success) {
+        $errors.Add("Image-card focus should declare its inset two-tone treatment.")
+    }
+    else {
+        $cardFocusSelector = $cardFocusRuleMatch.Groups["selector"].Value.Trim()
+        $cardFocusDeclarations = $cardFocusRuleMatch.Groups["declarations"].Value
+        Require-Match $cardFocusDeclarations '(?s)(?=.*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=.*box-shadow:\s*inset\s+0\s+0\s+0\s+3px\s+var\(--orbit-accent\)).*' "Image-card focus should combine an inset lime cue with a contrasting outline."
+
+        $sharedFocusSelector = '.orbit-shell a:focus-visible'
+        $cardFocusSpecificity = Get-CssSpecificity $cardFocusSelector
+        $sharedFocusSpecificity = Get-CssSpecificity $sharedFocusSelector
+        if ((Compare-CssSpecificity $cardFocusSpecificity $sharedFocusSpecificity) -le 0) {
+            $errors.Add("Image-card focus selector '$cardFocusSelector' specificity ($($cardFocusSpecificity -join ',')) must exceed shared focus selector '$sharedFocusSelector' specificity ($($sharedFocusSpecificity -join ',')) so inset focus wins the cascade.")
+        }
+    }
     Require-Match $orbitCss '(?s)\.orbit-search #searchInput:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-input focus should combine the contrasting outline with the lime cue."
     Require-Match $orbitCss '(?s)\.orbit-search__status\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Search live status should be visibly styled with the readable muted token."
     Require-Match $orbitCss '(?s)\.orbit-archive-month h3\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Archive month groups should expose a visible secondary heading."
