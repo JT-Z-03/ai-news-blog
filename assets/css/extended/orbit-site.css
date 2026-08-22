@@ -617,14 +617,39 @@ body.orbit-shell {
     color: #121212;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 760px) {
+    .orbit-shell .nav {
+        min-height: auto;
+        padding-block: 0.75rem;
+    }
+
+    .orbit-shell .main,
+    .orbit-shell .nav,
+    .orbit-shell .footer {
+        width: min(100%, calc(100vw - 28px));
+    }
+
+    .orbit-shell .header-nav {
+        width: min(100%, calc(100vw - 28px));
+        min-height: auto;
+        padding: 0.75rem 0;
+    }
+
     .home-landing {
         width: min(100%, calc(100vw - 28px));
     }
 
     .orbit-reading-progress {
         gap: 0.8rem;
-        margin: 1.5rem auto 3rem;
+        margin-block: 1.5rem 3rem;
+    }
+
+    .orbit-page__header {
+        padding-bottom: 1.5rem;
+    }
+
+    .orbit-static-page .orbit-page__header {
+        margin-top: 3rem;
     }
 
     .orbit-page__header .breadcrumbs {
@@ -632,32 +657,135 @@ body.orbit-shell {
     }
 
     .orbit-page__title {
+        font-size: clamp(2.15rem, 10vw, 3.25rem);
         letter-spacing: -0.035em;
     }
 
+    .orbit-article__toc,
     .orbit-article__body {
+        margin-top: 1.5rem;
         font-size: 1rem;
     }
 
+    .orbit-article__body h2,
+    .orbit-article__footer {
+        margin-top: 2.75rem;
+    }
+
     .orbit-list {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
     }
 
     .orbit-list__header .breadcrumbs {
         margin-bottom: 1.8rem;
     }
 
+    .orbit-list__header {
+        padding-bottom: 1.5rem;
+    }
+
+    .orbit-list__intro,
+    .orbit-list__count {
+        margin-top: 1.25rem;
+    }
+
     .orbit-list__row {
+        grid-template-columns: 1fr;
         padding-block: 1.5rem;
     }
 
     .orbit-search,
     .orbit-archives {
-        margin-top: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .orbit-search__box,
+    .orbit-search__results {
+        margin-top: 1.5rem;
+    }
+
+    .orbit-search__results li {
+        padding-block: 1rem;
+    }
+
+    .orbit-archive-year {
+        margin-top: 2rem;
     }
 
     .orbit-archive-entries article {
         grid-template-columns: 1fr;
         gap: 0.35rem;
+        padding-block: 1rem;
+    }
+
+    .orbit-not-found {
+        min-height: 50vh;
+        gap: 1rem;
+        padding-block: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-shell .menu {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .orbit-shell .menu a,
+    .orbit-pagination a,
+    .orbit-button {
+        min-height: 44px;
+    }
+
+    .orbit-shell .menu a,
+    .orbit-shell .logo a,
+    .orbit-shell .theme-toggle {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .orbit-shell .logo a,
+    .orbit-shell .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .orbit-shell .top-link {
+        width: 44px;
+        height: 44px;
+    }
+
+    .orbit-article__body table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .orbit-reading-progress {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .orbit-reading-progress__label {
+        grid-column: 1;
+    }
+
+    .orbit-pagination {
+        flex-wrap: wrap;
+    }
+
+    .orbit-not-found h1 {
+        font-size: clamp(4.5rem, 26vw, 6.5rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orbit-shell *,
+    .orbit-shell *::before,
+    .orbit-shell *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }

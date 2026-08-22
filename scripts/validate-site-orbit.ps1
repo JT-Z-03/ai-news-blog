@@ -41,6 +41,12 @@ try {
     & $hugoPath --source $projectRoot --destination $destination --cleanDestinationDir
     if ($LASTEXITCODE -ne 0) { throw "Hugo build failed with exit code $LASTEXITCODE" }
 
+    $cssFiles = Get-ChildItem -LiteralPath (Join-Path $destination "assets/css") -Filter "*.css" -File
+    $combinedCss = ($cssFiles | ForEach-Object { [IO.File]::ReadAllText($_.FullName) }) -join "`n"
+    if ($combinedCss -match '#14b8a6|#0f766e|rgba\(20,\s*184,\s*166') {
+        $errors.Add("Built site CSS should not contain the legacy teal design tokens.")
+    }
+
     $fixtureContentRoot = Join-Path $fixtureRoot "content"
     $fixtureSectionRoot = Join-Path $fixtureContentRoot "orbit-empty-fixture"
     $fixtureConfigPath = Join-Path $fixtureRoot "empty-list-fixture.toml"
