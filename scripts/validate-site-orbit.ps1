@@ -67,6 +67,18 @@ try {
 
     $articleMarkup = Read-Output "posts/deepseek-v4-agent-platform/index.html"
     $aboutMarkup = Read-Output "about/index.html"
+    $deepListMarkup = Read-Output "categories/深度分析/index.html"
+    $dailyListMarkup = Read-Output "categories/日报/index.html"
+    $dailyPageTwoMarkup = Read-Output "categories/日报/page/2/index.html"
+    $categoryTaxonomyMarkup = Read-Output "categories/index.html"
+
+    Require-Match $deepListMarkup '<section class="orbit-list"' "Deep-analysis category should use the shared Orbit list."
+    Require-Match $dailyListMarkup '<div class="orbit-list__items"' "Daily category should use the grouped list surface."
+    Require-Match $dailyPageTwoMarkup 'class="orbit-list__row"' "Paginated daily pages should keep Orbit rows."
+    Require-Match $categoryTaxonomyMarkup '<ul class="orbit-terms"' "Category taxonomy should use Orbit term links."
+    if ($deepListMarkup -match 'class="post-entry') {
+        $errors.Add("Orbit lists should not retain PaperMod floating post-entry cards.")
+    }
 
     Require-Match $articleMarkup '<article class="orbit-page orbit-article"' "Regular posts should render the reading-first article layout."
     Require-Match $articleMarkup 'class="orbit-reading-progress"' "Regular posts should render a reading-progress control."
