@@ -176,12 +176,14 @@ finally {
         Remove-Item -LiteralPath $resolvedDestination -Recurse -Force
     }
     $resolvedFixtureDestination = [IO.Path]::GetFullPath($fixtureDestination)
-    if ($resolvedFixtureDestination.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase) -and
+    if ((Test-Path -LiteralPath $fixtureDestination) -and
+        $resolvedFixtureDestination.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase) -and
         [IO.Path]::GetFileName($resolvedFixtureDestination).StartsWith("ai-news-blog-site-orbit-empty-")) {
         Remove-Item -LiteralPath $resolvedFixtureDestination -Recurse -Force
     }
     $resolvedFixtureRoot = [IO.Path]::GetFullPath($fixtureRoot)
-    if ($resolvedFixtureRoot.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase) -and
+    if ((Test-Path -LiteralPath $fixtureRoot) -and
+        $resolvedFixtureRoot.StartsWith($tempRoot, [StringComparison]::OrdinalIgnoreCase) -and
         [IO.Path]::GetFileName($resolvedFixtureRoot).StartsWith("ai-news-blog-site-orbit-fixture-")) {
         Remove-Item -LiteralPath $resolvedFixtureRoot -Recurse -Force
     }
