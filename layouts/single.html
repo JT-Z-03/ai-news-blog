@@ -1,0 +1,54 @@
+{{- define "main" }}
+{{- $isArticle := eq .Section "posts" -}}
+<article class="orbit-page {{ if $isArticle }}orbit-article{{ else }}orbit-static-page{{ end }}">
+  {{- if $isArticle }}
+  <div class="orbit-reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <span class="orbit-reading-progress__bar"></span>
+    <span class="orbit-reading-progress__label">阅读进度 0%</span>
+  </div>
+  {{- end }}
+
+  <header class="orbit-page__header">
+    {{- partial "breadcrumbs.html" . }}
+    {{- if $isArticle }}
+      {{- with .GetTerms "categories" }}
+        {{- with index . 0 }}
+        <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>{{ .LinkTitle }}</p>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    <h1 class="orbit-page__title">{{ .Title }}</h1>
+    {{- with .Description }}<p class="orbit-page__description">{{ . }}</p>{{ end }}
+    {{- if not (.Param "hideMeta") }}
+    <div class="orbit-page__meta">
+      {{- partial "post_meta.html" . -}}
+      {{- partial "translation_list.html" . -}}
+      {{- partial "edit_post.html" . -}}
+      {{- partial "post_canonical.html" . -}}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+  {{- if (.Param "ShowToc") }}<div class="orbit-article__toc">{{ partial "toc.html" . }}</div>{{ end }}
+
+  {{- with .Content }}
+  <div class="orbit-article__body post-content md-content">
+    {{- if not ($.Param "disableAnchoredHeadings") }}
+      {{- partial "anchored_headings.html" . -}}
+    {{- else }}{{ . }}{{ end }}
+  </div>
+  {{- end }}
+
+  {{- partial "extend_post_content.html" . }}
+  {{- if $isArticle }}
+  <footer class="orbit-article__footer post-footer">
+    <ul class="post-tags">{{ range (.GetTerms "tags") }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    {{- if (.Param "ShowPostNavLinks") }}{{ partial "post_nav_links.html" . }}{{ end }}
+    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
+  </footer>
+  {{- end }}
+  {{- if (.Param "comments") }}{{ partial "comments.html" . }}{{ end }}
+</article>
+{{- end }}
