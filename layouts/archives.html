@@ -1,0 +1,33 @@
+{{- define "main" }}
+<section class="orbit-archives">
+  <header class="orbit-list__header">
+    <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>AI NEWS ARCHIVE</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ if site.Params.ShowAllPagesInArchive }}{{ $pages = site.RegularPages }}{{ end }}
+  {{ range $pages.GroupByPublishDate "2006" }}
+    {{ if ne .Key "0001" }}
+    {{- $year := .Key }}
+    <section class="orbit-archive-year" aria-labelledby="year-{{ .Key }}">
+      <h2 id="year-{{ .Key }}">{{ .Key }} <span>{{ len .Pages }}</span></h2>
+      <div class="orbit-archive-months">
+        {{ range .Pages.GroupByPublishDate "01" }}
+        <section class="orbit-archive-month" aria-labelledby="month-{{ $year }}-{{ .Key }}">
+          <h3 id="month-{{ $year }}-{{ .Key }}">{{ .Key }} 月</h3>
+          <div class="orbit-archive-entries">
+            {{ range .Pages }}
+              {{ if eq .Kind "page" }}
+              <article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a></article>
+              {{ end }}
+            {{ end }}
+          </div>
+        </section>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  {{ end }}
+</section>
+{{- end }}

@@ -1,0 +1,45 @@
+{{- define "main" }}
+{{- $pages := union .RegularPages .Sections -}}
+{{- $paginator := .Paginate $pages -}}
+<section class="orbit-list">
+  <header class="orbit-list__header">
+    {{ partial "breadcrumbs.html" . }}
+    <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>AI NEWS INDEX</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . | markdownify }}</p>{{ end }}
+    <p class="orbit-list__count">共 {{ len $pages }} 篇内容</p>
+  </header>
+
+  {{ with .Content }}<div class="orbit-list__intro post-content md-content">{{ . }}</div>{{ end }}
+
+  {{ if gt (len $paginator.Pages) 0 }}
+  <div class="orbit-list__items">
+    {{ range $paginator.Pages }}
+    <article class="orbit-list__row">
+      <div class="orbit-list__context">
+        {{ with .GetTerms "categories" }}{{ with index . 0 }}<span>{{ .LinkTitle }}</span>{{ end }}{{ end }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+      </div>
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      {{ if ne (.Param "hideSummary") true }}
+        {{- $summary := .Description -}}
+        {{- if not $summary }}{{ $summary = .Summary }}{{ end -}}
+        <p class="orbit-list__summary">{{ $summary | plainify | htmlUnescape | truncate 159 "…" }}</p>
+      {{- end }}
+      {{ if not (.Param "hideMeta") }}<div class="orbit-list__meta">{{ partial "post_meta.html" . }}</div>{{ end }}
+    </article>
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="orbit-empty"><p>这里暂时还没有内容。</p><a href="{{ "/" | relURL }}">返回首页</a></div>
+  {{ end }}
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="orbit-pagination" aria-label="分页">
+    {{ with $paginator.Prev }}<a rel="prev" href="{{ .URL }}">上一页</a>{{ end }}
+    <span>{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+    {{ with $paginator.Next }}<a rel="next" href="{{ .URL }}">下一页</a>{{ end }}
+  </nav>
+  {{ end }}
+</section>
+{{- end }}

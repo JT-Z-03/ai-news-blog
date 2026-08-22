@@ -1,0 +1,18 @@
+{{- define "main" }}
+<section class="orbit-list orbit-taxonomy">
+  <header class="orbit-list__header">
+    <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>AI NEWS TOPICS</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <ul class="orbit-terms">
+    {{ $type := .Type }}
+    {{ range .Data.Terms.Alphabetical }}
+      {{ $count := .Count }}
+      {{ with site.GetPage (printf "/%s/%s" $type .Name) }}
+      <li><a href="{{ .RelPermalink }}"><span>{{ .LinkTitle }}</span><strong>{{ $count }}</strong></a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{- end }}
