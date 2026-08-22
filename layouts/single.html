@@ -21,7 +21,16 @@
     {{- with .Description }}<p class="orbit-page__description">{{ . }}</p>{{ end }}
     {{- if not (.Param "hideMeta") }}
     <div class="orbit-page__meta">
-      {{- partial "post_meta.html" . -}}
+      {{- if $isArticle }}
+        {{- $meta := newScratch -}}
+        {{- if not .Date.IsZero }}{{ $meta.Add "items" (slice (printf "<span title='%s'>%s</span>" .Date (.Date.Format "2006 年 1 月 2 日"))) }}{{ end -}}
+        {{- if (.Param "ShowReadingTime") }}{{ $meta.Add "items" (slice (printf "<span>%d 分钟</span>" .ReadingTime)) }}{{ end -}}
+        {{- if (.Param "ShowWordCount") }}{{ $meta.Add "items" (slice (printf "<span>%d 字</span>" .WordCount)) }}{{ end -}}
+        {{- if not (.Param "hideAuthor") }}{{ with (partial "author.html" .) }}{{ $meta.Add "items" (slice (printf "<span>%s</span>" .)) }}{{ end }}{{ end -}}
+        {{- with ($meta.Get "items") }}{{ delimit . "&nbsp;·&nbsp;" | safeHTML }}{{ end -}}
+      {{- else }}
+        {{- partial "post_meta.html" . -}}
+      {{- end }}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}

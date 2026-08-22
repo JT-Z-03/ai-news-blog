@@ -7,6 +7,10 @@
 {{- $bodyClasses := slice "orbit-shell" (printf "orbit-kind-%s" .Kind) -}}
 {{- with .Layout }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-layout-%s" .) }}{{ end -}}
 {{- with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-section-%s" .) }}{{ end -}}
+{{- with .Params.categories -}}
+    {{- if in . "深度分析" }}{{ $bodyClasses = $bodyClasses | append "orbit-nav-deep-analysis" }}{{ end -}}
+    {{- if in . "日报" }}{{ $bodyClasses = $bodyClasses | append "orbit-nav-daily" }}{{ end -}}
+{{- end -}}
 {{- if (or (ne .Kind `page`) (eq .Layout `archives`) (eq .Layout `search`)) }}{{ $bodyClasses = $bodyClasses | append "list" }}{{ end -}}
 <body class="{{ delimit $bodyClasses " " }}" id="top">
     {{ partialCached "header.html" . .Page -}}
