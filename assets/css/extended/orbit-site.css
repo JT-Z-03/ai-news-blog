@@ -40,6 +40,10 @@ body.orbit-shell {
     max-width: none;
 }
 
+.orbit-shell .main:not(:has(.home-landing)) {
+    max-width: none;
+}
+
 .orbit-shell a:focus-visible,
 .orbit-shell button:focus-visible,
 .orbit-shell input:focus-visible {
