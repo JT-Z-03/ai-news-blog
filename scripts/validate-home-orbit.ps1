@@ -5,10 +5,26 @@ $hugoPath = Join-Path $projectRoot "hugo.exe"
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $destination = Join-Path $tempRoot ("ai-news-blog-orbit-" + [guid]::NewGuid())
 $errors = @()
+$cssPath = Join-Path $projectRoot "assets/css/extended/orbit-home.css"
 
 if (-not (Test-Path -LiteralPath $hugoPath)) {
     Write-Error "Hugo executable not found at $hugoPath"
     exit 1
+}
+
+if (-not (Test-Path -LiteralPath $cssPath)) {
+    Write-Error "Orbit homepage stylesheet not found at $cssPath"
+    exit 1
+}
+
+$homeCss = [IO.File]::ReadAllText($cssPath, [Text.Encoding]::UTF8)
+if ($homeCss -match '--orbit-accent-text\s*:') {
+    $errors += "Small homepage labels and links must use neutral ink; --orbit-accent-text is not allowed."
+}
+foreach ($legacyGreen in @('#708800', '#9bb62a', 'rgba(144, 174, 20,')) {
+    if ($homeCss -match [regex]::Escape($legacyGreen)) {
+        $errors += "Only #d4ff3f may be used as the homepage brand accent; found legacy green $legacyGreen."
+    }
 }
 
 New-Item -ItemType Directory -Path $destination | Out-Null
