@@ -36,6 +36,12 @@ try {
         exit $LASTEXITCODE
     }
 
+    $cssFiles = Get-ChildItem -LiteralPath (Join-Path $destination "assets/css") -Filter "*.css" -File
+    $combinedCss = ($cssFiles | ForEach-Object { [IO.File]::ReadAllText($_.FullName) }) -join "`n"
+    if ($combinedCss -notmatch '(?s)@media\s*\(max-width:\s*480px\)\s*\{(?:(?!@media).)*?\.orbit-feature__daily-header\s+a,\s*\.orbit-pane-heading\s+a\s*\{(?=[^}]*display:\s*inline-flex)(?=[^}]*min-height:\s*44px)(?=[^}]*align-items:\s*center)[^}]*\}') {
+        $errors += "Homepage section navigation links should expose a 44px centered mobile hit area in built CSS."
+    }
+
     $homePath = Join-Path $destination "index.html"
     $homeMarkup = [IO.File]::ReadAllText($homePath, [Text.Encoding]::UTF8)
     $homeRootCount = [regex]::Matches($homeMarkup, '<div[^>]*class="[^"]*\borbit-home\b[^"]*"').Count

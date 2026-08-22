@@ -676,6 +676,14 @@
     .orbit-card-meta {
         flex-wrap: wrap;
     }
+
+    .orbit-feature__daily-header a,
+    .orbit-pane-heading a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
