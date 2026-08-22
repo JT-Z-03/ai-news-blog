@@ -650,6 +650,12 @@ body.orbit-shell {
     color: #121212;
 }
 
+@media (min-width: 761px) and (max-width: 943px) {
+    .orbit-article .orbit-page__title {
+        width: min(100%, var(--orbit-reading-width));
+    }
+}
+
 @media (max-width: 760px) {
     .orbit-shell .nav {
         min-height: auto;
