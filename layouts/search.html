@@ -1,0 +1,15 @@
+{{- define "main" }}
+<section class="orbit-search">
+  <header class="orbit-list__header">
+    <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>AI NEWS SEARCH</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+  <div id="searchbox" class="orbit-search__box">
+    <label for="searchInput">输入关键词</label>
+    <input id="searchInput" disabled placeholder="{{ .Params.placeholder | default "搜索文章" }}" aria-label="搜索文章" type="search" autocomplete="off" maxlength="64">
+    <p class="orbit-search__hint">搜索 AI 热点日报与深度分析文章</p>
+    <ul id="searchResults" class="searchResults orbit-search__results" aria-label="搜索结果"></ul>
+  </div>
+</section>
+{{- end }}
