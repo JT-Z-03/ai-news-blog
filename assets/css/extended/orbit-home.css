@@ -1,0 +1,705 @@
+.orbit-home {
+    --orbit-accent: #d4ff3f;
+    --orbit-ink: #121212;
+    --orbit-muted: #717171;
+    --orbit-focus-contrast: #121212;
+    --orbit-border: #e5e5e5;
+    --orbit-surface: #ffffff;
+    --orbit-surface-soft: #f7f7f5;
+    width: min(1200px, calc(100vw - 32px));
+    padding-bottom: clamp(3.5rem, 8vw, 6rem);
+    color: var(--orbit-ink);
+    font-family: "Inter", sans-serif;
+}
+
+[data-theme="dark"] .orbit-home {
+    --orbit-ink: #f5f5f4;
+    --orbit-muted: #a8a8a3;
+    --orbit-focus-contrast: #f5f5f4;
+    --orbit-border: #33332f;
+    --orbit-surface: #191918;
+    --orbit-surface-soft: #212120;
+}
+
+.orbit-home__hero {
+    max-width: 880px;
+    margin-inline: auto;
+    padding: clamp(5rem, 11vw, 8rem) 1.5rem clamp(3.5rem, 7vw, 5rem);
+    text-align: center;
+}
+
+.orbit-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1.35rem;
+    color: var(--orbit-muted);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.orbit-home__hero .orbit-eyebrow {
+    justify-content: center;
+}
+
+.orbit-eyebrow span {
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: 0 0 auto;
+    border-radius: 2px;
+    background: var(--orbit-accent);
+    box-shadow: 0 0 10px rgba(212, 255, 63, 0.5);
+}
+
+.orbit-home__hero h1 {
+    margin: 0;
+    color: var(--orbit-ink);
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(3rem, 8vw, 5.25rem);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+    line-height: 1.02;
+}
+
+.orbit-home__hero h1 span {
+    white-space: nowrap;
+}
+
+.orbit-home__summary {
+    max-width: 670px;
+    margin: 1.5rem auto 0;
+    color: var(--orbit-muted);
+    font-size: clamp(1rem, 1.6vw, 1.08rem);
+    line-height: 1.85;
+}
+
+.orbit-home__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 2rem;
+}
+
+.orbit-button {
+    display: inline-flex;
+    min-height: 2.85rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--orbit-border);
+    border-radius: 999px;
+    background: var(--orbit-surface);
+    color: var(--orbit-ink);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.orbit-button:hover {
+    border-color: var(--orbit-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.orbit-home__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 650px;
+    margin: 2.4rem auto 0;
+    padding: 1.15rem 0;
+    border-block: 1px solid var(--orbit-border);
+}
+
+.orbit-home__stats div {
+    padding-inline: 1rem;
+    border-right: 1px dotted var(--orbit-border);
+}
+
+.orbit-home__stats div:last-child {
+    border-right: 0;
+}
+
+.orbit-home__stats dt {
+    color: var(--orbit-ink);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.orbit-home__stats dd {
+    margin: 0.2rem 0 0;
+    color: var(--orbit-muted);
+    font-size: 0.76rem;
+}
+
+.orbit-feature,
+.orbit-hub {
+    padding: clamp(3.5rem, 7vw, 5.5rem) clamp(1rem, 3vw, 1.5rem);
+    border-top: 1px solid var(--orbit-border);
+}
+
+.orbit-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.orbit-section-heading .orbit-eyebrow {
+    margin-bottom: 0.7rem;
+}
+
+.orbit-section-heading h2 {
+    margin: 0;
+    color: var(--orbit-ink);
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+}
+
+.orbit-section-heading > p {
+    max-width: 28rem;
+    margin: 0;
+    color: var(--orbit-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.orbit-feature__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+    gap: 0.875rem;
+}
+
+.orbit-feature__lead,
+.orbit-feature__daily,
+.orbit-hub__analysis,
+.orbit-hub__daily {
+    border: 1px solid var(--orbit-border);
+    border-radius: 24px;
+    background: var(--orbit-surface);
+}
+
+.orbit-feature__lead {
+    position: relative;
+    padding: 1rem;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.orbit-feature__lead:hover,
+.orbit-feature__lead:focus-within {
+    border-color: var(--orbit-accent);
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.09);
+}
+
+.orbit-feature__media,
+.orbit-analysis-card__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #111111;
+}
+
+.orbit-feature__media {
+    aspect-ratio: 16 / 9;
+}
+
+.orbit-story-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.orbit-feature__lead:hover .orbit-story-image,
+.orbit-feature__lead:focus-within .orbit-story-image,
+.orbit-analysis-card:hover .orbit-story-image,
+.orbit-analysis-card:focus-within .orbit-story-image {
+    transform: scale(1.055);
+}
+
+.orbit-label {
+    position: absolute;
+    left: 0.85rem;
+    top: 0.85rem;
+    padding: 0.38rem 0.72rem;
+    border-radius: 999px;
+    background: var(--orbit-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    color: #121212;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.orbit-feature__copy {
+    padding: 1.35rem 0.45rem 0.45rem;
+}
+
+.orbit-feature__copy time {
+    color: var(--orbit-muted);
+    font-size: 0.76rem;
+}
+
+.orbit-feature__copy h3 {
+    max-width: 42rem;
+    margin: 0.55rem 0 0;
+    color: var(--orbit-ink);
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.22;
+}
+
+.orbit-feature__copy p {
+    max-width: 42rem;
+    margin: 0.8rem 0 1.1rem;
+    color: var(--orbit-muted);
+    font-size: 0.9rem;
+    line-height: 1.75;
+}
+
+.orbit-read-more {
+    display: inline-flex;
+    padding: 0.62rem 1.05rem;
+    border-radius: 999px;
+    background: var(--orbit-accent);
+    color: #121212;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.orbit-feature__daily {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.orbit-feature__daily-header,
+.orbit-pane-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.orbit-feature__daily-header {
+    padding: 0.2rem 0.25rem 1rem;
+}
+
+.orbit-feature__daily-header span,
+.orbit-daily-item__label {
+    color: var(--orbit-ink);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.orbit-feature__daily-header h3,
+.orbit-pane-heading h3 {
+    margin: 0.2rem 0 0;
+    color: var(--orbit-ink);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.orbit-feature__daily-header a,
+.orbit-pane-heading a {
+    position: relative;
+    z-index: 3;
+    color: var(--orbit-ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.orbit-feature__daily-header a::after,
+.orbit-pane-heading a::after {
+    content: " →";
+}
+
+.orbit-feature__daily-item {
+    position: relative;
+    flex: 1;
+    padding: 1.25rem 0.25rem;
+    border-top: 1px dotted var(--orbit-border);
+    transition: transform 0.25s ease;
+}
+
+.orbit-feature__daily-item:hover,
+.orbit-feature__daily-item:focus-within {
+    transform: translateX(4px);
+}
+
+.orbit-feature__daily-item time {
+    color: var(--orbit-ink);
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.orbit-feature__daily-item h4 {
+    margin: 0.45rem 0 0;
+    color: var(--orbit-ink);
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.orbit-feature__daily-item p {
+    margin: 0.55rem 0 0;
+    color: var(--orbit-muted);
+    font-size: 0.82rem;
+    line-height: 1.65;
+}
+
+.orbit-section-heading--hub {
+    margin-bottom: 1.5rem;
+}
+
+.orbit-hub__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.72fr);
+    gap: 0.875rem;
+}
+
+.orbit-hub__analysis,
+.orbit-hub__daily {
+    padding: 1.25rem;
+}
+
+.orbit-pane-heading {
+    margin-bottom: 1rem;
+    padding: 0 0.2rem 0.9rem;
+    border-bottom: 1px dotted var(--orbit-border);
+}
+
+.orbit-analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem;
+}
+
+.orbit-analysis-card {
+    position: relative;
+    min-width: 0;
+    padding: 0.75rem;
+    border: 1px solid var(--orbit-border);
+    border-radius: 18px;
+    background: var(--orbit-surface-soft);
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.orbit-analysis-card:hover,
+.orbit-analysis-card:focus-within {
+    border-color: var(--orbit-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.07);
+}
+
+.orbit-analysis-card__media {
+    aspect-ratio: 380 / 270;
+    border-radius: 13px;
+}
+
+.orbit-analysis-card__copy {
+    padding: 1rem 0.35rem 0.35rem;
+}
+
+.orbit-analysis-card__copy h4 {
+    min-height: 3.25rem;
+    margin: 0;
+    color: var(--orbit-ink);
+    font-size: 1.08rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.orbit-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-top: 0.95rem;
+    padding-top: 0.85rem;
+    border-top: 1px dotted var(--orbit-border);
+    color: var(--orbit-muted);
+    font-size: 0.7rem;
+}
+
+.orbit-card-meta span {
+    color: var(--orbit-ink);
+    font-weight: 700;
+}
+
+.orbit-card-meta time {
+    white-space: nowrap;
+}
+
+.orbit-daily-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    min-height: 5.25rem;
+    padding: 0.75rem 0.2rem;
+    border-bottom: 1px dotted var(--orbit-border);
+    transition: transform 0.25s ease;
+}
+
+.orbit-daily-item:last-child {
+    border-bottom: 0;
+}
+
+.orbit-daily-item:hover,
+.orbit-daily-item:focus-within {
+    transform: translateX(4px);
+}
+
+.orbit-daily-item time {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 3.6rem;
+    border: 1px solid var(--orbit-border);
+    border-radius: 12px;
+    background: var(--orbit-surface-soft);
+}
+
+.orbit-daily-item time strong {
+    color: var(--orbit-ink);
+    font-size: 1.1rem;
+}
+
+.orbit-daily-item time span {
+    margin-top: 0.1rem;
+    color: var(--orbit-muted);
+    font-size: 0.62rem;
+}
+
+.orbit-daily-item h4 {
+    margin: 0.28rem 0 0;
+    color: var(--orbit-ink);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.42;
+}
+
+.orbit-post-link {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    border-radius: inherit;
+}
+
+.orbit-shell .orbit-post-link:focus-visible {
+    outline: 3px solid var(--orbit-focus-contrast);
+    outline-offset: -6px;
+    box-shadow: inset 0 0 0 3px var(--orbit-accent);
+}
+
+.orbit-empty {
+    padding: 5rem 1rem;
+    text-align: center;
+}
+
+.orbit-empty p {
+    color: var(--orbit-muted);
+}
+
+.orbit-empty a {
+    color: var(--orbit-ink);
+}
+
+@keyframes orbit-home-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(1.6rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@supports (animation-timeline: view()) {
+    .orbit-reveal {
+        animation: orbit-home-reveal 0.65s ease-out both;
+        animation-range: entry 4% cover 24%;
+        animation-timeline: view();
+    }
+}
+
+@media (max-width: 920px) {
+    .orbit-feature__grid,
+    .orbit-hub__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orbit-feature__daily {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 1rem;
+    }
+
+    .orbit-feature__daily-header {
+        grid-column: 1 / -1;
+    }
+
+    .orbit-feature__daily-item {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .orbit-home__hero {
+        padding-block: 4.5rem 3.5rem;
+    }
+
+    .orbit-feature,
+    .orbit-hub {
+        padding-block: 4rem;
+    }
+
+    .orbit-section-heading {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .orbit-home {
+        width: min(100%, calc(100vw - 28px));
+    }
+
+    .orbit-home__hero {
+        padding: 4.5rem 0.8rem 3.5rem;
+    }
+
+    .orbit-home__hero h1 {
+        font-size: clamp(2.65rem, 13vw, 3.5rem);
+    }
+
+    .orbit-home__summary br {
+        display: none;
+    }
+
+    .orbit-home__actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .orbit-button {
+        width: 100%;
+    }
+
+    .orbit-home__stats div {
+        padding-inline: 0.45rem;
+    }
+
+    .orbit-home__stats dt {
+        font-size: 1rem;
+    }
+
+    .orbit-home__stats dd {
+        font-size: 0.66rem;
+    }
+
+    .orbit-feature,
+    .orbit-hub {
+        padding: 3.5rem 0;
+    }
+
+    .orbit-section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .orbit-section-heading > p {
+        max-width: none;
+        text-align: left;
+    }
+
+    .orbit-feature__lead,
+    .orbit-feature__daily,
+    .orbit-hub__analysis,
+    .orbit-hub__daily {
+        border-radius: 20px;
+    }
+
+    .orbit-feature__copy h3 {
+        font-size: 1.45rem;
+    }
+
+    .orbit-feature__daily {
+        display: block;
+    }
+
+    .orbit-analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .orbit-analysis-card__copy h4 {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-home__hero {
+        padding: 3.5rem 0 2.75rem;
+    }
+
+    .orbit-feature,
+    .orbit-hub {
+        padding-block: 3rem;
+    }
+
+    .orbit-feature__lead,
+    .orbit-feature__daily,
+    .orbit-hub__analysis,
+    .orbit-hub__daily {
+        padding: 0.75rem;
+    }
+
+    .orbit-feature__copy {
+        padding: 1rem 0.25rem 0.25rem;
+    }
+
+    .orbit-card-meta {
+        flex-wrap: wrap;
+    }
+
+    .orbit-feature__daily-header a,
+    .orbit-pane-heading a {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orbit-reveal {
+        animation: none;
+    }
+
+    .orbit-button,
+    .orbit-feature__lead,
+    .orbit-story-image,
+    .orbit-feature__daily-item,
+    .orbit-analysis-card,
+    .orbit-daily-item {
+        transition-duration: 0.01ms;
+    }
+}
