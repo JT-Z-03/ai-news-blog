@@ -44,7 +44,8 @@
   {{- partial "extend_post_content.html" . }}
   {{- if $isArticle }}
   <footer class="orbit-article__footer post-footer">
-    <ul class="post-tags">{{ range (.GetTerms "tags") }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    <ul class="post-tags">{{ range ($.GetTerms $tags) }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
     {{- if (.Param "ShowPostNavLinks") }}{{ partial "post_nav_links.html" . }}{{ end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
   </footer>
