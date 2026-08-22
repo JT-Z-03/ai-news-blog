@@ -3,6 +3,7 @@ $ErrorActionPreference = "Stop"
 $projectRoot = (Resolve-Path "$PSScriptRoot\..").Path
 $hugoPath = Join-Path $projectRoot "hugo.exe"
 $orbitCssPath = Join-Path $projectRoot "assets/css/extended/orbit-site.css"
+$orbitHomeCssPath = Join-Path $projectRoot "assets/css/extended/orbit-home.css"
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $destination = Join-Path $tempRoot ("ai-news-blog-site-orbit-" + [guid]::NewGuid())
 $fixtureRoot = Join-Path $tempRoot ("ai-news-blog-site-orbit-fixture-" + [guid]::NewGuid())
@@ -34,6 +35,74 @@ function Read-FixtureOutput([string]$relativePath) {
     return [IO.File]::ReadAllText($path, [Text.Encoding]::UTF8)
 }
 
+function Read-GeneratedAsset([string]$assetUrl) {
+    $assetPath = $assetUrl
+    if ([Uri]::IsWellFormedUriString($assetUrl, [UriKind]::Absolute)) {
+        $assetPath = ([Uri]$assetUrl).AbsolutePath
+    }
+    $assetPath = $assetPath.Split("?", 2)[0].TrimStart("/").Replace("/", [IO.Path]::DirectorySeparatorChar)
+    $path = Join-Path $destination $assetPath
+    if (-not (Test-Path -LiteralPath $path)) {
+        $errors.Add("Missing generated asset: $assetUrl")
+        return ""
+    }
+    return [IO.File]::ReadAllText($path, [Text.Encoding]::UTF8)
+}
+
+function Require-BoundedSummaries([string]$markup, [string]$relativePath, [int]$limit) {
+    $matches = [regex]::Matches($markup, '(?s)<p class="orbit-list__summary">(?<summary>.*?)</p>')
+    if ($matches.Count -eq 0) {
+        $errors.Add("$relativePath should render identifiable bounded list summaries.")
+        return
+    }
+
+    foreach ($match in $matches) {
+        $plainText = [Net.WebUtility]::HtmlDecode([regex]::Replace($match.Groups["summary"].Value, "<[^>]+>", "")).Trim()
+        if ($plainText.Length -gt $limit) {
+            $errors.Add("$relativePath rendered a list summary with $($plainText.Length) characters; the editorial limit is $limit.")
+        }
+    }
+}
+
+function Require-AllGeneratedSummariesBounded([int]$limit) {
+    $summaryCount = 0
+    Get-ChildItem -LiteralPath $destination -Filter "*.html" -File -Recurse | ForEach-Object {
+        $markup = [IO.File]::ReadAllText($_.FullName, [Text.Encoding]::UTF8)
+        $matches = [regex]::Matches($markup, '(?s)<p class="orbit-list__summary">(?<summary>.*?)</p>')
+        $summaryCount += $matches.Count
+        foreach ($match in $matches) {
+            $plainText = [Net.WebUtility]::HtmlDecode([regex]::Replace($match.Groups["summary"].Value, "<[^>]+>", "")).Trim()
+            if ($plainText.Length -gt $limit) {
+                $relativePath = [IO.Path]::GetRelativePath($destination, $_.FullName)
+                $errors.Add("$relativePath rendered a list summary with $($plainText.Length) characters; the editorial limit is $limit.")
+            }
+        }
+    }
+    if ($summaryCount -eq 0) {
+        $errors.Add("Generated output should contain bounded Orbit list summaries.")
+    }
+}
+
+function ConvertTo-RelativeLuminance([string]$hexColor) {
+    if ($hexColor -notmatch '^#(?<red>[0-9a-f]{2})(?<green>[0-9a-f]{2})(?<blue>[0-9a-f]{2})$') {
+        throw "Unsupported CSS color: $hexColor"
+    }
+
+    $channels = @($Matches.red, $Matches.green, $Matches.blue) | ForEach-Object {
+        $value = [Convert]::ToInt32($_, 16) / 255.0
+        if ($value -le 0.04045) { $value / 12.92 } else { [Math]::Pow(($value + 0.055) / 1.055, 2.4) }
+    }
+    return (0.2126 * $channels[0]) + (0.7152 * $channels[1]) + (0.0722 * $channels[2])
+}
+
+function Get-ContrastRatio([string]$foreground, [string]$background) {
+    $first = ConvertTo-RelativeLuminance $foreground
+    $second = ConvertTo-RelativeLuminance $background
+    $lighter = [Math]::Max($first, $second)
+    $darker = [Math]::Min($first, $second)
+    return ($lighter + 0.05) / ($darker + 0.05)
+}
+
 New-Item -ItemType Directory -Path $destination | Out-Null
 New-Item -ItemType Directory -Path $fixtureDestination | Out-Null
 try {
@@ -52,11 +121,20 @@ try {
 
     $fixtureContentRoot = Join-Path $fixtureRoot "content"
     $fixtureSectionRoot = Join-Path $fixtureContentRoot "orbit-empty-fixture"
+    $fixtureArchiveRoot = Join-Path $fixtureContentRoot "orbit-archive-fixture"
     $fixtureConfigPath = Join-Path $fixtureRoot "empty-list-fixture.toml"
     New-Item -ItemType Directory -Path $fixtureSectionRoot -Force | Out-Null
+    New-Item -ItemType Directory -Path $fixtureArchiveRoot -Force | Out-Null
     [IO.File]::WriteAllText((Join-Path $fixtureSectionRoot "_index.md"), @"
 ---
 title: "Empty list fixture"
+---
+"@, [Text.Encoding]::UTF8)
+    [IO.File]::WriteAllText((Join-Path $fixtureArchiveRoot "index.md"), @"
+---
+title: "Archive fixture"
+layout: "archives"
+url: "/orbit-archive-fixture/"
 ---
 "@, [Text.Encoding]::UTF8)
 
@@ -65,6 +143,7 @@ title: "Empty list fixture"
     $projectAssetsRoot = (Join-Path $projectRoot "assets").Replace("\", "/")
     $projectLayoutsRoot = (Join-Path $projectRoot "layouts").Replace("\", "/")
     $fixtureSectionSource = $fixtureSectionRoot.Replace("\", "/")
+    $fixtureArchiveSource = $fixtureArchiveRoot.Replace("\", "/")
     $utf8WithoutBom = [Text.UTF8Encoding]::new($false)
     [IO.File]::WriteAllText($fixtureConfigPath, @"
 [module]
@@ -83,6 +162,9 @@ title: "Empty list fixture"
   [[module.mounts]]
     source = "$fixtureSectionSource"
     target = "content/orbit-empty-fixture"
+  [[module.mounts]]
+    source = "$fixtureArchiveSource"
+    target = "content/orbit-archive-fixture"
 "@, $utf8WithoutBom)
     & $hugoPath --source $projectRoot --config "$projectRoot/hugo.toml,$fixtureConfigPath" --destination $fixtureDestination --cleanDestinationDir
     if ($LASTEXITCODE -ne 0) { throw "Hugo empty-list fixture build failed with exit code $LASTEXITCODE" }
@@ -134,12 +216,39 @@ title: "Empty list fixture"
     $emptyListMarkup = Read-FixtureOutput "orbit-empty-fixture/index.html"
     $searchMarkup = Read-Output "search/index.html"
     $notFoundMarkup = Read-Output "404.html"
+    $archiveMarkup = Read-FixtureOutput "orbit-archive-fixture/index.html"
 
     Require-Match $searchMarkup '<section class="orbit-search"' "Search should use the Orbit search layout."
     Require-Match $searchMarkup 'id="searchInput"' "Search must preserve PaperMod's search input hook."
     Require-Match $searchMarkup 'id="searchResults"' "Search must preserve PaperMod's results hook."
+    Require-Match $searchMarkup '<p id="searchStatus" class="orbit-search__status" role="status" aria-live="polite" aria-atomic="true" data-state="initial">输入关键词开始搜索。</p>' "Search should render a visible polite live-status element in its initial state."
+    $searchScriptMatch = [regex]::Match($searchMarkup, '<script\b[^>]*\bsrc="(?<src>[^"]*assets/js/search[^"]+\.js)"')
+    if (-not $searchScriptMatch.Success) {
+        $errors.Add("Search output should load its generated behavior bundle.")
+    }
+    else {
+        $searchScript = Read-GeneratedAsset $searchScriptMatch.Groups["src"].Value
+        foreach ($stateContract in ([ordered]@{
+            "initial" = "输入关键词开始搜索。"
+            "loading" = "正在加载搜索索引…"
+            "results" = " 条搜索结果。"
+            "empty" = "没有找到匹配结果。"
+            "failure" = "搜索暂时不可用，请稍后重试。"
+        }).GetEnumerator()) {
+            if ($searchScript -notmatch [regex]::Escape($stateContract.Value)) {
+                $errors.Add("Search behavior should ship the $($stateContract.Key) live-status state.")
+            }
+        }
+        Require-Match $searchScript '\.dataset\.state=' "Search behavior should expose each live-status state on the status element."
+        Require-Match $searchScript '\.textContent=' "Search behavior should update visible live-status text."
+    }
     Require-Match $notFoundMarkup '<section class="orbit-not-found"' "404 should use the Orbit error layout."
     Require-Match $notFoundMarkup 'href="/"' "404 should provide a direct homepage action."
+    Require-Match $archiveMarkup '(?s)<section class="orbit-archive-year"[^>]*>.*?<section class="orbit-archive-month"' "Archive output should nest month groups within each year."
+    Require-Match $archiveMarkup '<h3 id="month-2026-08">08 月</h3>' "The isolated archive fixture should render its August 2026 month heading."
+    if (Test-Path -LiteralPath (Join-Path $destination "orbit-archive-fixture\index.html")) {
+        $errors.Add("The temporary archive fixture must not introduce a production route.")
+    }
 
     Require-Match $deepListMarkup '<section class="orbit-list"' "Deep-analysis category should use the shared Orbit list."
     Require-Match $dailyListMarkup '<div class="orbit-list__items"' "Daily category should use the grouped list surface."
@@ -154,11 +263,22 @@ title: "Empty list fixture"
     if ($deepListMarkup -match 'class="post-entry') {
         $errors.Add("Orbit lists should not retain PaperMod floating post-entry cards.")
     }
+    foreach ($listOutput in ([ordered]@{
+        "categories/深度分析/index.html" = $deepListMarkup
+        "categories/日报/index.html" = $dailyListMarkup
+        "categories/日报/page/2/index.html" = $dailyPageTwoMarkup
+        "tags/AI/index.html" = $tagListMarkup
+        "posts/index.html" = $postsSectionMarkup
+    }).GetEnumerator()) {
+        Require-BoundedSummaries $listOutput.Value $listOutput.Key 160
+    }
+    Require-AllGeneratedSummariesBounded 160
+    Require-Match $deepListMarkup ([regex]::Escape('<p class="orbit-list__summary">从 V4-Flash、V4-Pro、峰谷定价到开源 Harness，DeepSeek 正在把竞争单位从一次模型调用扩展为一次完整的 Agent 任务。</p>')) "List rows should prefer an authored description before falling back to an automatic summary."
 
     Require-Match $articleMarkup '<article class="orbit-page orbit-article"' "Regular posts should render the reading-first article layout."
     Require-Match $articleMarkup '<body[^>]*class="[^"]*\borbit-nav-deep-analysis\b' "Deep-analysis articles should expose their active navigation context."
     Require-Match $articleMarkup 'class="orbit-reading-progress"' "Regular posts should render a reading-progress control."
-    Require-Match $articleMarkup 'class="orbit-reading-progress"[^>]*role="progressbar"[^>]*aria-valuemin="0"[^>]*aria-valuemax="100"[^>]*aria-valuenow="0"' "Reading progress should expose its initial ARIA range and value."
+    Require-Match $articleMarkup 'class="orbit-reading-progress"\s+hidden\s+role="progressbar"[^>]*aria-valuemin="0"[^>]*aria-valuemax="100"[^>]*aria-valuenow="0"' "Reading progress should be hidden until its script computes a meaningful scroll range."
     Require-Match $articleMarkup '<span class="orbit-reading-progress__bar"></span>' "Reading progress should render its visual bar."
     Require-Match $articleMarkup '<span class="orbit-reading-progress__label">阅读进度 0%</span>' "Reading progress should render its visible value label."
     Require-Match $articleMarkup 'class="orbit-article__body post-content md-content"' "Regular posts should expose the constrained reading body."
@@ -178,6 +298,32 @@ title: "Empty list fixture"
     }
 
     $orbitCss = [IO.File]::ReadAllText($orbitCssPath, [Text.Encoding]::UTF8)
+    $orbitHomeCss = [IO.File]::ReadAllText($orbitHomeCssPath, [Text.Encoding]::UTF8)
+    $siteMutedMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
+    $homeMutedMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
+    if (-not ($siteMutedMatch.Success -and $homeMutedMatch.Success)) {
+        $errors.Add("Orbit styles should declare their light muted-text tokens.")
+    }
+    else {
+        $siteMuted = $siteMutedMatch.Groups["color"].Value
+        $homeMuted = $homeMutedMatch.Groups["color"].Value
+        if ($siteMuted -ne $homeMuted) {
+            $errors.Add("Orbit site and homepage muted-text tokens should stay consistent.")
+        }
+        $mutedContrast = Get-ContrastRatio $siteMuted "#fbfbf9"
+        if ($mutedContrast -lt 4.5) {
+            $errors.Add("Light muted text contrast is $([Math]::Round($mutedContrast, 2)):1; it must meet WCAG AA 4.5:1.")
+        }
+    }
+    Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "Light Orbit pages should declare an ink focus-contrast token."
+    Require-Match $orbitCss '(?s)\[data-theme="dark"\]\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "Dark Orbit pages should declare an off-white focus-contrast token."
+    Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "The homepage should share the light focus-contrast token."
+    Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "The homepage should share the dark focus-contrast token."
+    Require-Match $orbitCss '(?s)\.orbit-shell a:focus-visible,[^{]*\.orbit-shell input:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Shared focus indicators should combine a contrasting outline with the lime cue."
+    Require-Match $orbitHomeCss '(?s)\.orbit-post-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*inset\s+0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Image-card focus should combine an inset lime cue with a contrasting outline."
+    Require-Match $orbitCss '(?s)\.orbit-search #searchInput:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-input focus should combine the contrasting outline with the lime cue."
+    Require-Match $orbitCss '(?s)\.orbit-search__status\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Search live status should be visibly styled with the readable muted token."
+    Require-Match $orbitCss '(?s)\.orbit-archive-month h3\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Archive month groups should expose a visible secondary heading."
     Require-Match $orbitCss '(?s)\.orbit-shell \.main:not\(:has\(\.home-landing\)\)\s*\{[^}]*max-width:\s*none;' "The shared shell must override the legacy non-home main width."
     Require-Match $orbitCss '(?s)\.orbit-shell \.header-nav\s*\{[^}]*max-width:\s*min\(var\(--orbit-shell-width\),\s*calc\(100vw\s*-\s*32px\)\);' "The header-nav rule should declare the shared Orbit shell width."
     Require-Match $orbitCss '(?s)\.orbit-reading-progress\s*\{[^}]*margin:\s*2\.6rem\s+auto\s+2\.5rem;' "The reading-progress rule should declare the reviewed compact margin."
@@ -188,7 +334,7 @@ title: "Empty list fixture"
     Require-Match $orbitCss '(?s)\.orbit-article \.orbit-page__description\s*\{[^}]*max-width:\s*42rem;' "The article-description rule should declare its independent 42rem reading measure."
     Require-Match $orbitCss '(?s)\.orbit-article__body\s*\{[^}]*font-size:\s*1\.1rem;' "The article-body rule should declare the reviewed reading size."
     Require-Match $orbitCss '(?s)\.orbit-list__row h2\s*\{[^}]*font-size:\s*clamp\(1\.5rem,\s*3vw,\s*2\.05rem\);' "The list-title rule should declare the reviewed maximum size."
-    Require-Match $orbitCss '(?s)\.orbit-shell \.orbit-search__results a\.entry-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-accent\))(?=[^}]*outline-offset:\s*3px)[^}]*\}' "The search-result focus rule should declare the 3px Orbit accent outline and offset."
+    Require-Match $orbitCss '(?s)\.orbit-shell \.orbit-search__results a\.entry-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-result focus should combine the contrasting outline with the lime cue."
     Require-Match $orbitCss '(?s)\.orbit-nav-deep-analysis \.menu a\[href\*="%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90/"\] span,[^{]*\{[^}]*box-shadow:\s*inset\s+0\s+-2px\s+var\(--orbit-accent\);' "The deep-analysis navigation rule should declare the Orbit accent underline."
     Require-Match $orbitCss '(?s)\.orbit-page__title\s*\{[^}]*font-family:\s*"Outfit"' "Orbit page titles should use the Outfit display face."
     Require-Match $orbitCss '(?s)\.orbit-article__body[^\{]*h2[^\{]*\{[^}]*font-family:\s*"Outfit"' "Article headings should use the Outfit display face."

@@ -9,6 +9,7 @@
     <label for="searchInput">输入关键词</label>
     <input id="searchInput" disabled placeholder="{{ .Params.placeholder | default "搜索文章" }}" aria-label="搜索文章" type="search" autocomplete="off" maxlength="64">
     <p class="orbit-search__hint">搜索 AI 热点日报与深度分析文章</p>
+    <p id="searchStatus" class="orbit-search__status" role="status" aria-live="polite" aria-atomic="true" data-state="initial">输入关键词开始搜索。</p>
     <ul id="searchResults" class="searchResults orbit-search__results" aria-label="搜索结果"></ul>
   </div>
 </section>

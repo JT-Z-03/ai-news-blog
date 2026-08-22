@@ -2,7 +2,7 @@
 {{- $isArticle := eq .Section "posts" -}}
 <article class="orbit-page {{ if $isArticle }}orbit-article{{ else }}orbit-static-page{{ end }}">
   {{- if $isArticle }}
-  <div class="orbit-reading-progress" role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+  <div class="orbit-reading-progress" hidden role="progressbar" aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
     <span class="orbit-reading-progress__bar"></span>
     <span class="orbit-reading-progress__label">阅读进度 0%</span>
   </div>
