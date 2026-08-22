@@ -559,6 +559,21 @@
     }
 }
 
+@media (max-width: 760px) {
+    .orbit-home__hero {
+        padding-block: 4.5rem 3.5rem;
+    }
+
+    .orbit-feature,
+    .orbit-hub {
+        padding-block: 4rem;
+    }
+
+    .orbit-section-heading {
+        margin-bottom: 1.5rem;
+    }
+}
+
 @media (max-width: 640px) {
     .orbit-home {
         width: min(100%, calc(100vw - 28px));
@@ -634,6 +649,32 @@
 
     .orbit-analysis-card__copy h4 {
         min-height: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-home__hero {
+        padding: 3.5rem 0 2.75rem;
+    }
+
+    .orbit-feature,
+    .orbit-hub {
+        padding-block: 3rem;
+    }
+
+    .orbit-feature__lead,
+    .orbit-feature__daily,
+    .orbit-hub__analysis,
+    .orbit-hub__daily {
+        padding: 0.75rem;
+    }
+
+    .orbit-feature__copy {
+        padding: 1rem 0.25rem 0.25rem;
+    }
+
+    .orbit-card-meta {
+        flex-wrap: wrap;
     }
 }
 
