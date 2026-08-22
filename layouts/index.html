@@ -2,120 +2,146 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $deepArticles := where $pages "Params.categories" "intersect" (slice "深度分析") }}
 {{- $dailyArticles := where $pages "Params.categories" "intersect" (slice "日报") }}
-{{- $signalDeep := first 1 $deepArticles }}
-{{- $signalDaily := first 2 $dailyArticles }}
+{{- $featuredDeep := first 1 $deepArticles }}
+{{- $featuredDaily := first 2 $dailyArticles }}
+{{- $analysisArticles := first 2 (after 1 $deepArticles) }}
+{{- $dailyStream := first 6 (after 2 $dailyArticles) }}
+{{- $analysisImages := slice
+    "/images/home/orbit/local-inference.webp"
+    "/images/home/orbit/generated-genomes.webp"
+-}}
 
-<div class="home-landing">
-    <header class="home-hero">
-        <div class="home-hero__copy">
-            <p class="home-kicker">AI NEWS INTELLIGENCE</p>
-            <h1>AI 热点追踪</h1>
-            <p class="home-hero__summary">
-                深度分析 + 精选日报，追踪 AI 行业最重要的事。少搬运，多筛选；少噪音，多线索。
-            </p>
-            <div class="home-actions" aria-label="首页快捷入口">
-                <a class="home-button home-button--primary" href="/categories/深度分析/">深度文章</a>
-                <a class="home-button" href="/categories/日报/">日报归档</a>
-                <a class="home-button" href="/search/">搜索</a>
-            </div>
-            <dl class="home-stats" aria-label="站点内容概览">
-                <div>
-                    <dt>{{ len $deepArticles }}</dt>
-                    <dd>深度分析</dd>
-                </div>
-                <div>
-                    <dt>{{ len $dailyArticles }}</dt>
-                    <dd>日报归档</dd>
-                </div>
-                <div>
-                    <dt>可追溯</dt>
-                    <dd>来源链接</dd>
-                </div>
-            </dl>
-        </div>
-        <div class="home-signal" aria-label="精选内容速览">
-            <div class="home-signal__ring home-signal__ring--outer" aria-hidden="true"></div>
-            <div class="home-signal__ring home-signal__ring--inner" aria-hidden="true"></div>
-            <div class="home-signal__sweep" aria-hidden="true"></div>
-            <div class="home-signal__node home-signal__node--one" aria-hidden="true"></div>
-            <div class="home-signal__node home-signal__node--two" aria-hidden="true"></div>
-            <div class="home-signal__node home-signal__node--three" aria-hidden="true"></div>
-            {{- range $signalDeep }}
-            <a class="home-signal__panel home-signal__panel--lead" href="{{ .RelPermalink }}">
-                <span class="home-signal__label">深度解析</span>
-                <strong>{{ .Title }}</strong>
-                <em>{{ with .Description }}{{ . | plainify | htmlUnescape | truncate 52 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 52 }}{{ end }}</em>
-            </a>
-            {{- end }}
-            {{- range $index, $item := $signalDaily }}
-            <a class="home-signal__panel {{ if eq $index 0 }}home-signal__panel--small{{ else }}home-signal__panel--wide{{ end }}" href="{{ $item.RelPermalink }}">
-                <span class="home-signal__label">最新日报</span>
-                <strong>{{ $item.Title }}</strong>
-                <em>{{ with $item.Description }}{{ . | plainify | htmlUnescape | truncate 46 }}{{ else }}{{ $item.Summary | plainify | htmlUnescape | truncate 46 }}{{ end }}</em>
-            </a>
-            {{- end }}
-        </div>
+<div class="home-landing orbit-home">
+    <header class="orbit-home__hero orbit-reveal">
+        <p class="orbit-eyebrow"><span aria-hidden="true"></span>AI NEWS INTELLIGENCE</p>
+        <h1>从每日信号，<br><span>到深度判断</span></h1>
+        <p class="orbit-home__summary">
+            追踪 AI 行业真正重要的变化：用日报快速过滤噪音，<br>
+            用深度分析解释变化为什么发生、接下来会影响谁。
+        </p>
+        <nav class="orbit-home__actions" aria-label="首页快捷入口">
+            <a class="orbit-button" href="/categories/深度分析/">阅读深度分析</a>
+            <a class="orbit-button" href="/categories/日报/">浏览每日日报</a>
+            <a class="orbit-button" href="/search/">搜索全部内容</a>
+        </nav>
+        <dl class="orbit-home__stats" aria-label="站点内容概览">
+            <div><dt>{{ len $deepArticles }}</dt><dd>篇深度分析</dd></div>
+            <div><dt>{{ len $dailyArticles }}</dt><dd>期精选日报</dd></div>
+            <div><dt>100%</dt><dd>来源可追溯</dd></div>
+        </dl>
     </header>
 
-    <div class="home-content">
-        {{- if $deepArticles }}
-        <section class="home-section" aria-labelledby="home-deep-title">
-            <div class="home-section__header">
-                <div>
-                    <p class="home-section__eyebrow">ANALYSIS</p>
-                    <h2 id="home-deep-title">深度文章</h2>
-                </div>
-                <a class="home-section__link" href="/categories/深度分析/">查看全部</a>
+    {{- if or $featuredDeep $featuredDaily }}
+    <section class="orbit-feature orbit-reveal" aria-labelledby="orbit-feature-title">
+        <header class="orbit-section-heading">
+            <div>
+                <p class="orbit-eyebrow"><span aria-hidden="true"></span>TODAY'S SIGNAL</p>
+                <h2 id="orbit-feature-title">今天最值得关注的变化</h2>
             </div>
+            <p>先看结论，再决定哪里值得继续深挖。</p>
+        </header>
 
-            <div class="home-feature-grid">
-                {{- range (first 3 $deepArticles) }}
-                <article class="home-article-card">
-                    <div class="home-card-meta">
-                        <time>{{ .Date.Format "2006年1月2日" }}</time>
-                        {{- with .Params.tags }}
-                        <span>{{ index . 0 }}</span>
-                        {{- end }}
+        <div class="orbit-feature__grid">
+            {{- range $featuredDeep }}
+            <article class="orbit-feature__lead">
+                <div class="orbit-feature__media">
+                    <img class="orbit-story-image" src="{{ "/images/home/orbit/deepseek-agent-platform.webp" | relURL }}" alt="{{ .Title | plainify }}" width="1200" height="826" decoding="async">
+                    <span class="orbit-label">深度分析</span>
+                </div>
+                <div class="orbit-feature__copy">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+                    <h3>{{ .Title }}</h3>
+                    <p>{{ with .Description }}{{ . | plainify | htmlUnescape | truncate 132 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 132 }}{{ end }}</p>
+                    <span class="orbit-read-more" aria-hidden="true">阅读全文</span>
+                </div>
+                <a class="orbit-post-link" href="{{ .RelPermalink }}" aria-label="阅读全文：{{ .Title | plainify }}"></a>
+            </article>
+            {{- end }}
+
+            <div class="orbit-feature__daily" aria-label="最新日报">
+                <div class="orbit-feature__daily-header">
+                    <div>
+                        <span>DAILY BRIEF</span>
+                        <h3>最新日报</h3>
                     </div>
-                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                    {{- if .Summary }}
-                    <p>{{ .Summary | plainify | htmlUnescape | truncate 128 }}</p>
-                    {{- end }}
-                    <a class="home-card-cta" href="{{ .Permalink }}">阅读全文</a>
-                    <a class="entry-link" aria-label="阅读全文：{{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-                </article>
-                {{- end }}
-            </div>
-        </section>
-        {{- end }}
-
-        {{- if $dailyArticles }}
-        <section class="home-section home-section--daily" aria-labelledby="home-daily-title">
-            <div class="home-section__header">
-                <div>
-                    <p class="home-section__eyebrow">DAILY BRIEF</p>
-                    <h2 id="home-daily-title">日报</h2>
+                    <a href="/categories/日报/">全部日报</a>
                 </div>
-                <a class="home-section__link" href="/categories/日报/">查看全部</a>
-            </div>
-
-            <div class="home-daily-list">
-                {{- range (first 6 $dailyArticles) }}
-                <article class="home-daily-item">
-                    <time>{{ .Date.Format "01-02" }}</time>
-                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                    <span>{{ with .Params.categories }}{{ index . 0 }}{{ end }}</span>
+                {{- range $featuredDaily }}
+                <article class="orbit-feature__daily-item">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01月02日" }}</time>
+                    <h4>{{ .Title }}</h4>
+                    <p>{{ with .Description }}{{ . | plainify | htmlUnescape | truncate 78 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 78 }}{{ end }}</p>
+                    <a class="orbit-post-link" href="{{ .RelPermalink }}" aria-label="阅读日报：{{ .Title | plainify }}"></a>
                 </article>
                 {{- end }}
             </div>
-        </section>
-        {{- end }}
+        </div>
+    </section>
+    {{- end }}
 
-        {{- if and (not $deepArticles) (not $dailyArticles) }}
-        <section class="home-empty">
-            <p>暂无文章，<a href="/about/">关于本站</a></p>
-        </section>
-        {{- end }}
-    </div>
+    {{- if or $analysisArticles $dailyStream }}
+    <section class="orbit-hub orbit-reveal" aria-labelledby="orbit-hub-title">
+        <header class="orbit-section-heading orbit-section-heading--hub">
+            <div>
+                <p class="orbit-eyebrow"><span aria-hidden="true"></span>KEEP TRACKING</p>
+                <h2 id="orbit-hub-title">继续追踪</h2>
+            </div>
+            <p>一边掌握当天发生了什么，一边理解它为什么重要。</p>
+        </header>
+
+        <div class="orbit-hub__grid">
+            <div class="orbit-hub__analysis">
+                <div class="orbit-pane-heading">
+                    <h3>深度分析</h3>
+                    <a href="/categories/深度分析/">查看全部</a>
+                </div>
+                <div class="orbit-analysis-grid">
+                    {{- range $index, $article := $analysisArticles }}
+                    {{- $image := index $analysisImages $index }}
+                    <article class="orbit-analysis-card">
+                        <div class="orbit-analysis-card__media">
+                            <img class="orbit-story-image" src="{{ $image | relURL }}" alt="{{ $article.Title | plainify }}" width="1200" height="826" loading="lazy" decoding="async">
+                            <span class="orbit-label">深度分析</span>
+                        </div>
+                        <div class="orbit-analysis-card__copy">
+                            <h4>{{ $article.Title }}</h4>
+                            <div class="orbit-card-meta">
+                                <span>{{ site.Params.author | default "钟懿" }}</span>
+                                <time datetime="{{ $article.Date.Format "2006-01-02" }}">{{ $article.Date.Format "2006年1月2日" }}</time>
+                            </div>
+                        </div>
+                        <a class="orbit-post-link" href="{{ $article.RelPermalink }}" aria-label="阅读全文：{{ $article.Title | plainify }}"></a>
+                    </article>
+                    {{- end }}
+                </div>
+            </div>
+
+            <div class="orbit-hub__daily">
+                <div class="orbit-pane-heading">
+                    <h3>每日日报</h3>
+                    <a href="/categories/日报/">查看全部</a>
+                </div>
+                <div class="orbit-daily-stream">
+                    {{- range $dailyStream }}
+                    <article class="orbit-daily-item">
+                        <time datetime="{{ .Date.Format "2006-01-02" }}"><strong>{{ .Date.Format "02" }}</strong><span>{{ .Date.Format "2006.01" }}</span></time>
+                        <div>
+                            <span class="orbit-daily-item__label">AI 日报</span>
+                            <h4>{{ .Title }}</h4>
+                        </div>
+                        <a class="orbit-post-link" href="{{ .RelPermalink }}" aria-label="阅读日报：{{ .Title | plainify }}"></a>
+                    </article>
+                    {{- end }}
+                </div>
+            </div>
+        </div>
+    </section>
+    {{- end }}
+
+    {{- if and (not $deepArticles) (not $dailyArticles) }}
+    <section class="orbit-empty">
+        <p>暂无文章，<a href="/about/">了解本站</a></p>
+    </section>
+    {{- end }}
 </div>
 {{- end }}

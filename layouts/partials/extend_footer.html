@@ -1,0 +1,25 @@
+<script>
+(() => {
+  const progress = document.querySelector('.orbit-article [role="progressbar"]');
+  const article = document.querySelector('.orbit-article__body');
+  if (!progress || !article) return;
+
+  const bar = progress.firstElementChild;
+  const label = progress.lastElementChild;
+
+  const updateProgress = () => {
+    const start = article.getBoundingClientRect().top + window.scrollY;
+    const distance = Math.max(article.offsetHeight - window.innerHeight, 0);
+    const percent = distance === 0 ? 100 : Math.min(100, Math.max(0, ((window.scrollY - start) / distance) * 100));
+    const rounded = Math.round(percent);
+    progress.hidden = distance === 0;
+    progress.setAttribute('aria-valuenow', String(rounded));
+    bar.style.transform = `scaleX(${percent / 100})`;
+    label.textContent = `阅读进度 ${rounded}%`;
+  };
+
+  updateProgress();
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  window.addEventListener('resize', updateProgress);
+})();
+</script>
