@@ -7,6 +7,7 @@
 {{- $bodyClasses := slice "orbit-shell" (printf "orbit-kind-%s" .Kind) -}}
 {{- with .Layout }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-layout-%s" .) }}{{ end -}}
 {{- with .Section }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-section-%s" .) }}{{ end -}}
+{{- if (or (ne .Kind `page`) (eq .Layout `archives`) (eq .Layout `search`)) }}{{ $bodyClasses = $bodyClasses | append "list" }}{{ end -}}
 <body class="{{ delimit $bodyClasses " " }}" id="top">
     {{ partialCached "header.html" . .Page -}}
     <main class="main">

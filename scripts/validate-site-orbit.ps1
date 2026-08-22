@@ -2,6 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path "$PSScriptRoot\..").Path
 $hugoPath = Join-Path $projectRoot "hugo.exe"
+$orbitCssPath = Join-Path $projectRoot "assets/css/extended/orbit-site.css"
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $destination = Join-Path $tempRoot ("ai-news-blog-site-orbit-" + [guid]::NewGuid())
 $errors = [Collections.Generic.List[string]]::new()
@@ -40,6 +41,30 @@ try {
         $markup = Read-Output $relativePath
         Require-Match $markup '<body[^>]*class="[^"]*\borbit-shell\b' "$relativePath should use the shared Orbit shell."
     }
+
+    foreach ($relativePath in @(
+        "index.html",
+        "categories/深度分析/index.html",
+        "categories/日报/index.html",
+        "search/index.html",
+        "404.html"
+    )) {
+        $markup = Read-Output $relativePath
+        Require-Match $markup '<body[^>]*class="[^"]*\blist\b' "$relativePath should retain PaperMod's list body class."
+    }
+
+    foreach ($relativePath in @(
+        "posts/deepseek-v4-agent-platform/index.html",
+        "about/index.html"
+    )) {
+        $markup = Read-Output $relativePath
+        if ($markup -match '<body[^>]*class="[^"]*\blist\b') {
+            $errors.Add("$relativePath should not use PaperMod's list body class.")
+        }
+    }
+
+    $orbitCss = [IO.File]::ReadAllText($orbitCssPath, [Text.Encoding]::UTF8)
+    Require-Match $orbitCss '(?s)\.orbit-shell \.main:not\(:has\(\.home-landing\)\)\s*\{[^}]*max-width:\s*none;' "The shared shell must override the legacy non-home main width."
 }
 finally {
     $resolvedDestination = [IO.Path]::GetFullPath($destination)
