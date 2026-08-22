@@ -21,7 +21,11 @@
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
       </div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-      {{ if ne (.Param "hideSummary") true }}<p>{{ .Summary | plainify | htmlUnescape }}</p>{{ end }}
+      {{ if ne (.Param "hideSummary") true }}
+        {{- $summary := .Description -}}
+        {{- if not $summary }}{{ $summary = .Summary }}{{ end -}}
+        <p class="orbit-list__summary">{{ $summary | plainify | htmlUnescape | truncate 159 "…" }}</p>
+      {{- end }}
       {{ if not (.Param "hideMeta") }}<div class="orbit-list__meta">{{ partial "post_meta.html" . }}</div>{{ end }}
     </article>
     {{ end }}

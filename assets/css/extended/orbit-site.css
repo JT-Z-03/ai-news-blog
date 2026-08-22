@@ -1,7 +1,8 @@
 :root {
     --orbit-accent: #d4ff3f;
     --orbit-ink: #121212;
-    --orbit-muted: #767676;
+    --orbit-muted: #747474;
+    --orbit-focus-contrast: #121212;
     --orbit-border: #e5e5e5;
     --orbit-page: #fbfbf9;
     --orbit-surface: #ffffff;
@@ -13,6 +14,7 @@
 [data-theme="dark"] {
     --orbit-ink: #f5f5f4;
     --orbit-muted: #a8a8a3;
+    --orbit-focus-contrast: #f5f5f4;
     --orbit-border: #33332f;
     --orbit-page: #111110;
     --orbit-surface: #191918;
@@ -47,8 +49,9 @@ body.orbit-shell {
 .orbit-shell a:focus-visible,
 .orbit-shell button:focus-visible,
 .orbit-shell input:focus-visible {
-    outline: 3px solid var(--orbit-accent);
+    outline: 3px solid var(--orbit-focus-contrast);
     outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--orbit-accent);
 }
 
 .orbit-shell .menu a:hover {
@@ -492,12 +495,20 @@ body.orbit-shell {
 
 .orbit-search #searchInput:focus-visible {
     border-color: var(--orbit-accent);
-    outline: 3px solid var(--orbit-accent);
+    outline: 3px solid var(--orbit-focus-contrast);
     outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--orbit-accent);
 }
 
 .orbit-search__hint {
     margin: 0.8rem 0 0;
+    color: var(--orbit-muted);
+    font-size: 0.9rem;
+}
+
+.orbit-search__status {
+    min-height: 1.5em;
+    margin: 0.6rem 0 0;
     color: var(--orbit-muted);
     font-size: 0.9rem;
 }
@@ -549,8 +560,9 @@ body.orbit-shell {
 }
 
 .orbit-shell .orbit-search__results a.entry-link:focus-visible {
-    outline: 3px solid var(--orbit-accent);
+    outline: 3px solid var(--orbit-focus-contrast);
     outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--orbit-accent);
 }
 
 .orbit-search__results .entry-content {
@@ -581,6 +593,15 @@ body.orbit-shell {
     font-family: "Inter", system-ui, sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
+}
+
+.orbit-archive-month h3 {
+    margin: 1.5rem 0 0;
+    color: var(--orbit-muted);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
 }
 
 .orbit-archive-entries article {
