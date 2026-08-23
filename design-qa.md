@@ -67,4 +67,38 @@
 
 Fix round 1 closes the reviewed typography P2 with measured source geometry, two red/green declaration cycles, a final full-view and focused same-input comparison, and fresh rendered desktop evidence. Fix round 2 closes the derived intermediate-width containment P2 with two additional red/green boundary cycles, an exact 900 × 1024 recapture, and DOM checks through the scrollbar-safe 943/944 transition. Every mobile state records CSS inner size, client/visual viewport, DPR/scale, exact PNG dimensions, and the default bitmap mapping. The source-match desktop geometry, mobile geometry, theme, progress, focus, overflow, image, and console checks pass, and no P0/P1/P2 finding remains.
 
+## Sticky Reading Progress Follow-up — 2026-08-23
+
+### Comparison
+
+- Source visual truth: `C:\Users\28717\AppData\Local\Temp\codex-clipboard-d47a90fd-a55e-40b6-9c86-d4c43d2ec729.png` (1920 × 1020 browser capture, with the page occupying the lower 1920 × 911 pixels at an effective 1.25× capture scale).
+- Implementation top state: `C:\Users\28717\.codex\visualizations\2026\08\23\sticky-reading-progress\article-progress-top-normalized-1536x729.png` (1521 × 722 visible page bitmap from a 1536 × 730 CSS viewport at DPR 1).
+- Density normalization: the source page area was cropped at `0,109` and scaled from 1920 × 911 to 1521 × 722 in `source-progress-normalized-1521x722.png`, matching the implementation bitmap.
+- Full-view comparison: `comparison-full-source-left-implementation-right.png`.
+- Focused progress comparison: `comparison-progress-focus-source-left-implementation-right.png`; the focused view was required because the progress line and label are too small for reliable judgment in the full-page pair.
+- Sticky desktop evidence: `article-progress-sticky-offset-1920x912.png` (1905 × 905 visible bitmap). At `scrollY = 1500`, the control measured `top = 12px`, `width = 880px`, remained visible, and reported `阅读进度 13%` with `aria-valuenow="13"`.
+- Sticky mobile evidence: `article-progress-sticky-mobile-390x844.png` (375 × 811 visible bitmap). At `scrollY = 1300`, the control measured `top = 12px`, remained within the 375px client width, and reported `阅读进度 5%` with `aria-valuenow="5"`.
+
+### Required Fidelity Surfaces
+
+- Fonts and typography: unchanged; the progress label retains the approved size, weight, and single-line desktop treatment, while the existing compact mobile stack remains legible.
+- Spacing and layout rhythm: the top-state comparison preserves the original progress position (`top = 126.4px`) and the surrounding article rhythm. The sticky state uses a 12px viewport offset so the bar and label do not touch the browser edge.
+- Colors and visual tokens: the sticky surface uses the existing page background token and lime progress token, so scrolling does not introduce a new color or elevation system.
+- Image quality and asset fidelity: no image assets were added or changed.
+- Copy and content: article copy is unchanged; the visible and accessible percentage continue to update together.
+
+### Findings
+
+- P1 (fixed) — reading progress scrolled out of view — the source capture showed a useful progress control, but the previous static layout removed it as soon as the reader passed the article header — added viewport-sticky positioning so it remains visible throughout the article while the existing script continues updating the percentage.
+- P2 (fixed in visual iteration 1) — first sticky pass touched the viewport edge — the initial `top = 0` capture made the line and label feel clipped against the browser boundary — changed the sticky offset to 12px and retained an opaque page-token backing surface; post-fix desktop and mobile captures show clear separation from the edge.
+- Remaining P0/P1/P2 findings: none.
+
+### Comparison History
+
+- Red test: the generated site CSS did not provide sticky positioning and `validate-site-orbit.ps1` failed with `Built reading progress should stick to the viewport top after reaching it.`
+- Green iteration 0: `article-progress-sticky-1920x912.png` proved persistent progress at `top = 0`, but visual review identified the edge-spacing P2.
+- Red/green iteration 1: the contract was tightened to the 12px offset, failed against the first pass, then passed after the CSS change. Final evidence is `article-progress-sticky-offset-1920x912.png` and `article-progress-sticky-mobile-390x844.png`.
+- Return-state check: after scrolling back to the top, `article-progress-restored-1920x912.png` measured `scrollY = 0`, `top = 126.4px`, and `阅读进度 0%`, confirming that the control returns to its original layout position.
+- Browser console warnings/errors: none. Desktop and mobile document scroll widths equaled their client widths.
+
 final result: passed
