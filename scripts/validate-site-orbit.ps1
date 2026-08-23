@@ -139,6 +139,7 @@ try {
     if ($combinedCss -notmatch '(?s)@media\s*\(max-width:\s*480px\)\s*\{(?:(?!@media).)*?\.orbit-article__footer\s+\.post-tags\s+a\s*\{(?=[^}]*display:\s*inline-flex)(?=[^}]*min-height:\s*44px)(?=[^}]*align-items:\s*center)[^}]*\}') {
         $errors.Add("Article tag links should expose a 44px centered mobile hit area in built CSS.")
     }
+    Require-Match $combinedCss '(?s)\.orbit-reading-progress\s*\{(?=[^}]*position:\s*sticky)(?=[^}]*top:\s*0?\.75rem)[^}]*\}' "Built reading progress should stick near the viewport top after reaching it."
 
     $fixtureContentRoot = Join-Path $fixtureRoot "content"
     $fixtureSectionRoot = Join-Path $fixtureContentRoot "orbit-empty-fixture"
