@@ -7,8 +7,8 @@
 {{- $analysisArticles := first 2 (after 1 $deepArticles) }}
 {{- $dailyStream := first 6 (after 2 $dailyArticles) }}
 {{- $analysisImages := slice
-    "/images/home/orbit/local-inference.webp"
-    "/images/home/orbit/generated-genomes.webp"
+    "/images/home/orbit/editorial-network.webp"
+    "/images/home/orbit/editorial-horizon.webp"
 -}}
 
 <div class="home-landing orbit-home">
@@ -45,7 +45,7 @@
             {{- range $featuredDeep }}
             <article class="orbit-feature__lead">
                 <div class="orbit-feature__media">
-                    <img class="orbit-story-image" src="{{ "/images/home/orbit/deepseek-agent-platform.webp" | relURL }}" alt="{{ .Title | plainify }}" width="1200" height="826" decoding="async">
+                    <img class="orbit-story-image" src="{{ "/images/home/orbit/editorial-focus.webp" | relURL }}" alt="" width="1600" height="900" decoding="async" aria-hidden="true">
                     <span class="orbit-label">深度分析</span>
                 </div>
                 <div class="orbit-feature__copy">
@@ -100,7 +100,7 @@
                     {{- $image := index $analysisImages $index }}
                     <article class="orbit-analysis-card">
                         <div class="orbit-analysis-card__media">
-                            <img class="orbit-story-image" src="{{ $image | relURL }}" alt="{{ $article.Title | plainify }}" width="1200" height="826" loading="lazy" decoding="async">
+                            <img class="orbit-story-image" src="{{ $image | relURL }}" alt="" width="1600" height="900" loading="lazy" decoding="async" aria-hidden="true">
                             <span class="orbit-label">深度分析</span>
                         </div>
                         <div class="orbit-analysis-card__copy">
