@@ -21,9 +21,9 @@ $homeCss = [IO.File]::ReadAllText($cssPath, [Text.Encoding]::UTF8)
 if ($homeCss -match '--orbit-accent-text\s*:') {
     $errors += "Small homepage labels and links must use neutral ink; --orbit-accent-text is not allowed."
 }
-foreach ($legacyGreen in @('#708800', '#9bb62a', 'rgba(144, 174, 20,')) {
-    if ($homeCss -match [regex]::Escape($legacyGreen)) {
-        $errors += "Only #d4ff3f may be used as the homepage brand accent; found legacy green $legacyGreen."
+foreach ($greenToken in @('#d4ff3f', '#708800', '#9bb62a', 'rgba(212, 255, 63,', 'rgba(144, 174, 20,')) {
+    if ($homeCss -match [regex]::Escape($greenToken)) {
+        $errors += "Homepage UI should use only neutral black-and-white accents; found green token $greenToken."
     }
 }
 
@@ -38,6 +38,24 @@ try {
 
     $cssFiles = Get-ChildItem -LiteralPath (Join-Path $destination "assets/css") -Filter "*.css" -File
     $combinedCss = ($cssFiles | ForEach-Object { [IO.File]::ReadAllText($_.FullName) }) -join "`n"
+    if ($combinedCss -match '#d4ff3f|rgba\(212,\s*255,\s*63,') {
+        $errors += "Built homepage CSS should not ship fluorescent-green UI colors."
+    }
+    if ($combinedCss -notmatch '(?s)\.orbit-home\s*\{[^}]*--orbit-accent:\s*#121212;') {
+        $errors += "Homepage light mode should use black as its neutral accent."
+    }
+    if ($combinedCss -notmatch '(?s)\[data-theme=.?dark.?\]\s+\.orbit-home\s*\{[^}]*--orbit-accent:\s*#f5f5f4;') {
+        $errors += "Homepage dark mode should use off-white as its neutral accent."
+    }
+    if ($combinedCss -notmatch '(?s)\.orbit-button\s*\{(?=[^}]*border:\s*1px\s+solid\s+var\(--orbit-ink\))(?=[^}]*background:\s*var\(--orbit-surface\))(?=[^}]*color:\s*var\(--orbit-ink\))[^}]*\}') {
+        $errors += "Homepage entry buttons should use white surfaces with black borders and text."
+    }
+    if ($combinedCss -notmatch '(?s)\.orbit-label\s*\{(?=[^}]*border:\s*1px\s+solid\s+var\(--orbit-ink\))(?=[^}]*background:\s*var\(--orbit-surface\))(?=[^}]*color:\s*var\(--orbit-ink\))[^}]*\}') {
+        $errors += "Homepage image labels should use monochrome outlined pills."
+    }
+    if ($combinedCss -notmatch '(?s)\.orbit-read-more\s*\{(?=[^}]*border:\s*1px\s+solid\s+var\(--orbit-ink\))(?=[^}]*background:\s*var\(--orbit-surface\))(?=[^}]*color:\s*var\(--orbit-ink\))[^}]*\}') {
+        $errors += "Homepage read-more links should use monochrome outlined pills."
+    }
     if ($combinedCss -notmatch '(?s)@media\s*\(max-width:\s*480px\)\s*\{(?:(?!@media).)*?\.orbit-feature__daily-header\s+a,\s*\.orbit-pane-heading\s+a\s*\{(?=[^}]*display:\s*inline-flex)(?=[^}]*min-height:\s*44px)(?=[^}]*align-items:\s*center)[^}]*\}') {
         $errors += "Homepage section navigation links should expose a 44px centered mobile hit area in built CSS."
     }
