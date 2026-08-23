@@ -177,3 +177,32 @@ final result: passed
 - Green implementation: the minimal token and component changes made both validators pass. The first equal-size browser comparison found no P0/P1/P2 layout, typography, imagery, copy, contrast, or interaction regression, so no corrective visual iteration was required.
 
 final result: passed
+
+## Homepage Weekly Copy Follow-up — 2026-08-23
+
+### Comparison
+
+- Source visual truth: `C:\Users\28717\.codex\visualizations\2026\08\23\homepage-weekly-copy\source-feature-dark.png` and `C:\Users\28717\.codex\visualizations\2026\08\23\homepage-weekly-copy\source-hub-dark.png` (both 748 × 684), together with the user's request to describe the featured analysis as weekly rather than daily.
+- Browser-rendered implementation: `C:\Users\28717\.codex\visualizations\2026\08\23\homepage-weekly-copy\implementation-feature-dark.png` and `C:\Users\28717\.codex\visualizations\2026\08\23\homepage-weekly-copy\implementation-hub-dark.png` (both 748 × 684).
+- Viewport and density: matched 763 × 698 CSS viewports at DPR 1 in dark mode; the in-app Browser excludes its scrollbar and surface area from each saved bitmap consistently.
+- Full-view same-input comparison: the matched pairs preserve layout, typography, imagery, spacing, colors, and scroll state. A separate crop was unnecessary because all changed copy is legible in the matched views.
+
+### Required Fidelity Surfaces
+
+- Fonts and typography: unchanged; the new weekly heading fits on the same line at the checked viewport.
+- Spacing and layout rhythm: unchanged; rendered document overflow remained 0px.
+- Colors and visual tokens: unchanged.
+- Image quality and asset fidelity: unchanged.
+- Copy and content: `TODAY'S SIGNAL` is now `WEEKLY SIGNAL`, `今天最值得关注的变化` is now `本周最值得关注的变化`, and `当天` was removed from the tracking description. Article content and links are unchanged.
+
+### Findings
+
+- P2 (fixed) — daily wording implied a deep-analysis publishing cadence the site does not follow — aligned the featured section with the intended weekly cadence and removed the unnecessary day-specific qualifier from the tracking copy.
+- Remaining P0/P1/P2 findings: none.
+
+### Verification and Comparison History
+
+- The first post-change matched comparison passed without a corrective visual iteration.
+- Browser DOM checks returned the exact requested copy, zero horizontal overflow, and no warning or error logs.
+
+final result: passed
