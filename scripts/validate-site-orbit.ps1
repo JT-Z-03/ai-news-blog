@@ -321,6 +321,9 @@ url: "/orbit-archive-fixture/"
 
     $orbitCss = [IO.File]::ReadAllText($orbitCssPath, [Text.Encoding]::UTF8)
     $orbitHomeCss = [IO.File]::ReadAllText($orbitHomeCssPath, [Text.Encoding]::UTF8)
+    if (("$orbitCss`n$orbitHomeCss") -match '#d4ff3f|rgba\(212,\s*255,\s*63,') {
+        $errors.Add("Orbit UI styles should not ship fluorescent-green colors.")
+    }
     $siteMutedMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
     $homeMutedMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
     $sitePageMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-page:\s*(?<color>#[0-9a-fA-F]{6});')
@@ -352,10 +355,14 @@ url: "/orbit-archive-fixture/"
         }
     }
     Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "Light Orbit pages should declare an ink focus-contrast token."
+    Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-accent:\s*#121212;' "Light Orbit pages should use black as their neutral accent."
     Require-Match $orbitCss '(?s)\[data-theme="dark"\]\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "Dark Orbit pages should declare an off-white focus-contrast token."
+    Require-Match $orbitCss '(?s)\[data-theme="dark"\]\s*\{[^}]*--orbit-accent:\s*#f5f5f4;' "Dark Orbit pages should use off-white as their neutral accent."
     Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "The homepage should share the light focus-contrast token."
+    Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-accent:\s*#121212;' "The homepage should share the light neutral accent."
     Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "The homepage should share the dark focus-contrast token."
-    Require-Match $orbitCss '(?s)\.orbit-shell a:focus-visible,[^{]*\.orbit-shell input:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Shared focus indicators should combine a contrasting outline with the lime cue."
+    Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-accent:\s*#f5f5f4;' "The homepage should share the dark neutral accent."
+    Require-Match $orbitCss '(?s)\.orbit-shell a:focus-visible,[^{]*\.orbit-shell input:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Shared focus indicators should use a high-contrast monochrome ring."
     $cardFocusRuleMatch = [regex]::Match($orbitHomeCss, '(?ms)^(?<selector>[^\r\n{]*\.orbit-post-link:focus-visible)\s*\{(?<declarations>[^}]*)\}')
     if (-not $cardFocusRuleMatch.Success) {
         $errors.Add("Image-card focus should declare its inset two-tone treatment.")
@@ -363,7 +370,7 @@ url: "/orbit-archive-fixture/"
     else {
         $cardFocusSelector = $cardFocusRuleMatch.Groups["selector"].Value.Trim()
         $cardFocusDeclarations = $cardFocusRuleMatch.Groups["declarations"].Value
-        Require-Match $cardFocusDeclarations '(?s)(?=.*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=.*box-shadow:\s*inset\s+0\s+0\s+0\s+3px\s+var\(--orbit-accent\)).*' "Image-card focus should combine an inset lime cue with a contrasting outline."
+        Require-Match $cardFocusDeclarations '(?s)(?=.*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=.*box-shadow:\s*inset\s+0\s+0\s+0\s+3px\s+var\(--orbit-accent\)).*' "Image-card focus should combine two monochrome contrast rings."
 
         $sharedFocusSelector = '.orbit-shell a:focus-visible'
         $cardFocusSpecificity = Get-CssSpecificity $cardFocusSelector
@@ -372,7 +379,7 @@ url: "/orbit-archive-fixture/"
             $errors.Add("Image-card focus selector '$cardFocusSelector' specificity ($($cardFocusSpecificity -join ',')) must exceed shared focus selector '$sharedFocusSelector' specificity ($($sharedFocusSpecificity -join ',')) so inset focus wins the cascade.")
         }
     }
-    Require-Match $orbitCss '(?s)\.orbit-search #searchInput:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-input focus should combine the contrasting outline with the lime cue."
+    Require-Match $orbitCss '(?s)\.orbit-search #searchInput:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-input focus should use a high-contrast monochrome ring."
     Require-Match $orbitCss '(?s)\.orbit-search__status\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Search live status should be visibly styled with the readable muted token."
     Require-Match $orbitCss '(?s)\.orbit-archive-month h3\s*\{[^}]*color:\s*var\(--orbit-muted\);' "Archive month groups should expose a visible secondary heading."
     Require-Match $orbitCss '(?s)\.orbit-shell \.main:not\(:has\(\.home-landing\)\)\s*\{[^}]*max-width:\s*none;' "The shared shell must override the legacy non-home main width."
@@ -385,7 +392,7 @@ url: "/orbit-archive-fixture/"
     Require-Match $orbitCss '(?s)\.orbit-article \.orbit-page__description\s*\{[^}]*max-width:\s*42rem;' "The article-description rule should declare its independent 42rem reading measure."
     Require-Match $orbitCss '(?s)\.orbit-article__body\s*\{[^}]*font-size:\s*1\.1rem;' "The article-body rule should declare the reviewed reading size."
     Require-Match $orbitCss '(?s)\.orbit-list__row h2\s*\{[^}]*font-size:\s*clamp\(1\.5rem,\s*3vw,\s*2\.05rem\);' "The list-title rule should declare the reviewed maximum size."
-    Require-Match $orbitCss '(?s)\.orbit-shell \.orbit-search__results a\.entry-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-result focus should combine the contrasting outline with the lime cue."
+    Require-Match $orbitCss '(?s)\.orbit-shell \.orbit-search__results a\.entry-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-result focus should use a high-contrast monochrome ring."
     Require-Match $orbitCss '(?s)\.orbit-nav-deep-analysis \.menu a\[href\*="%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90/"\] span,[^{]*\{[^}]*box-shadow:\s*inset\s+0\s+-2px\s+var\(--orbit-accent\);' "The deep-analysis navigation rule should declare the Orbit accent underline."
     Require-Match $orbitCss '(?s)\.orbit-page__title\s*\{[^}]*font-family:\s*"Outfit"' "Orbit page titles should use the Outfit display face."
     Require-Match $orbitCss '(?s)\.orbit-article__body[^\{]*h2[^\{]*\{[^}]*font-family:\s*"Outfit"' "Article headings should use the Outfit display face."

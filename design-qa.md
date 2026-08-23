@@ -102,3 +102,78 @@ Fix round 1 closes the reviewed typography P2 with measured source geometry, two
 - Browser console warnings/errors: none. Desktop and mobile document scroll widths equaled their client widths.
 
 final result: passed
+
+## Homepage Editorial Image Follow-up — 2026-08-23
+
+### Comparison
+
+- Source visual truth: `C:\Users\28717\.codex\generated_images\01a027ba-1a2a-7cf3-a202-a16cf58874a0\exec-135c6148-06b1-4b73-ad2f-3eeac71ee0cd.png` (1672 × 941).
+- Browser-rendered implementation: `C:\Users\28717\.codex\visualizations\2026\08\23\ai-blog-editorial-images\homepage-feature.png` and `C:\Users\28717\.codex\visualizations\2026\08\23\ai-blog-editorial-images\homepage-small-cards.png` (1265 × 712 each).
+- Viewport and density: 1280 × 720 CSS px, DPR 1; the in-app Browser bitmap excludes the 15px scrollbar and 8px browser-surface region. Source and implementation were compared for art direction and card crop rather than pixel-identical page layout because the source is a three-image concept board, not a webpage mock.
+- Full-view evidence: the concept board and `homepage-feature.png` were opened together to compare the primary image's palette, print texture, focal aperture, and 16:9 crop.
+- Focused evidence: the concept board and `homepage-small-cards.png` were opened together to compare the network and horizon images at their real 380:270 card crop.
+
+### Required Fidelity Surfaces
+
+- Fonts and typography: unchanged from the approved Orbit homepage; headline, metadata, label, and daily-brief hierarchy remain intact.
+- Spacing and layout rhythm: the existing 16:9 lead slot and 380:270 analysis slots are unchanged. The generated focal points stay inside both crops and preserve the existing card rhythm.
+- Colors and visual tokens: all three images consistently use aged ivory, vermilion, cobalt, warm yellow, and charcoal. The existing lime label remains as a deliberate site-level accent rather than being baked into the reusable artwork.
+- Image quality and asset fidelity: all three WebP files render at 1600 × 900 natural size, load successfully, and retain visible paper fibers, halftone dots, torn edges, and screen-print registration at both desktop card sizes. No placeholder, CSS drawing, SVG substitute, logo, or watermark is present.
+- Copy and content: article titles, descriptions, dates, author names, and links are unchanged. The fixed images now use empty alt text and `aria-hidden="true"`, correctly identifying them as decorative reusable artwork rather than literal article illustrations.
+
+### Findings
+
+- P3 — Orbit lime labels sit outside the selected print palette. This is acceptable because the label is interface chrome and preserves existing site recognition; a future site-wide palette pass could replace lime with the artwork's warm yellow, but that is outside this image-only change.
+- Remaining P0/P1/P2 findings: none.
+
+### Responsive and Interaction Checks
+
+- Desktop: all three assets loaded completely at 1600 × 900 natural size; rendered sizes were 654 × 368 for the lead and 264 × 188 for each analysis card. Document scroll width remained below the 1280px viewport width, with no warning or error console logs.
+- Mobile: a 390 × 844 pass confirmed that the centered network and horizon focal points survive the stacked card crop without clipping or horizontal page overflow.
+- Primary navigation: the `阅读深度分析` link navigated successfully to the local deep-analysis category and the browser returned to the homepage.
+
+### Comparison History
+
+- Initial generated board: established the approved three-part system but was unsuitable as a single cropped sprite.
+- Final asset pass: generated three independent 16:9 files from the approved system, then compressed them to 1600 × 900 WebP. The first browser comparison found no P0/P1/P2 crop, palette, loading, accessibility, or layout issue, so no corrective visual iteration was required.
+
+final result: passed
+
+## Monochrome UI Follow-up — 2026-08-23
+
+### Comparison
+
+- Source visual truth: the approved Orbit layout before this color revision, captured at `C:\Users\28717\.codex\visualizations\2026\08\23\ai-blog-editorial-images\homepage-feature.png` (1265 × 712) and `C:\Users\28717\.codex\visualizations\2026\08\23\sticky-reading-progress\article-progress-top-normalized-1536x729.png` (1521 × 722), together with the user's explicit direction to replace fluorescent-green interface chrome with ordinary white surfaces and black details while preserving the colorful editorial images.
+- Browser-rendered implementation: `C:\Users\28717\.codex\visualizations\2026\08\23\ai-blog-monochrome-ui\home-desktop-cards.png` (1265 × 712) and `C:\Users\28717\.codex\visualizations\2026\08\23\ai-blog-monochrome-ui\article-top-1536x729.png` (1521 × 722).
+- Viewport and density: homepage comparison used a 1280 × 720 CSS viewport; article comparison used a 1536 × 729 CSS viewport. Both used DPR 1, and the in-app Browser bitmaps exclude the scrollbar/browser-surface region in the same way for each matched pair.
+- State: light theme, unchanged content and scroll position for each source/implementation pair. The homepage source and implementation were opened together at equal pixel dimensions; the article source and implementation were also opened together at equal pixel dimensions.
+- Full-view comparison evidence: the matched pairs show that page geometry, typography, card imagery, copy, and reading-progress placement are unchanged while the green eyebrow marks, image labels, active-navigation underline, and article eyebrow are converted to black/white.
+- Focused-region comparison: a separate crop was not needed because the affected marks and pills remain clearly readable at native 1× size in both equal-dimension full-view pairs. Computed-style checks additionally measured `rgb(255, 255, 255)` surfaces and `rgb(18, 18, 18)` borders/text on homepage buttons and labels.
+
+### Required Fidelity Surfaces
+
+- Fonts and typography: unchanged; Outfit display hierarchy and Inter reading/UI hierarchy preserve the approved weights, line breaks, and measurements on the homepage and article page.
+- Spacing and layout rhythm: unchanged; the hero, cards, article header, body measure, and sticky progress bar remain in their approved positions. Desktop and 390 × 844 mobile checks returned zero horizontal overflow.
+- Colors and visual tokens: light mode now uses white page/surface backgrounds with `#121212` as the neutral accent; dark mode uses off-white `#f5f5f4` for the corresponding accent. Buttons, image labels, and read-more pills use outlined monochrome surfaces. Active navigation, progress, eyebrow marks, link underlines, and focus rings now inherit the same neutral accent. No `#d4ff3f` or `rgba(212, 255, 63, …)` remains in the shipped Orbit styles.
+- Image quality and asset fidelity: the three editorial WebP files are unchanged and all loaded at 1600 × 900 natural size. Their vermilion, cobalt, yellow, charcoal, and ivory print palette remains the only non-neutral color system on the homepage.
+- Copy and content: unchanged across the homepage, article, daily list, and search surface.
+
+### Findings
+
+- P2 (fixed) — fluorescent-green interface chrome conflicted with the newly approved editorial image palette — green labels, dots, underlines, progress, and focus cues competed with the artwork rather than framing it — replaced the site accent with adaptive black/off-white tokens and changed filled green pills to white/black outlined pills without changing layout or content.
+- Remaining P0/P1/P2 findings: none. The equal-size visual comparisons and rendered state checks found no color residue, lost contrast, layout shift, or responsive regression.
+
+### Responsive and Interaction Checks
+
+- Desktop homepage: `home-desktop-top.png` and `home-desktop-cards.png` confirm white page/surfaces, black button/label borders, all three 1600 × 900 images loaded, and zero horizontal overflow.
+- Desktop article: `article-top-1536x729.png` matches the prior geometry at the same pixel dimensions. `article-desktop-sticky.png` confirms the black reading-progress bar remains sticky at `top = 12px` and updates to `阅读进度 46%` while scrolling.
+- Mobile homepage: `home-mobile-390.png` confirms the three hero buttons remain equal-width white/black controls and the page has no horizontal overflow.
+- Dark mode: the homepage theme round-trip measured an `rgb(25, 25, 24)` button surface with off-white text/border and an off-white eyebrow mark; no overflow was introduced.
+- Search and daily list: keyboard focus, the daily active-navigation underline, and the daily eyebrow mark all computed to `rgb(18, 18, 18)` in light mode. Search, daily, article, homepage, and dark-mode checks returned no browser warning or error logs.
+
+### Comparison History
+
+- Red contract: both Orbit validators failed against the previous CSS because the fluorescent-green token still shipped and the required neutral light/dark accent tokens and outlined controls were missing.
+- Green implementation: the minimal token and component changes made both validators pass. The first equal-size browser comparison found no P0/P1/P2 layout, typography, imagery, copy, contrast, or interaction regression, so no corrective visual iteration was required.
+
+final result: passed

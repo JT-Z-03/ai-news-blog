@@ -1,10 +1,10 @@
 :root {
-    --orbit-accent: #d4ff3f;
+    --orbit-accent: #121212;
     --orbit-ink: #121212;
     --orbit-muted: #717171;
     --orbit-focus-contrast: #121212;
     --orbit-border: #e5e5e5;
-    --orbit-page: #fbfbf9;
+    --orbit-page: #ffffff;
     --orbit-surface: #ffffff;
     --orbit-surface-soft: #f4f4f1;
     --orbit-reading-width: 800px;
@@ -12,6 +12,7 @@
 }
 
 [data-theme="dark"] {
+    --orbit-accent: #f5f5f4;
     --orbit-ink: #f5f5f4;
     --orbit-muted: #a8a8a3;
     --orbit-focus-contrast: #f5f5f4;
@@ -55,8 +56,8 @@ body.orbit-shell {
 }
 
 .orbit-shell .menu a:hover {
-    background: var(--orbit-accent);
-    color: #121212;
+    background: var(--orbit-surface-soft);
+    color: var(--orbit-ink);
 }
 
 .orbit-shell .menu .active,
@@ -415,8 +416,9 @@ body.orbit-shell {
 .orbit-pagination a:hover,
 .orbit-empty a:hover,
 .orbit-terms a:hover {
-    background: var(--orbit-accent);
-    color: #121212;
+    border-color: var(--orbit-accent);
+    background: var(--orbit-surface);
+    color: var(--orbit-ink);
 }
 
 .orbit-terms {
@@ -672,8 +674,8 @@ body.orbit-shell {
 
 .orbit-not-found .orbit-button:hover {
     border-color: var(--orbit-accent);
-    background: var(--orbit-accent);
-    color: #121212;
+    background: var(--orbit-surface);
+    color: var(--orbit-ink);
 }
 
 @media (min-width: 761px) and (max-width: 943px) {
