@@ -194,4 +194,4 @@ OpenAI 发文主张青少年应获得安全的 AI 访问权，并介绍面向 te
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

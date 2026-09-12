@@ -160,4 +160,4 @@ Cloudflare 在内容独立日一周年文章中称，一个付费内容的动态
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

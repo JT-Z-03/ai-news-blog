@@ -196,4 +196,4 @@ World Labs 团队梳理"世界模型"术语，基于 POMDP 框架将当前系统
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

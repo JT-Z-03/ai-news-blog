@@ -116,4 +116,4 @@ Databricks 的指南用收入查询演示如何从单一提示词设计 Genie Ag
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

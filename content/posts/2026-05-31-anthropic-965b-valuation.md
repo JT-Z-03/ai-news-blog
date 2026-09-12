@@ -123,4 +123,4 @@ Anthropic 的这轮融资是 2026 年 AI 行业最重要的里程碑事件之一
 
 ---
 
-*深度分析 · 作者：钟懿 · 数据来源：Anthropic Newsroom、Bloomberg Technology、Simon Willison 博客*
+*深度分析 · 作者：ZestJT · 数据来源：Anthropic Newsroom、Bloomberg Technology、Simon Willison 博客*

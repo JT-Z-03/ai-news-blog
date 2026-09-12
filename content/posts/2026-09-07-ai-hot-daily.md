@@ -26,4 +26,4 @@ OpenAI 报告称，8 月每位活跃实验人员的实验数量达到自 2025 �
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

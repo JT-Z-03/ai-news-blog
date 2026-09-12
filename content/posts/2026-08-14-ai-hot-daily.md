@@ -118,4 +118,4 @@ Databricks 介绍如何在 SQL、Notebook、Lakeflow 管道和工作流中使用
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

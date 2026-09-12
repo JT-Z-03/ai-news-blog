@@ -148,4 +148,4 @@ Google 复盘 AI Agents Challenge 的头部提交，归纳出四种反复出现�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

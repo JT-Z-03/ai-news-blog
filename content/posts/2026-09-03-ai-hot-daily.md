@@ -142,4 +142,4 @@ Hugging Face 作者 Sergio Paniego 用 TRL 和 OpenEnv 复现了一套水彩训�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

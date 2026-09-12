@@ -52,4 +52,4 @@ Fortune 报道，OpenAI 在 Astra 发布后多次修改评测数据。IT之家�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

@@ -82,4 +82,4 @@ v2.1.159 版本更新包含内部基础设施改进，未引入任何面向用�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

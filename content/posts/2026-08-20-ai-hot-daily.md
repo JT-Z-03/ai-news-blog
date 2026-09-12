@@ -134,4 +134,4 @@ Gary Marcus 认为，共和党正在重新评估与大型科技公司和 AI 产�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

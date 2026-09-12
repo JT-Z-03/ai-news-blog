@@ -100,4 +100,4 @@ Artificial Analysis 在发布前评测了 Claude Fable 5.1。它在最高思考�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

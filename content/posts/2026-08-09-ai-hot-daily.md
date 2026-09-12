@@ -40,4 +40,4 @@ Nathan Lambert 结合近期前沿模型网络安全事件，认为企业的增�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

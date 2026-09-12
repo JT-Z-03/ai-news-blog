@@ -198,4 +198,4 @@ Wes McKinney 利用 Fable 逆向工程找到了为 AgentsView 设置自定义模
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

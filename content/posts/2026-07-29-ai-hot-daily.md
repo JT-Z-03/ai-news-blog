@@ -158,4 +158,4 @@ Gary Marcus 撰文批评 Anthropic CEO Dario Amodei 反对开放权重模型的�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

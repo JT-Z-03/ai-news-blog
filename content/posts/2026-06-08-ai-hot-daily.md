@@ -102,4 +102,4 @@ Gary Marcus 引用 FT 数据图表，认为精准提炼了 AI 行业"产出多�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

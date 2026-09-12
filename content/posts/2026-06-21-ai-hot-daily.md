@@ -32,4 +32,4 @@ AI HOT 汇总的当日消息显示，微软正在同时扮演两端模型渠道�
 
 ---
 
-*AI 热点日报 · 作者：钟意 · 数据来源：[AI HOT](https://aihot.virxact.com/)*
+*AI 热点日报 · 作者：ZestJT · 数据来源：[AI HOT](https://aihot.virxact.com/)*

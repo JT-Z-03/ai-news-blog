@@ -86,4 +86,4 @@ Tunguz 的文章把 OpenAI 与 Cursor 的拟议停止服务日期写成已经发
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*
