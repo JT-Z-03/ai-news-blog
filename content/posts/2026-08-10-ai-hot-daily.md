@@ -152,4 +152,4 @@ Gary Marcus 指出，开放权重模型并非真正的开源，二者在透明�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

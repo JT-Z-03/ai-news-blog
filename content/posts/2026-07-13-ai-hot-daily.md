@@ -104,4 +104,4 @@ OpenAI 整理了一份面向普通用户的提示词指南，建议用目标、�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

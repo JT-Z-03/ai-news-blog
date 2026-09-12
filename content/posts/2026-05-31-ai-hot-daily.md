@@ -116,4 +116,4 @@ Steve Yegge 在 Medium 发表观点文章《最后一次技术面试》，探讨
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -56,4 +56,4 @@ Firebird 在亚美尼亚启动面向区域市场的 AI 工厂，采用 NVIDIA �
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

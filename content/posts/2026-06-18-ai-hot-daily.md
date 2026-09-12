@@ -210,4 +210,4 @@ Nathan Lambert 在 Interconnects 博客创办约三年后更新规划。他当�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

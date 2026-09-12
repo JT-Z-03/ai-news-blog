@@ -132,4 +132,4 @@ Google 总结了 Agent-to-Agent（A2A）协议发布一周年的进展，强调�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

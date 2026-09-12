@@ -12,7 +12,7 @@ enableRobotsTXT = true
 [params]
   env = 'production'
   description = '深度分析 + 精选日报，追踪 AI 行业最重要的事'
-  author = '钟懿'
+  author = 'ZestJT'
   keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
   searchSubstrings = true
   ShowBreadCrumbs = true

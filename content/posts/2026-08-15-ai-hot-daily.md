@@ -22,4 +22,4 @@ description: 2026年8月15日 AI 圈要闻：一项对 14,419 本亚马逊自出
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -32,4 +32,4 @@ Index Ventures 联合创始人 Neil Rimer 表示，围绕 AI 积累的巨额财�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

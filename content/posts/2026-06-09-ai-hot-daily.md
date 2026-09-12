@@ -180,4 +180,4 @@ Anthropic 回顾 Claude Code 正式发布一年来的历程：验证最佳实践
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -104,4 +104,4 @@ Tomer Tunguz 讨论应用层公司的护城河问题，核心观点是：应用�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -188,4 +188,4 @@ Claude 官方频道发布短片《Can you trust what AI tells you?》，把关�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

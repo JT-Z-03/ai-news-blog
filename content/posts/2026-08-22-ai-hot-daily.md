@@ -24,4 +24,4 @@ description: 2026年8月22日 AI 圈要闻：第二届世界人形机器人运�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

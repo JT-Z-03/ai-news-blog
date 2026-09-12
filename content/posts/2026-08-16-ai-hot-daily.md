@@ -28,4 +28,4 @@ Gary Marcus 评论了围绕 Anthropic 上市的乐观叙事，重点质疑媒体
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -172,4 +172,4 @@ Runway 开发了名为 deckard 的容量控制器，在生产推理集群与研�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

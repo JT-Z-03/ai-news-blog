@@ -134,4 +134,4 @@ GitHub Copilot CLI 为初学者提供了常用斜杠命令的概述，帮助用�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -124,4 +124,4 @@ Runway 的客户案例介绍，建筑设计公司 Populous 用生成式视频制
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*
