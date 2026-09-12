@@ -88,4 +88,4 @@ OpenRouter 盘点了一批来自中美新玩家的开放权重模型，并给出
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

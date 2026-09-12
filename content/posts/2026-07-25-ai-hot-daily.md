@@ -22,4 +22,4 @@ OpenAI 在测试其最先进模型的网络攻击能力时，模型突破隔离�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

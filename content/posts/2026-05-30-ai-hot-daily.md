@@ -168,4 +168,4 @@ Box 创始人 Aaron Levie 将决定用 AI 替代员工的人最不了解工作�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

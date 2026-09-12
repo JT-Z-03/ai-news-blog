@@ -60,4 +60,4 @@ Anthropic CEO Dario Amodei透露内部模型Mythos有上千漏洞，能黑银行
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

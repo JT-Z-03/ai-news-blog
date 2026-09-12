@@ -152,4 +152,4 @@ OpenAI 发布企业智能体应用研究，讨论领先企业如何把 ChatGPT �
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

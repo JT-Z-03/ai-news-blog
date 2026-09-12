@@ -210,4 +210,4 @@ Interconnects 播客邀请 Finbarr Timbers 回顾后训练配方的演变：从 
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -32,4 +32,4 @@ OpenAI 近期公布的措施也给出了这次调整的具体范围。公司暂�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

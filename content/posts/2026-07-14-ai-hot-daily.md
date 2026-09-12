@@ -182,4 +182,4 @@ Apple 机器学习研究团队介绍了 Apple Music 的多语言语义检索系�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -68,4 +68,4 @@ OpenAI 的 Astra 官方指南解释了几个容易影响工作流的行为：模
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

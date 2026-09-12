@@ -196,4 +196,4 @@ Altman 在采访中强调人类必须始终处于 AI 发展中心，批判行业
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

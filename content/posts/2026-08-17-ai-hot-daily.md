@@ -136,4 +136,4 @@ SGLang 团队重构 CUDA Graph 支持，通过 runner 与 backend 接口分离�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

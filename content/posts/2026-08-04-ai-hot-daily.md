@@ -202,4 +202,4 @@ LangChain 将语音智能体评估拆成执行过程、任务结果和来电者�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -160,4 +160,4 @@ Databricks 介绍 AI Runtime 上的 PyTorch 容错训练。方案用分布式异
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

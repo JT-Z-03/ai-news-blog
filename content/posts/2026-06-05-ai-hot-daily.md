@@ -184,4 +184,4 @@ OpenAI 官方写道"我们看到了当今系统中递归自我改进（RSI）的
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

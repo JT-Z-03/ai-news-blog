@@ -118,4 +118,4 @@ Gary Marcus 汇集多组收入、资本开支和数据中心投资估算，认�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

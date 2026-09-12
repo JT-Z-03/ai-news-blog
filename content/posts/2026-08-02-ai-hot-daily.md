@@ -54,4 +54,4 @@ Thinking Machines 发布首个模型 Inkling，为 975B-A41B 多模态 MoE，支
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

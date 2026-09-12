@@ -158,4 +158,4 @@ NVIDIA NeMo AutoModel 基于 Transformers v5，加入 Expert Parallelism、DeepE
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

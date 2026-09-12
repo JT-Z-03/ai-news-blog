@@ -182,4 +182,4 @@ Gary Marcus 从数据、TPU、自有产品分发、现金流和研究人才等�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

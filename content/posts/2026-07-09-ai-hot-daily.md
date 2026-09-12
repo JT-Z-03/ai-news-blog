@@ -180,4 +180,4 @@ Bun 于 2025 年 12 月被 Anthropic 收购，作者使用预发布版 Claude Fa
 
 📎 [X：面壁智能 OpenBMB (@OpenBMB)](https://x.com/OpenBMB/status/2075218678027850154)
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

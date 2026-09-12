@@ -70,4 +70,4 @@ Nathan Lambert 在 Artifacts 22 中观察到，开放模型生态正在从少数
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

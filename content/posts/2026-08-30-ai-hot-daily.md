@@ -36,4 +36,4 @@ Uber 为了拆清优化效果，固定同一模型比较 2 月至 7 月的数据
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

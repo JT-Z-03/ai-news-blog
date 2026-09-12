@@ -176,4 +176,4 @@ NVIDIA 介绍面向边缘 AI 与机器人的 Jetson 开发套件。其中 Jetson
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*
