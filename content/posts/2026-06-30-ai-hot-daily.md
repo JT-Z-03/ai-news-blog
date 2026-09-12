@@ -164,4 +164,4 @@ Tomer Tunguz 分析称，Anthropic 在算力上的支出达到每位工程师每
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

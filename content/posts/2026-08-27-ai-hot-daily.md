@@ -168,4 +168,4 @@ GitHub 发布 OpenClaw 维护者访谈。这个个人 AI 助手项目由 Peter S
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

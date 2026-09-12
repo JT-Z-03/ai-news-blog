@@ -166,4 +166,4 @@ AI 网络安全平台 Outtake 基于 Claude，使用 Claude Code 和 Agent SDK �
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

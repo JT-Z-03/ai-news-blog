@@ -164,4 +164,4 @@ Gary Marcus 汇总三位评论者对 Anthropic 最新道歉声明的反应。围
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

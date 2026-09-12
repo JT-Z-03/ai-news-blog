@@ -176,4 +176,4 @@ LangChain 介绍了一套基于 Deep Agents 的 Kubernetes SRE 智能体，可�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

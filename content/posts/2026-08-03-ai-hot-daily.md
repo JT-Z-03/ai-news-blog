@@ -158,4 +158,4 @@ Paramount 首席技术官 Phil Wiser 把 AI 列入人类史上最重要的五大
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

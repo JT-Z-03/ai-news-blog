@@ -48,4 +48,4 @@ Habitat 从 Python 客户端库演进为独立服务，让路由、权限和部�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

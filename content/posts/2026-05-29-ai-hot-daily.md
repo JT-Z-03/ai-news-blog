@@ -178,4 +178,4 @@ Lemonade 的 CISO Jonathan Jaffe 指出，AI 对攻击者和防御者同样强�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -198,4 +198,4 @@ Emily Chang 与 Anthropic 联合创始人进行罕见深度对话，探讨创业
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

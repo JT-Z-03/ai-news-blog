@@ -94,4 +94,4 @@ SemiAnalysis 购买了 Anthropic 和 OpenAI 的全部订阅方案，模拟高强
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -194,4 +194,4 @@ Tomer Tunguz 总结，AI 编程生产力提升大致出现三个梯队：只分�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

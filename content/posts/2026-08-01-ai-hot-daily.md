@@ -32,4 +32,4 @@ OpenAI 发布一份 249 页论文合集，称其内部模型 Astra 在高维球�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

@@ -66,4 +66,4 @@ LlamaIndex 发布 legal-kb，一个基于 Index v2（LlamaParse Platform）的�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

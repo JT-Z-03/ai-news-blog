@@ -258,4 +258,4 @@ Gary Marcus 认为这篇文章与自己长期主张的安全和治理议题相�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

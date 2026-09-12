@@ -217,4 +217,4 @@ NVIDIA Nemotron 开放数据集包含超过 10 万亿预训练 tokens 和数百�
 📎 [Hugging Face：Blog（RSS）](https://huggingface.co/blog/nvidia/open-data-for-agents)
 
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

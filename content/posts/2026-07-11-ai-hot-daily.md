@@ -75,4 +75,4 @@ Ghost Font 是一种利用运动、视频、噪点和诱饵来隐藏文字的反
 📎 [Hacker News 热门（buzzing.cc 中文翻译）](https://www.mixfont.com/ghost-font)
 
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

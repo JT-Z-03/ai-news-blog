@@ -132,4 +132,4 @@ Cognition 的 Eric Lu 介绍了用多个 Devin 智能体优化 GPU 数论计算�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

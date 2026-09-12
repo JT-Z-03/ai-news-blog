@@ -150,4 +150,4 @@ OpenAI 发布三门 Academy 课程，帮助用户掌握实用 AI 技能、创建
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*

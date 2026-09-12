@@ -68,4 +68,4 @@ Qwen 官方模型卡显示，这是一款支持图像和视频理解的 27B 稠�
 
 ---
 
-*AI 热点日报 · 作者 钟懿 · 数据来源 AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.virxact.com）*

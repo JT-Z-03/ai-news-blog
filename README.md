@@ -66,6 +66,7 @@ npx wrangler pages deploy public --project-name ai-news-blog
 
 ## 内容质量要求
 
+- 所有现有与新发布内容（包括日报、深度分析和关于页）的作者、发布人及正文署名统一为 `ZestJT`。页面作者默认继承 `hugo.toml` 中的 `params.author`；如显式填写 frontmatter 作者或正文署名，也必须使用 `ZestJT`，不得从旧稿或写作 Skill 继承其他署名。
 - 每条日报资讯必须附原文链接。
 - 重大结论优先引用官方来源；没有官方来源时至少使用两个独立来源交叉核验。
 - 深度分析中的数字和直接引语必须提供可点击来源。

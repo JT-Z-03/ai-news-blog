@@ -188,4 +188,4 @@ OpenAI 这篇案例再次强化了一个趋势：高水平研究者开始把前�
 
 ---
 
-*AI 热点日报 · 作者：钟懿 · 数据来源：AI HOT（aihot.virxact.com）*
+*AI 热点日报 · 作者：ZestJT · 数据来源：AI HOT（aihot.virxact.com）*
