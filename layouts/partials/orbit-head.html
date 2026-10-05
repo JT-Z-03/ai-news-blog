@@ -1,0 +1,16 @@
+{{- /* Preserve the pinned theme head and remove only links to unavailable icons. */ -}}
+{{- $head := partial "head.html" . -}}
+{{- $icons := slice
+    (dict "attributes" `rel="icon"` "path" (site.Params.assets.favicon | default "favicon.ico"))
+    (dict "attributes" `rel="icon" type="image/png" sizes="16x16"` "path" (site.Params.assets.favicon16x16 | default "favicon-16x16.png"))
+    (dict "attributes" `rel="icon" type="image/png" sizes="32x32"` "path" (site.Params.assets.favicon32x32 | default "favicon-32x32.png"))
+    (dict "attributes" `rel="apple-touch-icon"` "path" (site.Params.assets.apple_touch_icon | default "apple-touch-icon.png"))
+    (dict "attributes" `rel="mask-icon"` "path" (site.Params.assets.safari_pinned_tab | default "safari-pinned-tab.svg"))
+-}}
+{{- range $icons -}}
+    {{- if not (partial "orbit-icon-available.html" .path) -}}
+        {{- $link := printf `<link %s href="%s">` .attributes (.path | absURL | htmlEscape) -}}
+        {{- $head = replace $head $link "" -}}
+    {{- end -}}
+{{- end -}}
+{{- $head | safeHTML -}}

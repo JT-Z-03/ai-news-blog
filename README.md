@@ -29,6 +29,16 @@ git submodule update --init --recursive
 
 构建产物写入 `public/`。该目录、Wrangler 本地状态和 Hugo 构建锁文件均不会提交到 Git。
 
+安全头、中文统计和分页 canonical 的针对性回归检查：
+
+```powershell
+.\scripts\test-security-validation.ps1
+.\scripts\test-content-metadata.ps1
+.\scripts\test-icon-references.ps1
+```
+
+回归检查使用隔离临时夹具，不上传访问统计或修改正式内容。安全校验回归同时纳入仓库 CI。
+
 ## 内容结构
 
 - `content/posts/`：日报与深度分析
