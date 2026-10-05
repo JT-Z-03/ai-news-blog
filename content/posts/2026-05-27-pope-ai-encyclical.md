@@ -24,7 +24,7 @@ draft: false
 
 ## 详细解读
 
-5月27日（周一），教皇 Leo XIV 发布了名为 **《Magnifica Humanitas》** 的通谕，重点讨论 AI 对社会的影响。发布会现场，Anthropic 联合创始人兼可解释性团队负责人 **Christopher Olah** 出席，引发广泛关注。
+5月27日（周三），教皇 Leo XIV 发布了名为 **《Magnifica Humanitas》** 的通谕，重点讨论 AI 对社会的影响。发布会现场，Anthropic 联合创始人兼可解释性团队负责人 **Christopher Olah** 出席，引发广泛关注。
 
 ### 通谕说了什么
 
