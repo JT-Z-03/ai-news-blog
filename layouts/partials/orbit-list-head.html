@@ -1,0 +1,11 @@
+{{- /* Keep the theme head intact, changing only the list page's canonical URL. */ -}}
+{{- $head := partial "orbit-head.html" .Page -}}
+{{- $canonicalPattern := `<link rel="canonical" href="[^"]*">` -}}
+{{- if ne (len (findRE $canonicalPattern $head)) 1 -}}
+    {{- errorf "Expected one canonical link in the theme head for %s" .Page.RelPermalink -}}
+{{- end -}}
+{{- if not .Page.Params.canonicalURL -}}
+    {{- $canonical := printf `<link rel="canonical" href="%s">` (.Paginator.URL | absURL | htmlEscape) -}}
+    {{- $head = replaceRE $canonicalPattern $canonical $head -}}
+{{- end -}}
+{{- $head | safeHTML -}}

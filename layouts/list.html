@@ -1,3 +1,9 @@
+{{- define "orbit-head" -}}
+{{- /* Initialize the original collection before head metadata accesses pagination. */ -}}
+{{- $paginator := .Paginate (union .RegularPages .Sections) -}}
+{{- partial "orbit-list-head.html" (dict "Page" . "Paginator" $paginator) -}}
+{{- end -}}
+
 {{- define "main" }}
 {{- $pages := union .RegularPages .Sections -}}
 {{- $paginator := .Paginate $pages -}}

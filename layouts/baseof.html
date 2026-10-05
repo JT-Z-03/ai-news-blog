@@ -8,7 +8,7 @@
 {{- end }}
 <html lang="{{ site.Language }}" dir="{{ $languageDirection }}" data-theme="{{ $theme }}">
 <head>
-    {{- partial "head.html" . }}
+    {{- block "orbit-head" . }}{{- partial "orbit-head.html" . }}{{- end }}
 </head>
 {{- $bodyClasses := slice "orbit-shell" (printf "orbit-kind-%s" .Kind) -}}
 {{- with .Layout }}{{ $bodyClasses = $bodyClasses | append (printf "orbit-layout-%s" .) }}{{ end -}}

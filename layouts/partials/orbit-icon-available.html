@@ -1,0 +1,5 @@
+{{- /* Keep explicit external icons; local icons must have a published static source. */ -}}
+{{- $icon := printf "%v" . -}}
+{{- $external := or (hasPrefix $icon "https://") (hasPrefix $icon "http://") (hasPrefix $icon "//") -}}
+{{- $localPath := index (split (index (split $icon "?") 0) "#") 0 -}}
+{{- return (or $external (fileExists (path.Join "static" (strings.TrimPrefix "/" $localPath)))) -}}

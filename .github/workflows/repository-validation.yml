@@ -28,3 +28,7 @@ jobs:
       - name: Validate security headers
         shell: pwsh
         run: ./scripts/validate-security.ps1
+
+      - name: Test security header validation
+        shell: pwsh
+        run: ./scripts/test-security-validation.ps1
