@@ -1,7 +1,10 @@
+param([string]$HugoPath)
+
 $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path "$PSScriptRoot\..").Path
-$hugoPath = Join-Path $projectRoot "hugo.exe"
+. (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
+$hugoPath = Resolve-HugoExecutable -ProjectRoot $projectRoot -HugoPath $HugoPath
 $orbitCssPath = Join-Path $projectRoot "assets/css/extended/orbit-site.css"
 $orbitHomeCssPath = Join-Path $projectRoot "assets/css/extended/orbit-home.css"
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
@@ -233,7 +236,7 @@ url: "/orbit-archive-fixture/"
     $dailyListMarkup = Read-Output "categories/日报/index.html"
     $dailyPageTwoMarkup = Read-Output "categories/日报/page/2/index.html"
     $categoryTaxonomyMarkup = Read-Output "categories/index.html"
-    $tagListMarkup = Read-Output "tags/AI/index.html"
+    $tagListMarkup = Read-Output "tags/ai/index.html"
     $postsSectionMarkup = Read-Output "posts/index.html"
     $emptyListMarkup = Read-FixtureOutput "orbit-empty-fixture/index.html"
     $searchMarkup = Read-Output "search/index.html"
@@ -289,7 +292,7 @@ url: "/orbit-archive-fixture/"
         "categories/深度分析/index.html" = $deepListMarkup
         "categories/日报/index.html" = $dailyListMarkup
         "categories/日报/page/2/index.html" = $dailyPageTwoMarkup
-        "tags/AI/index.html" = $tagListMarkup
+        "tags/ai/index.html" = $tagListMarkup
         "posts/index.html" = $postsSectionMarkup
     }).GetEnumerator()) {
         Require-BoundedSummaries $listOutput.Value $listOutput.Key 160

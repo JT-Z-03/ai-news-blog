@@ -1,16 +1,14 @@
+param([string]$HugoPath)
+
 $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path "$PSScriptRoot\..").Path
-$hugoPath = Join-Path $projectRoot "hugo.exe"
+. (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
+$hugoPath = Resolve-HugoExecutable -ProjectRoot $projectRoot -HugoPath $HugoPath
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $destination = Join-Path $tempRoot ("ai-news-blog-orbit-" + [guid]::NewGuid())
 $errors = @()
 $cssPath = Join-Path $projectRoot "assets/css/extended/orbit-home.css"
-
-if (-not (Test-Path -LiteralPath $hugoPath)) {
-    Write-Error "Hugo executable not found at $hugoPath"
-    exit 1
-}
 
 if (-not (Test-Path -LiteralPath $cssPath)) {
     Write-Error "Orbit homepage stylesheet not found at $cssPath"

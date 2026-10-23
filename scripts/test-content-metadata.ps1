@@ -6,7 +6,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 $projectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
-if (-not $HugoPath) { $HugoPath = Join-Path $projectRoot "hugo.exe" }
+. (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
+$HugoPath = Resolve-HugoExecutable -ProjectRoot $projectRoot -HugoPath $HugoPath
 $tempParent = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $tempRoot = Join-Path $tempParent ("ai-news-blog-metadata-test-" + [guid]::NewGuid().ToString("N"))
 $fixtureContent = Join-Path $tempRoot "content"

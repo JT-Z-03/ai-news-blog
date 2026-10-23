@@ -6,6 +6,9 @@
     "enabled": true
   },
   "pages_build_output_dir": "public",
+  "vars": {
+    "HUGO_VERSION": "0.162.0"
+  },
   "compatibility_flags": [
     "nodejs_compat"
   ]
