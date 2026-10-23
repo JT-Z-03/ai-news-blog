@@ -78,7 +78,7 @@ Resolve-HugoExecutable -ProjectRoot $ProjectRoot -HugoPath $HugoPath
     Assert-Run 'missing explicit path does not fall back' $resolverRunner ($resolverArguments + @('-HugoPath', (Join-Path $temporaryRoot 'missing-hugo'))) 1 'Explicit Hugo executable not found'
     Write-TestFile (Join-Path $fixtureProject '.hugo-version') 'latest'
     Assert-Run 'invalid version pin is rejected' $resolverRunner ($resolverArguments + @('-HugoPath', $valid)) 1 'Invalid Hugo version'
-    Remove-Item -LiteralPath (Join-Path $fixtureProject '.hugo-version')
+    Remove-Item -LiteralPath (Join-Path $fixtureProject '.hugo-version') -Force
     Assert-Run 'missing version pin is rejected' $resolverRunner ($resolverArguments + @('-HugoPath', $valid)) 1 'Missing Hugo version'
     Write-TestFile (Join-Path $fixtureProject '.hugo-version') "$expectedVersion`n"
 
