@@ -1,7 +1,10 @@
+param([string]$HugoPath)
+
 $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path "$PSScriptRoot\..").Path
-$hugoPath = Join-Path $projectRoot "hugo.exe"
+. (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
+$hugoPath = Resolve-HugoExecutable -ProjectRoot $projectRoot -HugoPath $HugoPath
 $orbitCssPath = Join-Path $projectRoot "assets/css/extended/orbit-site.css"
 $orbitHomeCssPath = Join-Path $projectRoot "assets/css/extended/orbit-home.css"
 $tempRoot = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())

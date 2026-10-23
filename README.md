@@ -8,7 +8,7 @@
 
 ## 本地开发
 
-项目当前使用 Hugo Extended `0.162.0`。
+Hugo Extended 版本以 [`.hugo-version`](.hugo-version) 为准，当前为 `0.162.0`。构建入口会拒绝不匹配的版本和非 Extended 版本。需要 Node.js 18+、PowerShell 7 和 Git。
 
 ```powershell
 git submodule update --init --recursive
@@ -20,14 +20,18 @@ git submodule update --init --recursive
 ## 构建验证
 
 ```powershell
-.\scripts\validate-content.ps1
-.\scripts\validate-security.ps1
-.\scripts\validate-home-orbit.ps1
-.\scripts\validate-site-orbit.ps1
-.\hugo.exe --gc --minify --cleanDestinationDir --printPathWarnings
+pwsh -NoProfile -File ./scripts/validate-all.ps1
 ```
 
-构建产物写入 `public/`。该目录、Wrangler 本地状态和 Hugo 构建锁文件均不会提交到 Git。
+Windows 和 Linux 使用相同入口：自动发现项目内的 Hugo 或 PATH 中的 Hugo，也可通过 `-HugoPath` 显式指定路径。完整检查包含内容、安全头、首页/全站、元数据、图标、工具链回归及隔离生产构建；任一失败均返回非零状态。夹具和最终构建写入临时目录，不覆盖正式 `public/`。
+
+生成可部署产物：
+
+```powershell
+node scripts/build-site.mjs
+```
+
+该入口先核对版本，再执行生产构建，默认清理 `public/` 中已删除或改名的旧路由，避免手工部署残留文章。可用 `HUGO_BINARY` 环境变量指定二进制，或用 `--destination PATH` 指定输出目录；自定义目录不会自动清理，应使用新的空目录。`public/`、Wrangler 本地状态和 Hugo 构建锁文件均不会提交到 Git。
 
 安全头、中文统计和分页 canonical 的针对性回归检查：
 
@@ -37,7 +41,7 @@ git submodule update --init --recursive
 .\scripts\test-icon-references.ps1
 ```
 
-回归检查使用隔离临时夹具，不上传访问统计或修改正式内容。安全校验回归同时纳入仓库 CI。
+回归检查使用隔离临时夹具，不上传访问统计或修改正式内容。仓库 CI 初始化固定主题子模块，从官方 Release 安装 `.hugo-version` 指定的 Extended 二进制并校验 SHA256，然后执行完整验证入口。
 
 ## 内容结构
 
@@ -67,12 +71,14 @@ npx wrangler pages deploy public --project-name ai-news-blog
 
 ## Cloudflare Pages
 
-建议构建配置：
+构建配置（production 和 preview 均需保持一致）：
 
-- Build command：`hugo --gc --minify`
+- Build command：`node scripts/build-site.mjs`
 - Build output directory：`public`
-- Environment variable：`HUGO_VERSION=0.162.0`
+- Environment variable：`HUGO_VERSION=0.162.0`，须与 `.hugo-version` 一致
 - Production branch：`main`
+
+Cloudflare 不会自动读取本项目的 `.hugo-version`；该文件用于本地、CI 与构建入口校验，平台安装版本仍由 `HUGO_VERSION` 选择。升级时先更新 preview 变量并验收 PR 预览，随后同步 production 并合并；以构建日志和线上首页 generator 的实际版本为准。版本不匹配时构建会停止，避免静默使用平台默认版本。
 
 ## 内容质量要求
 
