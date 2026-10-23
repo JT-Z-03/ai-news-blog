@@ -25,7 +25,7 @@
 body.orbit-shell {
     background: var(--orbit-page);
     color: var(--orbit-ink);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--orbit-font-sans);
 }
 
 .orbit-shell .header {
@@ -179,7 +179,7 @@ body.orbit-shell {
 .orbit-page__title {
     margin: 0;
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(2.6rem, 6vw, 4.5rem);
     font-weight: 760;
     line-height: 1.12;
@@ -237,7 +237,7 @@ body.orbit-shell {
 }
 
 .orbit-article__body :is(h1, h2, h3, h4, h5, h6) {
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
 }
 
 .orbit-article__body h2 {
@@ -306,7 +306,7 @@ body.orbit-shell {
 .orbit-list__header h1 {
     margin: 0;
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(2.6rem, 6vw, 4.5rem);
     font-weight: 760;
     line-height: 1.12;
@@ -362,7 +362,7 @@ body.orbit-shell {
 
 .orbit-list__row h2 {
     margin: 0.8rem 0 0;
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(1.5rem, 3vw, 2.05rem);
     line-height: 1.2;
     letter-spacing: -0.03em;
@@ -440,14 +440,14 @@ body.orbit-shell {
     justify-content: space-between;
     gap: 1rem;
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     text-decoration: none;
 }
 
 .orbit-terms strong {
     color: var(--orbit-muted);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: 0.9rem;
 }
 
@@ -552,7 +552,7 @@ body.orbit-shell {
 
 .orbit-search__results a {
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 700;
     line-height: 1.3;
@@ -590,14 +590,14 @@ body.orbit-shell {
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--orbit-border);
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(1.7rem, 3vw, 2.4rem);
     line-height: 1.2;
 }
 
 .orbit-archive-year h2 span {
     color: var(--orbit-muted);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: 0.85rem;
     font-weight: 500;
 }
@@ -605,7 +605,7 @@ body.orbit-shell {
 .orbit-archive-month h3 {
     margin: 1.5rem 0 0;
     color: var(--orbit-muted);
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -627,7 +627,7 @@ body.orbit-shell {
 
 .orbit-archive-entries a {
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(1.1rem, 2vw, 1.35rem);
     font-weight: 700;
     line-height: 1.35;
@@ -659,7 +659,7 @@ body.orbit-shell {
 .orbit-not-found h1 {
     margin: 0;
     color: var(--orbit-ink);
-    font-family: "Outfit", sans-serif;
+    font-family: var(--orbit-font-sans);
     font-size: clamp(5rem, 18vw, 9rem);
     line-height: 0.9;
     letter-spacing: -0.07em;

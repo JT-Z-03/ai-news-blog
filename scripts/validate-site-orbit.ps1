@@ -308,12 +308,9 @@ url: "/orbit-archive-fixture/"
     Require-Match $articleMarkup '<span class="orbit-reading-progress__label">阅读进度 0%</span>' "Reading progress should render its visible value label."
     Require-Match $articleMarkup 'class="orbit-article__body post-content md-content"' "Regular posts should expose the constrained reading body."
     Require-Match $articleMarkup '2026 年 8 月 14 日</span>&nbsp;·&nbsp;<span>11 分钟</span>&nbsp;·&nbsp;<span>5351 字</span>&nbsp;·&nbsp;<span>ZestJT</span>' "Article metadata should match the CJK-aware Chinese reading-first reference copy."
-    Require-Match $articleMarkup '"wordCount"\s*:\s*"5351"' "The DeepSeek article's JSON-LD should match its displayed CJK word count."
-    Require-Match $articleMarkup 'progress\.setAttribute\(.aria-valuenow.,\s*String\(' "The shipped progress script should update the accessible value."
-    Require-Match $articleMarkup 'bar\.style\.transform\s*=' "The shipped progress script should update the visual bar."
-    Require-Match $articleMarkup 'label\.textContent\s*=' "The shipped progress script should update the visible value label."
-    Require-Match $articleMarkup 'progress\.hidden\s*=\s*distance\s*===\s*0' "The shipped progress script should hide when the article cannot scroll."
-    Require-Match $articleMarkup 'addEventListener\(.scroll.,\s*updateProgress' "The shipped progress script should respond to scrolling."
+    $articleSchemas = @([regex]::Matches($articleMarkup, '<script type="application/ld\+json">(?<json>[\s\S]*?)</script>') | ForEach-Object { $_.Groups['json'].Value | ConvertFrom-Json } | Where-Object { $_.'@type' -eq 'BlogPosting' })
+    if ($articleSchemas.Count -ne 1 -or $articleSchemas[0].wordCount -ne 5351) { $errors.Add("The DeepSeek article's JSON-LD should match its displayed CJK word count.") }
+    Require-Match $articleMarkup '<script[^>]+src="[^"]*orbit-reading-progress[^" ]*\.js"' "Article progress should load an external script under the strict CSP; browser tests verify its behavior."
     Require-Match $articleMarkup '(?s)<footer class="orbit-article__footer post-footer">.*?href="[^"]*/categories/' "The article footer should honor the configured tag-taxonomy key."
     Require-Match $aboutMarkup '<article class="orbit-page orbit-static-page"' "Static pages should render the Orbit static-page layout."
     if ($aboutMarkup -match 'orbit-reading-progress') {
@@ -398,8 +395,8 @@ url: "/orbit-archive-fixture/"
     Require-Match $orbitCss '(?s)\.orbit-list__row h2\s*\{[^}]*font-size:\s*clamp\(1\.5rem,\s*3vw,\s*2\.05rem\);' "The list-title rule should declare the reviewed maximum size."
     Require-Match $orbitCss '(?s)\.orbit-shell \.orbit-search__results a\.entry-link:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Search-result focus should use a high-contrast monochrome ring."
     Require-Match $orbitCss '(?s)\.orbit-nav-deep-analysis \.menu a\[href\*="%E6%B7%B1%E5%BA%A6%E5%88%86%E6%9E%90/"\] span,[^{]*\{[^}]*box-shadow:\s*inset\s+0\s+-2px\s+var\(--orbit-accent\);' "The deep-analysis navigation rule should declare the Orbit accent underline."
-    Require-Match $orbitCss '(?s)\.orbit-page__title\s*\{[^}]*font-family:\s*"Outfit"' "Orbit page titles should use the Outfit display face."
-    Require-Match $orbitCss '(?s)\.orbit-article__body[^\{]*h2[^\{]*\{[^}]*font-family:\s*"Outfit"' "Article headings should use the Outfit display face."
+    Require-Match $orbitCss '(?s)\.orbit-page__title\s*\{[^}]*font-family:\s*var\(--orbit-font-sans\)' "Orbit page titles should use the shared system font stack."
+    Require-Match $orbitCss '(?s)\.orbit-article__body[^\{]*h2[^\{]*\{[^}]*font-family:\s*var\(--orbit-font-sans\)' "Article headings should use the shared system font stack."
 }
 finally {
     if ($null -eq $previousTagTaxonomy) {

@@ -1,221 +1,133 @@
 import * as params from '@params';
+import { createSearchIndex, isComposing, normalizeQuery, readSearchState, resultSnippet, searchStateUrl, RESULT_LIMIT } from './search-core.mjs';
 
-const resList = document.getElementById('searchResults');
-const sInput = document.getElementById('searchInput');
-const searchBox = document.getElementById('searchbox');
-const status = document.getElementById('searchStatus');
+function initSearch() {
+    const resList = document.getElementById('searchResults');
+    const sInput = document.getElementById('searchInput');
+    const searchBox = document.getElementById('searchbox');
+    const status = document.getElementById('searchStatus');
+    const typeSelect = document.getElementById('searchType');
+    const retry = document.getElementById('searchRetry');
+    if (!resList || !sInput || !searchBox || !status || !typeSelect || !retry) return;
 
-let fuse;
-let currentElement = null;
-let firstResult = null;
-let lastResult = null;
-
-const statusMessages = {
-    initial: '输入关键词开始搜索。',
-    loading: '正在加载搜索索引…',
-    empty: '没有找到匹配结果。',
-    failure: '搜索暂时不可用，请稍后重试。'
-};
-
-const setStatus = (state, count = 0) => {
-    if (!status) {
-        return;
-    }
-
-    status.dataset.state = state;
-    status.textContent = state === 'results' ? `${count} 条搜索结果。` : statusMessages[state];
-};
-
-const defaultFuseOptions = {
-    distance: 100,
-    threshold: 0.4,
-    ignoreLocation: true,
-    keys: ['title', 'permalink', 'summary', 'content']
-};
-
-const buildFuseOptions = () => {
-    if (!params.fuseOpts) {
-        return defaultFuseOptions;
-    }
-
-    return {
-        isCaseSensitive: params.fuseOpts.iscasesensitive ?? false,
-        includeScore: params.fuseOpts.includescore ?? false,
-        includeMatches: params.fuseOpts.includematches ?? false,
-        minMatchCharLength: params.fuseOpts.minmatchcharlength ?? 1,
-        shouldSort: params.fuseOpts.shouldsort ?? true,
-        findAllMatches: params.fuseOpts.findallmatches ?? false,
-        keys: params.fuseOpts.keys ?? defaultFuseOptions.keys,
-        location: params.fuseOpts.location ?? 0,
-        threshold: params.fuseOpts.threshold ?? defaultFuseOptions.threshold,
-        distance: params.fuseOpts.distance ?? defaultFuseOptions.distance,
-        ignoreLocation: params.fuseOpts.ignorelocation ?? defaultFuseOptions.ignoreLocation
-    };
-};
-
-const debounce = (fn, delay) => {
+    let index;
+    let composing = false;
     let timeout;
-    return (...args) => {
-        clearTimeout(timeout);
-        timeout = window.setTimeout(() => fn(...args), delay);
+    const messages = {
+        initial: '输入关键词开始搜索。',
+        loading: '正在加载搜索索引…',
+        empty: '没有找到匹配结果。',
+        failure: '搜索暂时不可用，请稍后重试。'
     };
-};
-
-const reset = () => {
-    currentElement = null;
-    firstResult = null;
-    lastResult = null;
-    resList.innerHTML = '';
-    sInput.value = '';
-    setStatus('initial');
-    sInput.focus();
-};
-
-const setActiveResult = (element) => {
-    document.querySelectorAll('.focus').forEach((item) => item.classList.remove('focus'));
-
-    if (!element) {
-        return;
-    }
-
-    element.focus();
-    element.parentElement?.classList.add('focus');
-    currentElement = element;
-};
-
-const renderResults = (results) => {
-    const query = sInput.value.trim();
-    if (!Array.isArray(results) || results.length === 0) {
-        resList.innerHTML = '';
-        firstResult = lastResult = currentElement = null;
-        setStatus(query ? 'empty' : 'initial');
-        return;
-    }
-
-    const fragment = document.createDocumentFragment();
-
-    for (const result of results) {
-        const li = document.createElement('li');
-        const titleText = document.createTextNode(result.item.title);
-        const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        svg.setAttribute('width', '24');
-        svg.setAttribute('height', '24');
-        svg.setAttribute('viewBox', '0 0 24 24');
-        svg.setAttribute('fill', 'none');
-        svg.setAttribute('stroke', 'currentColor');
-        svg.setAttribute('stroke-width', '2');
-        svg.setAttribute('stroke-linecap', 'round');
-        svg.setAttribute('stroke-linejoin', 'round');
-        svg.classList.add('feather', 'feather-chevrons-right');
-
-        svg.innerHTML = '<polyline points="13 17 18 12 13 7"></polyline><polyline points="6 17 11 12 6 7"></polyline>';
-
-        const link = document.createElement('a');
-        link.className = 'entry-link';
-        link.href = result.item.permalink;
-        link.setAttribute('aria-label', result.item.title);
-
-        li.appendChild(titleText);
-        li.appendChild(svg);
-        li.appendChild(link);
-        fragment.appendChild(li);
-    }
-
-    resList.innerHTML = '';
-    resList.appendChild(fragment);
-    firstResult = resList.firstElementChild;
-    lastResult = resList.lastElementChild;
-    setStatus('results', results.length);
-};
-
-const performSearch = () => {
-    if (!fuse) {
-        return;
-    }
-
-    const query = sInput.value.trim();
-    if (!query) {
-        renderResults([]);
-        return;
-    }
-
-    const searchOptions = params.fuseOpts?.limit ? { limit: params.fuseOpts.limit } : undefined;
-    const results = searchOptions ? fuse.search(query, searchOptions) : fuse.search(query);
-    renderResults(results);
-};
-
-const initSearch = async () => {
-    if (!sInput || !resList) {
-        return;
-    }
-
-    setStatus('loading');
-
-    try {
-        const response = await fetch('../index.json');
-        if (!response.ok) {
-            throw new Error(`Search index load failed: ${response.status}`);
+    const setStatus = (state, count = 0, more = false) => {
+        status.dataset.state = state;
+        status.textContent = state === 'results'
+            ? `${count} 条搜索结果。${more ? `仅显示前 ${RESULT_LIMIT} 条，可增加关键词或筛选文章类型。` : ''}`
+            : messages[state];
+    };
+    const restoreState = () => {
+        const state = readSearchState(window.location.href);
+        sInput.value = state.query;
+        typeSelect.value = state.type;
+    };
+    const renderResults = ({ results, more }, query) => {
+        const fragment = document.createDocumentFragment();
+        for (const result of results) {
+            const { item } = result;
+            const li = document.createElement('li');
+            const heading = document.createElement('h2');
+            heading.className = 'orbit-search__title';
+            const link = document.createElement('a');
+            link.className = 'entry-link';
+            link.href = item.permalink;
+            link.textContent = item.title;
+            heading.append(link);
+            const metadata = document.createElement('p');
+            metadata.className = 'orbit-search__meta';
+            if (/^\d{4}-\d{2}-\d{2}$/.test(item.date || '')) {
+                const date = document.createElement('time');
+                date.dateTime = item.date;
+                date.textContent = item.date;
+                metadata.append(date, document.createTextNode(' · '));
+            }
+            metadata.append(document.createTextNode(item.category || '页面'));
+            const snippet = document.createElement('p');
+            snippet.className = 'entry-content orbit-search__snippet';
+            for (const part of resultSnippet(item.content, query, result.matches)) {
+                if (part.marked) {
+                    const mark = document.createElement('mark');
+                    mark.textContent = part.text;
+                    snippet.append(mark);
+                } else snippet.append(document.createTextNode(part.text));
+            }
+            li.append(heading, metadata, snippet);
+            fragment.append(li);
         }
-
-        const data = await response.json();
-        if (!Array.isArray(data)) {
-            throw new Error('Search index returned invalid data');
+        resList.replaceChildren(fragment);
+        setStatus(results.length ? 'results' : (query ? 'empty' : 'initial'), results.length, more);
+    };
+    const performSearch = () => {
+        if (!index || composing) return;
+        const query = normalizeQuery(sInput.value);
+        const url = searchStateUrl(window.location.href, { query, type: typeSelect.value });
+        window.history.replaceState(window.history.state, '', url);
+        renderResults(index.search(query, typeSelect.value), query);
+    };
+    const scheduleSearch = () => {
+        clearTimeout(timeout);
+        timeout = window.setTimeout(performSearch, 150);
+    };
+    const loadIndex = async () => {
+        setStatus('loading');
+        retry.hidden = true;
+        sInput.disabled = typeSelect.disabled = true;
+        try {
+            const response = await fetch(searchBox.dataset.indexUrl || '../index.json');
+            if (!response.ok) throw new Error(`Search index load failed: ${response.status}`);
+            index = createSearchIndex(await response.json(), Fuse, window.location.href, params.fuseOpts, params.siteBaseURL || window.location.href);
+            sInput.disabled = typeSelect.disabled = false;
+            performSearch();
+        } catch (error) {
+            setStatus('failure');
+            retry.hidden = false;
+            console.error(error);
         }
-
-        fuse = new Fuse(data, buildFuseOptions());
-        sInput.disabled = false;
-        setStatus('initial');
-        sInput.focus();
-    } catch (error) {
-        sInput.disabled = true;
-        setStatus('failure');
-        console.error(error);
-    }
-};
-
-window.addEventListener('load', initSearch);
-
-sInput?.addEventListener('input', debounce(performSearch, 150));
-
-sInput?.addEventListener('search', () => {
-    if (!sInput.value) {
-        reset();
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    const { key } = event;
-    const active = document.activeElement;
-    const isInSearchBox = searchBox?.contains(active);
-
-    if (key === 'Escape') {
-        reset();
-        return;
-    }
-
-    if (!firstResult || !isInSearchBox) {
-        return;
-    }
-
-    if (key === 'ArrowDown') {
-        event.preventDefault();
-
-        if (active === sInput) {
-            setActiveResult(firstResult.querySelector('.entry-link'));
-        } else if (active?.parentElement !== lastResult) {
-            setActiveResult(active?.parentElement?.nextElementSibling?.querySelector('.entry-link'));
+    };
+    restoreState();
+    sInput.addEventListener('compositionstart', () => { composing = true; clearTimeout(timeout); });
+    sInput.addEventListener('compositionend', () => { composing = false; scheduleSearch(); });
+    sInput.addEventListener('input', (event) => {
+        if (isComposing(event, composing)) { clearTimeout(timeout); return; }
+        scheduleSearch();
+    });
+    sInput.addEventListener('search', () => { if (!composing) { clearTimeout(timeout); performSearch(); } });
+    typeSelect.addEventListener('change', () => { clearTimeout(timeout); performSearch(); });
+    retry.addEventListener('click', loadIndex);
+    window.addEventListener('popstate', () => { clearTimeout(timeout); restoreState(); performSearch(); });
+    document.addEventListener('keydown', (event) => {
+        const active = document.activeElement;
+        if (!searchBox.contains(active) || isComposing(event, composing)) return;
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            clearTimeout(timeout);
+            sInput.value = '';
+            performSearch();
+            sInput.focus();
+            return;
         }
-    } else if (key === 'ArrowUp') {
-        event.preventDefault();
+        const links = [...resList.querySelectorAll('.entry-link')];
+        const position = links.indexOf(active);
+        if (!links.length || (active !== sInput && position < 0)) return;
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            links[Math.min(position + 1, links.length - 1)].focus();
+        } else if (event.key === 'ArrowUp' && position >= 0) {
+            event.preventDefault();
+            (position === 0 ? sInput : links[position - 1]).focus();
+        }
+    });
+    loadIndex();
+}
 
-        if (active?.parentElement === firstResult) {
-            setActiveResult(sInput);
-        } else if (active !== sInput) {
-            setActiveResult(active?.parentElement?.previousElementSibling?.querySelector('.entry-link'));
-        }
-    } else if (key === 'ArrowRight') {
-        if (active?.matches?.('.entry-link')) {
-            active.click();
-        }
-    }
-});
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSearch, { once: true });
+else initSearch();

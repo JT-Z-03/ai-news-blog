@@ -20,7 +20,8 @@ try {
         @{ name = 'test-security-validation'; hugo = $false },
         @{ name = 'test-content-metadata'; hugo = $true },
         @{ name = 'test-icon-references'; hugo = $true },
-        @{ name = 'test-hugo-toolchain'; hugo = $true }
+        @{ name = 'test-hugo-toolchain'; hugo = $true },
+        @{ name = 'test-seo-security'; hugo = $true }
     )
     foreach ($check in $checks) {
         Write-Host "Running $($check.name)..."
@@ -33,8 +34,9 @@ try {
         }
     }
 
-    Write-Host 'Testing the production build script...'
-    & $nodeExecutable --test (Join-Path $PSScriptRoot 'test-build-site.mjs')
+    Write-Host 'Testing build, content, search, and monitoring behavior...'
+    $nodeTests = @(Get-ChildItem -LiteralPath $PSScriptRoot -Filter 'test-*.mjs' | Sort-Object Name | ForEach-Object FullName)
+    & $nodeExecutable --test @nodeTests
     if ($LASTEXITCODE -ne 0) {
         $exitCode = $LASTEXITCODE
         throw "Production build script regression failed with exit code $exitCode."

@@ -88,7 +88,8 @@ try {
     if ($timeMatch.Success) { $readingTime = [int]$timeMatch.Groups["minutes"].Value }
     Require-Match $article '<span>600 字</span>' "The 600-character unspaced CJK article must display 600 字."
     Require-Match $article '<span>2 分钟</span>' "The 600-character CJK article must display Hugo's 2-minute estimate."
-    Require-Match $article '"wordCount"\s*:\s*"600"' "The CJK article's JSON-LD wordCount must equal its displayed count."
+    $articleSchemas = @([regex]::Matches($article, '<script type="application/ld\+json">(?<json>[\s\S]*?)</script>') | ForEach-Object { $_.Groups['json'].Value | ConvertFrom-Json } | Where-Object { $_.'@type' -eq 'BlogPosting' })
+    if ($articleSchemas.Count -ne 1 -or $articleSchemas[0].wordCount -ne 600) { $errors.Add("The CJK article's JSON-LD wordCount must equal its displayed count.") }
 
     $allRows = [Collections.Generic.List[string]]::new()
     $pagePaths = @("posts/metadata-fixture/index.html", "posts/metadata-fixture/page/2/index.html", "posts/metadata-fixture/page/3/index.html")

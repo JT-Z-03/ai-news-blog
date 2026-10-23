@@ -1,0 +1,13 @@
+{{- /* Keep the existing static originals and create sized Hugo image resources. */ -}}
+{{- $sourcePath := printf "static%s" .path -}}
+{{- $resourcePath := printf "images/responsive/%s" (path.Base .path) -}}
+{{- $image := resources.FromString $resourcePath (readFile $sourcePath) -}}
+{{- $variants := slice -}}
+{{- range slice 400 640 960 1280 -}}
+  {{- if le . $image.Width -}}
+    {{- $variant := $image.Resize (printf "%dx webp q80" .) -}}
+    {{- $variants = $variants | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+  {{- end -}}
+{{- end -}}
+{{- $fallback := $image.Resize "640x webp q80" -}}
+<img class="orbit-story-image" src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $variants ", " }}" sizes="{{ .sizes }}" alt="" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="{{ .loading }}" decoding="async" aria-hidden="true">

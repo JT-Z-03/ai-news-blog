@@ -10,7 +10,7 @@ $utf8 = [Text.UTF8Encoding]::new($false)
 $pwshPath = Join-Path $PSHOME $(if ($IsWindows) { 'pwsh.exe' } else { 'pwsh' })
 $results = [Collections.Generic.List[object]]::new()
 $securityHeaders = [ordered]@{
-    'Content-Security-Policy' = "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
+    'Content-Security-Policy' = "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests"
     'Strict-Transport-Security' = 'max-age=31536000; includeSubDomains'
     'X-Content-Type-Options' = 'nosniff'
     'X-Frame-Options' = 'DENY'
@@ -74,6 +74,15 @@ try {
     $noRumCsp = $securityHeaders['Content-Security-Policy'].Replace(' https://cloudflareinsights.com', '')
     Invoke-Case 'missing-analytics-script-origin' (New-HeadersBlock -Csp $noBeaconCsp) $false
     Invoke-Case 'missing-analytics-connect-origin' (New-HeadersBlock -Csp $noRumCsp) $false
+    foreach ($unsafe in @("'unsafe-inline'", "'unsafe-eval'", '*', 'https:', 'data:', 'blob:')) {
+        $badCsp = $securityHeaders['Content-Security-Policy'].Replace("script-src 'self'", "script-src 'self' $unsafe")
+        $caseName = 'unsafe-script-source-' + ($unsafe -replace '[^a-zA-Z]', '')
+        Invoke-Case $caseName (New-HeadersBlock -Csp $badCsp) $false
+    }
+    Invoke-Case 'unsafe-script-element-override' (New-HeadersBlock -Csp ($securityHeaders['Content-Security-Policy'] + "; script-src-elem 'unsafe-inline'")) $false
+    Invoke-Case 'unsafe-event-handler-override' (New-HeadersBlock -Csp $securityHeaders['Content-Security-Policy'].Replace("script-src-attr 'none'", "script-src-attr 'unsafe-inline'")) $false
+    # Use the real head for the real project policy (the font compatibility cases above use their own fixture).
+    $headPath = Join-Path $PSScriptRoot '..\layouts\partials\extend_head.html'
     Invoke-Case 'project-headers' ([IO.File]::ReadAllText((Join-Path $PSScriptRoot '..\static\_headers'))) $true
 
     $failed = @($results | Where-Object { -not $_.passed })
