@@ -67,6 +67,23 @@ else {
 
     foreach ($cspMatch in $cspMatches) {
         $csp = $cspMatch.Groups["value"].Value.Trim()
+        foreach ($name in @('script-src', 'script-src-elem')) {
+            $scriptDirective = [regex]::Match($csp, "(?i)(?:^|;\s*)$name\s+(?<sources>[^;]+)")
+            if ($name -eq 'script-src' -and -not $scriptDirective.Success) {
+                $errors += 'static/_headers: global CSP must define script-src explicitly'
+            }
+            if ($scriptDirective.Success) {
+                $sources = $scriptDirective.Groups['sources'].Value -split '\s+'
+                foreach ($source in $sources) {
+                    if ($source -in @("'unsafe-inline'", "'unsafe-eval'", '*', 'https:', 'http:', 'data:', 'blob:')) {
+                        $errors += "static/_headers: $name must not allow unsafe or unrestricted source $source"
+                    }
+                }
+            }
+        }
+        if ($csp -notmatch "(?i)(?:^|;\s*)script-src-attr\s+'none'\s*(?:;|$)") {
+            $errors += "static/_headers: inline event handlers must be disabled with script-src-attr 'none'"
+        }
         # Pages injects the beacon outside the project head; keep its two required origins explicit.
         $analyticsSources = [ordered]@{
             'script-src' = 'https://static.cloudflareinsights.com'

@@ -16,12 +16,21 @@ jobs:
   repository-validation:
     name: repository-validation
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           submodules: recursive
+
+      - name: Set up pinned Node major
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install locked validation dependencies
+        run: npm ci --ignore-scripts
 
       - name: Install pinned Hugo Extended
         shell: bash
@@ -43,3 +52,23 @@ jobs:
       - name: Validate toolchain, content, pages, and production build
         shell: pwsh
         run: ./scripts/validate-all.ps1
+
+      - name: Build browser acceptance output
+        run: node scripts/build-site.mjs --destination .validation-public
+
+      - name: Install browser engines
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Check browser layouts, search, keyboard and CSP
+        run: npm run test:browser
+
+      - name: Retain browser evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: browser-acceptance
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
+          retention-days: 7

@@ -5,11 +5,21 @@
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </header>
-  <div id="searchbox" class="orbit-search__box">
+  <div id="searchbox" class="orbit-search__box" data-index-url="{{ "index.json" | relURL }}">
     <label for="searchInput">输入关键词</label>
-    <input id="searchInput" disabled placeholder="{{ .Params.placeholder | default "搜索文章" }}" aria-label="搜索文章" type="search" autocomplete="off" maxlength="64">
-    <p class="orbit-search__hint">搜索 AI 热点日报与深度分析文章</p>
+    <input id="searchInput" disabled placeholder="{{ .Params.placeholder | default "搜索文章" }}" aria-label="搜索文章" aria-describedby="searchHint searchStatus" type="search" autocomplete="off" maxlength="64">
+    <div class="orbit-search__filters">
+      <label for="searchType">文章类型</label>
+      <select id="searchType" disabled>
+        <option value="all">全部内容</option>
+        <option value="daily">日报</option>
+        <option value="analysis">深度分析</option>
+      </select>
+    </div>
+    <p id="searchHint" class="orbit-search__hint">搜索全文，多个关键词用空格分隔；用上下方向键浏览结果，按 Enter 打开文章。</p>
     <p id="searchStatus" class="orbit-search__status" role="status" aria-live="polite" aria-atomic="true" data-state="initial">输入关键词开始搜索。</p>
+    <button id="searchRetry" class="orbit-search__retry" type="button" hidden>重新加载搜索</button>
+    <noscript><p>搜索需要 JavaScript。也可浏览<a href="{{ "/categories/日报/" | relURL }}">日报</a>或<a href="{{ "/categories/深度分析/" | relURL }}">深度分析</a>。</p></noscript>
     <ul id="searchResults" class="searchResults orbit-search__results" aria-label="搜索结果"></ul>
   </div>
 </section>

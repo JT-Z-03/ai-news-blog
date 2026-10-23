@@ -1,0 +1,43 @@
+.orbit-search .orbit-search__filters {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+.orbit-search .orbit-search__filters label { margin: 0; }
+.orbit-search .orbit-search__filters select,
+.orbit-search .orbit-search__retry {
+    min-height: 44px;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid var(--orbit-border);
+    background: var(--orbit-surface);
+    color: var(--orbit-ink);
+    font: inherit;
+}
+.orbit-search .orbit-search__filters select:focus-visible,
+.orbit-search .orbit-search__retry:focus-visible {
+    outline: 3px solid var(--orbit-focus-contrast);
+    outline-offset: 3px;
+}
+.orbit-search .orbit-search__results .entry-link {
+    position: static;
+    inset: auto;
+    display: inline;
+    overflow-wrap: anywhere;
+}
+.orbit-search .orbit-search__title { margin: 0; }
+.orbit-search .orbit-search__meta {
+    margin: 0.6rem 0 0;
+    color: var(--orbit-muted);
+    font-size: 0.85rem;
+}
+.orbit-search .orbit-search__snippet {
+    margin: 0.6rem 0 0;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+.orbit-search .orbit-search__snippet mark {
+    background: rgb(128 128 128 / 20%);
+    color: inherit;
+    font-weight: 700;
+}

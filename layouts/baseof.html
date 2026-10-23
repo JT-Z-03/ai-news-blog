@@ -19,10 +19,11 @@
 {{- end -}}
 {{- if (or (ne .Kind `page`) (eq .Layout `archives`) (eq .Layout `search`)) }}{{ $bodyClasses = $bodyClasses | append "list" }}{{ end -}}
 <body class="{{ delimit $bodyClasses " " }}" id="top">
+    <a class="orbit-skip-link" href="#main-content" tabindex="0">跳到正文</a>
     {{ partialCached "header.html" . .Page -}}
-    <main class="main">
+    <main class="main" id="main-content" tabindex="-1">
         {{- block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ partialCached "footer.html" . .Layout .Kind .Section .Language.Lang (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>
 </html>
