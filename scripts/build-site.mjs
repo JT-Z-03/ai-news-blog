@@ -16,11 +16,23 @@ export function assertHugoVersion(output, expected) {
   }
 }
 
+export function assertCloudflareVersion(config, expected) {
+  for (const environment of ['production', 'preview']) {
+    const variables = config.env?.[environment]?.vars ?? config.vars;
+    if (variables?.HUGO_VERSION !== expected) {
+      throw new Error(`Wrangler ${environment} HUGO_VERSION must match .hugo-version (${expected}).`);
+    }
+  }
+}
+
 export function buildSite(args = process.argv.slice(2)) {
   if (args.length && (args.length !== 2 || args[0] !== '--destination' || !args[1])) {
     throw new Error('Usage: node scripts/build-site.mjs [--destination PATH]');
   }
   const expected = readFileSync(resolve(projectRoot, '.hugo-version'), 'utf8').trim();
+  // This repository keeps wrangler.jsonc as JSON without comments for this dependency-free check.
+  const cloudflareConfig = JSON.parse(readFileSync(resolve(projectRoot, 'wrangler.jsonc'), 'utf8'));
+  assertCloudflareVersion(cloudflareConfig, expected);
   const localBinary = resolve(projectRoot, process.platform === 'win32' ? 'hugo.exe' : 'hugo');
   const binary = process.env.HUGO_BINARY || (existsSync(localBinary) ? localBinary : 'hugo');
   const version = spawnSync(binary, ['version'], { cwd: projectRoot, encoding: 'utf8' });

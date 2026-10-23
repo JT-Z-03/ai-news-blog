@@ -75,10 +75,10 @@ npx wrangler pages deploy public --project-name ai-news-blog
 
 - Build command：`node scripts/build-site.mjs`
 - Build output directory：`public`
-- Environment variable：`HUGO_VERSION=0.162.0`，须与 `.hugo-version` 一致
+- Environment variable：`HUGO_VERSION=0.162.0`，由 `wrangler.jsonc` 的 `vars` 提供，须与 `.hugo-version` 一致
 - Production branch：`main`
 
-Cloudflare 不会自动读取本项目的 `.hugo-version`；该文件用于本地、CI 与构建入口校验，平台安装版本仍由 `HUGO_VERSION` 选择。升级时先更新 preview 变量并验收 PR 预览，随后同步 production 并合并；以构建日志和线上首页 generator 的实际版本为准。版本不匹配时构建会停止，避免静默使用平台默认版本。
+Cloudflare 不会自动读取本项目的 `.hugo-version`；该文件用于本地、CI 与构建入口校验。项目使用 Wrangler 配置时，它是构建环境变量的来源，仅修改控制台/API 变量会被仓库配置覆盖。`wrangler.jsonc` 保持无注释 JSON，构建入口核对其 production/preview 的有效 `HUGO_VERSION`，平台据此选择安装版本。升级时在同一 PR 修改版本文件与 Wrangler 变量，先验收预览再合并；以构建日志和线上首页 generator 的实际版本为准。版本不匹配时构建会停止，避免静默使用平台默认版本。
 
 ## 内容质量要求
 
