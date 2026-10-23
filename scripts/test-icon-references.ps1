@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [string]$ProjectRoot = (Split-Path $PSScriptRoot -Parent),
-    [string]$HugoPath = (Join-Path (Split-Path $PSScriptRoot -Parent) "hugo.exe"),
+    [string]$HugoPath,
     [string]$PublicRoot,
     [string]$EvidenceDirectory,
     [string]$EvidenceName = "icon-references"
@@ -9,7 +9,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 $projectPath = (Resolve-Path -LiteralPath $ProjectRoot).Path
-$hugoExecutable = (Resolve-Path -LiteralPath $HugoPath).Path
+. (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
+$hugoExecutable = Resolve-HugoExecutable -ProjectRoot $projectPath -HugoPath $HugoPath
 $temporaryParent = [IO.Path]::GetFullPath([IO.Path]::GetTempPath())
 $temporaryRoot = Join-Path $temporaryParent ("ai-news-blog-icon-test-" + [guid]::NewGuid())
 $fixtureSource = Join-Path $temporaryRoot "source"

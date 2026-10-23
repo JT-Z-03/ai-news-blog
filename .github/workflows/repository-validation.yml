@@ -16,19 +16,30 @@ jobs:
   repository-validation:
     name: repository-validation
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          submodules: recursive
 
-      - name: Validate content
-        shell: pwsh
-        run: ./scripts/validate-content.ps1
+      - name: Install pinned Hugo Extended
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(tr -d '\r\n' < .hugo-version)"
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          archive="hugo_extended_${version}_linux-amd64.tar.gz"
+          release="https://github.com/gohugoio/hugo/releases/download/v${version}"
+          install_dir="${RUNNER_TEMP}/hugo"
+          mkdir -p "$install_dir"
+          curl --fail --silent --show-error --location "${release}/${archive}" --output "${install_dir}/${archive}"
+          curl --fail --silent --show-error --location "${release}/hugo_${version}_checksums.txt" --output "${install_dir}/checksums.txt"
+          cd "$install_dir"
+          grep -E "^[0-9a-fA-F]{64}  ${archive//./\.}$" checksums.txt | sha256sum --check --strict
+          tar -xzf "$archive" hugo
+          echo "$install_dir" >> "$GITHUB_PATH"
 
-      - name: Validate security headers
+      - name: Validate toolchain, content, pages, and production build
         shell: pwsh
-        run: ./scripts/validate-security.ps1
-
-      - name: Test security header validation
-        shell: pwsh
-        run: ./scripts/test-security-validation.ps1
+        run: ./scripts/validate-all.ps1
