@@ -1,0 +1,16 @@
+{{- $index := slice -}}
+{{- range site.RegularPages -}}
+  {{- if and (not .Params.searchHidden) (ne .Layout "archives") (ne .Layout "search") -}}
+    {{- $category := "页面" -}}
+    {{- if in (.Params.categories | default slice) "日报" -}}{{- $category = "日报" -}}
+    {{- else if in (.Params.categories | default slice) "深度分析" -}}{{- $category = "深度分析" -}}{{- end -}}
+    {{- $date := "" -}}
+    {{- if not .Date.IsZero -}}{{- $date = .Date.Format "2006-01-02" -}}{{- end -}}
+    {{- $index = $index | append (dict "title" .Title "content" (.Plain | replaceRE `\s+` " " | strings.TrimSpace) "permalink" .RelPermalink "date" $date "category" $category) -}}
+  {{- end -}}
+{{- end -}}
+{{- $json := $index | jsonify -}}
+{{- if gt (len $json) 2097152 -}}
+  {{- errorf "Search index exceeds the 2 MiB raw JSON budget (%d bytes). Review search indexing/worker strategy before raising the budget; do not truncate article content." (len $json) -}}
+{{- end -}}
+{{- $json -}}

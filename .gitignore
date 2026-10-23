@@ -27,3 +27,10 @@ hugo.exe
 
 # Isolated task worktrees
 .worktrees/
+
+# Validation dependencies and browser evidence
+node_modules/
+test-results/
+playwright-report/
+.validation-public/
+assets/jsconfig.json

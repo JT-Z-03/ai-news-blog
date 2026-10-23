@@ -8,10 +8,11 @@
 
 ## 本地开发
 
-Hugo Extended 版本以 [`.hugo-version`](.hugo-version) 为准，当前为 `0.162.0`。构建入口会拒绝不匹配的版本和非 Extended 版本。需要 Node.js 18+、PowerShell 7 和 Git。
+Hugo Extended 版本以 [`.hugo-version`](.hugo-version) 为准，当前为 `0.162.0`。构建入口会拒绝不匹配的版本和非 Extended 版本。验证使用 Node.js 24、PowerShell 7 和 Git；站点仍由 Hugo 生成静态文件。
 
 ```powershell
 git submodule update --init --recursive
+npm ci --ignore-scripts
 .\hugo.exe server
 ```
 
@@ -24,6 +25,8 @@ pwsh -NoProfile -File ./scripts/validate-all.ps1
 ```
 
 Windows 和 Linux 使用相同入口：自动发现项目内的 Hugo 或 PATH 中的 Hugo，也可通过 `-HugoPath` 显式指定路径。完整检查包含内容、安全头、首页/全站、元数据、图标、工具链回归及隔离生产构建；任一失败均返回非零状态。夹具和最终构建写入临时目录，不覆盖正式 `public/`。
+
+Node 验证依赖固定在 `package-lock.json`，使用官方 npm registry。内容校验结构化解析 YAML 与 Markdown，检查非空字段、日期、分类、唯一 slug、ZestJT 署名和日报每条消息的来源链接；这不能替代对新闻事实和来源可信度的人工核查。搜索、监控和 SEO/CSP 的负向夹具也纳入统一入口。
 
 生成可部署产物：
 
@@ -42,6 +45,26 @@ node scripts/build-site.mjs
 ```
 
 回归检查使用隔离临时夹具，不上传访问统计或修改正式内容。仓库 CI 初始化固定主题子模块，从官方 Release 安装 `.hugo-version` 指定的 Extended 二进制并校验 SHA256，然后执行完整验证入口。
+
+浏览器验收使用 Chromium、Firefox、WebKit，覆盖 320/390/768/1024/1440px、文字放大、暗色、键盘、搜索与 CSP；CI 保存截图和失败轨迹7天：
+
+```powershell
+node scripts/build-site.mjs --destination .validation-public
+npx playwright install chromium firefox webkit
+npm run test:browser
+```
+
+也可设置 `PLAYWRIGHT_BASE_URL` 对预览域名运行同一测试。模拟视口、合成组合输入事件和文字缩放不等同真实手机、真实输入法及浏览器原生缩放验收。手工抽查记录应注明设备、浏览器、日期和结果。
+
+本地验收服务器仅监听 HTTP loopback，保留全部 CSP 来源限制，仅去掉需要 TLS 的 `upgrade-insecure-requests`；该指令在实际 HTTPS 预览和生产环境单独验证。生产 `_headers` 保持完整策略。
+
+## 搜索、主题覆盖与监控
+
+- 搜索保留完整正文，大小写不敏感，空格分隔的关键词须全部命中；没有字面匹配时提供标题容错。结果最多30条，支持类型筛选、日期和命中摘要，`?q=&type=`保存搜索状态。正文不再逐字执行模糊匹配。
+- 原始搜索索引预算为2 MiB，超限时构建失败，不静默截断正文。可运行 `node scripts/benchmark-search.mjs .validation-public/index.json` 生成基准；500/1000篇模拟仅用于评估扩展压力，不代表这些规模已通过网络或真实设备验收。
+- 主题固定提交、覆盖文件来源及升级检查见 [主题覆盖清单](docs/theme-overrides.md)。升级需重新验证页面元数据、外部脚本、图标、分页和浏览器行为。
+- `scripts/monitor-site.ps1` 检查安全头、生产索引许可、版本、搜索JSON、最新文章与首页/分类/sitemap一致性，以及页面实际引用的CSS/JS；默认期望文章来自当前checkout。部署验收可传 `-BaseUrl` 与 `-ExpectedArticle /posts/目标slug/`。小时监控沿用已有调度，不增加新定时任务。
+- Cloudflare Web Analytics保留既有注入与域名许可。脚本存在或请求成功不代表已有流量、搜索转化率或留存数据；查看报表时应单独核实对应时间范围。
 
 ## 内容结构
 

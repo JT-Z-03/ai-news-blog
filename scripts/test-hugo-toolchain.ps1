@@ -88,7 +88,7 @@ Resolve-HugoExecutable -ProjectRoot $ProjectRoot -HugoPath $HugoPath
     foreach ($name in @('hugo-toolchain.ps1', 'validate-all.ps1')) {
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $fixtureScripts
     }
-    $stageNames = @('validate-content', 'validate-security', 'validate-home-orbit', 'validate-site-orbit', 'test-security-validation', 'test-content-metadata', 'test-icon-references', 'test-hugo-toolchain')
+    $stageNames = @('validate-content', 'validate-security', 'validate-home-orbit', 'validate-site-orbit', 'test-security-validation', 'test-content-metadata', 'test-icon-references', 'test-hugo-toolchain', 'test-seo-security')
     $stageBody = @'
 param([string]$HugoPath)
 Add-Content -LiteralPath (Join-Path $PSScriptRoot '../stage-log.txt') -Value ([IO.Path]::GetFileNameWithoutExtension($PSCommandPath))

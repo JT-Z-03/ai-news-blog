@@ -40,7 +40,15 @@
 
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
-  {{- if (.Param "ShowToc") }}<div class="orbit-article__toc">{{ partial "toc.html" . }}</div>{{ end }}
+  {{- $headingCount := len (findRE `<h[23]\b` .Content) }}
+  {{- $showToc := and $isArticle (in (.Params.categories | default slice) "深度分析") (ge $headingCount 4) }}
+  {{- if or (isset .Params "showtoc") (isset site.Params "showtoc") }}{{ $showToc = .Param "ShowToc" }}{{ end }}
+  {{- if and $showToc (gt $headingCount 0) }}
+  <details class="orbit-article__toc orbit-toc"{{ if (.Param "TocOpen") }} open{{ end }}>
+    <summary>文章目录</summary>
+    <div class="orbit-toc__links">{{ .TableOfContents }}</div>
+  </details>
+  {{- end }}
 
   {{- with .Content }}
   <div class="orbit-article__body post-content md-content">
@@ -54,7 +62,17 @@
   {{- if $isArticle }}
   <footer class="orbit-article__footer post-footer">
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-    <ul class="post-tags">{{ range ($.GetTerms $tags) }}<li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    <ul class="post-tags">{{ range ($.GetTerms $tags) }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
+    {{- $candidates := where site.RegularPages "Section" "posts" }}
+    {{- $candidates = $candidates | complement (slice .) }}
+    {{- $related := first 3 (where $candidates "Params.tags" "intersect" (.Params.tags | default slice)) }}
+    <nav class="orbit-related" aria-labelledby="orbit-related-title">
+      <h2 id="orbit-related-title">继续阅读</h2>
+      {{- with $related }}
+      <ul>{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time></li>{{ end }}</ul>
+      {{- end }}
+      <p class="orbit-related__categories">{{ range .GetTerms "categories" }}<a href="{{ .RelPermalink }}">浏览更多{{ .LinkTitle }}</a>{{ end }}</p>
+    </nav>
     {{- if (.Param "ShowPostNavLinks") }}{{ partial "post_nav_links.html" . }}{{ end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}{{ partial "share_icons.html" . }}{{ end }}
   </footer>
