@@ -1,16 +1,18 @@
 # 主题覆盖与升级检查
 
-当前主题固定在 PaperMod `154d006e0182dfc7da38008323976b02e6bfab4a`。自定义文件位于项目 `layouts/`，不修改子模块源码。此文记录兼容边界，不代表主题已升级。
+当前主题固定在 PaperMod `969bebdc5600a1639158b5ef4eff9cf6cbb511ac`。自定义文件位于项目 `layouts/`，不修改子模块源码。下表的“来源基线”仍指覆盖最初参考的 `154d006e0182dfc7da38008323976b02e6bfab4a`，不随依赖升级改写。
+
+2026-10-24已审阅来源基线至当前版本的9个上游提交、19个文件：直接继承正文CSS和日期元信息修复，继续使用本站head/footer、搜索、RSS及结构化数据实现。上游最低Hugo版本为0.158.0，本站0.162.0满足。正文CSS移除了列表代码块负边距和旧高亮表格规则，升级验收重点覆盖代码、表格、窄屏、深色与文字放大。多语言分支仍沿用覆盖来源的API；本站当前单语，未据此声称多语言已验收。
 
 | 项目文件 | 上游来源 / 所有权 | 保留行为与必要差异 |
 |---|---|---|
-| `layouts/partials/orbit-head.html` | 上游 `layouts/_partials/head.html`，上述提交 | 保留 CSS 打包、搜索资源、验证标签、alternate/RSS、无 JS 样式、Twitter cards；canonical 接收显式分页参数，图标按资源存在性直接生成，主题初始化使用本地有指纹脚本。避免对上游生成的整段 HTML 做字符串替换。 |
+| `layouts/partials/orbit-head.html` | 上游 `layouts/_partials/head.html`，来源基线 | 保留 CSS 打包、搜索资源、验证标签、alternate/RSS、无 JS 样式、Twitter cards；canonical 接收显式分页参数，图标按资源存在性直接生成，主题初始化使用本地有指纹脚本。避免对上游生成的整段 HTML 做字符串替换。 |
 | `layouts/partials/orbit-list-head.html` | 项目局部入口 | 将分页 URL 传给 head；frontmatter canonicalURL 仍优先。 |
-| `layouts/partials/footer.html` | 上游 `layouts/_partials/footer.html`，上述提交 | 保留版权与 Hugo/PaperMod 链接、回顶按钮和扩展入口；辅助名称中文化，所有可执行脚本移至本地资源。 |
-| `layouts/partials/templates/opengraph.html` | 上游同名 partial，上述提交 | 仅 posts 输出 article 类型和非零文章日期；语言改用 `site.Language.Locale`，静态页面输出 website；复用head已解析的canonical，避免分页分享回到第一页。 |
+| `layouts/partials/footer.html` | 上游 `layouts/_partials/footer.html`，来源基线 | 保留版权与 Hugo/PaperMod 链接、回顶按钮和扩展入口；辅助名称中文化，所有可执行脚本移至本地资源。 |
+| `layouts/partials/templates/opengraph.html` | 上游同名 partial，来源基线 | 仅 posts 输出 article 类型和非零文章日期；语言改用 `site.Language.Locale`，静态页面输出 website；复用head已解析的canonical，避免分页分享回到第一页。 |
 | `layouts/partials/templates/twitter_cards.html`、`templates/_funcs/orbit-share-images.html` | 项目分享元数据 | Open Graph和Twitter共用图片解析，优先页面图片，再用站点默认图片；本地资源输出实际宽高、类型及替代文字。 |
 | `layouts/partials/templates/schema_json.html` | 项目语义实现；参考上游同名 partial | 用字典和 JSON 序列化构造合法数据；文章为 BlogPosting，关于为 AboutPage，搜索为 SearchResultsPage；其他普通页为 WebPage。面包屑取真实祖先。省略正文副本 articleBody，保留标题、摘要、作者、图片、实际日期和数值字数。保留可用图标检查。 |
-| `layouts/rss.xml` | 上游 `layouts/rss.xml`，上述提交 | 改用 Locale；RSS 只收录 posts，避免静态页零日期；空集合不读取首篇 Lastmod。 |
+| `layouts/rss.xml` | 上游 `layouts/rss.xml`，来源基线 | 改用 Locale；RSS 只收录 posts，避免静态页零日期；空集合不读取首篇 Lastmod。 |
 | `layouts/partials/extend_footer.html` | 项目扩展点 | 只在 posts 加载外部阅读进度脚本；footer 的 partialCached 键须包含 Section。 |
 | `layouts/baseof.html`、各页面模板、`header.html`、`orbit-responsive-image.html`、`layouts/_markup/` | 项目阅读界面 | 由本站负责维护；主题升级不能直接覆盖这些入口。其他未覆盖 partial 继续来自固定主题。 |
 
