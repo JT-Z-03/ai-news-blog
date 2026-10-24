@@ -21,6 +21,9 @@ Thumbs.db
 
 # Environment
 .env
+.env.*
+!.env.example
+!.env.sample
 
 # Hugo binary
 hugo.exe
@@ -34,3 +37,26 @@ test-results/
 playwright-report/
 .validation-public/
 assets/jsconfig.json
+
+# Local project records and machine configuration
+/.runtime/
+/.project-records/
+/.codex/hooks.json
+__pycache__/
+/docs/任务/
+/docs/决策/
+/docs/证据/
+/docs/模板/
+/docs/Codex启用.md
+/docs/项目状态.md
+/docs/项目概览.md
+/docs/项目档案协议.md
+/docs/历史档案索引.md
+/改动日志/
+
+# Historical working material retained locally
+/design-qa.md
+/docs/design-references/
+/docs/research/
+/docs/superpowers/
+/docs/security/

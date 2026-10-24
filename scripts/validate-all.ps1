@@ -12,6 +12,18 @@ try {
     . (Join-Path $PSScriptRoot 'hugo-toolchain.ps1')
     $hugoExecutable = Resolve-HugoExecutable -ProjectRoot $projectRoot -HugoPath $HugoPath
     $nodeExecutable = (Get-Command node -CommandType Application -ErrorAction Stop | Select-Object -First 1).Source
+    Write-Host 'Checking the complete public repository index...'
+    Push-Location -LiteralPath $projectRoot
+    try {
+        & $nodeExecutable (Join-Path $PSScriptRoot 'check-public-repository.mjs')
+        if ($LASTEXITCODE -ne 0) {
+            $exitCode = $LASTEXITCODE
+            throw "Public repository boundary check failed with exit code $exitCode."
+        }
+    }
+    finally {
+        Pop-Location
+    }
     $checks = @(
         @{ name = 'validate-content'; hugo = $false },
         @{ name = 'validate-security'; hugo = $false },
