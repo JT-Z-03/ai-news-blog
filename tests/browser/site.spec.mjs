@@ -193,5 +193,12 @@ test('dark reading and search fallback remain usable without JavaScript', async 
   await page.screenshot({ path: testInfo.outputPath('no-js-dark-article.png'), fullPage: true });
   await page.goto('/search/');
   await expect(page.locator('main noscript a').first()).toBeVisible();
+  await page.goto('/archives/');
+  const month = page.getByRole('navigation', { name: '按月份浏览文章' }).getByRole('link').last();
+  const monthId = await month.getAttribute('href');
+  await month.focus();
+  await page.keyboard.press('Enter');
+  await expect(page.locator(monthId)).toBeInViewport();
+  await expect(page.locator(monthId)).toBeFocused();
   await context.close();
 });

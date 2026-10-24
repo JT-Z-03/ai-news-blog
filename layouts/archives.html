@@ -19,7 +19,7 @@
       <div class="orbit-archive-months">
         {{ range .Pages.GroupByPublishDate "01" }}
         <section class="orbit-archive-month" aria-labelledby="month-{{ $year }}-{{ .Key }}">
-          <h3 id="month-{{ $year }}-{{ .Key }}">{{ .Key }} 月</h3>
+          <h3 id="month-{{ $year }}-{{ .Key }}" tabindex="-1">{{ .Key }} 月</h3>
           <div class="orbit-archive-entries">
             {{ range .Pages }}
               {{ if eq .Kind "page" }}
