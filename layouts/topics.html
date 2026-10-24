@@ -1,0 +1,35 @@
+{{- define "main" }}
+{{- $topics := partialCached "orbit-topics.html" .Site .Site.Language.Lang -}}
+<section class="orbit-topics orbit-list">
+  <header class="orbit-list__header">
+    {{ partial "breadcrumbs.html" . }}
+    <p class="orbit-page__eyebrow"><span aria-hidden="true"></span>按主题阅读</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    <p>选择一个方向开始阅读，同一篇文章可能出现在多个主题下。也可以浏览<a href="{{ "/tags/" | relURL }}">全部标签</a>或<a href="{{ "/categories/日报/" | relURL }}">每日资讯</a>。</p>
+  </header>
+
+  <nav class="orbit-topics__nav" aria-label="选择阅读主题">
+    <ul>{{ range $topics }}<li><a href="#{{ .id }}">{{ .title }}<span>{{ len .pages }} 篇</span></a></li>{{ end }}</ul>
+  </nav>
+
+  {{ range $topics }}
+  <section class="orbit-topics__group" id="{{ .id }}" aria-labelledby="{{ .id }}-title" tabindex="-1">
+    <header>
+      <h2 id="{{ .id }}-title">{{ .title }}<span class="orbit-topics__count">{{ len .pages }} 篇</span></h2>
+      <p>{{ .description }}</p>
+    </header>
+    {{ with .pages }}
+    <ul class="orbit-topics__articles">
+      {{ range . }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>{{ with .GetTerms "categories" }}{{ with index . 0 }}<span>{{ .LinkTitle }}</span>{{ end }}{{ end }}</p>
+      </li>
+      {{ end }}
+    </ul>
+    {{ else }}<p>这个主题还没有文章。可以先浏览<a href="{{ "/posts/" | relURL }}">全部文章</a>。</p>{{ end }}
+  </section>
+  {{ end }}
+</section>
+{{- end }}

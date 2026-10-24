@@ -1,0 +1,28 @@
+# id 是公开锚点（/topics/#id），发布后保持稳定。
+# tags 逐项引用原文标签，包括同义写法和直接相关标签；不会改写原标签或 URL。
+# 匹配忽略大小写和两侧空白；一篇文章命中同主题的多个标签时只计一次。
+# 不加入 AI、日报等宽泛标签，避免把综合日报误归到每个主题。
+- id: agents
+  title: 智能体与工作流
+  description: 从工具调用、协作协议到真实业务中的任务执行。
+  tags: [智能体, AI智能体, AI Agent, 智能体生态, Agent Plugins, MCP, A2A, DeepSeek Harness, 业务工作流]
+- id: coding-work
+  title: AI 编程与工作
+  description: 关注软件开发、工程验收，以及人与 AI 如何共同完成工作。
+  tags: [AI编程, 软件开发, 工程治理, AI与工作, 人机协作]
+- id: models
+  title: 模型与部署
+  description: 追踪模型能力、架构、开源生态和运行它们的基础设施。
+  tags: [大模型, 开源模型, 模型架构, 本地推理, AI基础设施, 模型蒸馏]
+- id: business
+  title: 成本与商业
+  description: 看清模型价格、任务成本和 AI 生意背后的变化。
+  tags: [AI成本, 模型定价, 大模型定价, 推理经济学, AI商业化, AI融资, AI竞争]
+- id: safety
+  title: 安全与治理
+  description: 理解安全边界、隐私、版权与技术应用中的责任。
+  tags: [AI安全, 安全对齐, 提示词注入, 网络安全, AI伦理, 政策法规, 版权, 用户隐私, 生物安全]
+- id: research
+  title: 科研与评测
+  description: 关注 AI 的科研应用，以及能力、可靠性和研究成果如何验证。
+  tags: [AI科研, AI for Science, AI评测, 基准测试, 可靠性, 大模型幻觉, 学术贡献]

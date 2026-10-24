@@ -61,6 +61,20 @@
   {{- partial "extend_post_content.html" . }}
   {{- if $isArticle }}
   <footer class="orbit-article__footer post-footer">
+    {{- $articleURL := .RelPermalink }}
+    {{- $articleTopics := slice }}
+    {{- range partialCached "orbit-topics.html" .Site .Site.Language.Lang }}
+      {{- if in .urls $articleURL }}{{ $articleTopics = $articleTopics | append . }}{{ end }}
+    {{- end }}
+    {{- with site.GetPage "/topics" }}
+      {{- $topicsURL := .RelPermalink }}
+      {{- with $articleTopics }}
+    <nav class="orbit-article-topics" aria-label="文章主题">
+      <p>所属主题</p>
+      <ul>{{ range . }}<li><a href="{{ $topicsURL }}#{{ .id }}">{{ .title }}</a></li>{{ end }}</ul>
+    </nav>
+      {{- end }}
+    {{- end }}
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">{{ range ($.GetTerms $tags) }}<li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>{{ end }}</ul>
     {{- $candidates := where site.RegularPages "Section" "posts" }}

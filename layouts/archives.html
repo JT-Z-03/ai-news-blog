@@ -5,13 +5,17 @@
     <h1>{{ .Title }}</h1>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
   </header>
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ if site.Params.ShowAllPagesInArchive }}{{ $pages = site.RegularPages }}{{ end }}
+  {{ $pages := where site.RegularPages "Section" "posts" }}
+  <nav class="orbit-archive-index" aria-label="按月份浏览文章">
+    {{ range $pages.GroupByPublishDate "2006-01" }}
+    <a href="#month-{{ .Key }}">{{ .Key }}<span>（{{ len .Pages }} 篇）</span></a>
+    {{ end }}
+  </nav>
   {{ range $pages.GroupByPublishDate "2006" }}
     {{ if ne .Key "0001" }}
     {{- $year := .Key }}
     <section class="orbit-archive-year" aria-labelledby="year-{{ .Key }}">
-      <h2 id="year-{{ .Key }}">{{ .Key }} <span>{{ len .Pages }}</span></h2>
+      <h2 id="year-{{ .Key }}">{{ .Key }} 年 <span>{{ len .Pages }} 篇</span></h2>
       <div class="orbit-archive-months">
         {{ range .Pages.GroupByPublishDate "01" }}
         <section class="orbit-archive-month" aria-labelledby="month-{{ $year }}-{{ .Key }}">
@@ -19,7 +23,7 @@
           <div class="orbit-archive-entries">
             {{ range .Pages }}
               {{ if eq .Kind "page" }}
-              <article><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01.02" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a></article>
+              <article><time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "01.02" }}</time><a href="{{ .RelPermalink }}">{{ .Title }}</a></article>
               {{ end }}
             {{ end }}
           </div>

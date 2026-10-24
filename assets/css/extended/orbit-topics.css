@@ -1,0 +1,93 @@
+.orbit-topics__nav ul,
+.orbit-article-topics ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+    padding: 0;
+}
+.orbit-topics__nav {
+    margin: 1.5rem 0 2.5rem;
+}
+.orbit-topics__nav a,
+.orbit-article-topics a {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--orbit-border);
+    border-radius: 0.4rem;
+    color: var(--orbit-ink);
+    background: var(--orbit-surface);
+    overflow-wrap: anywhere;
+}
+.orbit-topics__nav a span,
+.orbit-topics__count,
+.orbit-topics__group > header p,
+.orbit-topics__articles p,
+.orbit-article-topics > p {
+    color: var(--orbit-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+.orbit-topics__group {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--orbit-border);
+    scroll-margin-top: 6rem;
+}
+.orbit-topics__group h2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.7rem;
+    font-size: 1.35rem;
+}
+.orbit-topics__group > header p {
+    margin: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+}
+.orbit-topics__articles {
+    list-style: none;
+    padding: 0;
+}
+.orbit-topics__articles li {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--orbit-border);
+}
+.orbit-topics__articles li:last-child {
+    border-bottom: 0;
+}
+.orbit-topics__articles a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.3rem 0;
+    font-weight: 600;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+.orbit-topics__articles p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 0.35rem 0 0;
+}
+.orbit-topics a:hover,
+.orbit-article-topics a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+.orbit-topics a:focus-visible,
+.orbit-topics__group:focus-visible,
+.orbit-article-topics a:focus-visible {
+    outline: 3px solid var(--orbit-focus-contrast);
+    outline-offset: 3px;
+}
+.orbit-article-topics {
+    margin-bottom: 1.25rem;
+}
+.orbit-article-topics > p {
+    margin-bottom: 0.6rem;
+}

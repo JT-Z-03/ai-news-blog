@@ -119,6 +119,61 @@ test('navigation remains on the current preview or production origin', async ({ 
   await expect(page).toHaveURL(`${origin}/`);
 });
 
+test('footer discovery, topic reading and month archives work on mobile and desktop', async ({ page }, testInfo) => {
+  for (const width of [320, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    const footer = page.getByRole('navigation', { name: '订阅与内容导航' });
+    await footer.getByRole('link', { name: '主题导航' }).click();
+    await expect(page).toHaveURL(/\/topics\/$/);
+    await expectNoOverflow(page);
+    const topic = page.getByRole('navigation', { name: '选择阅读主题' }).getByRole('link').first();
+    await topic.focus();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('.orbit-topics__group').first()).toBeFocused();
+    const topicHref = await topic.getAttribute('href');
+    const articles = page.locator('.orbit-topics__group').first().locator('.orbit-topics__articles a');
+    expect(await articles.count()).toBeGreaterThan(0);
+    await articles.first().click();
+    await expect(page.locator(`.orbit-article-topics a[href$="${topicHref}"]`)).toBeVisible();
+    await page.getByRole('navigation', { name: '订阅与内容导航' }).getByRole('link', { name: '月份归档' }).click();
+    await expect(page).toHaveURL(/\/archives\/$/);
+    await expectNoOverflow(page);
+    const month = page.getByRole('navigation', { name: '按月份浏览文章' }).getByRole('link').last();
+    const monthId = await month.getAttribute('href');
+    await month.click();
+    await expect(page).toHaveURL(new RegExp(`${monthId}$`));
+    await expect(page.locator(monthId)).toBeInViewport();
+    await expect(page.locator(monthId)).toBeFocused();
+    const archiveLinks = await page.locator('.orbit-archive-entries a').evaluateAll(links => links.map(link => new URL(link.href).pathname));
+    expect(archiveLinks.every(path => path.startsWith('/posts/'))).toBeTruthy();
+    expect(new Set(archiveLinks).size).toBe(archiveLinks.length);
+    const rss = page.getByRole('navigation', { name: '订阅与内容导航' }).getByRole('link', { name: 'RSS 订阅' });
+    const response = await page.request.get(await rss.getAttribute('href'));
+    expect(response.ok()).toBeTruthy();
+    expect(await response.text()).toContain('<rss');
+    await page.screenshot({ path: testInfo.outputPath(`archives-${width}.png`), fullPage: true });
+  }
+});
+
+test('home and reading pages inherit the same light and dark colors', async ({ page }, testInfo) => {
+  for (const theme of ['light', 'dark']) {
+    await page.goto('/');
+    await page.evaluate(value => localStorage.setItem('pref-theme', value), theme);
+    for (const path of ['/', '/topics/', '/archives/', articlePath]) {
+      await page.goto(path);
+      await expect(page.locator('html')).toHaveAttribute('data-theme', theme);
+      const tokens = await page.locator('main').evaluate(el => {
+        const style = getComputedStyle(el);
+        return ['--orbit-ink', '--orbit-accent', '--orbit-focus-contrast'].map(name => style.getPropertyValue(name).trim());
+      });
+      expect(tokens).toEqual(Array(3).fill(theme === 'light' ? '#121212' : '#f5f5f4'));
+      await expectNoOverflow(page);
+      if (path === '/topics/') await page.screenshot({ path: testInfo.outputPath(`topics-${theme}.png`), fullPage: true });
+    }
+  }
+});
+
 test('dark reading and search fallback remain usable without JavaScript', async ({ browser, baseURL }, testInfo) => {
   const context = await browser.newContext({ baseURL, javaScriptEnabled: false, colorScheme: 'dark', viewport: { width: 390, height: 844 } });
   const page = await context.newPage();
