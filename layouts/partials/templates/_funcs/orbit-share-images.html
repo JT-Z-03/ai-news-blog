@@ -1,0 +1,34 @@
+{{- /* Share original assets without resizing or publishing a duplicate image. */ -}}
+{{- $images := partial "templates/_funcs/get-page-images" . -}}
+{{- $explicitAlt := .Params.imagesAlt -}}
+{{- if .Params.cover.image -}}
+  {{- $url := .Params.cover.image | absURL -}}
+  {{- if .Params.cover.relative -}}{{- $url = (path.Join .RelPermalink .Params.cover.image) | absURL -}}{{- end -}}
+  {{- $cover := dict "Permalink" $url -}}
+  {{- if .Params.cover.relative -}}{{- $cover = merge $cover (dict "Image" (.Resources.GetMatch .Params.cover.image)) -}}{{- end -}}
+  {{- $images = slice $cover -}}
+  {{- $explicitAlt = .Params.cover.alt | default $explicitAlt -}}
+{{- end -}}
+{{- $alt := $explicitAlt | default (.Title | default site.Title) -}}
+{{- $defaultImage := "" -}}
+{{- with site.Params.images -}}{{- $defaultImage = index . 0 | absURL -}}{{- end -}}
+{{- $basePath := (urls.Parse site.BaseURL).Path -}}
+{{- $result := slice -}}
+{{- range first 6 $images -}}
+  {{- $image := .Image -}}
+  {{- $imageAlt := $alt -}}
+  {{- if and (not $explicitAlt) (eq .Permalink $defaultImage) -}}{{- $imageAlt = site.Params.imagesAlt | default $alt -}}{{- end -}}
+  {{- $localPath := strings.TrimPrefix "/" (strings.TrimPrefix $basePath (urls.Parse .Permalink).Path) -}}
+  {{- $staticPath := path.Join "static" $localPath -}}
+  {{- if and (not $image) (hasPrefix .Permalink site.BaseURL) (fileExists $staticPath) -}}
+    {{- $image = resources.FromString (path.Join "seo-image-metadata" $localPath) (readFile $staticPath) -}}
+  {{- end -}}
+  {{- $metadata := dict "Permalink" .Permalink "Alt" ($imageAlt | plainify) -}}
+  {{- with $image -}}
+    {{- if in (slice "jpeg" "png" "webp" "gif" "avif" "bmp" "tiff") .MediaType.SubType -}}
+      {{- $metadata = merge $metadata (dict "Width" .Width "Height" .Height "Type" .MediaType.Type) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $result = $result | append $metadata -}}
+{{- end -}}
+{{- return $result -}}

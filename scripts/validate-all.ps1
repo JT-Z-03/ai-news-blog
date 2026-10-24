@@ -21,7 +21,9 @@ try {
         @{ name = 'test-content-metadata'; hugo = $true },
         @{ name = 'test-icon-references'; hugo = $true },
         @{ name = 'test-hugo-toolchain'; hugo = $true },
-        @{ name = 'test-seo-security'; hugo = $true }
+        @{ name = 'test-seo-security'; hugo = $true },
+        @{ name = 'test-share-metadata'; hugo = $true },
+        @{ name = 'test-topics'; hugo = $true }
     )
     foreach ($check in $checks) {
         Write-Host "Running $($check.name)..."

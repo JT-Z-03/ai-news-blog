@@ -31,7 +31,9 @@ function Get-PageIcons([string]$markup, [string]$relativePath) {
     foreach ($link in [regex]::Matches($markup, '(?is)<link\b[^>]*>')) {
         $relation = Get-HtmlAttribute $link.Value "rel"
         if ($relation -in @("icon", "apple-touch-icon", "mask-icon")) {
-            $references.Add([pscustomobject]@{ file = $relativePath; kind = "link:$relation"; url = (Get-HtmlAttribute $link.Value "href") })
+            $href = Get-HtmlAttribute $link.Value "href"
+            $resolvedHref = if ($href) { [uri]::new($siteUri, $href).AbsoluteUri } else { '' }
+            $references.Add([pscustomobject]@{ file = $relativePath; kind = "link:$relation"; url = $resolvedHref })
         }
     }
     foreach ($script in [regex]::Matches($markup, '(?is)<script\b(?<attributes>[^>]*)>(?<json>.*?)</script>')) {
@@ -120,7 +122,8 @@ function Require-ConfiguredReferences([object[]]$references, [string[]]$expected
 try {
     New-Item -ItemType Directory -Path $fixtureSource -Force | Out-Null
     if ($EvidenceDirectory) { New-Item -ItemType Directory -Path $EvidenceDirectory -Force | Out-Null }
-    foreach ($path in @("assets", "content", "layouts", "static", "themes", "hugo.toml")) {
+    foreach ($path in @("assets", "content", "layouts", "static", "themes", "data", "hugo.toml")) {
+        if (-not (Test-Path -LiteralPath (Join-Path $projectPath $path))) { continue }
         Copy-Item -LiteralPath (Join-Path $projectPath $path) -Destination $fixtureSource -Recurse
     }
 
@@ -136,7 +139,9 @@ try {
     $icoHeader += [BitConverter]::GetBytes([int]$pixel.Length) + [BitConverter]::GetBytes([int]22)
     [IO.File]::WriteAllBytes((Join-Path $fixtureSource "static/favicon.ico"), ($icoHeader + $pixel))
     [IO.File]::WriteAllText((Join-Path $fixtureSource "static/safari-pinned-tab.svg"), '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1 1"><path d="M0 0h1v1H0z"/></svg>', $utf8)
-    $localOutput = Build-Fixture "provided-local"
+    $localConfig = Join-Path $temporaryRoot "local-icons.toml"
+    [IO.File]::WriteAllText($localConfig, "[params.assets]`nfavicon = 'favicon.ico'`n", $utf8)
+    $localOutput = Build-Fixture "provided-local" $localConfig
     $localReferences = @(Test-GeneratedIcons $localOutput "provided local defaults")
     $localUrls = @("favicon.ico", "favicon-16x16.png", "favicon-32x32.png", "apple-touch-icon.png", "safari-pinned-tab.svg") | ForEach-Object { [uri]::new($siteUri, $_).AbsoluteUri }
     Require-ConfiguredReferences $localReferences $localUrls "provided local defaults"
