@@ -15,11 +15,16 @@ enableRobotsTXT = true
   description = '深度分析 + 精选日报，追踪 AI 行业最重要的事'
   author = 'ZestJT'
   keywords = ["AI", "大模型", "ChatGPT", "GPT", "开源模型"]
+  images = ["images/home/orbit/editorial-network.webp"]
+  imagesAlt = '红、蓝、黄线条连接多个圆形节点的抽象网络插图'
   searchSubstrings = true
   ShowBreadCrumbs = true
   ShowReadingTime = true
   ShowWordCount = true
   social = { github = "https://github.com/JT-Z-03/ai-news-blog" }
+
+  [params.assets]
+    favicon = 'favicon.svg'
 
 [[menu.main]]
   identifier = "home"

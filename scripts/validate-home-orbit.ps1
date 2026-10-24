@@ -39,10 +39,12 @@ try {
     if ($combinedCss -match '#d4ff3f|rgba\(212,\s*255,\s*63,') {
         $errors += "Built homepage CSS should not ship fluorescent-green UI colors."
     }
-    if ($combinedCss -notmatch '(?s)\.orbit-home\s*\{[^}]*--orbit-accent:\s*#121212;') {
+    if ($combinedCss -notmatch '(?s):root\s*\{[^}]*--orbit-light-ink:\s*#121212;' -or
+        $combinedCss -notmatch '--orbit-accent:\s*var\(--orbit-ink\)') {
         $errors += "Homepage light mode should use black as its neutral accent."
     }
-    if ($combinedCss -notmatch '(?s)\[data-theme=.?dark.?\]\s+\.orbit-home\s*\{[^}]*--orbit-accent:\s*#f5f5f4;') {
+    if ($combinedCss -notmatch '--orbit-dark-ink:\s*#f5f5f4;' -or
+        $combinedCss -notmatch '(?s):root\[data-theme=.?dark.?\]\s*\{[^}]*--orbit-ink:\s*var\(--orbit-dark-ink\)') {
         $errors += "Homepage dark mode should use off-white as its neutral accent."
     }
     if ($combinedCss -notmatch '(?s)\.orbit-button\s*\{(?=[^}]*border:\s*1px\s+solid\s+var\(--orbit-ink\))(?=[^}]*background:\s*var\(--orbit-surface\))(?=[^}]*color:\s*var\(--orbit-ink\))[^}]*\}') {

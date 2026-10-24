@@ -1,25 +1,9 @@
 .orbit-home {
-    --orbit-accent: #121212;
-    --orbit-ink: #121212;
-    --orbit-muted: #717171;
-    --orbit-focus-contrast: #121212;
-    --orbit-border: #e5e5e5;
-    --orbit-surface: #ffffff;
-    --orbit-surface-soft: #f7f7f5;
+    --orbit-surface-soft: var(--orbit-home-surface-soft);
     width: min(1200px, calc(100vw - 32px));
     padding-bottom: clamp(3.5rem, 8vw, 6rem);
     color: var(--orbit-ink);
     font-family: var(--orbit-font-sans);
-}
-
-[data-theme="dark"] .orbit-home {
-    --orbit-accent: #f5f5f4;
-    --orbit-ink: #f5f5f4;
-    --orbit-muted: #a8a8a3;
-    --orbit-focus-contrast: #f5f5f4;
-    --orbit-border: #33332f;
-    --orbit-surface: #191918;
-    --orbit-surface-soft: #212120;
 }
 
 .orbit-home__hero {

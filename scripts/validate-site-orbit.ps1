@@ -270,7 +270,7 @@ url: "/orbit-archive-fixture/"
     Require-Match $notFoundMarkup '<section class="orbit-not-found"' "404 should use the Orbit error layout."
     Require-Match $notFoundMarkup 'href="/"' "404 should provide a direct homepage action."
     Require-Match $archiveMarkup '(?s)<section class="orbit-archive-year"[^>]*>.*?<section class="orbit-archive-month"' "Archive output should nest month groups within each year."
-    Require-Match $archiveMarkup '<h3 id="month-2026-08">08 月</h3>' "The isolated archive fixture should render its August 2026 month heading."
+    Require-Match $archiveMarkup '<h3(?=[^>]*\bid="month-2026-08")(?=[^>]*\btabindex="-1")[^>]*>08 月</h3>' "The isolated archive fixture should render a focusable August 2026 month heading."
     if (Test-Path -LiteralPath (Join-Path $destination "orbit-archive-fixture\index.html")) {
         $errors.Add("The temporary archive fixture must not introduce a production route.")
     }
@@ -325,44 +325,36 @@ url: "/orbit-archive-fixture/"
     if (("$orbitCss`n$orbitHomeCss") -match '#d4ff3f|rgba\(212,\s*255,\s*63,') {
         $errors.Add("Orbit UI styles should not ship fluorescent-green colors.")
     }
-    $siteMutedMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
-    $homeMutedMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-muted:\s*(?<color>#[0-9a-fA-F]{6});')
-    $sitePageMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-page:\s*(?<color>#[0-9a-fA-F]{6});')
-    $siteSurfaceMatch = [regex]::Match($orbitCss, '(?s):root\s*\{[^}]*--orbit-surface:\s*(?<color>#[0-9a-fA-F]{6});')
-    $homeSurfaceMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-surface:\s*(?<color>#[0-9a-fA-F]{6});')
-    $homeSoftSurfaceMatch = [regex]::Match($orbitHomeCss, '(?s)\.orbit-home\s*\{[^}]*--orbit-surface-soft:\s*(?<color>#[0-9a-fA-F]{6});')
-    if (-not ($siteMutedMatch.Success -and $homeMutedMatch.Success -and $sitePageMatch.Success -and
-        $siteSurfaceMatch.Success -and $homeSurfaceMatch.Success -and $homeSoftSurfaceMatch.Success)) {
-        $errors.Add("Orbit styles should declare their light muted-text and surface tokens.")
+    $tokens = [IO.File]::ReadAllText((Join-Path $projectRoot 'assets/css/extended/orbit-tokens.css'), [Text.Encoding]::UTF8)
+    $palette = @{}
+    foreach ($match in [regex]::Matches($tokens, '--orbit-(?<name>[a-z-]+):\s*(?<color>#[0-9a-fA-F]{6});')) {
+        $palette[$match.Groups['name'].Value] = $match.Groups['color'].Value
     }
-    else {
-        $siteMuted = $siteMutedMatch.Groups["color"].Value
-        $homeMuted = $homeMutedMatch.Groups["color"].Value
-        if ($siteMuted -ne $homeMuted) {
-            $errors.Add("Orbit site and homepage muted-text tokens should stay consistent.")
-        }
-
-        $mutedSurfaceContracts = [ordered]@{
-            "Orbit page" = $sitePageMatch.Groups["color"].Value
-            "Orbit grouped surface" = $siteSurfaceMatch.Groups["color"].Value
-            "homepage surface" = $homeSurfaceMatch.Groups["color"].Value
-            "homepage soft card surface" = $homeSoftSurfaceMatch.Groups["color"].Value
-        }
-        foreach ($surface in $mutedSurfaceContracts.GetEnumerator()) {
-            $mutedContrast = Get-ContrastRatio $siteMuted $surface.Value
-            if ($mutedContrast -lt 4.5) {
-                $errors.Add("Light muted text contrast on $($surface.Key) $($surface.Value) is $([Math]::Round($mutedContrast, 3)):1; it must meet WCAG AA 4.5:1.")
+    foreach ($mode in @('light', 'dark')) {
+        $surfaces = @('surface', 'soft')
+        if ($mode -eq 'light') { $surfaces += 'home-soft' } else { $surfaces += 'page' }
+        foreach ($surface in $surfaces) {
+            $foreground = $palette["$mode-muted"]
+            $background = $palette["$mode-$surface"]
+            if (-not $foreground -or -not $background) {
+                $errors.Add("Shared palette must declare $mode muted text and $surface.")
+                continue
+            }
+            $contrast = Get-ContrastRatio $foreground $background
+            if ($contrast -lt 4.5) {
+                $errors.Add("$mode muted text on $surface has contrast $([Math]::Round($contrast, 3)):1; minimum is 4.5:1.")
             }
         }
     }
-    Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "Light Orbit pages should declare an ink focus-contrast token."
-    Require-Match $orbitCss '(?s):root\s*\{[^}]*--orbit-accent:\s*#121212;' "Light Orbit pages should use black as their neutral accent."
-    Require-Match $orbitCss '(?s)\[data-theme="dark"\]\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "Dark Orbit pages should declare an off-white focus-contrast token."
-    Require-Match $orbitCss '(?s)\[data-theme="dark"\]\s*\{[^}]*--orbit-accent:\s*#f5f5f4;' "Dark Orbit pages should use off-white as their neutral accent."
-    Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#121212;' "The homepage should share the light focus-contrast token."
-    Require-Match $orbitHomeCss '(?s)\.orbit-home\s*\{[^}]*--orbit-accent:\s*#121212;' "The homepage should share the light neutral accent."
-    Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-focus-contrast:\s*#f5f5f4;' "The homepage should share the dark focus-contrast token."
-    Require-Match $orbitHomeCss '(?s)\[data-theme="dark"\] \.orbit-home\s*\{[^}]*--orbit-accent:\s*#f5f5f4;' "The homepage should share the dark neutral accent."
+    Require-Match $tokens '--orbit-light-ink:\s*#121212;' 'Shared light ink should remain black.'
+    Require-Match $tokens '--orbit-dark-ink:\s*#f5f5f4;' 'Shared dark ink should remain off-white.'
+    Require-Match $tokens '--orbit-accent:\s*var\(--orbit-ink\);' 'Accent should follow the shared ink token.'
+    Require-Match $tokens '--orbit-focus-contrast:\s*var\(--orbit-ink\);' 'Focus contrast should follow the shared ink token.'
+    Require-Match $tokens '(?s):root\[data-theme="dark"\]\s*\{[^}]*--orbit-ink:\s*var\(--orbit-dark-ink\);' 'Dark mode should select dark ink.'
+    Require-Match $orbitHomeCss '--orbit-surface-soft:\s*var\(--orbit-home-surface-soft\);' 'Homepage cards should retain their own soft-surface choice.'
+    if (("$orbitCss`n$orbitHomeCss") -match '--orbit-(ink|muted|accent|focus-contrast):') {
+        $errors.Add('Page styles must inherit shared color tokens instead of defining copies.')
+    }
     Require-Match $orbitCss '(?s)\.orbit-shell a:focus-visible,[^{]*\.orbit-shell input:focus-visible\s*\{(?=[^}]*outline:\s*3px\s+solid\s+var\(--orbit-focus-contrast\))(?=[^}]*box-shadow:\s*0\s+0\s+0\s+3px\s+var\(--orbit-accent\))[^}]*\}' "Shared focus indicators should use a high-contrast monochrome ring."
     $cardFocusRuleMatch = [regex]::Match($orbitHomeCss, '(?ms)^(?<selector>[^\r\n{]*\.orbit-post-link:focus-visible)\s*\{(?<declarations>[^}]*)\}')
     if (-not $cardFocusRuleMatch.Success) {

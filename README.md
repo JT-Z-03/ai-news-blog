@@ -75,6 +75,16 @@ npm run test:browser
 - `assets/css/extended/`：站点样式
 - `hugo.toml`：站点、菜单、搜索和 SEO 配置
 
+## 主题导航、订阅与分享
+
+页脚提供 `/topics/` 主题导航、`/archives/` 月份归档和 `/index.xml` RSS订阅；关于页也包含订阅说明。归档和RSS只收录文章，不包含搜索、关于等静态页面。
+
+主题映射集中维护在 `data/topics.yaml`：`id` 是公开锚点，应保持稳定；`title`、`description` 面向读者，`tags` 按现有标签逐项列出同义或关联词。匹配忽略大小写和两侧空白，同一篇文章在一个主题内只出现一次，跨主题可以重复。新增文章仍沿用原标签，已有 `/tags/` URL保持可访问；缺少流量依据时不批量合并、删除或屏蔽标签页。修改映射后运行 `scripts/test-topics.ps1` 并抽查主题页和文章回链。
+
+默认分享图复用 `/images/home/orbit/editorial-network.webp`，favicon使用 `/favicon.svg`；文章可通过frontmatter `images` 覆盖分享图。Open Graph和Twitter共用图像元数据，分页 `og:url` 与canonical一致。`scripts/test-share-metadata.ps1` 校验路径、实际图像尺寸和分页地址；公开社交平台的抓取缓存和卡片展示需另外实测。
+
+页面配色统一在 `assets/css/extended/orbit-tokens.css`，保留首页卡片专用的浅色背景。修改色值时运行全站检查和三引擎浏览器验收，确认普通文字、焦点和无JS深色模式仍可读。
+
 ## 发布流程
 
 1. 从真实来源生成或更新文章。
@@ -89,10 +99,20 @@ npm run test:browser
 
 ```powershell
 $env:CLOUDFLARE_API_TOKEN = "..."
-npx wrangler pages deploy public --project-name ai-news-blog
+npx --yes wrangler@4.152.0 pages deploy public --project-name ai-news-blog
 ```
 
 ## Cloudflare Pages
+
+手工部署 CLI 固定为 Wrangler `4.152.0`（Node.js 22+），避免命令在不知情时切换版本。Git 集成仍执行上面的生产构建入口，不依赖全局 Wrangler。
+
+## 依赖维护
+
+`.github/dependabot.yml` 每月检查 npm、GitHub Actions 和 PaperMod 子模块，分别限制为最多3/2/1个未关闭更新PR；不自动合并。更新PR沿用 `repository-validation`，须通过内容/元数据/安全/生产构建与三引擎浏览器检查，预览验收后再合并。Action继续固定提交SHA，npm继续提交锁文件；主题升级还须按 [覆盖清单](docs/theme-overrides.md) 比较上游差异。
+
+Hugo版本和文档中的Wrangler版本保持显式维护：定期核对官方Release，升级时同时更新版本约定和实际验证结果。Dependabot配置不表示这些工具已自动升级，也不替代生产验收。
+
+## Cloudflare 构建配置
 
 构建配置（production 和 preview 均需保持一致）：
 

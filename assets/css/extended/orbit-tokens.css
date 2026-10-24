@@ -1,0 +1,48 @@
+/* Color values live here; page components inherit the semantic tokens below. */
+:root {
+    --orbit-light-ink: #121212;
+    --orbit-light-muted: #6f6f6f;
+    --orbit-light-border: #e5e5e5;
+    --orbit-light-surface: #ffffff;
+    --orbit-light-soft: #f4f4f1;
+    --orbit-light-home-soft: #f7f7f5;
+    --orbit-dark-ink: #f5f5f4;
+    --orbit-dark-muted: #a8a8a3;
+    --orbit-dark-border: #33332f;
+    --orbit-dark-page: #111110;
+    --orbit-dark-surface: #191918;
+    --orbit-dark-soft: #212120;
+
+    --orbit-ink: var(--orbit-light-ink);
+    --orbit-muted: var(--orbit-light-muted);
+    --orbit-border: var(--orbit-light-border);
+    --orbit-page: var(--orbit-light-surface);
+    --orbit-surface: var(--orbit-light-surface);
+    --orbit-surface-soft: var(--orbit-light-soft);
+    --orbit-home-surface-soft: var(--orbit-light-home-soft);
+    --orbit-accent: var(--orbit-ink);
+    --orbit-focus-contrast: var(--orbit-ink);
+}
+
+:root[data-theme="dark"] {
+    --orbit-ink: var(--orbit-dark-ink);
+    --orbit-muted: var(--orbit-dark-muted);
+    --orbit-border: var(--orbit-dark-border);
+    --orbit-page: var(--orbit-dark-page);
+    --orbit-surface: var(--orbit-dark-surface);
+    --orbit-surface-soft: var(--orbit-dark-soft);
+    --orbit-home-surface-soft: var(--orbit-dark-soft);
+}
+
+/* Without JavaScript, auto follows the OS while explicit light/dark stays fixed. */
+@media (prefers-color-scheme: dark) {
+    :root[data-theme="auto"] {
+        --orbit-ink: var(--orbit-dark-ink);
+        --orbit-muted: var(--orbit-dark-muted);
+        --orbit-border: var(--orbit-dark-border);
+        --orbit-page: var(--orbit-dark-page);
+        --orbit-surface: var(--orbit-dark-surface);
+        --orbit-surface-soft: var(--orbit-dark-soft);
+        --orbit-home-surface-soft: var(--orbit-dark-soft);
+    }
+}

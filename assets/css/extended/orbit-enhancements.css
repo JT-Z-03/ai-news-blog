@@ -100,9 +100,52 @@ body.orbit-shell .orbit-skip-link:focus {
     margin-top: 1rem;
 }
 
+.orbit-footer-links,
+.orbit-archive-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1rem;
+}
+
+.orbit-footer-links {
+    margin-bottom: 0.75rem;
+    color: var(--orbit-ink);
+    font-size: 0.9rem;
+}
+
+.orbit-footer-links a,
+.orbit-archive-index a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: 0.25rem;
+    text-underline-offset: 0.2em;
+}
+
+.orbit-archive-index {
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.orbit-archive-index a {
+    flex-wrap: wrap;
+    color: var(--orbit-ink);
+    text-decoration: underline;
+}
+
+.orbit-archive-index span {
+    color: var(--orbit-muted);
+}
+
+.orbit-archives :is(h2, h3) {
+    scroll-margin-top: 5rem;
+}
+
 @media (max-width: 480px) {
     .orbit-toc > summary,
-    .orbit-related a {
+    .orbit-related a,
+    .orbit-archive-entries a {
         min-height: 44px;
     }
 

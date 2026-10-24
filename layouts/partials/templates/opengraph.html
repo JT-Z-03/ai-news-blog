@@ -1,5 +1,9 @@
-{{- /* PaperMod 154d006: article-only Open Graph and current locale API. */ -}}
-<meta property="og:url" content="{{ .Permalink }}">
+{{- /* PaperMod 154d006: canonical URL, shared image metadata, article-only types. */ -}}
+{{- $page := . -}}
+{{- $canonical := "" -}}
+{{- if reflect.IsMap . -}}{{- $page = .Page -}}{{- $canonical = .CanonicalURL -}}{{- end -}}
+{{- with $page -}}
+<meta property="og:url" content="{{ $canonical | default .Permalink }}">
 
 {{- with or site.Title site.Params.title | plainify }}
   <meta property="og:site_name" content="{{ . }}">
@@ -36,18 +40,12 @@
   <meta property="og:type" content="website">
 {{- end }}
 
-{{- if .Params.cover.image -}}
-  {{- if (ne .Params.cover.relative true) }}
-    <meta property="og:image" content="{{ .Params.cover.image | absURL }}">
-  {{- else}}
-    <meta property="og:image" content="{{ (path.Join .RelPermalink .Params.cover.image ) | absURL }}">
-  {{- end}}
-{{- else }}
-  {{- with partial "_funcs/get-page-images" . }}
-    {{- range . | first 6 }}
-      <meta property="og:image" content="{{ .Permalink }}">
-    {{- end }}
-  {{- end }}
+{{- range partial "templates/_funcs/orbit-share-images.html" . }}
+  <meta property="og:image" content="{{ .Permalink }}">
+  {{- with .Type }}<meta property="og:image:type" content="{{ . }}">{{ end }}
+  {{- with .Width }}<meta property="og:image:width" content="{{ . }}">{{ end }}
+  {{- with .Height }}<meta property="og:image:height" content="{{ . }}">{{ end }}
+  <meta property="og:image:alt" content="{{ .Alt }}">
 {{- end }}
 
 {{- with .Params.audio }}
@@ -64,7 +62,7 @@
 
 {{- range .GetTerms "series" }}
   {{- range .Pages | first 7 }}
-    {{- if ne $ . }}
+    {{- if ne $page . }}
       <meta property="og:see_also" content="{{ .Permalink }}">
     {{- end }}
   {{- end }}
@@ -85,3 +83,4 @@
 {{- with (.Param "social.fediverse_creator") }}
   <meta name="fediverse:creator" content="{{ . }}">
 {{- end }}
+{{- end -}}

@@ -47,6 +47,10 @@ function Require-Canonical([string]$markup, [string]$expectedUrl, [string]$relat
     elseif ([Net.WebUtility]::HtmlDecode($links[0].Groups["url"].Value) -cne $expectedUrl) {
         $errors.Add("$relativePath canonical must be $expectedUrl; found $($links[0].Groups['url'].Value).")
     }
+    $openGraph = [regex]::Matches($markup, '<meta\b[^>]*\bproperty="og:url"[^>]*\bcontent="(?<url>[^"]*)"[^>]*>')
+    if ($openGraph.Count -ne 1 -or [Net.WebUtility]::HtmlDecode($openGraph[0].Groups['url'].Value) -cne $expectedUrl) {
+        $errors.Add("$relativePath og:url must match its canonical: $expectedUrl.")
+    }
 }
 
 try {
@@ -70,7 +74,8 @@ try {
     }
 
     $mounts = [Collections.Generic.List[string]]::new()
-    foreach ($directory in @("content", "static", "assets", "layouts")) {
+    foreach ($directory in @("content", "static", "assets", "layouts", "data")) {
+        if (-not (Test-Path -LiteralPath (Join-Path $projectRoot $directory) -PathType Container)) { continue }
         $source = (Join-Path $projectRoot $directory).Replace("\", "/")
         $mounts.Add("  [[module.mounts]]`n    source = '$source'`n    target = '$directory'")
     }

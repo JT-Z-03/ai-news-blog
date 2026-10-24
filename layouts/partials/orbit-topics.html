@@ -1,0 +1,19 @@
+{{- /* Context: Site. Cache once per language, shared by the landing and article links. */ -}}
+{{- $groups := slice -}}
+{{- $articles := (where .RegularPages "Section" "posts").ByDate.Reverse -}}
+{{- range hugo.Data.topics | default slice -}}
+  {{- $tags := slice -}}
+  {{- range .tags -}}{{- $tags = $tags | append (lower (trim . " \t\r\n")) -}}{{- end -}}
+  {{- $pages := slice -}}
+  {{- $urls := slice -}}
+  {{- range $articles -}}
+    {{- $articleTags := slice -}}
+    {{- range .Params.tags | default slice -}}{{- $articleTags = $articleTags | append (lower (trim . " \t\r\n")) -}}{{- end -}}
+    {{- if gt (len (intersect $tags $articleTags)) 0 -}}
+      {{- $pages = $pages | append . -}}
+      {{- $urls = $urls | append .RelPermalink -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $groups = $groups | append (merge . (dict "pages" $pages "urls" $urls)) -}}
+{{- end -}}
+{{- return $groups -}}

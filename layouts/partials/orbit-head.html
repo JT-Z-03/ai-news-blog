@@ -100,7 +100,9 @@
 -}}
 {{- range $icons -}}
   {{- if partial "orbit-icon-available.html" .path }}
-<link rel="{{ .rel }}"{{ with .type }} type="{{ . }}"{{ end }}{{ with .sizes }} sizes="{{ . }}"{{ end }} href="{{ .path | absURL }}">
+    {{- $iconType := .type -}}
+    {{- if eq (lower (path.Ext (urls.Parse .path).Path)) ".svg" -}}{{- $iconType = "image/svg+xml" -}}{{- end -}}
+<link rel="{{ .rel }}"{{ with $iconType }} type="{{ . }}"{{ end }}{{ with .sizes }} sizes="{{ . }}"{{ end }} href="{{ .path | relURL }}">
   {{- end -}}
 {{- end }}
 <meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#2e2e33" }}">
@@ -138,18 +140,6 @@
                 color-scheme: dark;
             }
 
-            :root,
-            .orbit-home {
-                --orbit-accent: #f5f5f4;
-                --orbit-ink: #f5f5f4;
-                --orbit-muted: #a8a8a3;
-                --orbit-focus-contrast: #f5f5f4;
-                --orbit-border: #33332f;
-                --orbit-page: #111110;
-                --orbit-surface: #191918;
-                --orbit-surface-soft: #212120;
-            }
-
             .list {
                 background: var(--theme);
             }
@@ -172,7 +162,7 @@
 {{- /* Misc */}}
 {{- if hugo.IsProduction | or (eq site.Params.env "production") }}
 {{- partial "google_analytics.html" . }}
-{{- partial "templates/opengraph.html" . }}
+{{- partial "templates/opengraph.html" (dict "Page" . "CanonicalURL" (trim $canonical " ")) }}
 {{- partial "templates/twitter_cards.html" . }}
 {{- partial "templates/schema_json.html" . }}
 {{- end -}}
