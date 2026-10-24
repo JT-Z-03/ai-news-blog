@@ -270,7 +270,7 @@ url: "/orbit-archive-fixture/"
     Require-Match $notFoundMarkup '<section class="orbit-not-found"' "404 should use the Orbit error layout."
     Require-Match $notFoundMarkup 'href="/"' "404 should provide a direct homepage action."
     Require-Match $archiveMarkup '(?s)<section class="orbit-archive-year"[^>]*>.*?<section class="orbit-archive-month"' "Archive output should nest month groups within each year."
-    Require-Match $archiveMarkup '<h3 id="month-2026-08">08 月</h3>' "The isolated archive fixture should render its August 2026 month heading."
+    Require-Match $archiveMarkup '<h3(?=[^>]*\bid="month-2026-08")(?=[^>]*\btabindex="-1")[^>]*>08 月</h3>' "The isolated archive fixture should render a focusable August 2026 month heading."
     if (Test-Path -LiteralPath (Join-Path $destination "orbit-archive-fixture\index.html")) {
         $errors.Add("The temporary archive fixture must not introduce a production route.")
     }
