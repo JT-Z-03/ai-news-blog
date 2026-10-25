@@ -298,7 +298,10 @@ url: "/orbit-archive-fixture/"
         Require-BoundedSummaries $listOutput.Value $listOutput.Key 160
     }
     Require-AllGeneratedSummariesBounded 160
-    Require-Match $deepListMarkup ([regex]::Escape('<p class="orbit-list__summary">从 V4-Flash、V4-Pro、峰谷定价到开源 Harness，DeepSeek 正在把竞争单位从一次模型调用扩展为一次完整的 Agent 任务。</p>')) "List rows should prefer an authored description before falling back to an automatic summary."
+    # The reference article can move to a later page as new deep-analysis posts are published.
+    $deepListPagesMarkup = (Get-ChildItem -LiteralPath (Join-Path $destination "categories/深度分析") -Filter "index.html" -File -Recurse |
+        ForEach-Object { [IO.File]::ReadAllText($_.FullName, [Text.Encoding]::UTF8) }) -join "`n"
+    Require-Match $deepListPagesMarkup ([regex]::Escape('<p class="orbit-list__summary">从 V4-Flash、V4-Pro、峰谷定价到开源 Harness，DeepSeek 正在把竞争单位从一次模型调用扩展为一次完整的 Agent 任务。</p>')) "List rows should prefer an authored description before falling back to an automatic summary."
 
     Require-Match $articleMarkup '<article class="orbit-page orbit-article"' "Regular posts should render the reading-first article layout."
     Require-Match $articleMarkup '<body[^>]*class="[^"]*\borbit-nav-deep-analysis\b' "Deep-analysis articles should expose their active navigation context."
