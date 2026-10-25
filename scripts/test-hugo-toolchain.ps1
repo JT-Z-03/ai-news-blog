@@ -13,6 +13,7 @@ $fixtureBin = Join-Path $temporaryRoot 'bin with spaces'
 $originalPath = $env:PATH
 $originalBuildExit = [Environment]::GetEnvironmentVariable('TOOLCHAIN_TEST_BUILD_EXIT', 'Process')
 $originalNodeFailure = [Environment]::GetEnvironmentVariable('TOOLCHAIN_TEST_NODE_FAILURE', 'Process')
+$originalPublicExit = [Environment]::GetEnvironmentVariable('TOOLCHAIN_TEST_PUBLIC_EXIT', 'Process')
 $utf8 = [Text.UTF8Encoding]::new($false)
 $caseCount = 0
 
@@ -88,6 +89,14 @@ Resolve-HugoExecutable -ProjectRoot $ProjectRoot -HugoPath $HugoPath
     foreach ($name in @('hugo-toolchain.ps1', 'validate-all.ps1')) {
         Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $fixtureScripts
     }
+    # This fixture verifies orchestration only; the real checker has isolated Git regression tests.
+    Write-TestFile (Join-Path $fixtureScripts 'check-public-repository.mjs') @'
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+const invocation = fileURLToPath(new URL('../public-check-invocation.json', import.meta.url));
+fs.writeFileSync(invocation, JSON.stringify({ cwd: process.cwd(), args: process.argv.slice(2) }));
+process.exit(Number(process.env.TOOLCHAIN_TEST_PUBLIC_EXIT || 0));
+'@
     $stageNames = @('validate-content', 'validate-security', 'validate-home-orbit', 'validate-site-orbit', 'test-security-validation', 'test-content-metadata', 'test-icon-references', 'test-hugo-toolchain', 'test-seo-security', 'test-share-metadata', 'test-topics')
     $stageBody = @'
 param([string]$HugoPath)
@@ -114,12 +123,27 @@ process.exit(Number(process.env.TOOLCHAIN_TEST_BUILD_EXIT || 0));
     Write-TestFile (Join-Path $fixtureScripts 'test-build-site.mjs') @'
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 test('disposable production build regression', () => {
+  fs.writeFileSync(fileURLToPath(new URL('../node-test-invocation.txt', import.meta.url)), 'called');
   assert.notEqual(process.env.TOOLCHAIN_TEST_NODE_FAILURE, '1');
 });
 '@
     $orchestrator = Join-Path $fixtureScripts 'validate-all.ps1'
     $stageLog = Join-Path $fixtureProject 'stage-log.txt'
+    $env:TOOLCHAIN_TEST_PUBLIC_EXIT = '29'
+    Assert-Run 'public boundary failure stops all later validation and build stages' $orchestrator @('-HugoPath', $valid) 29 'Public repository boundary check failed with exit code 29'
+    if ((Test-Path -LiteralPath $stageLog) -or
+        (Test-Path -LiteralPath (Join-Path $fixtureProject 'node-test-invocation.txt')) -or
+        (Test-Path -LiteralPath (Join-Path $fixtureProject 'build-invocation.json'))) {
+        throw 'A public boundary failure must stop PowerShell checks, Node tests, and the production build.'
+    }
+    $publicInvocation = Get-Content -LiteralPath (Join-Path $fixtureProject 'public-check-invocation.json') -Raw | ConvertFrom-Json
+    if ($publicInvocation.cwd -cne $fixtureProject -or $publicInvocation.args.Count -ne 0) {
+        throw 'The public boundary check must run in the fixture project root using the complete index mode.'
+    }
+    $env:TOOLCHAIN_TEST_PUBLIC_EXIT = '0'
     Write-TestFile (Join-Path $fixtureScripts 'validate-security.ps1') ($stageBody.Replace('exit 0', 'exit 31'))
     Assert-Run 'validation failure propagates and stops later stages' $orchestrator @('-HugoPath', $valid) 31 'validate-security failed with exit code 31'
     $observedStages = @(Get-Content -LiteralPath $stageLog)
@@ -157,6 +181,7 @@ finally {
     $env:PATH = $originalPath
     [Environment]::SetEnvironmentVariable('TOOLCHAIN_TEST_BUILD_EXIT', $originalBuildExit, 'Process')
     [Environment]::SetEnvironmentVariable('TOOLCHAIN_TEST_NODE_FAILURE', $originalNodeFailure, 'Process')
+    [Environment]::SetEnvironmentVariable('TOOLCHAIN_TEST_PUBLIC_EXIT', $originalPublicExit, 'Process')
     if (Test-Path -LiteralPath $temporaryRoot) {
         $resolved = [IO.Path]::GetFullPath($temporaryRoot)
         if (-not $resolved.StartsWith($temporaryParent, [StringComparison]::OrdinalIgnoreCase) -or

@@ -24,7 +24,7 @@ npm ci --ignore-scripts
 pwsh -NoProfile -File ./scripts/validate-all.ps1
 ```
 
-Windows 和 Linux 使用相同入口：自动发现项目内的 Hugo 或 PATH 中的 Hugo，也可通过 `-HugoPath` 显式指定路径。完整检查包含内容、安全头、首页/全站、元数据、图标、工具链回归及隔离生产构建；任一失败均返回非零状态。夹具和最终构建写入临时目录，不覆盖正式 `public/`。
+Windows 和 Linux 使用相同入口：自动发现项目内的 Hugo 或 PATH 中的 Hugo，也可通过 `-HugoPath` 显式指定路径。完整检查包含公开仓库边界、内容、安全头、首页/全站、元数据、图标、工具链回归及隔离生产构建；任一失败均返回非零状态。夹具和最终构建写入临时目录，不覆盖正式 `public/`。
 
 Node 验证依赖固定在 `package-lock.json`，使用官方 npm registry。内容校验结构化解析 YAML 与 Markdown，检查非空字段、日期、分类、唯一 slug、ZestJT 署名和日报每条消息的来源链接；这不能替代对新闻事实和来源可信度的人工核查。搜索、监控和 SEO/CSP 的负向夹具也纳入统一入口。
 
@@ -74,6 +74,20 @@ npm run test:browser
 - `layouts/`：页面模板
 - `assets/css/extended/`：站点样式
 - `hugo.toml`：站点、菜单、搜索和 SEO 配置
+
+## 公开仓库范围
+
+公开仓库保留文章、站点资源与模板、配置、构建和测试脚本、CI，以及主题覆盖说明。研究底稿、历史设计过程、账户操作手册、改动日志和本地项目档案只在本地保留。PaperMod 以固定提交的子模块引用纳入仓库。
+
+暂存时使用 `git add -- <本次明确的文件路径>`，再用 `git diff --cached --stat` 和 `git diff --cached` 核对实际内容。忽略规则不影响已跟踪文件，也不能替代暂存审阅。
+
+```powershell
+node scripts/check-public-repository.mjs          # 完整索引；统一验证与 CI 使用
+node scripts/check-public-repository.mjs --staged # 新增、复制、修改、改名、类型变化及冲突
+node scripts/check-public-repository.mjs --ref HEAD # 指定提交的完整文件树
+```
+
+检查器不依赖 npm 包，直接读取 Git 索引或指定提交，检查公开根文件/目录、环境与凭据文件、已知产物，以及少数高置信凭据特征；错误仅报告路径和类别。它不遍历主题子模块、不检查旧历史，也不保证发现所有秘密。新增公开根文件、目录或维护文档时，需同步审阅检查器允许范围；环境示例仅允许 `.env.example`、`.env.sample`，内容仍须审阅。提交前的检查不能替代推送前检查和平台权限。
 
 ## 主题导航、订阅与分享
 
