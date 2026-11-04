@@ -31,6 +31,29 @@ export function validatePost(text, name = 'article.md') {
   }
   if (nonempty(metadata.slug) && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.slug)) fail('slug must use lowercase letters, digits and hyphens');
   if (!validDate(metadata.date)) fail('date must be a valid ISO date');
+  if (Object.hasOwn(metadata, 'publishDate')) {
+    if (!validDate(metadata.publishDate) || !/T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(metadata.publishDate)) {
+      fail('publishDate must be a valid ISO timestamp with an explicit timezone');
+    } else if (validDate(metadata.date) && Date.parse(metadata.publishDate) < Date.parse(metadata.date)) {
+      fail('publishDate must not precede date');
+    }
+  }
+  if (Object.hasOwn(metadata, 'lastmod')) {
+    if (!validDate(metadata.lastmod) || !/T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(metadata.lastmod)) {
+      fail('lastmod must be a valid ISO timestamp with an explicit timezone');
+    } else if (validDate(metadata.date) && Date.parse(metadata.lastmod) < Date.parse(metadata.date)) {
+      fail('lastmod must not precede date');
+    } else if (validDate(metadata.publishDate) && Date.parse(metadata.lastmod) < Date.parse(metadata.publishDate)) {
+      fail('lastmod must not precede publishDate');
+    }
+  }
+  if (Object.hasOwn(metadata, 'aihot_ids')) {
+    if (!Array.isArray(metadata.aihot_ids) || !metadata.aihot_ids.length || !metadata.aihot_ids.every(nonempty)) {
+      fail('aihot_ids must be a nonempty list of nonempty strings');
+    } else if (new Set(metadata.aihot_ids).size !== metadata.aihot_ids.length) {
+      fail('aihot_ids must not contain duplicates');
+    }
+  }
   if (typeof metadata.draft !== 'boolean') fail('draft must be a boolean');
   for (const key of ['tags', 'categories']) {
     if (!Array.isArray(metadata[key]) || !metadata[key].length || !metadata[key].every(nonempty)) fail(`${key} must be a nonempty list of nonempty strings`);

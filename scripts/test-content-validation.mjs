@@ -67,3 +67,26 @@ test('rejects duplicate slugs across separate articles', () => {
     assert.ok(validateContentDirectory(directory).errors.some(error => /duplicate slug/.test(error)));
   } finally { rmSync(directory, { recursive: true, force: true }); }
 });
+
+test('rolling daily timestamps require a timezone and cannot precede the issue date', () => {
+  const withUpdate = value => valid.replace('draft: false', `lastmod: ${value}\ndraft: false`);
+  for (const value of ['2026-10-24T14:00:00+08:00', '2026-10-25T00:30:00Z']) {
+    assert.deepEqual(validatePost(withUpdate(value)).errors, []);
+  }
+  for (const value of ['2026-10-24', '2026-10-24T14:00:00', '2026-02-30T14:00:00+08:00', '2026-10-24T07:59:59+08:00']) {
+    assert.ok(validatePost(withUpdate(value)).errors.some(error => /lastmod/.test(error)), value);
+  }
+  assert.deepEqual(validatePost(valid).errors, []); // Historical articles need no fabricated update time.
+  const published = valid.replace('draft: false', 'publishDate: 2026-10-24T14:00:00+08:00\ndraft: false');
+  assert.deepEqual(validatePost(published).errors, []);
+  assert.ok(validatePost(published.replace('publishDate: 2026-10-24T14:00:00+08:00', 'publishDate: 2026-10-24')).errors.some(error => /publishDate/.test(error)));
+  assert.ok(validatePost(published.replace('draft: false', 'lastmod: 2026-10-24T13:00:00+08:00\ndraft: false')).errors.some(error => /lastmod.*publishDate/.test(error)));
+});
+
+test('optional AIHOT IDs retain a usable deduplication list', () => {
+  const withIds = value => valid.replace('draft: false', `aihot_ids: ${value}\ndraft: false`);
+  assert.deepEqual(validatePost(withIds('[item-a, item-b]')).errors, []);
+  for (const value of ['item-a', '[]', '[item-a, item-a]', '[""]', '[123]']) {
+    assert.ok(validatePost(withIds(value)).errors.some(error => /aihot_ids/.test(error)), value);
+  }
+});

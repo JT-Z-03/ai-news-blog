@@ -25,6 +25,7 @@
       <div class="orbit-list__context">
         {{ with .GetTerms "categories" }}{{ with index . 0 }}<span>{{ .LinkTitle }}</span>{{ end }}{{ end }}
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        {{ partial "orbit-daily-updated.html" (dict "page" . "compact" true) }}
       </div>
       <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
       {{ if ne (.Param "hideSummary") true }}

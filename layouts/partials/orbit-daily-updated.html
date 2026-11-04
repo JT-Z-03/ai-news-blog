@@ -1,0 +1,8 @@
+{{- /* With the site's date fallback, an omitted/equal lastmod is not an update. */ -}}
+{{- $page := .page -}}
+{{- if and (in ($page.Params.categories | default slice) "日报") ($page.Lastmod.After $page.Date) -}}
+  {{- $local := time.In "Asia/Shanghai" $page.Lastmod -}}
+  {{- $label := $local.Format "2006年1月2日 15:04" -}}
+  {{- if .compact }}{{ $label = $local.Format "1月2日 15:04" }}{{ end -}}
+  <span class="orbit-daily-updated" title="北京时间 {{ $local.Format "2006年1月2日 15:04" }}">更新至 {{ $label }}{{ if not .compact }}（北京时间）{{ end }}</span>
+{{- end -}}
