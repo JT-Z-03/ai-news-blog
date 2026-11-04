@@ -97,7 +97,7 @@ const invocation = fileURLToPath(new URL('../public-check-invocation.json', impo
 fs.writeFileSync(invocation, JSON.stringify({ cwd: process.cwd(), args: process.argv.slice(2) }));
 process.exit(Number(process.env.TOOLCHAIN_TEST_PUBLIC_EXIT || 0));
 '@
-    $stageNames = @('validate-content', 'validate-security', 'validate-home-orbit', 'validate-site-orbit', 'test-security-validation', 'test-content-metadata', 'test-icon-references', 'test-hugo-toolchain', 'test-seo-security', 'test-share-metadata', 'test-topics')
+    $stageNames = @('validate-content', 'validate-security', 'validate-home-orbit', 'validate-site-orbit', 'test-security-validation', 'test-content-metadata', 'test-daily-updated', 'test-icon-references', 'test-hugo-toolchain', 'test-seo-security', 'test-share-metadata', 'test-topics')
     $stageBody = @'
 param([string]$HugoPath)
 Add-Content -LiteralPath (Join-Path $PSScriptRoot '../stage-log.txt') -Value ([IO.Path]::GetFileNameWithoutExtension($PSCommandPath))

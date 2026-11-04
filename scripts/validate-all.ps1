@@ -31,6 +31,7 @@ try {
         @{ name = 'validate-site-orbit'; hugo = $true },
         @{ name = 'test-security-validation'; hugo = $false },
         @{ name = 'test-content-metadata'; hugo = $true },
+        @{ name = 'test-daily-updated'; hugo = $true },
         @{ name = 'test-icon-references'; hugo = $true },
         @{ name = 'test-hugo-toolchain'; hugo = $true },
         @{ name = 'test-seo-security'; hugo = $true },

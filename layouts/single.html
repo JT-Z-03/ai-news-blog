@@ -24,6 +24,7 @@
       {{- if $isArticle }}
         {{- $meta := newScratch -}}
         {{- if not .Date.IsZero }}{{ $meta.Add "items" (slice (printf "<span title='%s'>%s</span>" .Date (.Date.Format "2006 年 1 月 2 日"))) }}{{ end -}}
+        {{- with partial "orbit-daily-updated.html" (dict "page" . "compact" false) }}{{ $meta.Add "items" (slice .) }}{{ end -}}
         {{- if (.Param "ShowReadingTime") }}{{ $meta.Add "items" (slice (printf "<span>%d 分钟</span>" .ReadingTime)) }}{{ end -}}
         {{- if (.Param "ShowWordCount") }}{{ $meta.Add "items" (slice (printf "<span>%d 字</span>" .WordCount)) }}{{ end -}}
         {{- if not (.Param "hideAuthor") }}{{ with (partial "author.html" .) }}{{ $meta.Add "items" (slice (printf "<span>%s</span>" .)) }}{{ end }}{{ end -}}

@@ -69,6 +69,7 @@
                 {{- range $featuredDaily }}
                 <article class="orbit-feature__daily-item">
                     <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01月02日" }}</time>
+                    {{ with partial "orbit-daily-updated.html" (dict "page" . "compact" true) }}<div class="orbit-daily-item__label">{{ . }}</div>{{ end }}
                     <h4>{{ .Title }}</h4>
                     <p>{{ with .Description }}{{ . | plainify | htmlUnescape | truncate 78 }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 78 }}{{ end }}</p>
                     <a class="orbit-post-link" href="{{ .RelPermalink }}" aria-label="阅读日报：{{ .Title | plainify }}"></a>
@@ -127,6 +128,7 @@
                         <time datetime="{{ .Date.Format "2006-01-02" }}"><strong>{{ .Date.Format "02" }}</strong><span>{{ .Date.Format "2006.01" }}</span></time>
                         <div>
                             <span class="orbit-daily-item__label">AI 日报</span>
+                            {{ with partial "orbit-daily-updated.html" (dict "page" . "compact" true) }}<div class="orbit-daily-item__label">{{ . }}</div>{{ end }}
                             <h4>{{ .Title }}</h4>
                         </div>
                         <a class="orbit-post-link" href="{{ .RelPermalink }}" aria-label="阅读日报：{{ .Title | plainify }}"></a>
