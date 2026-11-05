@@ -2,20 +2,30 @@
 title: "AI 热点日报 | 2026年11月5日"
 date: 2026-11-05T00:00:00+08:00
 publishDate: 2026-11-05T08:05:25+08:00
-lastmod: 2026-11-05T14:08:00+08:00
+lastmod: 2026-11-05T22:09:01+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-05
-description: 2026年11月5日 AI HOT 滚动精选。补充 OpenAI Images 2.6、PFN 翻译模型、Cognition 编码模型及 Anthropic 生物研究等消息。
-aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7", "wwltahauj3uhzwy9yizi2i6f3", "mfhrioi9hwoh0m8q6q2yhjzo7", "ten7xip5406iqarfs8tj8pa22", "x9ea12d0zek7ntuejt9oxfdjn"]
+description: 2026年11月5日 AI HOT 滚动精选。补充 Goodfire 模型内部表征研究、Hy4 独立评测，以及 Images 2.6 等消息。
+aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7", "wwltahauj3uhzwy9yizi2i6f3", "mfhrioi9hwoh0m8q6q2yhjzo7", "ten7xip5406iqarfs8tj8pa22", "x9ea12d0zek7ntuejt9oxfdjn", "d9a7dr6n3w0nh5p2facdqqguu", "fj4zi12biz0b62ckhzg5awcxx"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 5 日 14:01。以下消息今天收录，原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条；本次取材截止北京时间 11 月 5 日 22:05。以下消息今天收录，原文日期分别注明。
 
 ---
 
 ## 模型发布/更新
+
+### 进展：Hy4 获 Artificial Analysis 独立评测
+
+**11月05日 22:09 补充。** 在[本站 11 月 4 日报道 Hy4 发布](/posts/ai-hot-2026-11-04/)后，Artificial Analysis 给其推理版本的 Intelligence Index 打出 35 分。腾讯混元于 11 月 5 日转发并感谢该评测。
+
+该分数来自特定评测组合和配置，不能直接代表所有应用场景；榜单与排名可能随模型和评测更新而变化。
+
+🔗 [Artificial Analysis 的 Hy4 评测页面](https://artificialanalysis.ai/models/hunyuan-dev1030-aa)
+
+🔗 [腾讯混元转发评测](https://x.com/TencentHunyuan/status/2118288137973854397)
 
 ### 补充：OpenAI 发布 Images 2.6，加入 GIF 创作能力
 
@@ -44,6 +54,14 @@ API 提供偏重速度的 Flare 和偏重细节与编辑一致性的 Sunburst；
 ---
 
 ## 研究与论文
+
+### Goodfire 研究通过内部表征调整模型训练
+
+**11月05日 22:09 补充，原文发表于 11 月 5 日。** Goodfire 提出 mechanistic shaping，在训练目标中对模型依赖或表达特定内部概念施加惩罚，并在影像分类、模型谄媚和奖励投机等任务中开展实验。
+
+研究人员发现，训练可能使原有监控探针失效，相关概念也可能转移或改变编码；在报告的实验中，重新训练探针或更换层次后仍能监测到概念。结果限于所测模型和任务，不能保证真实环境中的安全性。
+
+🔗 [Goodfire 原始研究说明](https://www.goodfire.com/research/mechanistic-shaping)
 
 ### 补充：Anthropic 用 Claude 辅助研究 vault 粒子结构
 
