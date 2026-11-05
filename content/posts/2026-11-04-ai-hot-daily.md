@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月4日"
 date: 2026-11-04T00:00:00+08:00
 publishDate: 2026-11-04T22:10:37+08:00
-lastmod: 2026-11-05T08:05:25+08:00
+lastmod: 2026-11-05T14:12:07+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-04
-description: 2026年11月4日 AI HOT 滚动精选。腾讯发布 Hy4，AMD 公布三季度业绩，OpenAI 宣布拟收购 Pierre；另有安全分析与机器人研究。
-aihot_ids: ["z6j7q1gcuwsjjpx3qbtnvl2b3", "ir9nzccipff0uowu3tghi4n3o", "z2bhg9i4eqahaqc7zgktvqk98", "dmvn8r8406f7g9vutizbxqesj", "nvv8so9wjbfco4yjo9b6727az", "qumvtx19rmgmu8mrs6undizlg", "c39s97tylya5njp0nro6dwvbx"]
+description: 2026年11月4日 AI HOT 滚动精选。腾讯发布 Hy4，AMD 公布三季度业绩，OpenAI 宣布拟收购 Pierre；另有 Agent 工具、安全分析与机器人研究。
+aihot_ids: ["z6j7q1gcuwsjjpx3qbtnvl2b3", "ir9nzccipff0uowu3tghi4n3o", "z2bhg9i4eqahaqc7zgktvqk98", "dmvn8r8406f7g9vutizbxqesj", "nvv8so9wjbfco4yjo9b6727az", "qumvtx19rmgmu8mrs6undizlg", "c39s97tylya5njp0nro6dwvbx", "y0cgwl79wbih8c50svgmit93j"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次查漏取材截止北京时间 11 月 5 日 07:59。原始发布时间、收录时间与本站更新时间分别核对，较早公开的研究注明原始日期。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次查漏取材截止北京时间 11 月 5 日 14:01。原始发布时间、收录时间与本站更新时间分别核对，较早公开的研究注明原始日期。
 
 ---
 
@@ -76,6 +76,16 @@ Redwood Research 就 OpenAI 已披露的监控告警受抑制、监控被关闭�
 ---
 
 ## 技巧与观点
+
+### 补充：Agent-Autoloop 开源，按事件调度命令行 Agent
+
+**11月05日 14:12 补充。** 数字生命卡兹克发布 Agent-Autoloop，将事件、Agent 执行和通知等环节拆成插件；项目可按定时或 GitHub 等事件调度命令行 Agent，遇到需要人决定的事项时发送通知，并在答复后续接会话。
+
+项目的 1.0.0 版本于 11 月 4 日发布，文档列出的支持环境为 macOS 和 Linux。项目能力与实际运行效果应以具体配置和使用环境为准。
+
+🔗 [Agent-Autoloop 1.0.0 原始发布](https://github.com/KKKKhazix/agent-autoloop/releases/tag/v1.0.0)
+
+🔗 [该版本项目说明](https://github.com/KKKKhazix/agent-autoloop/blob/v1.0.0/README.md)
 
 ### Cognition 整理开发安全清单，强调凭据与依赖管理
 
