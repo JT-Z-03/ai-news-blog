@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月4日"
 date: 2026-11-04T00:00:00+08:00
 publishDate: 2026-11-04T22:10:37+08:00
-lastmod: 2026-11-04T22:10:37+08:00
+lastmod: 2026-11-05T08:05:25+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-04
-description: 2026年11月4日 AI HOT 滚动精选。腾讯发布 Hy4，AMD 公布三季度业绩；Redwood 评论监控事件处置，Cognition 整理开发安全清单，补充智元 GO-3 与 CEL 机器人研究。
-aihot_ids: ["z6j7q1gcuwsjjpx3qbtnvl2b3", "ir9nzccipff0uowu3tghi4n3o", "z2bhg9i4eqahaqc7zgktvqk98", "dmvn8r8406f7g9vutizbxqesj", "nvv8so9wjbfco4yjo9b6727az", "qumvtx19rmgmu8mrs6undizlg"]
+description: 2026年11月4日 AI HOT 滚动精选。腾讯发布 Hy4，AMD 公布三季度业绩，OpenAI 宣布拟收购 Pierre；另有安全分析与机器人研究。
+aihot_ids: ["z6j7q1gcuwsjjpx3qbtnvl2b3", "ir9nzccipff0uowu3tghi4n3o", "z2bhg9i4eqahaqc7zgktvqk98", "dmvn8r8406f7g9vutizbxqesj", "nvv8so9wjbfco4yjo9b6727az", "qumvtx19rmgmu8mrs6undizlg", "c39s97tylya5njp0nro6dwvbx"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条；取材截止北京时间 11 月 4 日 21:59。原始发布时间、收录时间与本站更新时间分别核对，较早公开的研究注明原始日期。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次查漏取材截止北京时间 11 月 5 日 07:59。原始发布时间、收录时间与本站更新时间分别核对，较早公开的研究注明原始日期。
 
 ---
 
@@ -28,6 +28,16 @@ aihot_ids: ["z6j7q1gcuwsjjpx3qbtnvl2b3", "ir9nzccipff0uowu3tghi4n3o", "z2bhg9i4e
 ---
 
 ## 行业动态
+
+### 补充：OpenAI 宣布拟收购开发工具公司 Pierre
+
+**11月05日 08:05 补充。** OpenAI 于 11 月 4 日宣布拟收购 Pierre Computer Company。Pierre 开发了 Code Storage 和开源开发工具，Codex 应用已使用其 Trees 和 Diffs 库来浏览文件与查看代码改动。
+
+OpenAI 表示，交易完成后 Pierre 的开源项目将继续开源，Code Storage 客户仍可使用服务，公司计划将其功能引入 Codex。交易仍须满足包括监管批准在内的交割条件，双方在完成交割前仍是独立公司。
+
+🔗 [OpenAI 拟收购 Pierre 的官方公告](https://openai.com/index/openai-to-acquire-pierre/)
+
+---
 
 ### AMD 公布三季度业绩，数据中心收入同比增长 97%
 
