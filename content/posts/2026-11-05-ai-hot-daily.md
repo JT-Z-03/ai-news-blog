@@ -2,20 +2,56 @@
 title: "AI 热点日报 | 2026年11月5日"
 date: 2026-11-05T00:00:00+08:00
 publishDate: 2026-11-05T08:05:25+08:00
-lastmod: 2026-11-05T08:05:25+08:00
+lastmod: 2026-11-05T14:08:00+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-05
-description: 2026年11月5日 AI HOT 滚动精选。补充 OpenAI 的 Linux 安全研究和 Astra 安全任务评测，以及 Factory 收购 HumanLayer 的公告。
-aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7"]
+description: 2026年11月5日 AI HOT 滚动精选。补充 OpenAI Images 2.6、PFN 翻译模型、Cognition 编码模型及 Anthropic 生物研究等消息。
+aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7", "wwltahauj3uhzwy9yizi2i6f3", "mfhrioi9hwoh0m8q6q2yhjzo7", "ten7xip5406iqarfs8tj8pa22", "x9ea12d0zek7ntuejt9oxfdjn"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 3 条；取材截止北京时间 11 月 5 日 07:59。以下消息今天收录，原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 5 日 14:01。以下消息今天收录，原文日期分别注明。
+
+---
+
+## 模型发布/更新
+
+### 补充：OpenAI 发布 Images 2.6，加入 GIF 创作能力
+
+**11月05日 14:08 补充，原文发布于 11 月 4 日。** OpenAI 宣布 Images 2.6 在 ChatGPT、Codex 和 API 中推出，支持创建 GIF，并改进多轮编辑中的角色、产品和品牌细节一致性。公司称生成速度较此前提高 50%。
+
+API 提供偏重速度的 Flare 和偏重细节与编辑一致性的 Sunburst；速度和效果仍取决于具体质量设置与任务。
+
+🔗 [OpenAI Images 2.6 官方公告](https://openai.com/index/introducing-images-2-6/)
+
+### PFN 发布 PLaMo 3 Translate 翻译模型权重
+
+**11月05日 14:08 补充，原文发布于 11 月 5 日。** Preferred Networks 发布 PLaMo 3 Translate，提供 0.8B、2B、8B 和 31B 四种规模的模型权重，支持 53 种语言。官方展示了最小模型在飞行模式手机上运行的翻译演示。
+
+模型可在用户自己的设备上运行，具体性能取决于设备与所选模型；使用权重还须遵守其社区许可证条件。
+
+🔗 [Preferred Networks 官方发布公告](https://www.preferred.jp/en/news/pr20261105)
+
+### 补充：Cognition 发布编码模型 SWE-2 Flash
+
+**11月05日 14:08 补充，原文发布于 11 月 4 日。** Cognition 推出基于 Inkling-Small 训练的 SWE-2 Flash，并将其提供给 Devin Desktop 和 CLI 用户。公司报告其 Terminal-Bench 4.0 成绩从基座模型的 0.9% 提升至 20.0%。
+
+这些成绩来自发布方评测，不代表所有编码任务的实际效果。Cognition 表示暂未公开模型权重，正在制定向合作伙伴和研究机构分享权重的方案。
+
+🔗 [Cognition 官方模型公告](https://cognition.com/blog/swe-2-flash)
 
 ---
 
 ## 研究与论文
+
+### 补充：Anthropic 用 Claude 辅助研究 vault 粒子结构
+
+**11月05日 14:08 补充，原文发布于 11 月 4 日。** Anthropic 研究团队介绍一种源于噬菌体、在细菌中组装的 vault 粒子的三维结构。团队称，Claude 在研究人员指导下参与蛋白数据库检索、DNA 设计、分离方法优化和显微数据处理。
+
+粒子的生物功能仍未确定；研究团队尚未检验其是否在自然宿主中形成，预印本已提交 bioRxiv。模型参与不能等同于独立完成实验。
+
+🔗 [Anthropic 原始研究说明](https://www.anthropic.com/research/investigating-vault-particles-with-claude)
 
 ### 补充：OpenAI 用自动化流程研究 Linux 内核漏洞
 
