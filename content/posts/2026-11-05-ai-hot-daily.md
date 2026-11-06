@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月5日"
 date: 2026-11-05T00:00:00+08:00
 publishDate: 2026-11-05T08:05:25+08:00
-lastmod: 2026-11-05T22:09:01+08:00
+lastmod: 2026-11-06T14:08:57+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-05
-description: 2026年11月5日 AI HOT 滚动精选。补充 Goodfire 模型内部表征研究、Hy4 独立评测，以及 Images 2.6 等消息。
-aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7", "wwltahauj3uhzwy9yizi2i6f3", "mfhrioi9hwoh0m8q6q2yhjzo7", "ten7xip5406iqarfs8tj8pa22", "x9ea12d0zek7ntuejt9oxfdjn", "d9a7dr6n3w0nh5p2facdqqguu", "fj4zi12biz0b62ckhzg5awcxx"]
+description: 2026年11月5日 AI HOT 滚动精选，关注 Kimi 权重、Hy4 评测、Images 2.6 和模型安全研究。
+aihot_ids: ["ewubpx7n7eojfvgdx6bbrd7vl", "ulr0gn1mg4kpj7yz2h2zwp7u1", "n18ioc30q9zj3ciika9oag9x1", "cc4sa2q738kbc1y9hj6agvta7", "wwltahauj3uhzwy9yizi2i6f3", "mfhrioi9hwoh0m8q6q2yhjzo7", "ten7xip5406iqarfs8tj8pa22", "x9ea12d0zek7ntuejt9oxfdjn", "d9a7dr6n3w0nh5p2facdqqguu", "fj4zi12biz0b62ckhzg5awcxx", "hkcafk9es55rbok8pinu90x5o"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条；本次取材截止北京时间 11 月 5 日 22:05。以下消息今天收录，原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条；本次取材截止北京时间 11 月 6 日 14:00。原文日期分别注明。
 
 ---
 
 ## 模型发布/更新
+
+### 进展：Kimi K3.1 Pro 权重开放
+
+**11月06日 14:08 补充，原文发表于 11 月 5 日。** 在[本站此前报道 Kimi K3.1 Pro 发布](/posts/ai-hot-2026-10-24/)后，IT之家报道其模型权重已在 Hugging Face 开放；Moonshot AI 的模型仓库现已列出模型文件与使用许可。
+
+权重的具体首次公开时刻尚未确认；使用者需要核对模型许可及自身部署条件。
+
+🔗 [Moonshot AI 模型仓库](https://huggingface.co/moonshotai/Kimi-K3.1-Pro) · [IT之家报道](https://www.ithome.com/1/022/490.htm)
 
 ### 进展：Hy4 获 Artificial Analysis 独立评测
 
