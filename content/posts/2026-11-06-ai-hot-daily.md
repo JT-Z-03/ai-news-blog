@@ -2,20 +2,36 @@
 title: "AI 热点日报 | 2026年11月6日"
 date: 2026-11-06T00:00:00+08:00
 publishDate: 2026-11-06T08:03:47+08:00
-lastmod: 2026-11-06T14:08:57+08:00
+lastmod: 2026-11-06T22:09:22+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-06
 description: 2026年11月6日 AI HOT 滚动精选，关注模型更新、Agent 工具、模型安全和科研应用。
-aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y"]
+aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y", "r3360gkpmqpyyt2ii9cp1k9rz", "apnpwouw9phkt81pijcxcl1a1"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条；本次取材截止北京时间 11 月 6 日 14:00。原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 6 日 22:02。原文日期分别注明。
 
 ---
 
 ## 模型发布/更新
+
+### 补充：百度开放 ERNIE 5.5 Flash Base 预训练权重
+
+**11月06日 22:09 补充，百度官方动态日期为 11 月 5 日。** 百度发布 ERNIE 5.5 Flash Base，这是总参数 280B、每 token 激活 14B 的稀疏混合专家语言模型。此次开放的是预训练终点权重，尚未经过中训练与后训练，可供开发者进行领域适配和指令微调等后续研究。
+
+官方说明其训练上下文最长为 128K，微调与推理支持 1M tokens 上下文。
+
+🔗 [百度官方发布说明](https://ernie.baidu.com/zh/release/ernie-5-5-flash-base/) · [官方动态日期](https://ernie.baidu.com/zh/)
+
+### 补充：蚂蚁百灵上线 Ling-3.2-flash
+
+**11月06日 22:09 补充，官方更新日志日期为 11 月 5 日。** 蚂蚁百灵上线原生多模态模型 Ling-3.2-flash，官方称其总参数为 560B、激活参数为 25B，上下文窗口为 1M，支持图像、文本与视频输入。
+
+用户可通过对话页面体验，也可通过兼容 OpenAI 和 Anthropic 协议的 API 调用。
+
+🔗 [蚂蚁百灵官方更新日志](https://developer.ant-ling.com/zh-CN/docs/getting-started/changelog/) · [模型文档](https://developer.ant-ling.com/zh-CN/docs/models/ling/)
 
 ### 补充：OpenAI 发布安全研究模型 GPT-6 Cyber
 
