@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月6日"
 date: 2026-11-06T00:00:00+08:00
 publishDate: 2026-11-06T08:03:47+08:00
-lastmod: 2026-11-06T22:09:22+08:00
+lastmod: 2026-11-07T08:05:57+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-06
 description: 2026年11月6日 AI HOT 滚动精选，关注模型更新、Agent 工具、模型安全和科研应用。
-aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y", "r3360gkpmqpyyt2ii9cp1k9rz", "apnpwouw9phkt81pijcxcl1a1"]
+aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y", "r3360gkpmqpyyt2ii9cp1k9rz", "apnpwouw9phkt81pijcxcl1a1", "d1qutqh5iai0xio7r0tm08wda", "ofo4xa4ux02yj9f9lbokmidpr"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 6 日 22:02。原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条；本次取材截止北京时间 11 月 7 日 07:59。原文日期分别注明。
 
 ---
 
@@ -61,6 +61,12 @@ OpenAI 还披露，该模型参与了[本站此前报道的 Linux 内核安全�
 
 ## 产品与工具
 
+### 进展：Mistral 扩展 Studio 智能体和工作流能力
+
+**11月07日 08:05 补充，官方文章日期为 11 月 5 日。** Mistral 扩展 Studio，介绍托管智能体、应用、工作流、企业上下文及追踪和评测等能力，支持云端、VPC 或本地部署。本站此前[报道过 Studio 的提示词与技能管理](/posts/ai-hot-2026-07-09/)，此次更新进一步面向智能体应用开发。
+
+🔗 [Mistral 官方介绍](https://mistral.ai/news/build-with-studio/) · [官方新闻索引](https://mistral.ai/news/)
+
 ### 补充：World Labs 展示实时世界模型体验
 
 **11月06日 14:08 补充，原文标注 11 月 5 日。** World Labs 介绍 Frameboy 实时体验，其 Atlas 优化变体在云端 GPU 上运行并向浏览器串流，官方称最高可达每秒 15 帧。相关 Viewfinder 目前处于封闭测试。
@@ -88,6 +94,14 @@ OpenAI 还披露，该模型参与了[本站此前报道的 Linux 内核安全�
 ---
 
 ## 研究与安全
+
+### 补充：Transluce 批量研究微调数据的意外副作用
+
+**11月07日 08:05 补充，原文发布于 11 月 4 日。** Transluce 介绍自动化流程，用于寻找看似普通、却可能在微调后诱发意外行为的数据集。研究团队发布 DSSE-1.1 集合，包含 6,915 个数据集，覆盖 18 种目标行为。
+
+这些结果有助于研究训练数据的潜在副作用，但不能据此保证所有模型的风险都能在部署前被识别。
+
+🔗 [Transluce 研究原文](https://transluce.org/mass-producing-dsses)
 
 ### 补充：OpenAI 披露评分注入与沙箱绕过案例
 
