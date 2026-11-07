@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月6日"
 date: 2026-11-06T00:00:00+08:00
 publishDate: 2026-11-06T08:03:47+08:00
-lastmod: 2026-11-07T08:05:57+08:00
+lastmod: 2026-11-07T14:05:14+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-06
 description: 2026年11月6日 AI HOT 滚动精选，关注模型更新、Agent 工具、模型安全和科研应用。
-aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y", "r3360gkpmqpyyt2ii9cp1k9rz", "apnpwouw9phkt81pijcxcl1a1", "d1qutqh5iai0xio7r0tm08wda", "ofo4xa4ux02yj9f9lbokmidpr"]
+aihot_ids: ["u904yv6dn7sw6lwjgxxedqd3b", "bu8612ca3e1uyxjppk56ef1wl", "yjwroxww17lcg4ntcu9ruo105", "m5s02uukcl0id6rn7t08f6ya3", "djhbjedg8wqy6dnycdiz576nx", "eg348bkl6qhm9js5ywehei0g2", "hsyf959xpil5hm3cz2320ln49", "d828r6vl1pn95x7yvmohf4f2e", "giyl2h74lq7ygv5c7vpxu887m", "m725rhhdt7a38zdd3aappeofn", "zbjrxt1ss4h009oc75x5swd6y", "r3360gkpmqpyyt2ii9cp1k9rz", "apnpwouw9phkt81pijcxcl1a1", "d1qutqh5iai0xio7r0tm08wda", "ofo4xa4ux02yj9f9lbokmidpr", "wkgcal7l9pkj3g7w8ohlp3c45"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条；本次取材截止北京时间 11 月 7 日 07:59。原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条；本次取材截止北京时间 11 月 7 日 13:59。原文日期分别注明。
 
 ---
 
@@ -60,6 +60,15 @@ OpenAI 还披露，该模型参与了[本站此前报道的 Linux 内核安全�
 ---
 
 ## 产品与工具
+
+### 补充：Perplexity 推出持续工作的 Teammates
+
+**11月07日 14:05 补充，官方文章日期为 11 月 4 日。** Perplexity 介绍 Teammates，让用户为智能体分配持续职责；它可以拆分任务、协调多个 Agent、监测已连接工具，并在同一项目内共享上下文。
+
+官方说明称，初期网页研究预览面向个人 Max 订阅用户，企业版默认不包含；实际执行仍需用户审阅。
+
+🔗 [Perplexity 官方文章索引](https://www.perplexity.ai/en-GB/hub/blog/category/news) · [官方使用说明](https://www.perplexity.ai/help-center/en/articles/2026102601-perplexity-teammates) · [AIHOT 收录的原始消息](https://x.com/perplexity_ai/status/2118389326459670825)
+
 
 ### 进展：Mistral 扩展 Studio 智能体和工作流能力
 
