@@ -2,20 +2,29 @@
 title: "AI 热点日报 | 2026年11月7日"
 date: 2026-11-07T00:00:00+08:00
 publishDate: 2026-11-07T08:03:52+08:00
-lastmod: 2026-11-07T08:03:52+08:00
+lastmod: 2026-11-07T14:05:48+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-07
-description: 2026年11月7日 AI HOT 滚动精选，关注智能体记忆、语音协作和模型路由。
-aihot_ids: ["d28mrqwr7h7tl8b8jcse4b449", "nzxzrjiqbmjkybz85mcylo2xo", "w59f8d3md3ct7dj9akyn599dz", "b0ddwv6p8wgd0xlhcvvw4z36b", "ed4gnfu2f09xz5t7ur690iadn"]
+description: 2026年11月7日 AI HOT 滚动精选，关注智能体记忆、语音协作、模型路由和行业融资。
+aihot_ids: ["d28mrqwr7h7tl8b8jcse4b449", "nzxzrjiqbmjkybz85mcylo2xo", "w59f8d3md3ct7dj9akyn599dz", "b0ddwv6p8wgd0xlhcvvw4z36b", "ed4gnfu2f09xz5t7ur690iadn", "fjuidf0zii7na78sxru5il7pr", "m45kaixmfb2554qlzxbpnir36"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条；本次取材截止北京时间 11 月 7 日 07:59。原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 7 日 13:59。原文日期分别注明。
 
 ---
 
 ## 产品与工具
+
+### 补充：Meta 为 Muse 和 Meta AI 推出专用模型
+
+**11月07日 14:05 补充，官方文章日期为 11 月 6 日。** Meta 介绍使用 Muse Wonder 训练的现有模型专用版本，并向 Muse 和 Meta AI 用户推出。更新将 Active Memory 和 Active Focus 能力带入这些产品，用于关联先前对话中的信息以及持续处理目标。
+
+Meta 自测中，新旧 Muse 模型在记忆评测中正确使用关键上下文的比例分别为 90% 和 76%；这是厂商评测，实际效果取决于使用情境。
+
+🔗 [Meta 官方介绍](https://research.meta.ai/blog/specialized-models-for-muse-and-metaai)
+
 
 ### 补充：Cursor 推出 Agent 实时语音对话
 
@@ -57,4 +66,13 @@ aihot_ids: ["d28mrqwr7h7tl8b8jcse4b449", "nzxzrjiqbmjkybz85mcylo2xo", "w59f8d3md
 
 ---
 
+## 行业动态
+
+### 补充：媒体称 OpenAI 完成本轮部分融资
+
+**11月07日 14:05 补充，报道发表于美国东部时间 11 月 6 日。** 路透和彭博援引知情人士报道，OpenAI 已完成约 110 亿美元融资，该轮估值为 1.25 万亿美元。路透称这只是本轮融资的一部分，尚不能视为整轮完成；金额和估值目前来自媒体消息源。
+
+🔗 [路透报道](https://new.streetinsider.com/Reuters/OpenAI%2Bgets%2B%2411%2Bbillion%2Bfunding%2Bat%2B%241.25%2Btrillion%2Bvaluation%2C%2Bsource%2Bsays/27307823.html) · [彭博报道摘录](https://newsopenai.net/business/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value) · [彭博原文](https://www.bloomberg.com/news/articles/2026-11-06/openai-completes-11-billion-portion-of-funding-at-1-25-trillion-value)
+
+---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
