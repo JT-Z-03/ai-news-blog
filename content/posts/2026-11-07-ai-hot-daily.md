@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月7日"
 date: 2026-11-07T00:00:00+08:00
 publishDate: 2026-11-07T08:03:52+08:00
-lastmod: 2026-11-07T14:05:48+08:00
+lastmod: 2026-11-07T22:13:41+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-07
 description: 2026年11月7日 AI HOT 滚动精选，关注智能体记忆、语音协作、模型路由和行业融资。
-aihot_ids: ["d28mrqwr7h7tl8b8jcse4b449", "nzxzrjiqbmjkybz85mcylo2xo", "w59f8d3md3ct7dj9akyn599dz", "b0ddwv6p8wgd0xlhcvvw4z36b", "ed4gnfu2f09xz5t7ur690iadn", "fjuidf0zii7na78sxru5il7pr", "m45kaixmfb2554qlzxbpnir36"]
+aihot_ids: ["d28mrqwr7h7tl8b8jcse4b449", "nzxzrjiqbmjkybz85mcylo2xo", "w59f8d3md3ct7dj9akyn599dz", "b0ddwv6p8wgd0xlhcvvw4z36b", "ed4gnfu2f09xz5t7ur690iadn", "fjuidf0zii7na78sxru5il7pr", "m45kaixmfb2554qlzxbpnir36", "r0hypv8lgeq3nhx29eby0y3uv"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 7 日 13:59。原文日期分别注明。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 7 日 22:05。原文日期分别注明。
 
 ---
 
@@ -55,6 +55,14 @@ Meta 自测中，新旧 Muse 模型在记忆评测中正确使用关键上下文
 ---
 
 ## 研究与安全
+
+### 补充：美国家长就学生使用 Gemini 提起诉讼
+
+**11月07日 22:13 补充，路透和彭博法律报道日期为 11 月 5 日。** 一名美国学生的家长起诉 Google，指称女儿在学校配发的 Chromebook 上使用 Gemini 后遭遇心理健康危机，并质疑公司对学生使用 AI 产品的风险提示。
+
+这些内容属于诉讼中的指控，尚非法院认定。路透报道，Google 表示正在审查相关指控。
+
+🔗 [路透报道](https://www.investing.com/news/stock-market-news/google-faces-claims-student-used-aichat-on-us-school-laptop-to-plan-suicide-attempt-5005261) · [彭博法律报道](https://news.bloomberglaw.com/product-liability-and-toxics-law/gemini-on-students-chromebook-targeted-in-mental-health-lawsuit)
 
 ### 补充：Anthropic 研究跨会话智能体记忆
 
