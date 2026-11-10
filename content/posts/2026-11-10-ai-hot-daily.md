@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月10日"
 date: 2026-11-10T00:00:00+08:00
 publishDate: 2026-11-10T08:35:23+08:00
-lastmod: 2026-11-10T08:35:23+08:00
+lastmod: 2026-11-10T14:03:51+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-10
-description: 2026年11月10日 AI HOT 滚动精选，关注 Claude Fable 5.2、形式证明实验和 ZONOS3-Mini。
-aihot_ids: ["va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh"]
+description: 2026年11月10日 AI HOT 滚动精选，关注 Claude Fable 5.2、Muse Ember、形式证明实验和 ZONOS3-Mini。
+aihot_ids: ["va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh", "cox936nwax49rkiimi1oicgzu"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 3 条；本次取材截止北京时间 11 月 10 日 08:05。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条；本次取材截止北京时间 11 月 10 日 13:58。
 
 ---
 
 ## 模型与产品
+
+### Meta 推出轻量模型 Muse Ember
+
+**11月10日 14:03 补充。** Meta 于 11 月 9 日介绍 Muse Ember，定位为处理工具调用、代码子任务和长文档解析等智能体重复工作的轻量模型。官方称它支持文本、图像、音频和视频输入，可通过 Muse Code 与 Meta Model API 使用。
+
+官方公布的上下文窗口为 100 万 token，最长输出为 51.2 万 token；定价随输入长度变化。厂商给出的基准表现和实际任务效果仍需结合测试条件判断。
+
+🔗 [Meta 官方介绍](https://research.meta.ai/blog/muse-ember)
 
 ### Anthropic 发布 Claude Fable 和 Mythos 5.2
 
