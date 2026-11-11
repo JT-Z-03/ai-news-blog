@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月10日"
 date: 2026-11-10T00:00:00+08:00
 publishDate: 2026-11-10T08:35:23+08:00
-lastmod: 2026-11-10T22:10:26+08:00
+lastmod: 2026-11-11T08:14:31+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-10
-description: 2026年11月10日 AI HOT 滚动精选，关注 Nod、Anthropic IPO 路演、Claude Fable 5.2 和 Muse Ember。
-aihot_ids: ["va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh", "cox936nwax49rkiimi1oicgzu", "yrk09s03tcgcxsxq8jh0npjk0", "wrxlh5gesmj36fresoxbriak2"]
+description: 2026年11月10日 AI HOT 滚动精选，关注 AlphaProof Code、Nod、Anthropic IPO 路演、Claude Fable 5.2 和 Muse Ember。
+aihot_ids: ["va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh", "cox936nwax49rkiimi1oicgzu", "yrk09s03tcgcxsxq8jh0npjk0", "wrxlh5gesmj36fresoxbriak2", "t9g33uqn3lfwm8cr1kr2fvnp7"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 10 日 22:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 11 日 08:03。
 
 ---
 
@@ -52,6 +52,15 @@ Anthropic 同日介绍了一项电子设计实验：团队让 Fable 5.2 根据�
 ---
 
 ## 研究进展
+
+### Google 展示 AlphaProof Code 验证 Signal 协议代码
+
+**11月11日 08:14 补充。** Google DeepMind 于 11 月 10 日介绍 AlphaProof Code：人类专家参与制定和审查形式化规格，Gemini Carbon 智能体构造 Lean 证明，以验证 Signal 协议核心编译代码是否满足选定的安全性质。
+
+官方还在隔离代码中注入两个已修复的历史漏洞，检验系统能否识别不安全行为。验证针对特定代码和规格，不能据此断言整个 Signal 或所有软件没有漏洞。
+
+🔗 [Google DeepMind 官方介绍](https://deepmind.google/blog/introducing-alphaproof-code/) · [技术报告和证明](https://google-deepmind.github.io/code-verification/)
+
 
 ### 进展：Anthropic 用多智能体复现费马大定理形式化证明
 
