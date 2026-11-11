@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月10日"
 date: 2026-11-10T00:00:00+08:00
 publishDate: 2026-11-10T08:35:23+08:00
-lastmod: 2026-11-11T08:14:31+08:00
+lastmod: 2026-11-11T14:07:34+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-10
-description: 2026年11月10日 AI HOT 滚动精选，关注 AlphaProof Code、Nod、Anthropic IPO 路演、Claude Fable 5.2 和 Muse Ember。
-aihot_ids: ["va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh", "cox936nwax49rkiimi1oicgzu", "yrk09s03tcgcxsxq8jh0npjk0", "wrxlh5gesmj36fresoxbriak2", "t9g33uqn3lfwm8cr1kr2fvnp7"]
+description: 2026年11月10日 AI HOT 滚动精选，关注 Lovable 安全扫描、AlphaProof Code、Nod 和 Claude Fable 5.2。
+aihot_ids: ["gbyp35reiyczetrirpyzycssq", "va9trgwaw3r4por6vdqbjxrhd", "xmqflr9ja0pipwyibtqnf8qsj", "y0m3p1gin2dlfm4ns7gsrkvr8", "r5h0cwwdh1peqbg2rk6k9ljrh", "cox936nwax49rkiimi1oicgzu", "yrk09s03tcgcxsxq8jh0npjk0", "wrxlh5gesmj36fresoxbriak2", "t9g33uqn3lfwm8cr1kr2fvnp7"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 11 日 08:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 11 日 13:59。
 
 ---
 
 ## 模型与产品
+
+### Lovable 介绍应用安全扫描与修复功能
+
+**11月11日 14:07 补充。** Lovable 于 11 月 10 日介绍应用安全机制：发布时扫描代码、应用逻辑、数据库结构及行级安全策略，也可免费手动运行深度扫描。发现问题后，用户可让智能体协助修复，或在项目设置中启用自动修复。
+
+官方称付费计划的定期扫描将在当月推出；扫描结果仍需用户结合应用的实际权限需求审查。
+
+🔗 [Lovable 官方介绍](https://lovable.dev/blog/find-it-fix-it-ship-it)
 
 ### n8n Labs 发布个人智能体 Nod 研究预览
 
