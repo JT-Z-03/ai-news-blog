@@ -2,20 +2,36 @@
 title: "AI 热点日报 | 2026年11月11日"
 date: 2026-11-11T00:00:00+08:00
 publishDate: 2026-11-11T08:10:15+08:00
-lastmod: 2026-11-11T08:10:15+08:00
+lastmod: 2026-11-11T14:07:34+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-11
-description: 2026年11月11日 AI HOT 滚动精选，关注 Gemini 4 Carbon、MiniMax H3-Image、Claude 工作工具及 AI 安全研究。
-aihot_ids: ["w8cvkd1j2o1c3m8ikh8x2kpfx", "eel6o8sxfldx5itfa8f8wigc0", "c1fodrvts3po1pprz70weooju", "s7ny0oaxr6q9e5677fmb2hqpf", "vouc5yc5intvgg7311kekkhsi", "uif827ayipylunwlh7gejgcbo", "xaj5t8sbv4qtc0n9ovus1nfl9", "womexcn3n0ijhbehvhbsxxm4f", "mx6m3dvh7s5zz7u91h4iqd5pt"]
+description: 2026年11月11日 AI HOT 滚动精选，关注 ERNIE 5.5 Flash Preview、端侧语音、工具接口实验及 AI 安全研究。
+aihot_ids: ["qd3f4j2hd0t98tqf28iv7pu2j", "hq666kd02bayn64cw702xm11w", "wkpj021rmg6sgthgj9zwevei4", "i3gp1xj4j11gi4qoreya18izb", "w8cvkd1j2o1c3m8ikh8x2kpfx", "eel6o8sxfldx5itfa8f8wigc0", "c1fodrvts3po1pprz70weooju", "s7ny0oaxr6q9e5677fmb2hqpf", "vouc5yc5intvgg7311kekkhsi", "uif827ayipylunwlh7gejgcbo", "xaj5t8sbv4qtc0n9ovus1nfl9", "womexcn3n0ijhbehvhbsxxm4f", "mx6m3dvh7s5zz7u91h4iqd5pt"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 11 日 08:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 11 日 13:59。
 
 ---
 
 ## 模型与产品
+
+### 进展：ERNIE 5.5 Flash Preview 上线 API
+
+**11月11日 14:07 补充。** 百度发布 ERNIE 5.5 Flash Preview，是此前 [Flash Base](/posts/ai-hot-2026-11-06/) 的首个后训练版本。官方介绍模型总参数 280B、激活参数 14B，支持 100 万 token 上下文，API 已在千帆平台上线。
+
+百度称模型权重计划于 11 月 25 日前开源；目前仍是预览版本，实际效果需结合使用场景评估。
+
+🔗 [百度文心官方介绍](https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/)
+
+### Google AI Edge Gallery 增加端侧语音能力
+
+**11月11日 14:07 补充。** Google 于 11 月 10 日介绍 AI Edge Gallery 的端侧语音识别与语音合成能力。AI Chat 可使用语音输入并朗读回复；官方也展示了结合本地视觉和语音模型的语言学习体验。
+
+Google 提供基于 Android ML Kit 以及跨平台 MediaPipe、LiteRT 的实现路径；功能和性能依设备、模型与语言而异。
+
+🔗 [Google Developers 官方介绍](https://developers.googleblog.com/on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-gallery/)
 
 ### 进展：Gemini 4 Carbon 扩大开放范围
 
@@ -52,6 +68,22 @@ aihot_ids: ["w8cvkd1j2o1c3m8ikh8x2kpfx", "eel6o8sxfldx5itfa8f8wigc0", "c1fodrvts
 ---
 
 ## 研究进展
+
+### OpenRouter 比较 MCP、CLI 与 Skill 的上下文开销
+
+**11月11日 14:07 补充。** OpenRouter 在一个 GitHub 查询任务中比较工具接入方式：以 Claude Sonnet 5.5 为例，CLI、Skill 与加载默认工具的 MCP 分别使用 1,421、3,315 和 59,417 个输入 token。研究指出，工具定义与返回结果都可能增加上下文开销。
+
+这是特定任务与配置下的结果，并非三种方式在所有场景中的固定差距；按需选择工具和控制返回内容可能改变结果。
+
+🔗 [OpenRouter 实验](https://openrouter.ai/blog/insights/mcp-vs-cli-vs-skills/)
+
+### OpenRouter 测试不同量化精度的质量与价格
+
+**11月11日 14:07 补充。** OpenRouter 对 Qwen3.8 27B 的六个服务端点进行测试，在 240 道评分任务中未检出 fp8、fp4 与 fp16 的准确率差异；另对 1,455 个端点的调查显示，较低精度通常更便宜，但并非总是如此。
+
+测试只涉及一个模型和有限任务，无法排除较小差异，也不能推断所有模型或工作负载的量化效果。
+
+🔗 [OpenRouter 测试与方法](https://openrouter.ai/blog/insights/llm-quantization/)
 
 ### OpenAI 研究模型训练与思维链可监控性
 
