@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月11日"
 date: 2026-11-11T00:00:00+08:00
 publishDate: 2026-11-11T08:10:15+08:00
-lastmod: 2026-11-11T14:07:34+08:00
+lastmod: 2026-11-11T22:12:12+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-11
-description: 2026年11月11日 AI HOT 滚动精选，关注 ERNIE 5.5 Flash Preview、端侧语音、工具接口实验及 AI 安全研究。
-aihot_ids: ["qd3f4j2hd0t98tqf28iv7pu2j", "hq666kd02bayn64cw702xm11w", "wkpj021rmg6sgthgj9zwevei4", "i3gp1xj4j11gi4qoreya18izb", "w8cvkd1j2o1c3m8ikh8x2kpfx", "eel6o8sxfldx5itfa8f8wigc0", "c1fodrvts3po1pprz70weooju", "s7ny0oaxr6q9e5677fmb2hqpf", "vouc5yc5intvgg7311kekkhsi", "uif827ayipylunwlh7gejgcbo", "xaj5t8sbv4qtc0n9ovus1nfl9", "womexcn3n0ijhbehvhbsxxm4f", "mx6m3dvh7s5zz7u91h4iqd5pt"]
+description: 2026年11月11日 AI HOT 滚动精选，关注 Grok 应用安全、OpenAI 营收、端侧语音与 AI 安全研究。
+aihot_ids: ["qd3f4j2hd0t98tqf28iv7pu2j", "hq666kd02bayn64cw702xm11w", "wkpj021rmg6sgthgj9zwevei4", "i3gp1xj4j11gi4qoreya18izb", "w8cvkd1j2o1c3m8ikh8x2kpfx", "eel6o8sxfldx5itfa8f8wigc0", "c1fodrvts3po1pprz70weooju", "s7ny0oaxr6q9e5677fmb2hqpf", "vouc5yc5intvgg7311kekkhsi", "uif827ayipylunwlh7gejgcbo", "xaj5t8sbv4qtc0n9ovus1nfl9", "womexcn3n0ijhbehvhbsxxm4f", "mx6m3dvh7s5zz7u91h4iqd5pt", "wlmgb3vb5ycgom7wq44felnin", "mzxxannvi5wge7wz0c0jfdyz5"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 11 日 13:59。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条；本次取材截止北京时间 11 月 11 日 22:05。
 
 ---
 
 ## 模型与产品
+
+### 媒体报道 OpenAI 第三季度营收达到 100 亿美元
+
+**11月11日 22:12 补充。** Bloomberg 和 The Information 于 11 月 10 日分别援引知情人士报道，OpenAI 第三季度营收达到 100 亿美元，较前一季度增长约 50%。The Information 还报道同期营业亏损扩大至 109 亿美元。
+
+上述数字来自媒体报道，并非公司公开财报；Bloomberg 称 OpenAI 拒绝置评。季度营收与年化收入指标不能直接混同。
+
+🔗 [Bloomberg 报道](https://news.bloomberglaw.com/private-equity/openai-third-quarter-revenue-soars-nearly-50-to-10-billion) · [The Information 报道](https://www.theinformation.com/articles/openai-revenue-jumps-10-billion-third-quarter/)
 
 ### 进展：ERNIE 5.5 Flash Preview 上线 API
 
@@ -68,6 +76,14 @@ Google 提供基于 Android ML Kit 以及跨平台 MediaPipe、LiteRT 的实现�
 ---
 
 ## 研究进展
+
+### Claroc 调查 Grok Build 发布应用的访问风险
+
+**11月11日 22:12 补充。** Claroc 11 月 10 日发布研究称，在其发现并尝试访问的 Grok 应用地址中，仍在线的 37,571 个应用有 35,578 个无需登录即可打开；这是研究样本，并不代表所有应用都含敏感信息。研究者还在自行创建的团队应用上测试，发现未授权 Google 账号可读写其中数据；没有对他人的应用测试写入。
+
+SpaceXSI 回应称，应用在创建者选择分享前保持私有，发布需要多个步骤。Claroc 则称其测试的付费账户在发布访问选项中预选了“持链接者”；报告后，厂商撤下了研究者发现的 24 个员工开放应用。
+
+🔗 [Claroc 研究及厂商回应](https://blog.claroc.io/ghostshares-grok-build-apps/)
 
 ### OpenRouter 比较 MCP、CLI 与 Skill 的上下文开销
 
