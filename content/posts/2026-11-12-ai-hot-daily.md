@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月12日"
 date: 2026-11-12T00:00:00+08:00
 publishDate: 2026-11-12T08:11:31+08:00
-lastmod: 2026-11-12T14:09:01+08:00
+lastmod: 2026-11-12T22:06:39+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-12
-description: 2026年11月12日 AI HOT 滚动精选，关注智能体循环防护、Gemini Decisions API、Praxis-1 和多智能体协调研究。
-aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp", "vq9nwgwhtm31cgoliyb7ydyde"]
+description: 2026年11月12日 AI HOT 滚动精选，关注 OpenRouter 多语言本地化与智能体循环防护、Gemini Decisions API、Praxis-1 和多智能体协调研究。
+aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp", "vq9nwgwhtm31cgoliyb7ydyde", "cve017k4le2q7l8x1bfr2xdjx"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条；本次取材截止北京时间 11 月 12 日 14:04。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条；本次取材截止北京时间 11 月 12 日 22:01。
 
 ---
 
 ## 模型与产品
+
+### OpenRouter 推出八种语言界面
+
+**11月12日 22:06 补充。** OpenRouter 宣布网站本地化功能进入测试阶段，除英语外支持简体中文、西班牙语、巴西葡萄牙语、德语、法语、日语和韩语，可在账户菜单切换语言。
+
+官方介绍，其翻译流程使用 GPT-6.1 Sol 翻译，再以同一模型的另一次调用对照英文检查。按文章中的规模估算，将 16,918 条英文字符串翻译为七种语言并核验一次约需 460 美元；该费用对应其特定流程和工作量。
+
+🔗 [OpenRouter 官方介绍](https://openrouter.ai/blog/announcements/openrouter-in-8-languages/)
 
 ### OpenRouter 介绍智能体循环防护方法
 
