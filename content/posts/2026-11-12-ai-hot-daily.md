@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月12日"
 date: 2026-11-12T00:00:00+08:00
 publishDate: 2026-11-12T08:11:31+08:00
-lastmod: 2026-11-12T08:11:31+08:00
+lastmod: 2026-11-12T14:09:01+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-12
-description: 2026年11月12日 AI HOT 滚动精选，关注 Gemini Decisions API、Praxis-1 开放权重和多智能体协调研究。
-aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp"]
+description: 2026年11月12日 AI HOT 滚动精选，关注智能体循环防护、Gemini Decisions API、Praxis-1 和多智能体协调研究。
+aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp", "vq9nwgwhtm31cgoliyb7ydyde"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 3 条；本次取材截止北京时间 11 月 12 日 08:04。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条；本次取材截止北京时间 11 月 12 日 14:04。
 
 ---
 
 ## 模型与产品
+
+### OpenRouter 介绍智能体循环防护方法
+
+**11月12日 14:09 补充。** OpenRouter 在教程中介绍如何限制 AI 智能体重复调用工具：检测相同调用的循环，并通过归一化调用参数识别仅有细微变化的重复请求。
+
+教程还建议为单次运行设置步数和费用上限，并为 API 密钥设置信用额度；单独限制步数不能确保费用不会超出预算。这些是开发实践建议，实际阈值需要结合任务调整。
+
+🔗 [OpenRouter 官方教程](https://openrouter.ai/blog/tutorials/ai-agent-infinite-loop/)
 
 ### Google 推出 Gemini Decisions API
 
