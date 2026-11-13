@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月13日"
 date: 2026-11-13T00:00:00+08:00
 publishDate: 2026-11-13T08:04:54+08:00
-lastmod: 2026-11-13T14:11:40+08:00
+lastmod: 2026-11-13T22:08:47+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-13
-description: 2026年11月13日 AI HOT 滚动精选，关注 Edge0 本地模型、Claude Meetings、OpenAI 评估事故报告与 NVIDIA 芯片销售调查。
-aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4"]
+description: 2026年11月13日 AI HOT 滚动精选，关注 Apple HomeView 发售进展、Edge0 本地模型、Claude Meetings 与 AI 行业动态。
+aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4", "bp01lj0ahiqsoahba8sjor2b4"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 13 日 14:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 13 日 22:05。
 
 ---
 
 ## 模型与产品
+
+### Apple HomeView 发售进展：部分地区开始销售
+
+**11月13日 22:08 补充。** Apple 宣布 HomeView 于 11 月 13 日在美国、英国等部分地区开售，桌面版和壁挂版美国售价均为 299 美元。这是此前[产品预告](/posts/ai-hot-2026-10-13/)的后续进展。
+
+设备上的 Siri AI 目前为测试版，个人上下文请求需要配对启用 Apple Intelligence 的兼容 iPhone 或 iPad；官方列出的首批销售地区不包括中国。
+
+🔗 [Apple 官方发售说明](https://www.apple.com/newsroom/2026/11/apple-homeview-available-today/)
 
 ### Edge0 发布本地运行的 145B 和 120B 模型
 
