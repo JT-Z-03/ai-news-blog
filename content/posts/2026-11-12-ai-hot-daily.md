@@ -2,20 +2,28 @@
 title: "AI 热点日报 | 2026年11月12日"
 date: 2026-11-12T00:00:00+08:00
 publishDate: 2026-11-12T08:11:31+08:00
-lastmod: 2026-11-12T22:06:39+08:00
+lastmod: 2026-11-13T08:04:54+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-12
-description: 2026年11月12日 AI HOT 滚动精选，关注 OpenRouter 多语言本地化与智能体循环防护、Gemini Decisions API、Praxis-1 和多智能体协调研究。
-aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp", "vq9nwgwhtm31cgoliyb7ydyde", "cve017k4le2q7l8x1bfr2xdjx"]
+description: 2026年11月12日 AI HOT 滚动精选，关注 OpenRouter 多语言本地化与智能体循环防护、Gemini Decisions API、Praxis-1、多智能体协调研究及 NVIDIA 管理层变动。
+aihot_ids: ["r8hsm3m3munjwk1n3u885zszw", "bx3sq4dxfqblyztkuiktiz0wv", "z9u4n1e7zfapxjozcn97quhdp", "vq9nwgwhtm31cgoliyb7ydyde", "cve017k4le2q7l8x1bfr2xdjx", "qsbjbz754aodhcijq56puh6va"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条；本次取材截止北京时间 11 月 12 日 22:01。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 13 日 07:59。
 
 ---
 
 ## 模型与产品
+
+### NVIDIA 宣布首席执行官变动
+
+**11月13日 08:04 补充。** NVIDIA 11 月 12 日宣布，黄仁勋已辞去总裁、首席执行官及董事职务，即时生效；首席财务官 Colette Kress 出任临时 CEO，同时继续担任 CFO。董事会将寻找永久继任者，Harvey C. Jones 获任董事会主席。
+
+此前[本站报道](/posts/ai-hot-2026-11-09/)了 NVIDIA 董事会启动独立调查；此次公司公告没有给出离职原因或调查结论。
+
+🔗 [NVIDIA 官方公告](https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition)
 
 ### OpenRouter 推出八种语言界面
 
