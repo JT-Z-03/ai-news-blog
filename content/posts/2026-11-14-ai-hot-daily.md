@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月14日"
 date: 2026-11-14T00:00:00+08:00
 publishDate: 2026-11-14T08:05:19+08:00
-lastmod: 2026-11-14T14:11:50+08:00
+lastmod: 2026-11-14T22:09:08+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-14
-description: 2026年11月14日 AI HOT 滚动精选，关注 Cursor 安全事件调查进展、Poppy 1.0 与常驻智能体实践。
-aihot_ids: ["z4wsrxr1xmhg3lq3y0ouq5rmr", "vot1htumxjgnb0i88rbq3zsuq", "ypeap2t8w4fqqfuvt7mw3wg79", "h0obmlpmc44dqk1da164ca1z7", "e9o5h2c1o5f0xuh2bgqtc2w7k", "q92ir58jcjtp3g9fn11jlb6ei", "xzt8t0xkgj3mm17k11s2yo3d4"]
+description: 2026年11月14日 AI HOT 滚动精选，关注 Claude Duet 邀请进展、Cursor 安全调查与 Poppy 1.0。
+aihot_ids: ["z4wsrxr1xmhg3lq3y0ouq5rmr", "vot1htumxjgnb0i88rbq3zsuq", "ypeap2t8w4fqqfuvt7mw3wg79", "h0obmlpmc44dqk1da164ca1z7", "e9o5h2c1o5f0xuh2bgqtc2w7k", "q92ir58jcjtp3g9fn11jlb6ei", "xzt8t0xkgj3mm17k11s2yo3d4", "ajfypca37l5knyrnij49v5ofz"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 14 日 14:05。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 14 日 22:02。
 
 ---
 
@@ -28,6 +28,12 @@ Cursor 表示已通知受影响客户并协助撤销、轮换相关凭据；在�
 ---
 
 ## 模型与产品
+
+### 进展：Claude Duet 邀请已有候补用户
+
+**11月14日 22:09 补充。** Anthropic 产品负责人 11 月 13 日表示，截至其帖文前一天已登记候补的美国 Pro、Max 和 Ultra 用户均已获邀使用 Claude Duet，新登记用户仍需排队。Duet 仍处于研究预览阶段。这是[此前开启研究预览](/posts/ai-hot-2026-10-22/)后的开放进展。
+
+🔗 [Anthropic 员工帖文](https://x.com/adocomplete/status/2121338030967697908) · [产品负责人帖文](https://x.com/ahuja_karan/status/2121332990836163033)
 
 ### Poppy 1.0 发布，Shopify 商店开始支持
 

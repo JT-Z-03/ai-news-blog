@@ -2,20 +2,32 @@
 title: "AI 热点日报 | 2026年11月13日"
 date: 2026-11-13T00:00:00+08:00
 publishDate: 2026-11-13T08:04:54+08:00
-lastmod: 2026-11-14T08:07:55+08:00
+lastmod: 2026-11-14T22:09:08+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-13
-description: 2026年11月13日 AI HOT 滚动精选，关注 DeepSeek 应用 API、MOSS-Live、Apple HomeView 与 AI 行业动态。
-aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4", "bp01lj0ahiqsoahba8sjor2b4", "nnbnoebf6mvo97usmwj5wziyl", "rcjkjkhq7xxwbhh9wnv15fqy1", "um8pmpa91qn1ymvx3pux0sq1x", "qp41q77z9ge5hsyrh9kra0c7k", "yheau2l45u3ognq2w94xhtuyj"]
+description: 2026年11月13日 AI HOT 滚动精选，关注 Atlas 开放、Google 智能眼镜预购、DeepSeek 应用 API 与 AI 行业动态。
+aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4", "bp01lj0ahiqsoahba8sjor2b4", "nnbnoebf6mvo97usmwj5wziyl", "rcjkjkhq7xxwbhh9wnv15fqy1", "um8pmpa91qn1ymvx3pux0sq1x", "qp41q77z9ge5hsyrh9kra0c7k", "yheau2l45u3ognq2w94xhtuyj", "lazmov9ciw8y5uqpuda9qcizm", "hjhcsj440ym8b7ynttcx4433j"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 13 条；本次取材截止北京时间 11 月 14 日 07:59。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条；本次取材截止北京时间 11 月 14 日 22:02。
 
 ---
 
 ## 模型与产品
+
+### 进展：World Labs 向所有人开放 Atlas
+
+**11月14日 22:09 补充。** World Labs 11 月 12 日宣布向所有人开放 Atlas，这是此前[报道 Viewfinder 封测](/posts/ai-hot-2026-11-06/)后的进展。官方产品页介绍，Viewfinder 可从图片重建场景，Chisel 可用于构建场景，也提供开发者 API 和 Blender 集成。本站依据北京时间 11 月 13 日收录补充。
+
+🔗 [World Labs 官方产品页](https://worldlabs.ai/atlas) · [李飞飞官方帖文](https://x.com/drfeifei/status/2120942509786558671)
+
+### Google 智能眼镜开始预购
+
+**11月14日 22:09 补充。** Google 11 月 12 日宣布，与 Gentle Monster、Warby Parker 和 Samsung 合作的智能眼镜开始预购，集成 Gemini 并与兼容手机配合使用；官方称 12 月 10 日起在线上和门店销售。本站依据北京时间 11 月 13 日收录补充。
+
+🔗 [Google 官方介绍](https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/)
 
 ### llama.cpp 发布首个稳定版本 v1.0.0
 
