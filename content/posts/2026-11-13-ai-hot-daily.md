@@ -2,20 +2,56 @@
 title: "AI 热点日报 | 2026年11月13日"
 date: 2026-11-13T00:00:00+08:00
 publishDate: 2026-11-13T08:04:54+08:00
-lastmod: 2026-11-13T22:08:47+08:00
+lastmod: 2026-11-14T08:07:55+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-13
-description: 2026年11月13日 AI HOT 滚动精选，关注 Apple HomeView 发售进展、Edge0 本地模型、Claude Meetings 与 AI 行业动态。
-aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4", "bp01lj0ahiqsoahba8sjor2b4"]
+description: 2026年11月13日 AI HOT 滚动精选，关注 DeepSeek 应用 API、MOSS-Live、Apple HomeView 与 AI 行业动态。
+aihot_ids: ["uy1ayrrlqx1snqsv4lub7whsa", "k7sfjumcmtq0zswb5yj5kmju1", "yg97h3u5vthadivuv5po5f0aw", "wz5z4s95o7y82d8fk803hyr3x", "icmwp7qazk244f7fn6zlw8882", "l36ne5q2gsdx6thyia7fi10kn", "cfh0nazzl7eedgttz8n99fza4", "bp01lj0ahiqsoahba8sjor2b4", "nnbnoebf6mvo97usmwj5wziyl", "rcjkjkhq7xxwbhh9wnv15fqy1", "um8pmpa91qn1ymvx3pux0sq1x", "qp41q77z9ge5hsyrh9kra0c7k", "yheau2l45u3ognq2w94xhtuyj"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 13 日 22:05。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 13 条；本次取材截止北京时间 11 月 14 日 07:59。
 
 ---
 
 ## 模型与产品
+
+### llama.cpp 发布首个稳定版本 v1.0.0
+
+**11月14日 08:07 补充。** llama.cpp 于 11 月 13 日发布 v1.0.0。GitHub 发布说明列出移除已弃用的公开 API、将 ggml 更新至 1.0，以及加入 FP8 KV cache 等变化。该版本的官方发布时间为北京时间 11 月 13 日 18:20。
+
+🔗 [llama.cpp 官方发布说明](https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0)
+
+### 腾讯介绍混元 Hy Realtime 实时语音模型
+
+**11月14日 08:07 补充。** 腾讯混元于 11 月 13 日介绍 Hy Realtime。官方称，该实时语音模型支持工具调用和唱歌，已用于元宝语音通话及腾讯客服，腾讯云 API 计划近期上线。
+
+🔗 [腾讯混元官方介绍](https://mp.weixin.qq.com/s/bFxAT04ohJs9hPcjjin3bg)
+
+### Google DeepMind 开放天气模型数据集
+
+**11月14日 08:07 补充。** Google DeepMind 于 11 月 13 日介绍开放 PARDIG 降水数据和 SatWeave 卫星数据的历史归档及实时数据，供天气与气候研究使用。这是继本站[报道 WeatherNext 3](/posts/ai-hot-2026-09-03/)后的数据开放进展。
+
+AI HOT 的发布时间与原文不一致；官网元数据显示原文发布于北京时间 11 月 13 日 20:00，早于收录时间，本站据此归入本期。
+
+🔗 [Google DeepMind 官方介绍](https://deepmind.google/blog/opening-the-datasets-behind-our-ai-weather-models/)
+
+### DeepSeek 扩展应用 API 能力
+
+**11月14日 08:05 补充。** DeepSeek 在 11 月 13 日的更新日志中介绍应用 API：开发者可在 `deepseek-flash` 的对话接口中启用联网搜索、文件输入、阅读链接和安全校验等能力，由服务端处理相关工具调用与上下文拼接。
+
+官方还提供可单独调用的搜索、网页抓取、OCR、语音识别和语音合成接口。这是继本站[报道搜索 API](/posts/ai-hot-2026-10-17/)后的功能扩展。
+
+🔗 [DeepSeek 官方更新日志](https://api-docs.deepseek.com/zh-cn/updates/#发布全家桶应用-api)
+
+### OpenMOSS 解读 MOSS-Live 全双工模型
+
+**11月14日 08:05 补充。** OpenMOSS 于 11 月 13 日发布对 MOSS-Live 的技术解读。模思的产品页介绍，该模型支持全双工语音交互、语义打断、视听理解和异步工具调用。
+
+评测解读中的领先结果来自其所列参评模型和测试条件，不代表所有场景均领先；产品页未注明首次发布日期。
+
+🔗 [OpenMOSS 技术解读](https://openmoss.ai/blog/cn/moss-live/) · [模思产品页](https://www.moss.cn/models/moss-live)
 
 ### Apple HomeView 发售进展：部分地区开始销售
 
