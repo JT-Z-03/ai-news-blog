@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月14日"
 date: 2026-11-14T00:00:00+08:00
 publishDate: 2026-11-14T08:05:19+08:00
-lastmod: 2026-11-14T22:09:08+08:00
+lastmod: 2026-11-15T08:09:32+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-14
-description: 2026年11月14日 AI HOT 滚动精选，关注 Claude Duet 邀请进展、Cursor 安全调查与 Poppy 1.0。
-aihot_ids: ["z4wsrxr1xmhg3lq3y0ouq5rmr", "vot1htumxjgnb0i88rbq3zsuq", "ypeap2t8w4fqqfuvt7mw3wg79", "h0obmlpmc44dqk1da164ca1z7", "e9o5h2c1o5f0xuh2bgqtc2w7k", "q92ir58jcjtp3g9fn11jlb6ei", "xzt8t0xkgj3mm17k11s2yo3d4", "ajfypca37l5knyrnij49v5ofz"]
+description: 2026年11月14日 AI HOT 滚动精选，关注 NVIDIA 冒名公开信澄清、Claude Duet 邀请进展与 Cursor 安全调查。
+aihot_ids: ["z4wsrxr1xmhg3lq3y0ouq5rmr", "vot1htumxjgnb0i88rbq3zsuq", "ypeap2t8w4fqqfuvt7mw3wg79", "h0obmlpmc44dqk1da164ca1z7", "e9o5h2c1o5f0xuh2bgqtc2w7k", "q92ir58jcjtp3g9fn11jlb6ei", "xzt8t0xkgj3mm17k11s2yo3d4", "ajfypca37l5knyrnij49v5ofz", "kei20gkia8a0vhknc859jsfqr"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 14 日 22:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条；本次取材截止北京时间 11 月 15 日 08:03。
 
 ---
 
@@ -83,6 +83,13 @@ Poppy 定义个人智能体与企业连接的方式，商家可以分阶段增�
 ---
 
 ## 行业动态
+
+### 补充：NVIDIA 副总裁否认签署流传公开信
+
+**11月15日 08:09 补充。** NVIDIA 应用深度学习研究副总裁 Bryan Catanzaro 表示，一份在网上流传、要求董事会让黄仁勋复职并列有他名字的公开信是伪造的，他并未签署。他同时表示支持董事会及临时 CEO Colette Kress。该信与另一份网上复职请愿应区分，不能将这一澄清推及所有请愿。相关报道发表于 11 月 13 日（美国时间），本站依据 11 月 14 日收录补充。
+
+🔗 [Wccftech 报道及原帖](https://wccftech.com/letter-seeking-ex-ceo-jensen-huangs-return-is-obviously-fake-says-nvidia-vp-after-he-is-made-a-named-signatory-alongside-top-leadership-at-firm/amp/) · [SBS 报道](https://news.sbs.co.kr/english/article.do?cooper=SBSNEWSMAIN&news_id=N1008845854&plink=NEW)
+
 
 ### 补充：美联储报告呈现市场联系人对 AI 风险的关注
 
