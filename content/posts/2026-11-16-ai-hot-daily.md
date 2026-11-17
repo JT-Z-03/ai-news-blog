@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月16日"
 date: 2026-11-16T00:00:00+08:00
 publishDate: 2026-11-16T14:05:46+08:00
-lastmod: 2026-11-16T22:11:21+08:00
+lastmod: 2026-11-17T08:10:06+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-16
-description: 2026年11月16日 AI HOT 滚动精选，关注 Qwen4-Max、腾讯混元模型、苹果健康 AI 研究和 AI 融资风险。
-aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeopbsx4if4lap30899", "leb3cw7nrt06nvf0ew7rkiqf7"]
+description: 2026年11月16日 AI HOT 滚动精选，关注 Qwen4-Max、腾讯混元、Lovable 草稿、Anthropic 漏洞披露与 AI 行业动态。
+aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeopbsx4if4lap30899", "leb3cw7nrt06nvf0ew7rkiqf7", "v8ml9usyo7vicoqktyv5cdi0z", "hlcy3o9sbfz920grc9b6p86re"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条；本次取材截止北京时间 11 月 16 日 22:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 17 日 08:03。
 
 ---
 
@@ -28,6 +28,20 @@ aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeo
 **11月16日 22:09 补充。** 腾讯于 11 月 16 日发布混元 Hy4 flash。媒体报道，该模型总参数为 2240 亿，其中包括 640 亿 Engram 参数，每个 token 激活 120 亿参数；模型支持多模态输入和 100 万 token 上下文。
 
 🔗 [凤凰网报道](https://original.ifeng.com/c/8y68li91x4B) · [新京报报道](https://www.bjnews.com.cn/detail/1794811095129773.html) · [腾讯混元研究页面](https://hunyuan.tencent.com/research/100145?langVersion=zh)
+
+### Lovable 推出 Drafts 草稿功能
+
+**11月17日 08:08 补充。** Lovable 11 月 16 日介绍 Drafts，用户可复制应用及所需后端，在独立草稿中并行修改和预览。官方称接受草稿后仍需发布才会更新线上应用，测试时添加的数据会在接受或删除草稿时清除。
+
+🔗 [Lovable 官方介绍](https://lovable.dev/blog/introducing-drafts)
+
+## 安全与治理
+
+### Anthropic 缩短漏洞协调披露期限
+
+**11月17日 08:10 补充。** Anthropic 11 月 16 日宣布更新漏洞协调披露政策。对 2027 年 1 月 1 日起向维护者报告的问题，高危和严重漏洞的披露期限由 90 天缩至 30 天，其他问题为 45 天；届时已有报告保留原截止期限。正在被积极利用的漏洞仍适用 7 天期限，未经人工审核的 AI 发现不适用此次更新。
+
+🔗 [Anthropic 官方说明](https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines)
 
 ## 行业动态
 
