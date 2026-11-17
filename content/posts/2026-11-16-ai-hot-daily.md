@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月16日"
 date: 2026-11-16T00:00:00+08:00
 publishDate: 2026-11-16T14:05:46+08:00
-lastmod: 2026-11-17T08:10:06+08:00
+lastmod: 2026-11-17T14:17:11+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-16
-description: 2026年11月16日 AI HOT 滚动精选，关注 Qwen4-Max、腾讯混元、Lovable 草稿、Anthropic 漏洞披露与 AI 行业动态。
-aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeopbsx4if4lap30899", "leb3cw7nrt06nvf0ew7rkiqf7", "v8ml9usyo7vicoqktyv5cdi0z", "hlcy3o9sbfz920grc9b6p86re"]
+description: 2026年11月16日 AI HOT 滚动精选，关注 Qwen4-Max、腾讯混元、Lovable 草稿、漏洞披露与 AI 芯片管制。
+aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeopbsx4if4lap30899", "leb3cw7nrt06nvf0ew7rkiqf7", "v8ml9usyo7vicoqktyv5cdi0z", "hlcy3o9sbfz920grc9b6p86re", "x6msqkehvwzry0904un629cqg"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 17 日 08:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 17 日 14:06。
 
 ---
 
@@ -42,6 +42,12 @@ aihot_ids: ["nqcfrkilrh7nhnpd03t9q1zfh", "txbnasfrp3d0w6wqmor5rp8fk", "u36vxmxeo
 **11月17日 08:10 补充。** Anthropic 11 月 16 日宣布更新漏洞协调披露政策。对 2027 年 1 月 1 日起向维护者报告的问题，高危和严重漏洞的披露期限由 90 天缩至 30 天，其他问题为 45 天；届时已有报告保留原截止期限。正在被积极利用的漏洞仍适用 7 天期限，未经人工审核的 AI 发现不适用此次更新。
 
 🔗 [Anthropic 官方说明](https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines)
+
+### 美国公布针对远程访问先进芯片的临时规则
+
+**11月17日 14:17 补充。** 美国商务部工业与安全局 11 月 16 日发布临时最终规则，针对通过第三国数据中心远程访问先进芯片和服务器的安排。TechCrunch 报道，该规则涉及可能向中国等受限国家企业提供算力的数据中心及相关许可要求。规则公布不等于已生效，具体适用范围与生效时间应以正式规则为准。
+
+🔗 [美国商务部工业与安全局公告](https://media.bis.gov/sites/default/files/documents/BIS%20Issues%20Rule%20Addressing%20Remote%20Access%20to%20American%20Super%20Intelligence%20Technology.pdf) · [TechCrunch 报道](https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/)
 
 ## 行业动态
 

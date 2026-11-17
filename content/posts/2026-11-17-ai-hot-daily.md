@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月17日"
 date: 2026-11-17T00:00:00+08:00
 publishDate: 2026-11-17T08:08:57+08:00
-lastmod: 2026-11-17T08:08:57+08:00
+lastmod: 2026-11-17T14:15:42+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-17
-description: 2026年11月17日 AI HOT 滚动精选，关注 OpenAI 儿童安全工具、独立评估和编程智能体成本研究。
-aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965"]
+description: 2026年11月17日 AI HOT 滚动精选，关注儿童安全、模型评估、推理路由及企业 AI 使用研究。
+aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 3 条；本次取材截止北京时间 11 月 17 日 08:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 17 日 14:06。
 
 ---
 
@@ -29,6 +29,12 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 
 🔗 [OpenAI 官方说明](https://openai.com/index/our-first-phase-of-embedded-assessments/)
 
+### 补充：METR 研究智能体能否辨认评估类型
+
+**11月17日 14:15 补充，原文标注 11 月 16 日。** METR 让调查智能体探索 19 个对齐评估和 36 个能力评估环境，判断各项任务在测试什么。研究者发现，调查智能体可利用模拟环境不够真实等线索区分部分评估；实验研究的是主动调查时能发现什么，并未证明智能体执行任务时会识别评估，或这些线索已改变其行为。该消息由 AI HOT 于 11 月 17 日收录。
+
+🔗 [METR 研究说明](https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/)
+
 ## 研究与开发
 
 ### 补充：TokenEconomizer 利用历史经验降低编程智能体成本
@@ -36,6 +42,20 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 **11月17日 08:08 补充，原文标注 11 月 16 日。** 微软研究院介绍开源插件 TokenEconomizer，它从代码仓库中的历史会话提取经验，并通过精简工具和提示处理失败循环等方式减少开销。研究者在六个仓库的 277 个 SWE-Bench 任务上测试五种智能体与模型组合，报告平均成本降低 18.4% 至 30.9%，任务成功率总体保持稳定；结果限定于该实验条件。该消息由 AI HOT 于 11 月 17 日收录。
 
 🔗 [Microsoft Research 原文](https://www.microsoft.com/en-us/research/blog/tokeneconomizer-learning-from-experience-to-make-ai-coding-agents-more-efficient/)
+
+### 补充：Hugging Face 将语言模型请求接入 OpenRouter 路由
+
+**11月17日 14:15 补充，原文标注 11 月 16 日。** Hugging Face 称，其 Inference Providers 的语言模型请求改由 OpenRouter 按价格、速度和可靠性等因素选择服务商，首次调用失败时可尝试其他服务商。图像、视频和音频生成仍通过原有路径处理。该消息由 AI HOT 于 11 月 17 日收录。
+
+🔗 [Hugging Face 官方介绍](https://huggingface.co/blog/openrouter)
+
+## 行业动态
+
+### 补充：Databricks 发布企业 AI 使用指数
+
+**11月17日 14:15 补充，原文标注 11 月 16 日。** Databricks 推出 AI Index，结合其 Unity Gateway 上超过 1 万家企业的汇总匿名使用数据，以及基于内部工作流的编程智能体评测，展示模型使用、支出与任务成本等信息。结果反映其平台样本和所选评测，不代表全部企业。该消息由 AI HOT 于 11 月 17 日收录。
+
+🔗 [Databricks 官方介绍](https://www.databricks.com/blog/introducing-databricks-ai-index-state-enterprise-ai-tokenomics)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
