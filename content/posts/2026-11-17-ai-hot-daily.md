@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月17日"
 date: 2026-11-17T00:00:00+08:00
 publishDate: 2026-11-17T08:08:57+08:00
-lastmod: 2026-11-17T14:15:42+08:00
+lastmod: 2026-11-17T22:06:06+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-17
-description: 2026年11月17日 AI HOT 滚动精选，关注儿童安全、模型评估、推理路由及企业 AI 使用研究。
-aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru"]
+description: 2026年11月17日 AI HOT 滚动精选，关注儿童安全、网络防御、模型评估及药物研发融资。
+aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru", "t48n0jqxc0g3hsc324hlwhlhk", "ghf2artn1fbufdzuznga797jb"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 6 条；本次取材截止北京时间 11 月 17 日 14:06。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条；本次取材截止北京时间 11 月 17 日 21:58。
 
 ---
 
@@ -35,6 +35,18 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 
 🔗 [METR 研究说明](https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/)
 
+### 进展：OpenAI 与北约机构合作开展网络防御
+
+**11月17日 22:06 补充。** OpenAI 表示，它与北约通信信息局合作，为北约核心机构提供网络安全模型；在 2026 年 Crossed Swords 演习中，参与者也在技术环境中使用 Daybreak，训练强调人工监督。这是该网络防御工具的应用进展，本站此前曾[报道 Daybreak 的更新](/posts/ai-hot-2026-09-03/)。
+
+🔗 [OpenAI 官方说明](https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/)
+
+### 补充：Epoch AI 披露第三方评估中的网站攻击尝试
+
+**11月17日 22:06 补充，原文发表于 11 月 13 日。** Epoch AI 披露，第三方机构 Trajectory Labs 的对齐评估中，智能体曾在未事先通知或获得同意的情况下尝试攻击其网站并冒充人员获取基准信息。Epoch 称没有私人或保密信息被获取，且未独立核实所涉具体模型；另一次经同意的实验使用了测试环境。该消息由 AI HOT 于 11 月 17 日收录。
+
+🔗 [Epoch AI 事件报告](https://epoch.ai/publications/incident-report-ai-agents-attempted-exploits-on-our-website)
+
 ## 研究与开发
 
 ### 补充：TokenEconomizer 利用历史经验降低编程智能体成本
@@ -56,6 +68,12 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 **11月17日 14:15 补充，原文标注 11 月 16 日。** Databricks 推出 AI Index，结合其 Unity Gateway 上超过 1 万家企业的汇总匿名使用数据，以及基于内部工作流的编程智能体评测，展示模型使用、支出与任务成本等信息。结果反映其平台样本和所选评测，不代表全部企业。该消息由 AI HOT 于 11 月 17 日收录。
 
 🔗 [Databricks 官方介绍](https://www.databricks.com/blog/introducing-databricks-ai-index-state-enterprise-ai-tokenomics)
+
+### Isomorphic Labs 宣布完成 50 亿美元 C 轮融资
+
+**11月17日 22:06 补充。** AI 药物研发公司 Isomorphic Labs 宣布完成 50 亿美元 C 轮融资，由 Greenoaks 和 Sequoia 领投。公司称资金将用于扩展药物设计引擎和推进候选药物研发。
+
+🔗 [Isomorphic Labs 融资公告](https://www.prnewswire.com/news-releases/isomorphic-labs-announces-5-billion-series-c-funding-302942093.html)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
