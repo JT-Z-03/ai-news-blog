@@ -2,20 +2,26 @@
 title: "AI 热点日报 | 2026年11月18日"
 date: 2026-11-18T00:00:00+08:00
 publishDate: 2026-11-18T08:05:01+08:00
-lastmod: 2026-11-18T14:09:43+08:00
+lastmod: 2026-11-18T22:08:00+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-18
-description: 2026年11月18日 AI HOT 滚动精选，关注新模型、Android 开发工具、供应链安全与语音 AI。
-aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518"]
+description: 2026年11月18日 AI HOT 滚动精选，关注新模型、文件处理、Android 开发工具、供应链安全与语音 AI。
+aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518", "a48izcq1y2jqtjr66xjvwqkak"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 18 日 14:06。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 18 日 22:03。
 
 ---
 
 ## 模型与开发
+
+### Gemini API 增加多模态文件切片能力
+
+**11月18日 22:08 补充。** Google 在 Gemini API 更新日志中介绍多模态文件处理与切片：开发者可直接传入 Microsoft Office 和 OpenDocument 文件，并在提示词或函数响应中指定文档页码、工作表、单元格范围及音视频时间区间等，只处理所需内容。
+
+🔗 [Google Gemini API 更新日志](https://ai.google.dev/gemini-api/docs/changelog#11-18-2026)
 
 ### 补充：OpenAI 发布 GPT-6.2 Astra 和 Sol
 
