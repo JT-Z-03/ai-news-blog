@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月17日"
 date: 2026-11-17T00:00:00+08:00
 publishDate: 2026-11-17T08:08:57+08:00
-lastmod: 2026-11-17T22:06:06+08:00
+lastmod: 2026-11-18T08:05:01+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-17
 description: 2026年11月17日 AI HOT 滚动精选，关注儿童安全、网络防御、模型评估及药物研发融资。
-aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru", "t48n0jqxc0g3hsc324hlwhlhk", "ghf2artn1fbufdzuznga797jb"]
+aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru", "t48n0jqxc0g3hsc324hlwhlhk", "ghf2artn1fbufdzuznga797jb", "kdrk16eh8ab7b7ffs555p25nm"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条；本次取材截止北京时间 11 月 17 日 21:58。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条；本次取材截止北京时间 11 月 18 日 08:00。
 
 ---
 
@@ -60,6 +60,12 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 **11月17日 14:15 补充，原文标注 11 月 16 日。** Hugging Face 称，其 Inference Providers 的语言模型请求改由 OpenRouter 按价格、速度和可靠性等因素选择服务商，首次调用失败时可尝试其他服务商。图像、视频和音频生成仍通过原有路径处理。该消息由 AI HOT 于 11 月 17 日收录。
 
 🔗 [Hugging Face 官方介绍](https://huggingface.co/blog/openrouter)
+
+### OpenHands 推出团队工程自动化工具
+
+**11月18日 08:05 补充。** OpenHands 推出自助使用的 Teams，帮助工程团队在自己的基础设施上构建自动化工作流，首个场景是漏洞修复：智能体调查问题并提出代码修改，供人员审查。
+
+🔗 [OpenHands 官方介绍](https://hub.openhands.dev/blog/introducing-openhands-teams)
 
 ## 行业动态
 
