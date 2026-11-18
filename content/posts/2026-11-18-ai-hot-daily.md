@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月18日"
 date: 2026-11-18T00:00:00+08:00
 publishDate: 2026-11-18T08:05:01+08:00
-lastmod: 2026-11-18T08:05:01+08:00
+lastmod: 2026-11-18T14:09:43+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-18
-description: 2026年11月18日 AI HOT 滚动精选，关注 OpenAI 与微软新模型、Gemini 任务功能和供应链安全。
-aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw"]
+description: 2026年11月18日 AI HOT 滚动精选，关注新模型、Android 开发工具、供应链安全与语音 AI。
+aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条；本次取材截止北京时间 11 月 18 日 08:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条；本次取材截止北京时间 11 月 18 日 14:06。
 
 ---
 
@@ -28,6 +28,12 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 **11月18日 08:05 补充，原文发表于 11 月 17 日。** Microsoft AI 在 Ignite 期间介绍七款新模型，包括编码模型 MAI Code 2、Code 2 Flash 和语音到语音模型 MAI Realtime 1。微软同时介绍 Licensed Weights 方案，供有特定部署需求的客户使用模型权重。该消息由 AI HOT 于 11 月 18 日收录。
 
 🔗 [Microsoft AI 官方介绍](https://microsoft.ai/news/microsoft-ignite-2026/)
+
+### 补充：Google AI Studio 扩展 Android 全栈开发能力
+
+**11月18日 14:09 补充，原文发表于 11 月 17 日。** Google 介绍 AI Studio 的 Android 开发更新：Build agent 可在用户确认后配置 Firestore 数据库、登录和 Firebase AI Logic，并支持模拟器音频及截图反馈。生成的应用可发布到个人 Google Play 库，供用户在自己的设备上安装。该消息由 AI HOT 于 11 月 18 日收录。
+
+🔗 [Google 开发者博客](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/)
 
 ## 产品应用
 
@@ -50,6 +56,14 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 **11月18日 08:05 补充，原文发表于 11 月 17 日。** 安全公司 Wiz 报告，Microsoft agent-framework 的 1.26.1 和 1.26.2 版本曾被植入窃取凭据的恶意代码，随后从 PyPI 下架。Wiz 表示事件根因尚未确认；使用过受影响版本的团队应参照研究报告排查。该消息由 AI HOT 于 11 月 18 日收录。
 
 🔗 [Wiz 安全研究](https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi)
+
+## 行业动态
+
+### 补充：ElevenLabs 宣布收购日本语音 AI 公司 Kotoba
+
+**11月18日 14:09 补充，原文发表于 11 月 16 日。** ElevenLabs 宣布收购日本语音 AI 公司 Kotoba，计划结合其日语语音研究拓展相关产品。公司表示交易预计于 2026 年第四季度晚些时候完成，仍须满足监管审批及交割条件。该消息由 AI HOT 于 11 月 18 日收录。
+
+🔗 [ElevenLabs 公告](https://elevenlabs.io/blog/kotoba)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*

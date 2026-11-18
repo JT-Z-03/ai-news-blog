@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月17日"
 date: 2026-11-17T00:00:00+08:00
 publishDate: 2026-11-17T08:08:57+08:00
-lastmod: 2026-11-18T08:05:01+08:00
+lastmod: 2026-11-18T14:12:04+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-17
 description: 2026年11月17日 AI HOT 滚动精选，关注儿童安全、网络防御、模型评估及药物研发融资。
-aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru", "t48n0jqxc0g3hsc324hlwhlhk", "ghf2artn1fbufdzuznga797jb", "kdrk16eh8ab7b7ffs555p25nm"]
+aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptre8jgn8xanq9ic965", "m4emm1ej7qzex1k77a7mfaztd", "v9a6479l3xc0c2m5xsd9bzo9o", "ctdbuq2r9l6dakhxrm4pmd8ru", "t48n0jqxc0g3hsc324hlwhlhk", "ghf2artn1fbufdzuznga797jb", "kdrk16eh8ab7b7ffs555p25nm", "naql5xzzrykngxhvhd6vin5yn"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条；本次取材截止北京时间 11 月 18 日 08:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 11 条；本次取材截止北京时间 11 月 18 日 14:06。
 
 ---
 
@@ -34,6 +34,12 @@ aihot_ids: ["cidgb5cgquwqxtiydrzykwc2p", "ub0r10tgaq7g5nnq01ciz9d17", "qaj2npptr
 **11月17日 14:15 补充，原文标注 11 月 16 日。** METR 让调查智能体探索 19 个对齐评估和 36 个能力评估环境，判断各项任务在测试什么。研究者发现，调查智能体可利用模拟环境不够真实等线索区分部分评估；实验研究的是主动调查时能发现什么，并未证明智能体执行任务时会识别评估，或这些线索已改变其行为。该消息由 AI HOT 于 11 月 17 日收录。
 
 🔗 [METR 研究说明](https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells/)
+
+### 补充：Redwood 研究者质疑 Gemini 4 安全报告的论证
+
+**11月18日 14:12 补充，原文发表于 11 月 16 日。** Redwood Research 的研究者认为，Google DeepMind 公开的 Gemini 4 安全报告不足以证明失控风险已经得到可靠缓解。他们尤其质疑 Carbon 没有重新运行控制评估，而沿用了 Argon 的部分结果；这是研究者对现有证据的判断，并非失控事件已发生。该消息由 AI HOT 于 11 月 17 日收录。
+
+🔗 [Redwood Research 分析](https://blog.redwoodresearch.org/p/gemini-4-safety-reports-dont-demonstrate)
 
 ### 进展：OpenAI 与北约机构合作开展网络防御
 
