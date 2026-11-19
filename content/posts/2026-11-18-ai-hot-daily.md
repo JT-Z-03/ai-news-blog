@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月18日"
 date: 2026-11-18T00:00:00+08:00
 publishDate: 2026-11-18T08:05:01+08:00
-lastmod: 2026-11-19T14:49:52+08:00
+lastmod: 2026-11-19T22:11:44+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-18
-description: 2026年11月18日 AI HOT 滚动精选，关注 Hy4 flash 开放权重、微软 Ignite、Replit Missions、Claude Docs 工程复盘及英伟达财报。
-aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518", "a48izcq1y2jqtjr66xjvwqkak", "jj0ftew61l69qvcrmww6gcxjt", "snkvsiff90slvj17hf9i5u4do", "vgopllkh4so1p1q01nefg1364", "io0nmdphe40k919fuw1h28kg3", "ei7hom06r7wgtedvkl2eqbofp"]
+description: 2026年11月18日 AI HOT 滚动精选，关注 Hy4 flash 开放权重、OpenClaw 登录、微软 Ignite 及英伟达财报和出口合规。
+aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518", "a48izcq1y2jqtjr66xjvwqkak", "jj0ftew61l69qvcrmww6gcxjt", "snkvsiff90slvj17hf9i5u4do", "vgopllkh4so1p1q01nefg1364", "io0nmdphe40k919fuw1h28kg3", "ei7hom06r7wgtedvkl2eqbofp", "fatxhu2tz1d0g2g8412axx3k5", "ulwhtxvx986i1rjdkk2mxgzdl"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 19 日 14:43。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 13 条；本次取材截止北京时间 11 月 19 日 22:03。
 
 ---
 
@@ -63,6 +63,12 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 
 🔗 [Claude 开发者博客](https://claude.dev/blog/chaos-loop-claude-docs-launch/)
 
+### 补充：OpenClaw 的 Sign in with ChatGPT 结束测试
+
+**11月19日 22:11 补充，项目于北京时间 11 月 18 日发布消息。** OpenClaw 宣布 Sign in with ChatGPT 结束测试，支持符合条件的 ChatGPT Business 用户授权应用使用订阅额度。用户可为 OpenClaw 设置每周用量上限，Business 用户还受工作区的跨应用共享额度限制。
+
+🔗 [OpenClaw 发布帖](https://x.com/openclaw/status/2122809472271958517) · [OpenClaw 认证文档](https://docs.openclaw.ai/providers/openai/authentication) · [项目变更记录](https://github.com/openclaw/openclaw/commit/32a76530b4bdd98f8a9a652cf3498e5e01dea0b8)
+
 ## 产品应用
 
 ### 补充：Gemini 扩展任务功能
@@ -98,6 +104,10 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 **11月19日 14:49 补充，财报原文发表于美国当地时间 11 月 17 日。** 本站[此前报道](/posts/nvidia-leadership-succession/)了英伟达 CEO 交接及即将举行的财报电话会。英伟达随后公布 2027 财年第三财季营收 1158 亿美元，同比增长 103%。其中数据中心营收 1076 亿美元，同比增长 110%。公司同时披露 Vera Rubin NVL72 已开始出货。
 
 🔗 [英伟达官方财报](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027)
+
+**11月19日 22:11 补充，公告和采访均在美国当地时间 11 月 17 日发布。** 英伟达董事会成立常设委员会，负责监督国家安全政策、出口管制合规和全球贸易风险。临时 CEO Colette Kress 在接受 CNBC 采访时确认，英伟达已停止 H200 出货。
+
+🔗 [英伟达委员会公告](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Board-of-Directors-Establishes-National-Security-and-Export-Control-Oversight-Committee/default.aspx) · [CNBC 采访实录](https://pressroom.versantmedia.com/cnbc/press-releases/cnbc-exclusive-transcript-nvidia-interim-ceo-colette-kress-speaks-cnbcs-jim)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
