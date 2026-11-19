@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月18日"
 date: 2026-11-18T00:00:00+08:00
 publishDate: 2026-11-18T08:05:01+08:00
-lastmod: 2026-11-18T22:08:00+08:00
+lastmod: 2026-11-19T14:49:52+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-18
-description: 2026年11月18日 AI HOT 滚动精选，关注新模型、文件处理、Android 开发工具、供应链安全与语音 AI。
-aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518", "a48izcq1y2jqtjr66xjvwqkak"]
+description: 2026年11月18日 AI HOT 滚动精选，关注 Hy4 flash 开放权重、微软 Ignite、Replit Missions、Claude Docs 工程复盘及英伟达财报。
+aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s64y292ovwq2qrx39", "yznmu3humymvshagrka95k1n1", "ekt4wsp34savbuzq0vafnlhpw", "ujx1ebv207quqahxh2ypzibqd", "jir2e9szcxw5vfemfzyr07518", "a48izcq1y2jqtjr66xjvwqkak", "jj0ftew61l69qvcrmww6gcxjt", "snkvsiff90slvj17hf9i5u4do", "vgopllkh4so1p1q01nefg1364", "io0nmdphe40k919fuw1h28kg3", "ei7hom06r7wgtedvkl2eqbofp"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条；本次取材截止北京时间 11 月 18 日 22:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 19 日 14:43。
 
 ---
 
@@ -35,11 +35,33 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 
 🔗 [Microsoft AI 官方介绍](https://microsoft.ai/news/microsoft-ignite-2026/)
 
+**11月19日 14:49 补充，主题演讲原文发表于 11 月 17 日。** 同一场 Ignite 大会上，微软还介绍了 Copilot Workspaces，让团队成员与各自的智能体共享项目上下文，功能已向 Frontier 用户开放。用于关联 AI 使用量、支出与业务结果的 Agent 365 Business Analytics 也开始在 Frontier Public 推出。
+
+🔗 [Microsoft Ignite 主题演讲](https://blogs.microsoft.com/blog/2026/11/17/ignite-2026-building-the-frontier-ecosystem/) · [Copilot 产品公告](https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/)
+
 ### 补充：Google AI Studio 扩展 Android 全栈开发能力
 
 **11月18日 14:09 补充，原文发表于 11 月 17 日。** Google 介绍 AI Studio 的 Android 开发更新：Build agent 可在用户确认后配置 Firestore 数据库、登录和 Firebase AI Logic，并支持模拟器音频及截图反馈。生成的应用可发布到个人 Google Play 库，供用户在自己的设备上安装。该消息由 AI HOT 于 11 月 18 日收录。
 
 🔗 [Google 开发者博客](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/)
+
+### 进展：腾讯混元开放 Hy4 flash 权重
+
+**11月19日 14:49 补充。** 腾讯混元在[此前发布 Hy4 flash](/posts/ai-hot-2026-11-16/) 时预告了权重开放。11 月 18 日，腾讯开放了指令版、FP8 量化指令版和预训练 Base 版的权重，均采用 Tencent Hy License。
+
+🔗 [腾讯混元官方仓库](https://github.com/Tencent-Hunyuan/Hy4-flash) · [官方模型卡](https://huggingface.co/tencent/Hy4-flash)
+
+### 补充：Replit 推出按目标协作的 Missions
+
+**11月19日 14:49 补充，官方博客标注 11 月 17 日，发布元数据对应北京时间 11 月 18 日 02:00。** 用户在 Missions 中给出目标、验收标准、预算及需要审批的动作，Replit 协调多个智能体分工完成规划、开发、测试和迭代。Replit 同时开源了用 Missions 构建的应用监控工具 DataCat，供团队自行部署。
+
+🔗 [Replit 发布公告](https://replit.com/blog/introducing-replit-missions) · [DataCat 源码](https://github.com/replit/datacat)
+
+### 补充：Anthropic 复盘 Claude Docs 上线前的故障测试
+
+**11月19日 14:49 补充，原文发表于 11 月 17 日。** Anthropic 工程师复盘了 [Claude Docs](/posts/ai-hot-2026-09-17/) 上线前的两周测试。团队在预发布环境用 Claude 循环执行压测、读取遥测数据并验证修复，难以撤销的改动仍由人审批。工程师称，上线首周约 20 亿次请求中出现 60 次服务器错误。
+
+🔗 [Claude 开发者博客](https://claude.dev/blog/chaos-loop-claude-docs-launch/)
 
 ## 产品应用
 
@@ -70,6 +92,12 @@ aihot_ids: ["jr7fqw95e5ihuevr1rzib208l", "z9zhvfj8o8zp2yp433eizf3uk", "k036fkz6s
 **11月18日 14:09 补充，原文发表于 11 月 16 日。** ElevenLabs 宣布收购日本语音 AI 公司 Kotoba，计划结合其日语语音研究拓展相关产品。公司表示交易预计于 2026 年第四季度晚些时候完成，仍须满足监管审批及交割条件。该消息由 AI HOT 于 11 月 18 日收录。
 
 🔗 [ElevenLabs 公告](https://elevenlabs.io/blog/kotoba)
+
+### 进展：英伟达公布第三财季业绩
+
+**11月19日 14:49 补充，财报原文发表于美国当地时间 11 月 17 日。** 本站[此前报道](/posts/nvidia-leadership-succession/)了英伟达 CEO 交接及即将举行的财报电话会。英伟达随后公布 2027 财年第三财季营收 1158 亿美元，同比增长 103%。其中数据中心营收 1076 亿美元，同比增长 110%。公司同时披露 Vera Rubin NVL72 已开始出货。
+
+🔗 [英伟达官方财报](https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
