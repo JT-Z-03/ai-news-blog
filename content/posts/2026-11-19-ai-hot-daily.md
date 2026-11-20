@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月19日"
 date: 2026-11-19T00:00:00+08:00
 publishDate: 2026-11-19T08:07:53+08:00
-lastmod: 2026-11-19T22:11:44+08:00
+lastmod: 2026-11-20T08:10:11+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-19
-description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、Meta Muse 隐私及微软自愿离职方案。
-aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y"]
+description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、Meta Muse 隐私、微软自愿离职方案和数据中心用电的空气质量影响。
+aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y", "wefmgc42bqc1uhcqc2gv3haav"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条；本次取材截止北京时间 11 月 19 日 22:03。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 13 条。本次查漏截止北京时间 11 月 20 日 08:02。
 
 ---
 
@@ -92,6 +92,12 @@ aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy
 **11月19日 22:11 补充，采访于美国当地时间 11 月 18 日举行。** 微软 CEO 纳德拉在 DealBook 峰会上说，公司正围绕 AI 重组工作方式，并希望通过 10 月推出的自愿离职补偿方案给员工更多选择。微软公告称，方案面向美国、英国、加拿大和印度部分团队的符合条件员工。TechCrunch 报道，约 6 万名员工收到方案。
 
 🔗 [微软自愿离职方案公告](https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/) · [TechCrunch 峰会报道](https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/) · [Anadolu 峰会报道](https://www.aa.com.tr/en/world/microsoft-ceo-warns-ai-could-trigger-more-outages-as-cybersecurity-risks-grow/4130517)
+
+### MIT 研究估算数据中心用电对美国空气质量的影响
+
+**11月20日 08:10 补充，原文发表于 11 月 19 日。** MIT 研究团队把电网调度、大气污染传播和流行病学资料结合起来，估算 2023 年美国数据中心增加的电力需求所产生的额外空气污染，与约 650 例过早死亡相关。部分估算风险较高的地区远离用电大户，反映了跨区供电和污染物的传播。该研究由 AI HOT 于 11 月 19 日晚收录。
+
+🔗 [MIT 研究报道](https://news.mit.edu/2026/study-reveals-data-centers-long-distance-damage-air-quality-1119) · [期刊论文](https://doi.org/10.1088/1748-9326/aebbd4)
 
 ### 进展：Anthropic 公布 IPO 定价
 
