@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月19日"
 date: 2026-11-19T00:00:00+08:00
 publishDate: 2026-11-19T08:07:53+08:00
-lastmod: 2026-11-20T14:07:12+08:00
+lastmod: 2026-11-20T22:10:39+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-19
-description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、NGINX 安全更新、数据中心用电的空气质量影响与 Anthropic 招股细节。
-aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y", "wefmgc42bqc1uhcqc2gv3haav", "x8i90coywg5pag1dmf436vgg5", "a8d06cpj4vy2dkdzazgsqsrwx"]
+description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、Vals AI 安全评测、数据中心用电的空气质量影响与 Anthropic 招股细节。
+aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y", "wefmgc42bqc1uhcqc2gv3haav", "x8i90coywg5pag1dmf436vgg5", "a8d06cpj4vy2dkdzazgsqsrwx", "yf91syits6gqn8qvtksix0kdj"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条。本次查漏截止北京时间 11 月 20 日 14:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次查漏截止北京时间 11 月 20 日 22:01。
 
 ---
 
@@ -84,6 +84,12 @@ aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy
 **11月20日 14:07 补充，原始公告发表于 11 月 18 日。** NGINX 发布稳定版 1.30.7 和主线版 1.31.9，修复包括 CVE-2026-123007 和 CVE-2026-123633 在内的漏洞。CERT-EU 指出，这两项 HTTP/2 漏洞可导致未经认证的远程代码执行，建议优先升级面向互联网的实例。相关披露由 AI HOT 于 11 月 19 日收录。
 
 🔗 [NGINX 官方安全公告](https://nginx.org/en/security_advisories.html) · [CERT-EU 通报](https://cert.europa.eu/publications/security-advisories/2026-022/)
+
+### 补充：Vals AI 评估前沿模型在自主武器相关场景下的防护
+
+**11月20日 22:10 补充，原始研究发表于 11 月 17 日。** 独立评测机构 Vals AI 披露，在其针对自主武器风险的模拟评估中，多款前沿模型的防护未能稳定拦截高风险请求。结果反映了受测模型在该实验条件下的表现。后续报道于 11 月 18 日刊发，由 AI HOT 于北京时间 11 月 19 日凌晨收录。
+
+🔗 [Vals AI 官方研究摘要](https://www.vals.ai/blogs?category=Research)
 
 ## 行业动态
 

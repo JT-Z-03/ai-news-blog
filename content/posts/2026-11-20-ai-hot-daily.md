@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月20日"
 date: 2026-11-20T00:00:00+08:00
 publishDate: 2026-11-20T08:10:11+08:00
-lastmod: 2026-11-20T14:07:12+08:00
+lastmod: 2026-11-20T22:10:39+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-20
-description: 2026年11月20日 AI HOT 滚动精选，关注腾讯混元 Hy4 开放权重、Genie 4 向开发者开放、Conductor 聊天内嵌产物、Codex 排查 ChatGPT 性能回退与 Anthropic 上市首日。
-aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc", "jl6m0eymz9z0kleh54c3guowx", "stnka187ae3za2qnx70vqheg7"]
+description: 2026年11月20日 AI HOT 滚动精选，关注腾讯混元 Hy4 开放权重、Genie 4 向开发者开放、可灵图像模型 API、Codex 排查 ChatGPT 性能回退与 Anthropic IPO 交割。
+aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqeuqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc", "jl6m0eymz9z0kleh54c3guowx", "stnka187ae3za2qnx70vqheg7", "e871ammlz8gpx1oozsswidzt0", "z0unnn7ryj39a3tuns8b1l4a6"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条。本次取材截止北京时间 11 月 20 日 14:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条。本次取材截止北京时间 11 月 20 日 22:01。
 
 ---
 
@@ -47,7 +47,19 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 
 🔗 [腾讯混元发布公告](https://x.com/TencentHunyuan/status/2123625549147070538) · [官方仓库与模型权重入口](https://github.com/Tencent-Hunyuan/Hy4#model-links)
 
+### 补录：fal 与 Runware 开放 Kling Image 4.0 API
+
+**11月20日 22:10 补充，模型于 11 月 17 日发布。** fal 与 Runware 均已接入可灵的图像生成模型 Kling Image 4.0，提供文字和参考图生成入口，支持 2K、4K 和 8K 输出，并可一次生成最多十张主题和风格一致的图像。该消息由 AI HOT 于 11 月 17 日收录，本次依据两家平台的 API 文档补录。
+
+🔗 [fal 模型与 API 说明](https://fal.ai/kling-image-4) · [Runware 模型文档](https://runware.ai/docs/models/klingai-image-4-0)
+
 ## 开发与研究
+
+### 进展：Arena 公布 Gemini 4 Neon 的首发实测
+
+**11月20日 22:10 补充，原帖发表于美国当地时间 11 月 19 日。** 在[Google 发布 Gemini 4 Neon](/posts/ai-hot-2026-11-19/)后，Arena 分享了对该模型的首发体验，覆盖 3D 场景、游戏、界面和数据可视化任务。Arena 另有一份标注 11 月 18 日更新的智能体榜单。Neon 在高推理设置下基于 4,238 次会话获得 1,333±32 分，暂列第 3，名次估计范围为第 2 至第 7。视频相关消息由 AI HOT 于北京时间 11 月 20 日收录。
+
+🔗 [Arena 实测原帖](https://x.com/arena/status/2123528811572846972) · [Arena 实测视频](https://www.youtube.com/watch?v=79sSH0Y8FA4) · [Arena 模型榜单](https://arena.ai/leaderboard/agent/models/gemini-4-neon-high-m0ck)
 
 ### 补充：OpenAI 用 Codex 排查 ChatGPT 性能回退
 
@@ -80,6 +92,10 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 继[公布每股 83 美元的 IPO 定价](/posts/ai-hot-2026-11-19/)后，Anthropic 股票于美国东部时间 11 月 19 日在纳斯达克以 ANT 为代码开始交易。纳斯达克确认首笔成交价为每股 111.50 美元，较发行价高约 34%，首日收于 97.17 美元。该进展由 AI HOT 于北京时间 11 月 20 日收录。
 
 🔗 [纳斯达克上市记录](https://www.nasdaq.com/newsroom/anthropic-marks-ipo-at-nasdaq) · [Anthropic 定价公告](https://www.anthropic.com/news/anthropic-prices-initial-public-offering) · [美联社首日行情报道](https://apnews.com/article/anthropic-ipo-by-numbers-fdca56f1cda70c9908899057e7e591e6)
+
+**11月20日 22:10 补充。** Anthropic 公告称，IPO 与同期私募均已交割。承销商全额行使了额外认购 1.47 亿股的选择权，IPO 的总募资额约为 935 亿美元，其中约 916 亿美元由 Anthropic 获得，均为扣除承销费用和其他发行费用前的金额。另有约 260 亿美元来自同期私募。
+
+🔗 [Anthropic 交割公告](https://www.anthropic.com/news/ipo-close) · [路透社交割报道（Investing.com 刊载）](https://www.investing.com/news/economy-news/anthropic-ipo-haul-rises-to-935-billion-after-underwriters-exercise-greenshoe-5041607)
 
 ### 进展：美国远程算力出口管制规则生效
 
