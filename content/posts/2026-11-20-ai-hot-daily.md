@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月20日"
 date: 2026-11-20T00:00:00+08:00
 publishDate: 2026-11-20T08:10:11+08:00
-lastmod: 2026-11-20T08:10:11+08:00
+lastmod: 2026-11-20T14:07:12+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-20
-description: 2026年11月20日 AI HOT 滚动精选，关注 Genie 4 向开发者开放、Gemini 工具检索预览、Codex 排查 ChatGPT 性能回退、Anthropic 上市首日与美国远程算力规则生效。
-aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc"]
+description: 2026年11月20日 AI HOT 滚动精选，关注腾讯混元 Hy4 开放权重、Genie 4 向开发者开放、Conductor 聊天内嵌产物、Codex 排查 ChatGPT 性能回退与 Anthropic 上市首日。
+aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc", "jl6m0eymz9z0kleh54c3guowx", "stnka187ae3za2qnx70vqheg7"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条。本次取材截止北京时间 11 月 20 日 08:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条。本次取材截止北京时间 11 月 20 日 14:00。
 
 ---
 
@@ -41,6 +41,12 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 
 🔗 [Perplexity 官方研究报告](https://www.perplexity.ai/en-GB/hub/blog/self-improving-skills)
 
+### 进展：腾讯混元开放 Hy4 正式版权重
+
+**11月20日 14:07 补充。** 腾讯混元在[11 月 4 日发布旗舰 Hy4](/posts/ai-hot-2026-11-04/)后，于 11 月 20 日开放指令版、FP8 量化指令版和预训练基础版的权重，均采用 Tencent Hy License。官方资料显示，Hy4 支持图像和文本输入与 100 万 token 上下文，语言主干约有 7700 亿参数，处理文本时每个 token 激活约 490 亿参数。腾讯同步发布了系统卡，披露安全评估结果。
+
+🔗 [腾讯混元发布公告](https://x.com/TencentHunyuan/status/2123625549147070538) · [官方仓库与模型权重入口](https://github.com/Tencent-Hunyuan/Hy4#model-links)
+
 ## 开发与研究
 
 ### 补充：OpenAI 用 Codex 排查 ChatGPT 性能回退
@@ -60,6 +66,12 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 **11月20日 08:10 补充，原文发表于 11 月 19 日。** 斯坦福研究者发布 PhantomDocket，利用已确认使用生成式 AI 的法律文书及对照样本评估检测工具。研究分析了美国四地州法院约 12.75 万份民事起诉状，估计 2026 年加州圣克拉拉县和旧金山县的可比案件样本分别有约 38% 和 36% 的起诉状呈现 AI 辅助写作迹象。研究者强调，这一方法适合估计群体比例，判断单份文书仍有明显误差。该研究由 AI HOT 于 11 月 20 日收录。
 
 🔗 [斯坦福 HAI 研究说明](https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter) · [研究论文](https://dho.stanford.edu/wp-content/uploads/GenAI_Courts.pdf)
+
+### 补充：Conductor 在聊天中展示智能体生成的 HTML 页面
+
+**11月20日 14:07 补充，原文发表于 11 月 19 日。** Conductor 0.97.0 让本地工作区里的智能体把 HTML 页面直接嵌入聊天，例如在对话中展示流程图。用户可以通过 @ 指定产物，也可以在设置中管理模板。新版还支持选中聊天原文并引用回复。该更新由 AI HOT 于 11 月 20 日收录。
+
+🔗 [Conductor 更新日志](https://www.conductor.build/changelog/0.97.0-first-class-artifacts)
 
 ## 行业动态
 

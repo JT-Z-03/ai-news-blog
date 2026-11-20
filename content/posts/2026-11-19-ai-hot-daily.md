@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月19日"
 date: 2026-11-19T00:00:00+08:00
 publishDate: 2026-11-19T08:07:53+08:00
-lastmod: 2026-11-20T08:10:11+08:00
+lastmod: 2026-11-20T14:07:12+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-19
-description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、Meta Muse 隐私、微软自愿离职方案和数据中心用电的空气质量影响。
-aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y", "wefmgc42bqc1uhcqc2gv3haav"]
+description: 2026年11月19日 AI HOT 滚动精选，关注 Gemini 4 Neon 开放范围、AI 辅助芯片设计、NGINX 安全更新、数据中心用电的空气质量影响与 Anthropic 招股细节。
+aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy74nvduahsy10sp2f", "v0rnw0gs7wqagl0k8xwblf421", "kj58lhwtxwnxjjeppyzjddqmc", "agma8nflzrckhkvklgsgnrnpp", "o0z8uukw36ic6txpxi29o96ep", "zyv7euqbikadbvaxfjxdh850k", "na2nxuqq5bxz0us1vjup0l259", "dpmse0g0euqubtr0704x8bqvw", "k821p6smjnprmolffcr66q1mz", "i24hiy236uc3ynswh26pw7s0h", "abxhv94f3gcq1qb9mzdf7yma3", "g47lsydtqfsi16e0z920ghe2y", "wefmgc42bqc1uhcqc2gv3haav", "x8i90coywg5pag1dmf436vgg5", "a8d06cpj4vy2dkdzazgsqsrwx"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 13 条。本次查漏截止北京时间 11 月 20 日 08:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条。本次查漏截止北京时间 11 月 20 日 14:00。
 
 ---
 
@@ -79,6 +79,12 @@ aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy
 
 🔗 [路透社调查全文（Investing.com 刊载）](https://www.investing.com/news/stock-market-news/as-meta-bets-big-on-muse-ai-agent-early-safety-mishaps-surface-5035458) · [Ars Technica 与 Meta 回应](https://arstechnica.com/tech-policy/2026/11/muse-privacy-invasions-are-freaking-out-meta-staffers-internal-chats-show/) · [Inc. 的独立使用记录](https://www.inc.com/jason-aten/metas-new-muse-ai-agent-read-my-private-messages-i-never-asked-it-to/91408202)
 
+### 补充：NGINX 发布 HTTP/2 安全修复
+
+**11月20日 14:07 补充，原始公告发表于 11 月 18 日。** NGINX 发布稳定版 1.30.7 和主线版 1.31.9，修复包括 CVE-2026-123007 和 CVE-2026-123633 在内的漏洞。CERT-EU 指出，这两项 HTTP/2 漏洞可导致未经认证的远程代码执行，建议优先升级面向互联网的实例。相关披露由 AI HOT 于 11 月 19 日收录。
+
+🔗 [NGINX 官方安全公告](https://nginx.org/en/security_advisories.html) · [CERT-EU 通报](https://cert.europa.eu/publications/security-advisories/2026-022/)
+
 ## 行业动态
 
 ### 补充：美国两部门公布 Megaspeed 调查进展
@@ -104,6 +110,10 @@ aihot_ids: ["lp0snt9lfrx5ju7mg3wma6hnw", "rubpebtbkzpp1fpbtvw0kt8v2", "fn0p7buwy
 **11月19日 08:07 补充，原文发表于 11 月 18 日。** Anthropic 公布首次公开发行定价为每股 83 美元，预计股票于美国东部时间 11 月 19 日在纳斯达克以 ANT 代码开始交易，交割预计于 11 月 20 日进行并须满足条件。本站[此前报道](/posts/ai-hot-2026-11-10/)了其 IPO 路演计划；本次定价由 AI HOT 于 11 月 19 日收录。
 
 🔗 [Anthropic 官方公告](https://www.anthropic.com/news/anthropic-prices-initial-public-offering)
+
+**11月20日 14:07 补充，最终招股书于 11 月 19 日提交。** Anthropic 向美国证交会提交的文件列出一笔同期私募，Google、英伟达、AMD 等七家公司同意按 IPO 定价认购合计 260 亿美元的 N 类股份。文件还披露，创始人实体持有的 F 类股份在一般股东表决事项上占 50.1% 投票权，长期利益信托仍有权选出多数董事。相关融资报道由 AI HOT 于 11 月 19 日晚收录。
+
+🔗 [Anthropic 最终招股书](https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm) · [TechCrunch 融资报道](https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
