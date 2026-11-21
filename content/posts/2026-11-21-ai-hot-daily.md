@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月21日"
 date: 2026-11-21T00:00:00+08:00
 publishDate: 2026-11-21T10:23:03+08:00
-lastmod: 2026-11-21T10:23:03+08:00
+lastmod: 2026-11-21T14:05:59+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-21
-description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想证明主张、Inkling 2 Mini 开放权重、ChatGPT Space 扩大开放与 METR 能力评估。
-aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4"]
+description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想证明的独立复核、混元 Hy4 轻量模型计划、Inkling 2 Mini 权重与 ChatGPT Space。
+aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4", "j8qdprqh5i5n9n7ece0f411f1"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条。本次取材截止北京时间 11 月 21 日 08:09。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 21 日 13:58。
 
 ---
 
@@ -35,6 +35,12 @@ aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46
 
 🔗 [Google Research 工程说明](https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/)
 
+### 补录：腾讯混元团队预告更轻量的 Hy4 模型
+
+**11月21日 14:05 补充。** AI HOT 于 11 月 19 日收录腾讯混元的社区问答预告。继[开放旗舰 Hy4 权重](/posts/ai-hot-2026-11-20/)后，团队在北京时间 11 月 21 日的问答中表示，更小的 Hy4 模型已列入路线图，并预告了 Flash-Lite。团队还在推进 llama.cpp 适配，尚未公布这些计划的具体时间。
+
+🔗 [较小模型路线图](https://www.reddit.com/r/LocalLLaMA/comments/1y15w4a/comment/19sxf15n36tnm/) · [Flash-Lite 预告](https://www.reddit.com/r/LocalLLaMA/comments/1y15w4a/comment/19sxin04bnm3m/) · [llama.cpp 适配回复](https://www.reddit.com/r/LocalLLaMA/comments/1y15w4a/comment/19sxert2z7a8x/)
+
 ## 开发与研究
 
 ### 进展：数学家 Levent Alpöge 发布黎曼猜想证明主张和 Lean 文件
@@ -42,6 +48,10 @@ aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46
 **原始说明于 11 月 20 日发布。** Anthropic 数学家 Levent Alpöge 在个人网站公开说明和分卷 Lean 文件，称他与 Claude 找到了黎曼猜想的证明，方法也适用于狄利克雷 L 函数的广义版本。本站[曾报道相关的零点比例下界结果](/posts/ai-hot-2026-08-10/)。MIT 数学家 Andrew Sutherland 公布的初步核验显示，源码编译无误，独立内核接受了导出的证明；截至本期取材时，部分形式化检查仍在进行，克雷数学研究所仍将该猜想列为未解决。
 
 🔗 [Alpöge 原始说明及文件入口](https://alpo.ge/remark.pdf) · [Sutherland 核验记录](https://math.mit.edu/~drew/grh/) · [克雷数学研究所问题页面](https://www.claymath.org/millennium/Riemann-Hypothesis/)
+
+**11月21日 14:05 补充。** Lean 社区的证明镜像于北京时间 12:27 合入公开的编译缓存，方便第三方复核。维护者记录称，已验证全部 175,187 个模块的缓存下载和恢复。美联社随后刊载克雷数学研究所所长 Martin Bridson 的回应。他表示，要充分理解这项成果仍需时间。该研究所的问题页面仍标注「未解决」。
+
+🔗 [Lean 社区合并记录](https://github.com/leanprover-community/riemann-hypothesis/pull/7) · [美联社刊载的研究所回应](https://apnews.com/article/anthropic-claude-math-solution-ai-4fe8b69a891f160f9e7f0c85af8c55c8)
 
 ### 补充：METR 更新 AI 任务时间视野评估
 
