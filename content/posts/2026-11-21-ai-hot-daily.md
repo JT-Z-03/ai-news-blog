@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月21日"
 date: 2026-11-21T00:00:00+08:00
 publishDate: 2026-11-21T10:23:03+08:00
-lastmod: 2026-11-21T14:05:59+08:00
+lastmod: 2026-11-21T22:11:30+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-21
-description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想证明的独立复核、混元 Hy4 轻量模型计划、Inkling 2 Mini 权重与 ChatGPT Space。
-aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4", "j8qdprqh5i5n9n7ece0f411f1"]
+description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想的两份证明主张及核验进展、混元 Hy4 轻量模型计划、Inkling 2 Mini 权重与 ChatGPT Space。
+aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4", "j8qdprqh5i5n9n7ece0f411f1", "tje8i8y21ttk7jjmqet5bpxuq"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 21 日 13:58。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 21 日 22:07。
 
 ---
 
@@ -52,6 +52,10 @@ aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46
 **11月21日 14:05 补充。** Lean 社区的证明镜像于北京时间 12:27 合入公开的编译缓存，方便第三方复核。维护者记录称，已验证全部 175,187 个模块的缓存下载和恢复。美联社随后刊载克雷数学研究所所长 Martin Bridson 的回应。他表示，要充分理解这项成果仍需时间。该研究所的问题页面仍标注「未解决」。
 
 🔗 [Lean 社区合并记录](https://github.com/leanprover-community/riemann-hypothesis/pull/7) · [美联社刊载的研究所回应](https://apnews.com/article/anthropic-claude-math-solution-ai-4fe8b69a891f160f9e7f0c85af8c55c8)
+
+**11月21日 22:11 补充。** 斯坦福数学家 Ravi Vakil 于北京时间 11 月 21 日凌晨公开了 Alessandro Maria Masullo 独立撰写的广义黎曼猜想证明草稿。Vakil 随后表示，有读者借助不同的 AI 模型发现了草稿中的问题，仍需逐一解决。另一边，Sutherland 在北京时间 20:55 更新核验记录，报告两个独立实现的内核均接受了 Alpöge 版本的完整证明导出，其中一个还核对了五个定理陈述。另有检查仍在进行，克雷数学研究所仍将黎曼猜想列为未解决。
+
+🔗 [Vakil 发布草稿及补记](https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/) · [Masullo 原稿](https://math216.wordpress.com/wp-content/uploads/2026/11/the-music-of-the-primes.pdf) · [Sutherland 更新的核验记录](https://math.mit.edu/~drew/grh/)
 
 ### 补充：METR 更新 AI 任务时间视野评估
 
