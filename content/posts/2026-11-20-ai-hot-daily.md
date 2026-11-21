@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月20日"
 date: 2026-11-20T00:00:00+08:00
 publishDate: 2026-11-20T08:10:11+08:00
-lastmod: 2026-11-20T22:10:39+08:00
+lastmod: 2026-11-21T10:23:03+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-20
-description: 2026年11月20日 AI HOT 滚动精选，关注腾讯混元 Hy4 开放权重、Genie 4 向开发者开放、可灵图像模型 API、Codex 排查 ChatGPT 性能回退与 Anthropic IPO 交割。
-aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqeuqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc", "jl6m0eymz9z0kleh54c3guowx", "stnka187ae3za2qnx70vqheg7", "e871ammlz8gpx1oozsswidzt0", "z0unnn7ryj39a3tuns8b1l4a6"]
+description: 2026年11月20日 AI HOT 滚动精选，关注腾讯混元 Hy4 开放权重、Genie 4 向开发者开放、MIT 数学座谈与 Anthropic 上市次日走势。
+aihot_ids: ["n1nzpfmd3f6zc4abq3s8yxrde", "h5xjk79bhcu8vgnbrynj208uj", "n3npoqbr48wu58cke5p3ox18l", "cty34utgc5ppbdnayf7cnjqlv", "alwgjr29158n454prl9tjmmw1", "nl1zxwjilx9vxvz7af13c1s9w", "wi5cfyezztfdcojsokxto4q0d", "gklqioeodqeuqgz3lttg83ztv", "h4bvsjw4ri6to1inm87srlf42", "w1q2gyqsel49b4vbqeodf0qmc", "jl6m0eymz9z0kleh54c3guowx", "stnka187ae3za2qnx70vqheg7", "e871ammlz8gpx1oozsswidzt0", "z0unnn7ryj39a3tuns8b1l4a6", "qfwgfsg8m1r4vcf4vglgi03by", "ufyn252g3i251j0mfwy8xth9r"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条。本次取材截止北京时间 11 月 20 日 22:01。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次取材截止北京时间 11 月 21 日 08:09。
 
 ---
 
@@ -85,6 +85,12 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 
 🔗 [Conductor 更新日志](https://www.conductor.build/changelog/0.97.0-first-class-artifacts)
 
+### MIT 数学座谈讨论如何审阅 AI 辅助证明
+
+**11月21日 10:23 补充，原文发表于 11 月 20 日。** MIT News 报道，MIT、哈佛大学、西北大学和纽约大学的数学研究者在一场座谈中讨论了如何审阅 AI 辅助证明，以及如何培养能理解这些成果的研究人员。西北大学数学家 Bryna Kra 提到，她参与管理的一家期刊因 AI 生成或辅助的投稿增加而增聘了一名执行编辑。报道由 AI HOT 于北京时间 11 月 20 日 23:50 收录。
+
+🔗 [MIT News 座谈报道](https://news.mit.edu/2026/following-mathocalypse-mathematicians-consider-future-1120)
+
 ## 行业动态
 
 ### 进展：Anthropic 股票在纳斯达克开始交易
@@ -96,6 +102,10 @@ Google 在 Gemini Interactions API 预览 Tool Retrieval。开发者可以让模
 **11月20日 22:10 补充。** Anthropic 公告称，IPO 与同期私募均已交割。承销商全额行使了额外认购 1.47 亿股的选择权，IPO 的总募资额约为 935 亿美元，其中约 916 亿美元由 Anthropic 获得，均为扣除承销费用和其他发行费用前的金额。另有约 260 亿美元来自同期私募。
 
 🔗 [Anthropic 交割公告](https://www.anthropic.com/news/ipo-close) · [路透社交割报道（Investing.com 刊载）](https://www.investing.com/news/economy-news/anthropic-ipo-haul-rises-to-935-billion-after-underwriters-exercise-greenshoe-5041607)
+
+**11月21日 10:23 补充，美国当地时间 11 月 20 日行情。** Anthropic 上市次日收于 88.30 美元，较首日收盘价下跌约 9%。同日纳斯达克综合指数下跌约 5.3%。《卫报》于 11 月 20 日首次刊发相关报道，当晚由 AI HOT 收录。收盘数据来自该报道的后续更新和路透社收盘报道。
+
+🔗 [《卫报》市场报道](https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off) · [路透社收盘报道（Euronext 刊载）](https://live.euronext.com/en/financial-news/tech-leads-global-stocks-rout-treasury-yields-fall)
 
 ### 进展：美国远程算力出口管制规则生效
 
