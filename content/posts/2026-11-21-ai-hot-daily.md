@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月21日"
 date: 2026-11-21T00:00:00+08:00
 publishDate: 2026-11-21T10:23:03+08:00
-lastmod: 2026-11-21T22:11:30+08:00
+lastmod: 2026-11-22T08:05:36+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-21
-description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想的两份证明主张及核验进展、混元 Hy4 轻量模型计划、Inkling 2 Mini 权重与 ChatGPT Space。
-aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4", "j8qdprqh5i5n9n7ece0f411f1", "tje8i8y21ttk7jjmqet5bpxuq"]
+description: 2026年11月21日 AI HOT 滚动精选，关注黎曼猜想核验、Dragos 推理隐私调查、混元 Hy4 轻量模型计划、Inkling 2 Mini 与 ChatGPT Space。
+aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46hdbp52212ozxleh3", "vu6fw8wmrs3xcln4u9gwzf1f4", "sn8qb9u8fqka3mpnmy0r1nz4b", "wibzzhd168cafn7o3gl8336di", "wnw22hxqlwsd58lzsm44psc6g", "i94tul4bae051uizh2kkpn2r4", "j8qdprqh5i5n9n7ece0f411f1", "tje8i8y21ttk7jjmqet5bpxuq", "agm7klro03kcu9weuix1bt4su"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 21 日 22:07。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条。本次取材截止北京时间 11 月 22 日 08:01。
 
 ---
 
@@ -80,6 +80,14 @@ aihot_ids: ["y7nk77dxae51qwi826gpmvbho", "ekf0so0xitc52thkrxx3mwax1", "t68rgyv46
 **原文标注 11 月 19 日。** OpenHands 介绍了如何从自家部署清单识别容器镜像，交叉比对两款扫描器的结果，再由智能体提出依赖升级或镜像重建 PR。公司称，风险较低的变更可在检查通过后自动合并，其余由人员审阅，团队跟踪补丁是否随部署生效。
 
 🔗 [OpenHands 工程博客](https://www.openhands.dev/blog/automating-cve-remediation-with-openhands)
+
+## 行业动态
+
+### 补充：Dragos 调查发现 AI 推理服务链存在提示词泄露
+
+**11月22日 08:05 补充。** Dragos 调查原文标注 11 月 19 日，AI HOT 于北京时间 11 月 21 日收录相关报道。研究团队称，他们在近 200 万次推理请求中加入可追踪的测试标记，观察到至少三家服务商有数据暴露迹象。研究还发现，部分经由中间商转发的请求被保留，一些标记为零数据留存（ZDR）的请求也出现了测试标记被访问的情况。
+
+🔗 [Dragos 调查原文](https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens) · [Ars Technica 报道](https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
