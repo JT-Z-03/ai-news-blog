@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月22日"
 date: 2026-11-22T00:00:00+08:00
 publishDate: 2026-11-22T08:05:36+08:00
-lastmod: 2026-11-22T08:05:36+08:00
+lastmod: 2026-11-22T14:05:30+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-22
-description: 2026年11月22日 AI HOT 滚动精选，关注 Together AI 接入 Qwen4-Max 的整仓测试，以及部分推理提示词样本泄露的通报。
+description: 2026年11月22日 AI HOT 滚动精选，关注黎曼猜想证明的独立核验进展、Together AI 接入 Qwen4-Max 的整仓测试及提示词样本泄露通报。
 aihot_ids: ["rlj39tzyujneo0u35iyrfb4uc", "xqe6lbb5zsjp9xbsc1o912cs0"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 2 条。本次取材截止北京时间 11 月 22 日 08:01。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 3 条。本次取材截止北京时间 11 月 22 日 14:01。
 
 ---
 
@@ -22,6 +22,16 @@ aihot_ids: ["rlj39tzyujneo0u35iyrfb4uc", "xqe6lbb5zsjp9xbsc1o912cs0"]
 **公告标注 11 月 21 日。** 继[阿里介绍 Qwen4-Max](/posts/ai-hot-2026-11-16/)后，Together AI 宣布其无服务器推理服务已支持该模型。该公司用一个已有修复的 Tornado 缺陷做了单次复测，把问题描述和 344 个文件一次送入模型，输入约 65.3 万 token。Together AI 称，模型给出的补丁通过了维护者的两项回归用例和 Tornado 的 1,673 项全套测试。
 
 🔗 [Together AI 上线公告与测试说明](https://www.together.ai/blog/qwen4-max) · [Together AI 模型页](https://www.together.ai/models/qwen4-max)
+
+## 开发与研究
+
+### 进展：黎曼猜想证明的独立重建与逐模块复核通过
+
+**11月22日 14:05 补充。** 继[本站报道两套独立内核接受完整的证明导出文件](/posts/ai-hot-2026-11-21/#进展数学家-levent-alpöge-发布黎曼猜想证明主张和-lean-文件)后，MIT 数学家 Andrew Sutherland 于北京时间 11 月 22 日 12:35 更新核验记录。核验团队在另一台机器的隔离环境里从公开源码重新构建，得到的证明导出文件与公布版本逐字节相同。另一个独立检查器 lean4lean 也核验了全部 175,187 个编译模块。
+
+完整的 Comparator 检查和使用 Lean 内核复核导出证明仍在进行。克雷数学研究所仍将黎曼猜想列为「未解决」。
+
+🔗 [Sutherland 的核验记录](https://math.mit.edu/~drew/grh/) · [克雷数学研究所问题页面](https://www.claymath.org/millennium/Riemann-Hypothesis/)
 
 ## 行业动态
 
