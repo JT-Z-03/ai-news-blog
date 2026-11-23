@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月23日"
 date: 2026-11-23T00:00:00+08:00
 publishDate: 2026-11-23T08:08:53+08:00
-lastmod: 2026-11-23T08:08:53+08:00
+lastmod: 2026-11-23T14:07:28+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-23
-description: 2026年11月23日 AI HOT 滚动精选，关注 MiniCPM 本地文档实测、OpenAI 的困惑度提议、黎曼猜想形式化核验，以及卡兹克的多模型协作案例。
-aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf"]
+description: 2026年11月23日 AI HOT 滚动精选，关注 MiniCPM 本地文档实测、OpenAI 的困惑度提议、黎曼猜想形式化核验、多模型协作，以及 Beam 智能体的办公室售货测试。
+aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条。本次取材截止北京时间 11 月 23 日 08:02。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条。本次取材截止北京时间 11 月 23 日 14:04。
 
 ---
 
@@ -42,6 +42,14 @@ aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcw
 数字生命卡兹克在 11 月 23 日发布的文章中介绍，他用 Claude 拆解需求和验收，遇到较大的架构决策就让 Claude 和 Gemini 各自出方案。Gemini 只拿原始需求和必要背景，Claude 核对建议后汇总，作者自己拍板。作者也让 Gemini 复核交互和文案，再把接口已定的后端和算法工作交给 Codex，由 Claude 检查改动并跑测试。
 
 🔗 [数字生命卡兹克公众号原文](https://mp.weixin.qq.com/s/gwj0xLNHPfToQnQJN7IkMA)
+
+### 补充：Reflection 公布 Beam 智能体的办公室售货测试
+
+**11月23日 14:07 补充。原文标注 11 月 20 日，23 日由 AI HOT 收录。** Reflection 与 Andon Labs 在纽约和旧金山办公室测试 Beam。智能体负责选品、定价、下单和处理客诉，实物收货和补货由员工完成。Reflection 公布的纽约试点记录显示，10 月 8 日至 30 日共有 23 条人工介入记录，其中 12 条涉及财务监督或流程纠正，包括补查已收款但尚未向供应商下单的交易。
+
+测试中，一条未经核实的人员变动消息被写入长期记忆，影响了智能体接下来数天的操作。Reflection 据此提出，评测还应检查哪些信息被写入记忆，以及会产生实际后果的工具调用是否符合规则。
+
+🔗 [Reflection 官方测试报告](https://reflection.ai/blog/mr-beam-partnering-with-andon-labs)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
