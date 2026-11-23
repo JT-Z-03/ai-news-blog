@@ -2,26 +2,42 @@
 title: "AI 热点日报 | 2026年11月23日"
 date: 2026-11-23T00:00:00+08:00
 publishDate: 2026-11-23T08:08:53+08:00
-lastmod: 2026-11-23T14:07:28+08:00
+lastmod: 2026-11-23T22:06:16+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-23
-description: 2026年11月23日 AI HOT 滚动精选，关注 MiniCPM 本地文档实测、OpenAI 的困惑度提议、黎曼猜想形式化核验、多模型协作，以及 Beam 智能体的办公室售货测试。
-aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq"]
+description: 2026年11月23日 AI HOT 滚动精选，关注智谱 GLM-5.4、Gemini Notebook 交互网站、MiniCPM 本地文档实测、OpenAI 困惑度提议、黎曼猜想形式化核验、多模型协作、Beam 售货测试及加州对 OpenAI 提起诉讼。
+aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq", "d4hhqnlmrclsx7d6idtvq95wz", "dlnrpd7xq39i5gkkti3hic390", "t1ol5cc73f6teh8f32wvri1cn"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 5 条。本次取材截止北京时间 11 月 23 日 14:04。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条。本次取材截止北京时间 11 月 23 日 21:58。
 
 ---
 
 ## 模型与产品
+
+### 智谱发布首款采用 Loop Transformer 的旗舰模型 GLM-5.4
+
+**11月23日 22:06 补充。** 智谱于 11 月 23 日发布 GLM-5.4。模型在 7500 亿参数基座上让同一组 28 层共享权重、运行两轮，在参数量不变的情况下增加计算深度。官方技术说明还展示了用代码生成视频、在 FreeCAD 中构建六轴机械臂模型等案例。
+
+GLM Coding Plan 用户已可使用。智谱表示，通用 API 将在安全评估后上线，模型权重计划后续开放。
+
+🔗 [智谱发布原文](https://mp.weixin.qq.com/s/D-IZr-QaT1or_chminK8IQ) · [Z.ai 技术说明](https://z.ai/blog/glm-5.4)
 
 ### 补充：用户实测 MiniCPM5-2B 在 Mac 本地读取体检报告
 
 **原帖发布于 11 月 19 日，面壁智能于 11 月 22 日引用，23 日凌晨收录。** 一位开发者在搭载 M4 Pro 的 Mac 上用 Mirobody 1.6.1 处理一份 14 页体检报告，由 GLM-OCR 识别文档、MiniCPM5-2B 回答问题。首次导入漏掉了 3 页含扫描图的化验单。作者把这三页转成图片逐页导入，核对后称 58 行数值均与原件一致，其中 20 行匹配到 LOINC 标准编码。模型找全了报告标出的 5 项超范围指标，同时把一项处在参考范围内的读数误报为超范围。Mirobody 1.6.2 已修复带页眉页脚的扫描页漏送 OCR 的问题。
 
 🔗 [开发者实测原帖](https://x.com/cxjwin/status/2123256763340444007) · [面壁智能引用](https://x.com/OpenBMB/status/2124461770043785636) · [Mirobody 1.6.2 修复记录](https://github.com/thetahealth/mirobody/pull/327)
+
+### 补录：Gemini Notebook 可将笔记资料生成交互网站
+
+**11月23日 22:06 补充。谷歌原公告标注 11 月 16 日，AI HOT 于北京时间 11 月 17 日收录。** 用户可以在笔记本的聊天窗口描述想做的数据看板或项目进度表，让 Gemini Notebook 根据已有资料生成交互页面。谷歌的 11 月 18 日更新注明，功能面向年满 18 岁的网页用户逐步推出。
+
+谷歌帮助文档说明，通过链接分享生成页面时，接收者需要有整个笔记本的访问权限。单独分享页面文件可以使用下载功能。
+
+🔗 [Google Labs 发布原文](https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/) · [Google Workspace 上线说明](https://workspaceupdates.googleblog.com/2026/11/transform-your-notes-and-research-into-dynamic-tools-with-Gemini-Notebook.html) · [谷歌帮助文档](https://support.google.com/gemininotebook/answer/18945748?hl=en)
 
 ## 开发与研究
 
@@ -50,6 +66,16 @@ aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcw
 测试中，一条未经核实的人员变动消息被写入长期记忆，影响了智能体接下来数天的操作。Reflection 据此提出，评测还应检查哪些信息被写入记忆，以及会产生实际后果的工具调用是否符合规则。
 
 🔗 [Reflection 官方测试报告](https://reflection.ai/blog/mr-beam-partnering-with-andon-labs)
+
+## 行业动态
+
+### 补录进展：加州总检察长因模型测试安全措施起诉 OpenAI
+
+**11月23日 22:06 补充。加州司法部公告标注当地时间 11 月 16 日，AI HOT 于北京时间 11 月 17 日收录。** 继今年 7 月的 [Hugging Face 事件](/posts/ai-hot-2026-10-11/)后，加州总检察长 Rob Bonta 向旧金山高等法院提起民事诉讼。加州方面指控，OpenAI 对先进模型的测试缺乏充分的隔离和监督，构成公共妨害并违反加州《不公平竞争法》。
+
+OpenAI 发言人向 Axios 表示，公司已发布多份报告、通知受影响机构，并在事件后加强了防护措施。
+
+🔗 [加州司法部原始公告](https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over) · [Axios 报道及 OpenAI 回应](https://www.axios.com/local/san-francisco/2026/11/16/california-openai-lawsuit-hugging-face-hack)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
