@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月23日"
 date: 2026-11-23T00:00:00+08:00
 publishDate: 2026-11-23T08:08:53+08:00
-lastmod: 2026-11-23T22:06:16+08:00
+lastmod: 2026-11-24T08:07:58+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-23
-description: 2026年11月23日 AI HOT 滚动精选，关注智谱 GLM-5.4、Gemini Notebook 交互网站、MiniCPM 本地文档实测、OpenAI 困惑度提议、黎曼猜想形式化核验、多模型协作、Beam 售货测试及加州对 OpenAI 提起诉讼。
-aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq", "d4hhqnlmrclsx7d6idtvq95wz", "dlnrpd7xq39i5gkkti3hic390", "t1ol5cc73f6teh8f32wvri1cn"]
+description: 2026年11月23日 AI HOT 滚动精选，关注智谱 GLM-5.4、Gemini Notebook 交互网站、MiniCPM 本地文档实测、OpenAI 困惑度提议、黎曼猜想形式化核验、多模型协作、Beam 售货测试、加州对 OpenAI 提起诉讼、英伟达恢复黄仁勋职务与购物智能体测试。
+aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq", "d4hhqnlmrclsx7d6idtvq95wz", "dlnrpd7xq39i5gkkti3hic390", "t1ol5cc73f6teh8f32wvri1cn", "ajcxs84uezjqgsgxpdtr31o0l", "qkxvs90ewfu3k430sdefndv56"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 8 条。本次取材截止北京时间 11 月 23 日 21:58。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条。本次取材截止北京时间 11 月 24 日 08:01，补查 23 日晚间收录。
 
 ---
 
@@ -76,6 +76,18 @@ GLM Coding Plan 用户已可使用。智谱表示，通用 API 将在安全评�
 OpenAI 发言人向 Axios 表示，公司已发布多份报告、通知受影响机构，并在事件后加强了防护措施。
 
 🔗 [加州司法部原始公告](https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over) · [Axios 报道及 OpenAI 回应](https://www.axios.com/local/san-francisco/2026/11/16/california-openai-lawsuit-hugging-face-hack)
+
+### 进展：英伟达董事会恢复黄仁勋的总裁、CEO 和董事职务
+
+**11月24日 08:07 补充。** 英伟达 11 月 23 日在美国发布公告。提交给美国证券交易委员会的 8-K 文件显示，董事会于当地时间 11 月 22 日一致同意恢复黄仁勋的三项职务，立即生效。此前[兼任临时 CEO 的 Colette Kress](/posts/ai-hot-2026-11-12/)继续担任执行副总裁兼首席财务官，Harvey C. Jones 仍任董事长。英伟达表示，独立董事此前启动的调查将继续。
+
+🔗 [英伟达公告](https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director) · [SEC 8-K 文件](https://www.sec.gov/Archives/edgar/data/1045810/000104581026000090/nvda-20261122.htm)
+
+### a16z 实测购物智能体如何筛选商品
+
+**11月24日 08:07 补充。** a16z 与 The Prompting Company 在 11 月 23 日公布一组购物实验，涵盖 1,270 条提示词和 11,307 次完成的智能体运行。在 Grok Bot、Muse、Instinct 和 Dots 的对照中，一个智能体选中的商品有 73% 的概率也被至少一个其他智能体选中。加入发质、使用频率等具体要求后，部分问题的首选会改变。这些数字统计的是测试中的推荐，研究另用消费数据观察实际交易。
+
+🔗 [a16z 联合测试原文](https://www.a16z.news/p/welcome-to-the-b2a-economy-how-agents)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
