@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月23日"
 date: 2026-11-23T00:00:00+08:00
 publishDate: 2026-11-23T08:08:53+08:00
-lastmod: 2026-11-24T08:07:58+08:00
+lastmod: 2026-11-24T14:09:15+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-23
-description: 2026年11月23日 AI HOT 滚动精选，关注智谱 GLM-5.4、Gemini Notebook 交互网站、MiniCPM 本地文档实测、OpenAI 困惑度提议、黎曼猜想形式化核验、多模型协作、Beam 售货测试、加州对 OpenAI 提起诉讼、英伟达恢复黄仁勋职务与购物智能体测试。
-aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq", "d4hhqnlmrclsx7d6idtvq95wz", "dlnrpd7xq39i5gkkti3hic390", "t1ol5cc73f6teh8f32wvri1cn", "ajcxs84uezjqgsgxpdtr31o0l", "qkxvs90ewfu3k430sdefndv56"]
+description: 2026年11月23日 AI HOT 滚动精选，关注智谱 GLM-5.4、Gemini Notebook 交互网站、MiniCPM 本地文档实测、OpenAI 困惑度提议、黎曼猜想形式化核验、多模型协作、Beam 售货测试、加州对 OpenAI 提起诉讼、英伟达恢复黄仁勋职务、购物智能体测试及 Wiz 披露的云入侵案例。
+aihot_ids: ["g3vdho0vzm8rzriiz5grruy3m", "r7kb35fpdwc1m2iqsmd310tdj", "hz782dpcwhurj6584rtd13eaf", "w0ka422uzqyautrrsmzlmk9iq", "d4hhqnlmrclsx7d6idtvq95wz", "dlnrpd7xq39i5gkkti3hic390", "t1ol5cc73f6teh8f32wvri1cn", "ajcxs84uezjqgsgxpdtr31o0l", "qkxvs90ewfu3k430sdefndv56", "gp8e9a8oitha0rbip8pzntuff"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条。本次取材截止北京时间 11 月 24 日 08:01，补查 23 日晚间收录。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 11 条。本次取材截止北京时间 11 月 24 日 14:01，补查 23 日晚间收录。
 
 ---
 
@@ -66,6 +66,12 @@ GLM Coding Plan 用户已可使用。智谱表示，通用 API 将在安全评�
 测试中，一条未经核实的人员变动消息被写入长期记忆，影响了智能体接下来数天的操作。Reflection 据此提出，评测还应检查哪些信息被写入记忆，以及会产生实际后果的工具调用是否符合规则。
 
 🔗 [Reflection 官方测试报告](https://reflection.ai/blog/mr-beam-partnering-with-andon-labs)
+
+### 进展：Wiz 披露新一批涉及 AI 智能体的云入侵案例
+
+**11月24日 14:09 补充。Wiz 报告于 11 月 23 日发布，当晚 23:28 收录。** 继[10 月的 ARTEX 调查](/posts/ai-hot-2026-10-22/)后，Wiz 将 10 月下旬至 11 月中旬十多家机构出现的活动与一轮新攻势关联，各机构的关联置信度不同。报告还披露另一宗匿名事件，涉及两个 AWS 账户和七个 EKS 集群。Wiz 列出的检测重点包括异常使用云凭据与短时间大量读取密钥。
+
+🔗 [Wiz Research 原始报告与检测建议](https://www.wiz.io/blog/agentic-attacks-artex-offensive-ai-frameworks#recommendations-49)
 
 ## 行业动态
 

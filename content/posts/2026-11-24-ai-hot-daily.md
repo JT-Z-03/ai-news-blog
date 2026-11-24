@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月24日"
 date: 2026-11-24T00:00:00+08:00
 publishDate: 2026-11-24T08:07:58+08:00
-lastmod: 2026-11-24T08:07:58+08:00
+lastmod: 2026-11-24T14:09:15+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-24
-description: 2026年11月24日 AI HOT 滚动精选，关注 ChatGPT 日常聊天版 GPT-6.2 Sol、Claude 插件与 Claude Ship、Figma 智能体、Google Wallet 接入搜索、量子电路和黎曼猜想的形式化核验、企业 AI 用工访谈及美国两州的 Grok 诉讼。
-aihot_ids: ["gl6fl6hsisrt26tg83li0j4gk", "h1vnjuwxsli7ku7rpocjlr3s2", "zur9ndkrkvtk4lqiix14q468s", "cyorgi8t8dm2fo6ee3b5a6qs2", "t7jlbaldqf2zcliuva1sofoks", "pjpgapf3mbvmy98cywxhwf07n", "gj8mzwrgqlkvim6xe382a35q2", "vlxrimiuixb91iodhjh5hxmte"]
+description: 2026年11月24日 AI HOT 滚动精选，关注 GPT-6.2 Sol 日常版、Claude 与 Figma 更新、Google Wallet 接入搜索、MiniMax H3 Family、形式化验证、智能体监视器评测、AI 用工访谈、Grok 诉讼及 Megaspeed 出口管制。
+aihot_ids: ["gl6fl6hsisrt26tg83li0j4gk", "h1vnjuwxsli7ku7rpocjlr3s2", "zur9ndkrkvtk4lqiix14q468s", "cyorgi8t8dm2fo6ee3b5a6qs2", "t7jlbaldqf2zcliuva1sofoks", "pjpgapf3mbvmy98cywxhwf07n", "gj8mzwrgqlkvim6xe382a35q2", "vlxrimiuixb91iodhjh5hxmte", "f1380j6hyrxn0rnz6666nu3b8", "tl8v9gto8rd3e4x40xfbljj13", "zto0pspydy8330r0bvwqb6j5z"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 24 日 08:01。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 12 条。本次取材截止北京时间 11 月 24 日 14:01。
 
 ---
 
@@ -41,6 +41,12 @@ Figma 博客的发布时间对应北京时间 11 月 24 日 04:54。 FigJam 和 
 
 🔗 [Google Search 官方公告](https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/)
 
+### 进展：MiniMax 公布 H3 Family 视频与图像模型阵容
+
+**11月24日 14:09 补充。** 继[开放 H3-Image 权重](/posts/ai-hot-2026-11-11/)后，MiniMax 于北京时间 11 月 24 日公布 H3 Family 的产品阵容。视频系列包括侧重画质的 H3、侧重速度的 H3-Highspeed 和降低生成成本的 H3-Lite，图像系列包括 H3-Image 和 H3-Image Highspeed。官方还收录了 fal、Suno、HeyGen 等合作方的扩展。MiniMax 在开源生态回顾中称，基于 H3 的衍生模型已有 1,472 个，累计下载超过 1.48 亿次。
+
+🔗 [MiniMax 发布原文](https://mp.weixin.qq.com/s/Maoz76fZdGNaB7tlIVxWWQ) · [H3 Family 官方产品页](https://www.minimax.cn/h3-family)
+
 ## 开发与研究
 
 ### 补充：Claude Ship 扩展 GitHub 拉取请求的评审和审批
@@ -61,6 +67,12 @@ Figma 博客的发布时间对应北京时间 11 月 24 日 04:54。 FigJam 和 
 
 🔗 [Sutherland 的核验记录](https://math.mit.edu/~drew/grh/) · [克雷数学研究所问题页面](https://www.claymath.org/millennium/Riemann-Hypothesis/)
 
+### 补充：英国 AISI 发现智能体监视器的漏检率随测试条件大幅变化
+
+**11月24日 14:09 补充。AISI 官网标注 11 月 23 日发布，24 日凌晨收录。** 英国 AI 安全研究所用不同的合成样本评估同一个已停用的监视器。在这组试验里，对成功完成有害目标的样本，测得的漏检率从 0.2% 到 23% 不等。研究只评估了一个监视器和一个受监视的智能体。AISI 仍配合使用沙箱、人工监督和部署规模限制等措施。
+
+🔗 [英国 AISI 研究原文](https://www.aisi.gov.uk/blog/attack-policy-selection-can-make-monitor-evaluations-misleading)
+
 ## 行业动态
 
 ### 补充：Anthropic 访谈 58 家企业，受访者报告少量裁员与招聘放缓
@@ -74,6 +86,12 @@ Figma 博客的发布时间对应北京时间 11 月 24 日 04:54。 FigJam 和 
 **两州公告标注美国当地时间 11 月 23 日，24 日凌晨收录。** 俄勒冈州和弗吉尼亚州总检察长分别在州法院提起民事诉讼，被告包括 SpaceX 和 X Corp.。两州指控相关公司对 X 和 Grok 的安全性作出误导性宣传，且未采取充分措施阻止未经同意的私密图像生成和传播，包括涉及未成年人的图像。两州公告所列为诉讼指控，仍待法院审理。
 
 🔗 [俄勒冈州司法部公告](https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-takes-legal-action-against-grok-for-failing-to-block-child-exploitation/) · [弗吉尼亚州总检察长公告](https://oag.state.va.us/media-center/news-releases/jay-jones/3162-attorneys-general-jones-and-rayfield-file-suit-against-spacex-parent-company-of-x-xai-and-grok-over-creation-and-promotion-of-child-exploitation-and-non-consensual-images-on-platform)
+
+### 进展：美国商务部公布将 Megaspeed 等七家实体列入实体清单的规则
+
+**11月24日 14:09 补充。** 继[美国商务部与司法部披露调查进展](/posts/ai-hot-2026-11-19/#补充美国两部门公布-megaspeed-调查进展)后，美国商务部工业与安全局（BIS）的规则于美国东部时间 11 月 23 日 16:15 提交公开预览，对应北京时间 24 日 05:15，计划于 11 月 25 日正式刊登。规则将 Megaspeed International 等位于新加坡、马来西亚和泰国的七家实体列入出口管制实体清单。BIS 给出的理由是先进计算产品转向未经授权用途或最终用户的重大风险。相关交易涉及受美国《出口管理条例》管辖的物项时须申请许可，审查原则上推定拒绝。
+
+🔗 [美国《联邦公报》公开预览](https://www.federalregister.gov/public-inspection/2026-23999/additions-to-the-entity-list) · [BIS 规则原文](https://public-inspection.federalregister.gov/2026-23999.pdf)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
