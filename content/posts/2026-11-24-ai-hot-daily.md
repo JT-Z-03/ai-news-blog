@@ -2,7 +2,7 @@
 title: "AI 热点日报 | 2026年11月24日"
 date: 2026-11-24T00:00:00+08:00
 publishDate: 2026-11-24T08:07:58+08:00
-lastmod: 2026-11-25T08:07:33+08:00
+lastmod: 2026-11-25T14:08:27+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
@@ -11,7 +11,7 @@ description: 2026年11月24日 AI HOT 滚动精选，关注 GPT-6.2 Sol 日常�
 aihot_ids: ["gl6fl6hsisrt26tg83li0j4gk", "h1vnjuwxsli7ku7rpocjlr3s2", "zur9ndkrkvtk4lqiix14q468s", "cyorgi8t8dm2fo6ee3b5a6qs2", "t7jlbaldqf2zcliuva1sofoks", "pjpgapf3mbvmy98cywxhwf07n", "gj8mzwrgqlkvim6xe382a35q2", "vlxrimiuixb91iodhjh5hxmte", "f1380j6hyrxn0rnz6666nu3b8", "tl8v9gto8rd3e4x40xfbljj13", "zto0pspydy8330r0bvwqb6j5z", "d41p6k2h48zm8u2kl5xdzqx5h", "frmncgr2jcrvfm3t6jgabqhfh", "ygbhvp086wl672gfxuhfgl23x"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次复核取材截止北京时间 11 月 25 日 08:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次复核取材截止北京时间 11 月 25 日 14:01。
 
 ---
 
@@ -103,9 +103,11 @@ Figma 博客的发布时间对应北京时间 11 月 24 日 04:54。 FigJam 和 
 
 ### 进展：美国商务部公布将 Megaspeed 等七家实体列入实体清单的规则
 
-**11月24日 14:09 补充。** 继[美国商务部与司法部披露调查进展](/posts/ai-hot-2026-11-19/#补充美国两部门公布-megaspeed-调查进展)后，美国商务部工业与安全局（BIS）的规则于美国东部时间 11 月 23 日 16:15 提交公开预览，对应北京时间 24 日 05:15，计划于 11 月 25 日正式刊登。规则将 Megaspeed International 等位于新加坡、马来西亚和泰国的七家实体列入出口管制实体清单。BIS 给出的理由是先进计算产品转向未经授权用途或最终用户的重大风险。相关交易涉及受美国《出口管理条例》管辖的物项时须申请许可，审查原则上推定拒绝。
+**11月24日 14:09 补充。** 继[美国商务部与司法部披露调查进展](/posts/ai-hot-2026-11-19/#补充美国两部门公布-megaspeed-调查进展)后，美国商务部工业与安全局（BIS）的规则于美国东部时间 11 月 23 日 16:15 提交公开预览，对应北京时间 24 日 05:15，计划于 11 月 25 日正式刊登。BIS 将 Megaspeed International 等七家实体按新加坡、马来西亚和泰国三地归入出口管制实体清单。BIS 给出的理由是先进计算产品转向未经授权用途或最终用户的重大风险。相关交易涉及受美国《出口管理条例》管辖的物项时须申请许可，审查原则上推定拒绝。
 
-🔗 [美国《联邦公报》公开预览](https://www.federalregister.gov/public-inspection/2026-23999/additions-to-the-entity-list) · [BIS 规则原文](https://public-inspection.federalregister.gov/2026-23999.pdf)
+**11月25日 14:08 补充。** 上文已更正对七家实体所在地的表述。BIS 把 PT Megaspeed International 列在马来西亚名下。马来西亚投资、贸易及工业部在 11 月 24 日的声明中说，按马来西亚投资发展局的记录，该公司并非马来西亚实体，也没有在当地运营或租用数据中心。
+
+🔗 [美国《联邦公报》公开预览](https://www.federalregister.gov/public-inspection/2026-23999/additions-to-the-entity-list) · [BIS 规则原文](https://public-inspection.federalregister.gov/2026-23999.pdf) · [马来西亚投资、贸易及工业部声明](https://www.miti.gov.my/miti/resources/Media%20Release/THE_ADDITION_OF_MALAYSIAN_ENTITIES_TO_THE_US_ENTITY_LIST_-_UNDER_BUREAU_OF_INDUSTRY_AND_SECURITY_OF_THE_US_DEPARTMENT_OF_COMMERCE.pdf)
 
 ### 补充：亚马逊披露智能体利用零日漏洞的案例，维护者已发布修复
 
