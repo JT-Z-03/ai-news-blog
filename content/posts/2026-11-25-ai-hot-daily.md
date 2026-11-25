@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月25日"
 date: 2026-11-25T00:00:00+08:00
 publishDate: 2026-11-25T08:07:33+08:00
-lastmod: 2026-11-25T14:08:27+08:00
+lastmod: 2026-11-25T22:06:03+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-25
-description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go 代打电话、MAGI-2 与 Claude 更新、Cognition SWE-2.1、矩阵乘法预印本、预测智能体、OpenAI 预训练损失和 Copilot 招聘研究等。
-aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez"]
+description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go 代打电话、MAGI-2 与 Claude 更新、矩阵乘法预印本、EVIL 安全评测、Copilot 招聘研究及 Megaspeed 出口管制进展。
+aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez", "uyodjb16jngloilypsm1d3q0d", "ogucsvlqrdr1rvfh5nvx757cx", "kzwj96fvnn3whzvnhqdvsh830"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 14 条。本次取材截止北京时间 11 月 25 日 14:01。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 17 条。本次取材截止北京时间 11 月 25 日 21:59。
 
 ---
 
@@ -91,6 +91,18 @@ Anthropic 的研究原文标注 11 月 24 日，AI HOT 于北京时间 25 日收
 
 🔗 [METR 分析原文](https://metr.org/blog/2026-11-24-interpreting-a-recent-acceleration-in-pretraining-loss/) · [OpenAI 原始曲线与说明](https://openai.com/index/perplexity-and-intelligence/)
 
+### 进展：Claude Code 团队发布个人开发者的 PR 跟进指南
+
+**11月25日 22:06 补充。** 指南标注 11 月 24 日，AI HOT 于北京时间 25 日收录。继[此前发布 Claude Ship](/posts/ai-hot-2026-11-24/#补充claude-ship-扩展-github-拉取请求的评审和审批)后，Claude Code 团队说明了个人开发者如何跟进自己的 GitHub PR。无需管理员开启团队服务，开发者可以用 `/steward` 跟进已打开的 PR。用 `/ship` 启动的本地监控依赖当前会话和电脑保持运行，最长七天。Windows 上的 `/ship` 可以创建和审查 PR，目前无法启动这一监控。
+
+🔗 [Claude Code 团队指南](https://claude.dev/blog/the-work-after-you-open-a-pr/) · [官方命令文档](https://code.claude.com/docs/en/ship-command)
+
+### 补充：EVIL 基准评估模型如何回应违法请求
+
+**11月25日 22:06 补充。** 论文于 11 月 20 日在《Nature Communications》上线，AI HOT 于北京时间 25 日收录研究团队的介绍。研究者用中国和美国的判例构建了涵盖 269 种违法情境、50 类意图的评测，对 10 个模型的回答进行评分。在两套法律语境的测试中，多数模型被判为安全的回答比例低于 75%，GPT-4o 在两套测试中均约为 57%。这些比例来自该基准的样本和评分规则。
+
+🔗 [《Nature Communications》论文](https://www.nature.com/articles/s41467-026-79176-3) · [PubMed 摘要与发表记录](https://pubmed.ncbi.nlm.nih.gov/43064773/)
+
 ## 行业动态
 
 ### 进展：Anthropic 股价收于 83 美元发行价下方
@@ -104,6 +116,12 @@ Anthropic 的研究原文标注 11 月 24 日，AI HOT 于北京时间 25 日收
 **11月25日 14:08 补充。** MIT 与 Microsoft Research 的两位研究者于 UTC 11 月 23 日、北京时间 24 日向 arXiv 提交论文，AI HOT 于 25 日收录相关讨论。作者用 5,414 家跨国公司的软件采购周期构造自然实验。在因合同审查而采用 GitHub Copilot 的企业中，作者估计采用一年后，每季度技术岗位招聘量下降 29%，初级软件工程师招聘量下降约 40%。研究未发现技术人员总数或离职量出现显著变化。这些估计针对因审查时点而采用工具的企业。
 
 🔗 [arXiv 论文与提交记录](https://arxiv.org/abs/2611.31083) · [MIT 托管的论文全文](https://economics.mit.edu/sites/default/files/2026-11/AILaborDemand_06Nov2026.pdf)
+
+### 进展：Megaspeed 实体清单规则正式刊登，黄仁勋将出席出口管制听证会
+
+**11月25日 22:06 补充。** 继[美国商务部公布规则供公众查阅](/posts/ai-hot-2026-11-24/)后，美国《联邦公报》于当地 11 月 25 日正式刊登将 Megaspeed 等七家实体列入实体清单的规则，文件列明生效日期为 11 月 23 日。AI HOT 于北京时间 25 日晚收录相关报道。美国参议院银行委员会安排在美国东部时间 12 月 3 日 10:00 举行出口管制公开听证会，黄仁勋列为证人。
+
+🔗 [美国《联邦公报》正式刊登版](https://www.govinfo.gov/content/pkg/FR-2026-11-25/pdf/2026-23999.pdf) · [参议院银行委员会议程](https://www.banking.senate.gov/hearings/protecting-americas-ai-advantage-oversight-of-us-export-controls) · [TechCrunch 跟进报道](https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
