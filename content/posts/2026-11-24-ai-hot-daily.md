@@ -2,7 +2,7 @@
 title: "AI 热点日报 | 2026年11月24日"
 date: 2026-11-24T00:00:00+08:00
 publishDate: 2026-11-24T08:07:58+08:00
-lastmod: 2026-11-24T22:10:50+08:00
+lastmod: 2026-11-25T08:07:33+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
@@ -11,7 +11,7 @@ description: 2026年11月24日 AI HOT 滚动精选，关注 GPT-6.2 Sol 日常�
 aihot_ids: ["gl6fl6hsisrt26tg83li0j4gk", "h1vnjuwxsli7ku7rpocjlr3s2", "zur9ndkrkvtk4lqiix14q468s", "cyorgi8t8dm2fo6ee3b5a6qs2", "t7jlbaldqf2zcliuva1sofoks", "pjpgapf3mbvmy98cywxhwf07n", "gj8mzwrgqlkvim6xe382a35q2", "vlxrimiuixb91iodhjh5hxmte", "f1380j6hyrxn0rnz6666nu3b8", "tl8v9gto8rd3e4x40xfbljj13", "zto0pspydy8330r0bvwqb6j5z", "d41p6k2h48zm8u2kl5xdzqx5h", "frmncgr2jcrvfm3t6jgabqhfh", "ygbhvp086wl672gfxuhfgl23x"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次取材截止北京时间 11 月 24 日 22:06。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 15 条。本次复核取材截止北京时间 11 月 25 日 08:00。
 
 ---
 
@@ -64,6 +64,8 @@ Figma 博客的发布时间对应北京时间 11 月 24 日 04:54。 FigJam 和 
 ### 进展：黎曼猜想形式化证明通过一轮端到端 Comparator 核验
 
 继[两条等价不等式的核验进展](/posts/ai-hot-2026-11-23/#进展黎曼猜想形式化核验扩展至两条等价不等式)后，MIT 数学家 Andrew Sutherland 于北京时间 11 月 24 日 07:45 更新记录。记录显示，使用已有构建文件运行的 Comparator v4.33.0 已完成对原证明的命题比对、公理检查及内核核验。采用 Lean v4.36.0 的另一轮检查已通过严格模式内核和 nanoda，最后一个内核阶段仍在运行。把原证明与两条不等式组合后的完整核验也仍在运行。克雷数学研究所继续将黎曼猜想列为待解问题。
+
+**11月25日 08:07 补充。** Sutherland 在北京时间 11 月 24 日 13:25 的后续记录中增加了第三条算术推论。它从狄利克雷 L 函数的广义黎曼猜想导出一条适用于分圆域整数环理想的 Robin 型不等式。合并后的证明已通过 con-leche 和 con-ron 对三条命题的比对，独立内核 nanoda 也接受了合并后的证明导出文件。截至该记录，原证明单独使用 Lean v4.36.0 的 Comparator 核验仍在进行。
 
 🔗 [Sutherland 的核验记录](https://math.mit.edu/~drew/grh/) · [克雷数学研究所问题页面](https://www.claymath.org/millennium/Riemann-Hypothesis/)
 
