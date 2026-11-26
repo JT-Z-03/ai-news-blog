@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月25日"
 date: 2026-11-25T00:00:00+08:00
 publishDate: 2026-11-25T08:07:33+08:00
-lastmod: 2026-11-25T22:06:03+08:00
+lastmod: 2026-11-26T08:04:28+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-25
-description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go 代打电话、MAGI-2 与 Claude 更新、矩阵乘法预印本、EVIL 安全评测、Copilot 招聘研究及 Megaspeed 出口管制进展。
-aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez", "uyodjb16jngloilypsm1d3q0d", "ogucsvlqrdr1rvfh5nvx757cx", "kzwj96fvnn3whzvnhqdvsh830"]
+description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go 代打电话、MAGI-2 与 Claude 更新、矩阵乘法预印本、OpenClaw 正式版、EVIL 安全评测、Copilot 招聘研究及 Megaspeed 出口管制进展。
+aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez", "uyodjb16jngloilypsm1d3q0d", "ogucsvlqrdr1rvfh5nvx757cx", "kzwj96fvnn3whzvnhqdvsh830", "vz3bvc1o7zuki3x2zw8lnnv78"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 17 条。本次取材截止北京时间 11 月 25 日 21:59。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 18 条。本次取材截止北京时间 11 月 26 日 07:58。
 
 ---
 
@@ -46,6 +46,12 @@ Cognition 在美国太平洋时间 11 月 24 日 08:00 发布公告，对应北�
 **11月25日 14:08 补充。** Claude 发布说明标注 11 月 24 日，AI HOT 于北京时间 25 日收录。继[今年 7 月推出测试版](/posts/ai-hot-2026-07-09/)后，月度回顾现已在网页、桌面和移动端向 Free、Pro、Max 和 Ultra 用户正式开放。回顾可纳入 Claude Code 会话和云端 Claude Cowork 任务，用户可以删除已存储的回顾。同一份说明还宣布，向已连接应用发送文件、从这些应用保存文件的功能开始分批测试。
 
 🔗 [Claude 官方发布说明](https://support.claude.com/en/articles/12138966-release-notes#h_21ad83d886)
+
+### OpenClaw 2026.11.10 新增深度研究、知识库和浏览器接管
+
+**11月26日 08:04 补充。** OpenClaw 的 GitHub 正式版发布于北京时间 11 月 25 日 13:42，AI HOT 于 22:15 收录。新版可在聊天中发起 Deep Research，汇总网页或本地材料并给出带引用的报告。可选的 Knowledge 插件用本地 Markdown 记录项目、人物和决策。用户还可以在控制台接管由 OpenClaw Gateway 托管的受支持浏览器标签页，暂停智能体在该页的点击和输入，完成操作后再交回控制。
+
+🔗 [OpenClaw 官方版本说明](https://docs.openclaw.ai/releases/2026.11.10) · [GitHub 正式发布记录](https://github.com/openclaw/openclaw/releases/tag/v2026.11.10)
 
 ## 开发与研究
 
