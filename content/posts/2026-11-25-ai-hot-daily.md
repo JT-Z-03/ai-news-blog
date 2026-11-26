@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月25日"
 date: 2026-11-25T00:00:00+08:00
 publishDate: 2026-11-25T08:07:33+08:00
-lastmod: 2026-11-26T08:04:28+08:00
+lastmod: 2026-11-26T14:10:11+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-25
-description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go 代打电话、MAGI-2 与 Claude 更新、矩阵乘法预印本、OpenClaw 正式版、EVIL 安全评测、Copilot 招聘研究及 Megaspeed 出口管制进展。
-aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez", "uyodjb16jngloilypsm1d3q0d", "ogucsvlqrdr1rvfh5nvx757cx", "kzwj96fvnn3whzvnhqdvsh830", "vz3bvc1o7zuki3x2zw8lnnv78"]
+description: 2026年11月25日 AI HOT 滚动精选，关注千问 Go、MAGI-2 与 Claude 更新、矩阵乘法与 GPT-6 蛋白质设计预印本、OpenClaw 正式版、EVIL 安全评测、Copilot 招聘研究及 Megaspeed 出口管制进展。
+aihot_ids: ["zcpto4b7qb8sr6v6n223kd2sx", "gflb0kkwzma61spkzpp1uxmrk", "nm8mi41auemid3iivue4tel3d", "kjd2qp2iuk9zxdfqj5qk2a8f9", "gat7lwf755dyryyd45gvlesxz", "eb9lfibaf8fpouyw0x3vh63st", "jurm0kx9gczvzp4o14g0o35xo", "cebavio3uyjwli5r3imsuq1si", "u71y2i8e6zhwauu7gpuyxrp4z", "w9zx5w4dj1xhxvjylbijskshq", "pdtslys0302mclldlo6l1dlr9", "yh9lmlhqwoc77d1ii1mvr5d6x", "youah0x28ti3a58sj8ku26rdy", "hyofqy3ukzks1eyr4bu317bez", "uyodjb16jngloilypsm1d3q0d", "ogucsvlqrdr1rvfh5nvx757cx", "kzwj96fvnn3whzvnhqdvsh830", "vz3bvc1o7zuki3x2zw8lnnv78", "yg04c9d5qnwzitqstg19c6ow2"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 18 条。本次取材截止北京时间 11 月 26 日 07:58。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 19 条。本次取材截止北京时间 11 月 26 日 14:04。
 
 ---
 
@@ -108,6 +108,12 @@ Anthropic 的研究原文标注 11 月 24 日，AI HOT 于北京时间 25 日收
 **11月25日 22:06 补充。** 论文于 11 月 20 日在《Nature Communications》上线，AI HOT 于北京时间 25 日收录研究团队的介绍。研究者用中国和美国的判例构建了涵盖 269 种违法情境、50 类意图的评测，对 10 个模型的回答进行评分。在两套法律语境的测试中，多数模型被判为安全的回答比例低于 75%，GPT-4o 在两套测试中均约为 57%。这些比例来自该基准的样本和评分规则。
 
 🔗 [《Nature Communications》论文](https://www.nature.com/articles/s41467-026-79176-3) · [PubMed 摘要与发表记录](https://pubmed.ncbi.nlm.nih.gov/43064773/)
+
+### 补充：OpenAI 公布 GPT-6 蛋白质设计预印本与初步实验结果
+
+**11月26日 14:10 补充。** OpenAI 的研究说明标注 11 月 24 日，AI HOT 于北京时间 25 日收录。OpenAI 与 Onava 报告，在一组实验中，322 个候选小蛋白里有 35 个表现出与预定靶标结合的迹象。实验仍借助专用模型，结果说明通用模型能参与部分设计工作。候选分子的实际生物功能和治疗价值仍需进一步验证。
+
+🔗 [OpenAI 官方研究说明](https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/)
 
 ## 行业动态
 

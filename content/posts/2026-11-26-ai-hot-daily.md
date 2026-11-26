@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月26日"
 date: 2026-11-26T00:00:00+08:00
 publishDate: 2026-11-26T08:04:28+08:00
-lastmod: 2026-11-26T08:04:28+08:00
+lastmod: 2026-11-26T14:10:11+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-26
-description: 2026年11月26日 AI HOT 滚动精选，关注 Fireworks 接入混元 Hy4 Flash、Pydantic AI 发布 Pax、Anthropic 的 Rust 迁移验证，以及 Character.AI 出售中的用户数据争议。
-aihot_ids: ["dvu6olan4q58k1evvnp8t60t2", "i5qr52169dlque8rb2sl4i5jo", "h1ja45355xx1xf9rqf89cv1if", "rnanzlnaqxdr2icjqw0qwv9la", "j0hoj1rlmltoft6okserijp25"]
+description: 2026年11月26日 AI HOT 滚动精选，关注混元 Hy4 Flash 接入 Fireworks、Pax、Anthropic 的 Rust 迁移与 AI 治理表态、Tor Browser 安全修复、《人生意义设计课》提示词和 Character.AI 用户数据争议。
+aihot_ids: ["dvu6olan4q58k1evvnp8t60t2", "i5qr52169dlque8rb2sl4i5jo", "h1ja45355xx1xf9rqf89cv1if", "rnanzlnaqxdr2icjqw0qwv9la", "j0hoj1rlmltoft6okserijp25", "gv1y811sp5p9kl7p3ci7xjt5n", "mruv0rx3oxnkjy9ll805qaidc", "e6gp31eup40d99unaon9umnpo"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 4 条。本次取材截止北京时间 11 月 26 日 07:58。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 7 条。本次取材截止北京时间 11 月 26 日 14:04。
 
 ---
 
@@ -37,6 +37,18 @@ Anthropic 的工程文章标注 11 月 25 日，AI HOT 于北京时间 26 日收
 
 🔗 [Anthropic 工程复盘](https://www.anthropic.com/research/migrating-api-to-rust) · [Katelyn Lesse 访谈原文](https://newsletter.pragmaticengineer.com/p/how-anthropic-builds-software-in)
 
+### Calif 公开 Tor Browser 旧版匿名性风险研究，相关修复已于 9 月发布
+
+**11月26日 14:10 补充。** Calif 在 OpenAI 的 Patch the Planet 项目下公开了针对 Tor Browser 15.0.22 的安全研究，指出旧版存在泄露用户真实 IP 地址的风险。Tor Project 已在 9 月 15 日发布的 15.0.23 中纳入相关 Firefox ESR 安全修复，11 月 24 日又发布了 16.0.3 安全更新。
+
+🔗 [Tor Project 的 15.0.23 发布公告](https://blog.torproject.org/new-release-tor-browser-15023/) · [Mozilla 安全公告](https://www.mozilla.org/en-US/security/advisories/mfsa2026-92/#CVE-2026-92027) · [Tor Project 的 16.0.3 发布公告](https://blog.torproject.org/new-release-tor-browser-1603/)
+
+### 数字生命卡兹克把《人生意义设计课》改编为多轮对话提示词
+
+**11月26日 14:10 补充。** 作者在当天发布的文章里给出了完整提示词和一次 GPT-6.2 对话示例。提示词分四个阶段，从回顾日常经历开始，逐步梳理个人价值观和想继续探索的问题，最后把回答整理成一份个人手册。
+
+🔗 [数字生命卡兹克原创文章](https://www.woshipm.com/ai/6500639.html)
+
 ## 行业动态
 
 ### 进展：美国多地总检察长反对 Character.AI 随平台出售私密聊天记录
@@ -44,6 +56,12 @@ Anthropic 的工程文章标注 11 月 25 日，AI HOT 于北京时间 26 日收
 **迟到补充。** 继[美国多地总检察长要求在 Character.AI 破产出售中保护用户数据](/posts/ai-hot-2026-10-15/)后，加州和伊利诺伊州总检察长办公室于美国当地 11 月 24 日披露，联盟已向破产法院提出异议，要求驳回包含私密聊天记录的出售方案。两地公告称，方案涉及超过 2,100 万个美国账号的聊天记录，其中超过 210 万个账号登记为未成年人。加州公告列出的拟议拍卖日期为 12 月 1 日。AI HOT 于北京时间 26 日收录 11 月 25 日的跟进报道。
 
 🔗 [加州总检察长办公室公告](https://oag.ca.gov/news/press-releases/attorney-general-bonta-opposes-asset-sale-characterai-amid-child-safety-concerns) · [伊利诺伊州总检察长办公室公告](https://www.illinoisattorneygeneral.gov/news/story/attorney-general-raoul-challenges-plan-to-auction-off-characterai-users-private-chats-to-the-highest-bidder) · [TechCrunch 跟进报道](https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/)
+
+### Anthropic CEO 回应 Axios，表明反对把社会治理权交给 AI
+
+**11月26日 14:10 补充。** 北京时间 11 月 26 日凌晨，Dario Amodei 发文回应 Axios 关于 AI 决策权的报道。他主张由合法的民主程序监督 AI 的发展，并区分了社会治理和具体任务自动化。他认为 AI 在部分具体任务上可以发挥更大作用，同时提出部署时应考虑就业冲击，并讨论是否限制模型自主研发下一代系统。
+
+🔗 [Dario Amodei 原帖](https://x.com/DarioAmodei/status/2125656399392690605) · [Axios 后续报道](https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios) · [TechCrunch 报道](https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
