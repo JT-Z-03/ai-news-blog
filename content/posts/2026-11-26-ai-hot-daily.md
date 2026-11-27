@@ -2,16 +2,16 @@
 title: "AI 热点日报 | 2026年11月26日"
 date: 2026-11-26T00:00:00+08:00
 publishDate: 2026-11-26T08:04:28+08:00
-lastmod: 2026-11-26T22:08:22+08:00
+lastmod: 2026-11-27T08:06:45+08:00
 draft: false
 tags: ["AI", "日报"]
 categories: ["日报"]
 slug: ai-hot-2026-11-26
-description: 2026年11月26日 AI HOT 滚动精选，关注蚂蚁开源设计图像模型 Ming-Image-0.2-Design、Philipp Schmid 对 MCP 的技术分析、混元 Hy4 Flash 接入 Fireworks、Pax、Anthropic 的 Rust 迁移与 AI 治理表态，以及 Character.AI 用户数据争议等。
-aihot_ids: ["dvu6olan4q58k1evvnp8t60t2", "i5qr52169dlque8rb2sl4i5jo", "h1ja45355xx1xf9rqf89cv1if", "rnanzlnaqxdr2icjqw0qwv9la", "j0hoj1rlmltoft6okserijp25", "gv1y811sp5p9kl7p3ci7xjt5n", "mruv0rx3oxnkjy9ll805qaidc", "e6gp31eup40d99unaon9umnpo", "hdvt6wswzycj78wnr7r43xn6o", "jcdfpftbam647yhc210dbace9"]
+description: 2026年11月26日 AI HOT 滚动精选，关注英伟达东南亚服务器发运、蚂蚁开源设计图像模型 Ming-Image-0.2-Design、Philipp Schmid 对 MCP 的技术分析、混元 Hy4 Flash 接入 Fireworks、Pax、Anthropic 的 Rust 迁移与 AI 治理表态，以及 Character.AI 用户数据争议等。
+aihot_ids: ["dvu6olan4q58k1evvnp8t60t2", "i5qr52169dlque8rb2sl4i5jo", "h1ja45355xx1xf9rqf89cv1if", "rnanzlnaqxdr2icjqw0qwv9la", "j0hoj1rlmltoft6okserijp25", "gv1y811sp5p9kl7p3ci7xjt5n", "mruv0rx3oxnkjy9ll805qaidc", "e6gp31eup40d99unaon9umnpo", "hdvt6wswzycj78wnr7r43xn6o", "jcdfpftbam647yhc210dbace9", "rlt60gq96bl1cf5b88o8rbj30"]
 ---
 
-> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 9 条。本次取材截止北京时间 11 月 26 日 22:00。
+> 数据来源 [AI HOT](https://aihot.news/)。本期为截至本次更新时间的精选，含必要迟到补充，共 10 条。本次取材截止北京时间 11 月 27 日 08:02。
 
 ---
 
@@ -74,6 +74,12 @@ Anthropic 的工程文章标注 11 月 25 日，AI HOT 于北京时间 26 日收
 **11月26日 14:10 补充。** 北京时间 11 月 26 日凌晨，Dario Amodei 发文回应 Axios 关于 AI 决策权的报道。他主张由合法的民主程序监督 AI 的发展，并区分了社会治理和具体任务自动化。他认为 AI 在部分具体任务上可以发挥更大作用，同时提出部署时应考虑就业冲击，并讨论是否限制模型自主研发下一代系统。
 
 🔗 [Dario Amodei 原帖](https://x.com/DarioAmodei/status/2125656399392690605) · [Axios 后续报道](https://www.axios.com/2026/11/25/anthropic-dario-amodei-ai-free-will-contro-axios) · [TechCrunch 报道](https://techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd/)
+
+### 进展：两家媒体报道英伟达要求暂缓向东南亚四国发运服务器
+
+**11月27日 08:06 补充。** 美国[远程算力出口管制规则](/posts/ai-hot-2026-11-20/)生效后，《金融时报》于 11 月 26 日援引知情人士称，英伟达要求制造合作伙伴暂缓向马来西亚、新加坡、泰国和印度尼西亚交付搭载其芯片的服务器。《华尔街日报》也独立援引知情人士作出相同报道，提到戴尔和超微电脑等厂商。暂停期限尚未明确。
+
+🔗 [《金融时报》原始报道](https://www.ft.com/content/7838a715-07d4-4605-aa60-21f5af2b2370) · [《华尔街日报》独立报道](https://www.wsj.com/tech/nvidia-tells-partners-to-pause-shipments-to-southeast-asia-5b791cb0)
 
 ---
 *AI 热点日报 · 作者 ZestJT · 数据来源 AI HOT（aihot.news）*
